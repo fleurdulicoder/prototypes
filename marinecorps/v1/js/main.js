@@ -171,6 +171,9 @@ var Banner = function(bannerId, bannerSlides) {
   var circles = [];
   var current = -1;
 
+  var prev = element.querySelector('div.navigate>.prev>.title');
+  var next = element.querySelector('div.navigate>.next>.title');
+
   function update(index, slide) {
     slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
     slide.title.innerHTML = slides[index].title;
@@ -204,6 +207,14 @@ var Banner = function(bannerId, bannerSlides) {
 
     currentSlide.element.style.backgroundImage = "url(" + slides[current].image + ")";
     update(current, currentSlide);
+    navigate();
+  }
+
+  function navigate() {
+    var prevIndex = (current - 1) < 0 ? slides.length - 1 : current - 1;
+    var nextIndex = (current + 1) >= slides.length ? 0 : current + 1;
+    prev.innerHTML = slides[prevIndex].title;
+    next.innerHTML = slides[nextIndex].title;
   }
 
   function preload() {
