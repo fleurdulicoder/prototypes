@@ -25,15 +25,16 @@ body {
   margin: 0;
   padding: 0;
   background: #000;
-  -webkit-transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  -moz-transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  -o-transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  -webkit-transform: translate3d(0, 0, 0);
+  /*-webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  perspective: 1000px;
+  transform: translate3d(0, 0, 0);*/
+  will-change: transform;
+
+  -webkit-transition: transform 400ms cubic-bezier(.67,.54,.43,.78);
+  -moz-transition: transform 400ms cubic-bezier(.67,.54,.43,.78);
+  -o-transition: transform 400ms cubic-bezier(.67,.54,.43,.78);
+  transition: transform 400ms cubic-bezier(.67,.54,.43,.78);
 }
 
 body::after {
@@ -125,15 +126,6 @@ h5 {
           align-items: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
-
-  /*transform-origin: bottom;
-  transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  transform: rotateX(90deg) scaleX(1.1) translate3d(0, 0, 0);
-  transform-style: preserve-3d;*/
-}
-
-body.with-on-spot .on-point-bar {
-  /*transform: rotateX(0deg) scaleX(1);*/
 }
 
 .on-point-bar .on-point {
@@ -150,29 +142,8 @@ body.with-on-spot .on-point-bar {
   white-space: nowrap;
 }
 
-@keyframes flash-in {
-  0% { transform: scale(1); opacity: 1; }
-  5% { transform: scale(1.4); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-.on-point-bar .on-point h4 {
-  margin: 0;
-  padding: 0;
-  font-weight: 100;
+.on-point-bar .on-point>h4 {
   line-height: 60px;
-  animation-name: flash-in;
-  animation-delay: 400ms;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(.41,.91,.52,.94);
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-play-state: paused;
-  opacity: 0;
-}
-
-body.with-on-spot .on-point-bar .on-point h4 {
-  animation-play-state: running;
 }
 
 .on-point-bar .announcement {
@@ -199,25 +170,6 @@ body.with-on-spot .on-point-bar .on-point h4 {
           align-items: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
-
-  -webkit-transform: translate3d(10px, 0, 0);
-  -moz-transform: translate3d(10px, 0, 0);
-  -o-transform: translate3d(10px, 0, 0);
-  transform: translate3d(10px, 0, 0);
-  -webkit-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  -moz-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  -o-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  opacity: 0;
-}
-
-body.with-on-spot .on-point-bar .announcement {
-  transition-delay: 400ms;
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
 }
 
 .on-point-bar .announcement .rotator {
@@ -609,4 +561,50 @@ nav>ul li, .nav-bar .social ul li {
 .navigate .prev span.title, .navigate .next span.title {
   color: #FFF;
   margin: 0 10px;
+}
+
+@keyframes flash-in {
+  0% { transform: scale(1); opacity: 1; }
+  5% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.on-point-bar .on-point h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  line-height: 60px;
+  animation-name: flash-in;
+  animation-delay: 400ms;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.41,.91,.52,.94);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  opacity: 0;
+}
+
+body.with-on-spot .on-point-bar .on-point h4 {
+  animation-play-state: running;
+}
+
+.on-point-bar .announcement {
+  -webkit-transform: translate3d(10px, 0, 0);
+  -moz-transform: translate3d(10px, 0, 0);
+  -o-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+  -webkit-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  -moz-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  -o-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  opacity: 0;
+}
+
+body.with-on-spot .on-point-bar .announcement {
+  transition-delay: 400ms;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }

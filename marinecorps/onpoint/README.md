@@ -28,8 +28,7 @@ to the overall animation.
 
 Custom Curves:
 
-1. Notify Bar Slide Down/Up: cubic-bezier(.41,.91,.52,.94)
-2. Content Ease-In: cubic-bezier(.67,.54,.43,.78)
+Custom Ease-In: cubic-bezier(.67,.54,.43,.78)
 
 
 Version 2:

@@ -1,0 +1,45 @@
+@keyframes flash-in {
+  0% { transform: scale(1); opacity: 1; }
+  5% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.on-point-bar .on-point h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  line-height: 60px;
+  animation-name: flash-in;
+  animation-delay: 400ms;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(.41,.91,.52,.94);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  opacity: 0;
+}
+
+body.with-on-spot .on-point-bar .on-point h4 {
+  animation-play-state: running;
+}
+
+.on-point-bar .announcement {
+  -webkit-transform: translate3d(10px, 0, 0);
+  -moz-transform: translate3d(10px, 0, 0);
+  -o-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+  -webkit-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  -moz-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  -o-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  opacity: 0;
+}
+
+body.with-on-spot .on-point-bar .announcement {
+  transition-delay: 400ms;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}

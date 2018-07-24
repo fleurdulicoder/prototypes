@@ -10,7 +10,7 @@ var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
   function open() {
     window.setTimeout(function() {
       document.body.className += ' with-on-spot';
-    }, 1000);
+    }, 1400);
   }
 
   if (close) {
