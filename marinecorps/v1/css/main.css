@@ -18,8 +18,8 @@ body {
   position: relative;
   font-family: "Arial";
   font-size: 14px;
-  font-size: 1rem;
   font-weight: normal;
+  line-height: 1.4em;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -48,8 +48,8 @@ svg {
 }
 
 p {
-  padding: 0 1.2em;
-  font-size: 1rem;
+  padding: 0 0 10px;
+  font-size: 14px;
 }
 
 h1,
@@ -59,33 +59,42 @@ h4,
 h5 {
   font-family: "Colossalis", Impact, Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  line-height: 1.2em;
+  font-weight: 100;
+  margin: 0 0 10px;
+  padding: 0;
 }
 
 h1 {
-  font-size: 65px;
-  font-size: 5rem;
+  font-size: 60px;
+  line-height: 60px;
 }
 
 h2 {
   font-size: 48px;
   font-size: 3rem;
+  line-height: 48px;
 }
 
 h3 {
   font-size: 36px;
   font-size: 2.25rem;
+  line-height: 36px;
 }
 
 h4 {
   font-size: 30px;
   font-size: 1.875rem;
+  line-height: 30px;
 }
 
 h5 {
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 22px;
+  line-height: 20px;
+}
+
+.row {
+  position: relative;
+  padding: 70px 120px;
 }
 
 .on-point-bar {
@@ -431,10 +440,10 @@ nav>ul li, .nav-bar .social ul li {
 
 .app .banner .overlay, .app .banner .next-slide, .app .banner .current-slide {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .app .banner .overlay {
@@ -464,13 +473,20 @@ nav>ul li, .nav-bar .social ul li {
   z-index: 3;
 }
 
+.app .banner .next-slide aside, .app .banner .current-slide aside {
+  display: block;
+  margin-top: 16px;
+}
+
+/* counter */
 .app .banner .counter {
   position: absolute;
-  bottom: 50px;
+  bottom: 100px;
   left: 0;
-  width: 100%;
+  right: 0;
+  height: 20px;
   text-align: center;
-  min-height: 50px;
+  min-height: 20px;
   z-index: 6;
 }
 
@@ -483,10 +499,6 @@ nav>ul li, .nav-bar .social ul li {
   -webkit-border-radius: 8px;
   margin: 0 6px;
   background-color: rgba(256,256,256,0);
-  /*-webkit-transition: background-color 50ms cubic-bezier(.67,.54,.43,.78);
-  -moz-transition: background-color 50ms cubic-bezier(.67,.54,.43,.78);
-  -o-transition: background-color 50ms cubic-bezier(.67,.54,.43,.78);
-  transition: background-color 50ms cubic-bezier(.67,.54,.43,.78);*/
 }
 
 .app .banner .counter>.circle.current {
@@ -509,6 +521,94 @@ nav>ul li, .nav-bar .social ul li {
   animation: fadeOut .5s cubic-bezier(.67,.54,.43,.78) 1 forwards;
 }
 
-.app .slide {
+/* banner content */
+.app .banner .content {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
   width: 100%;
+  color: #FFF;
+  height: auto;
+  vertical-align: bottom;
+  z-index: 5;
+}
+
+.app .banner .content h1 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.app .banner .content h5 {
+  display: inline-block;
+  width: 4em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #960000;
+}
+
+.app .banner .content p {
+  font-size: 13px;
+  line-height: 1.4em;
+  padding: 0;
+  margin: 0 0 10px;
+  width: 400px;
+}
+
+.uppercased {
+  font-family: 'Colossalis', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.app .banner .content a {
+  text-decoration: none;
+  font-family: 'Colossalis', Arial, sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-right: 10px;
+}
+
+.app .banner .content svg {
+  width: 14px;
+  height: 14px;
+  fill: #960000;
+  margin-right: 4px;
+}
+
+/* banner navigation */
+.app .banner .navigate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  color: white;
+  z-index: 5;
+}
+
+.app .banner .navigate {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.navigate .prev {
+  padding-left: 100px;
+}
+
+.navigate .next {
+  padding-right: 100px;
+}
+
+.navigate .prev, .navigate .next {
+  color:  #A7A7A7;
+  font-size: 13px;
+}
+
+.navigate .prev span.title, .navigate .next span.title {
+  color: #FFF;
+  margin: 0 10px;
 }
