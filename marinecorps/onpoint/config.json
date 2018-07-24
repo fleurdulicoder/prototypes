@@ -7,8 +7,7 @@
   "CSS": {
     "DIST_DIR": "dist",
     "plain": ["css/main.css", "css/slowbody.css"],
-    "fast": ["css/main.css", "css/onpoint.css"],
     "core": ["css/main.css", "css/slowbody.css", "css/onpoint.css"],
-    "more": ["css/main.css", "css/slowbody.css", "css/squared.css"]
+    "proto": ["css/main.css", "css/protos.css"]
   }
 }
