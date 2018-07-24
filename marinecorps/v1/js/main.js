@@ -7,32 +7,32 @@ var slides = [{
     url: '#'
   }, {
     image: 'img/img2.jpg',
-    title: 'U.S. Marine Corps Water Survival',
+    title: 'Lorem Ipsum',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
     video: 'https://www.youtube.com/watch?v=ZyPpwxtUK7o',
     url: '#'
   }, {
     image: 'img/img3.jpg',
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
+    title: 'Sit Amet',
+    text: ' Fusce tincidunt sem vel ornare tempor. Etiam sagittis felis id leo lobortis, vulputate consequat odio mollis. Mauris vel augue varius.',
     video: 'https://www.youtube.com/',
     url: '#'
   }, {
     image: 'img/img4.jpg',
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
+    title: 'Consectetur',
+    text: 'Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
     video: 'https://www.youtube.com/',
     url: '#'
   }, {
     image: 'img/img5.jpg',
-    title: 'Lorem Ipsum',
+    title: 'Mauris porttitor',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
     video: 'https://www.youtube.com/',
     url: '#'
   }, {
     image: 'img/img6.jpg',
-    title: 'Lorem Ipsum',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. Integer accumsan diam sit amet nisi efficitur iaculis.',
+    title: 'Sagittis Blandit',
+    text: 'Integer accumsan diam sit amet nisi efficitur iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris id porttitor dolor, sagittis blandit elit. ',
     video: 'https://www.youtube.com/',
     url: '#'
   }, {
@@ -141,7 +141,6 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   rightControl.addEventListener('touch', moveRight, false);
 
   setup();
-
 }
 
 var Banner = function(bannerId, bannerSlides) {
@@ -149,13 +148,36 @@ var Banner = function(bannerId, bannerSlides) {
   var slides = bannerSlides || [];
   if (!element || slides.length == 0) return;
 
-  var nextSlide = element.querySelector('div.next-slide');
-  var currentSlide = element.querySelector('div.current-slide');
+  var slides = bannerSlides;
+  var nextSlide = {
+    element: element.querySelector('div.next-slide') || null,
+    number: element.querySelector('div.next-slide>.content>.row>h5') || null,
+    title: element.querySelector('div.next-slide>.content>.row>h1') || null,
+    text: element.querySelector('div.next-slide>.content>.row>p') || null,
+    url: element.querySelector('div.next-slide>.content>.row>aside a:nth-child(1)') || null,
+    video: element.querySelector('div.next-slide>.content>.row>aside a:nth-child(2)') || null
+  };
+
+  var currentSlide = {
+    element: element.querySelector('div.current-slide') || null,
+    number: element.querySelector('div.current-slide>.content>.row>h5') || null,
+    title: element.querySelector('div.current-slide>.content>.row>h1') || null,
+    text: element.querySelector('div.current-slide>.content>.row>p') || null,
+    url: element.querySelector('div.current-slide>.content>.row>aside a:nth-child(1)') || null,
+    video: element.querySelector('div.current-slide>.content>.row>aside a:nth-child(2)') || null
+  };
+
   var counter = element.querySelector('div.counter');
   var circles = [];
   var current = -1;
 
-  var slides = bannerSlides;
+  function update(index, slide) {
+    slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
+    slide.title.innerHTML = slides[index].title;
+    slide.text.innerHTML = slides[index].text;
+    slide.url.setAttribute('href', slides[index].url);
+    slide.video.setAttribute('href', slides[index].video);
+  }
 
   function init() {
     makeCircles();
@@ -177,30 +199,26 @@ var Banner = function(bannerId, bannerSlides) {
     if (++current >= slides.length) current = 0;
     circles[current].className = 'circle current';
 
-
     if (current == 0) circles[slides.length - 1].className = 'circle';
     else circles[current - 1].className = 'circle';
 
-    currentSlide.style.backgroundImage = "url(" + slides[current].image + ")";
+    currentSlide.element.style.backgroundImage = "url(" + slides[current].image + ")";
+    update(current, currentSlide);
   }
 
   function preload() {
     var next = ((current + 1) >= slides.length) ? 0 : current + 1;
-    nextSlide.style.backgroundImage = "url(" + slides[next].image + ")";
+    nextSlide.element.style.backgroundImage = "url(" + slides[next].image + ")";
+    update(next, nextSlide);
   }
 
   function fade() {
-    currentSlide.className = 'current-slide fade-out';
+    currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
       load();
       preload();
-      currentSlide.className = 'current-slide';
+      currentSlide.element.className = 'current-slide';
     }, 500);
   }
   init();
-}
-
-// further implementation for banner rotation
-function pickRandomSlides() {
-
 }

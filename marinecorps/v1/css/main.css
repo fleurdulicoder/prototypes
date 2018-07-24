@@ -18,7 +18,6 @@ body {
   position: relative;
   font-family: "Arial";
   font-size: 14px;
-  font-size: 1rem;
   font-weight: normal;
   line-height: 1.4em;
   width: 100%;
@@ -473,6 +472,12 @@ nav>ul li, .nav-bar .social ul li {
   background-image: url("../img/img1.jpg");
   z-index: 3;
 }
+
+.app .banner .next-slide aside, .app .banner .current-slide aside {
+  display: block;
+  margin-top: 16px;
+}
+
 /* counter */
 .app .banner .counter {
   position: absolute;
@@ -545,6 +550,7 @@ nav>ul li, .nav-bar .social ul li {
   line-height: 1.4em;
   padding: 0;
   margin: 0 0 10px;
+  width: 400px;
 }
 
 .uppercased {
