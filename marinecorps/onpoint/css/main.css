@@ -36,6 +36,10 @@ body {
   perspective: 1000px;
 }
 
+body::after {
+  content: url('../img/banner.jpg'), url('../img/logo.png')
+}
+
 body.with-on-spot {
   -webkit-transform: translate3d(0, 60px, 0);
   -moz-transform: translate3d(0, 60px, 0);
@@ -362,7 +366,7 @@ body.with-on-spot .on-point-bar .announcement {
 
 .nav-bar .container > .logo {
   text-align: left;
-  background: transparent url('../img/marine-corps-logo-sm.png') no-repeat center center;
+  background: transparent url('../img/logo.png') no-repeat center center;
   background-size: contain;
   width: 300px;
   height: inherit;
@@ -463,7 +467,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 .app .banner .current-slide {
-  background-image: url("../img/img1.jpg");
+  background-image: url("../img/banner.jpg");
   z-index: 3;
 }
 
