@@ -1,11 +1,3 @@
-PACKAGE HANDLING
--------------------------------------------------------------------------------
-To minify files, install npm smoosh module globally:
-$ npm install -g smoosh
-
-To minify files run inside the folder:
-$ smoosh ./config.json
-
 ON-POINT ANIMATION CHOREOGRAPHY
 -------------------------------------------------------------------------------
 
