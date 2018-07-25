@@ -6,6 +6,7 @@
   },
   "CSS": {
     "DIST_DIR": "dist",
-    "core": ["css/main.css"]
+    "core": ["css/main.css"],
+    "proto": ["css/main.css", "css/protos.css"]
   }
 }
