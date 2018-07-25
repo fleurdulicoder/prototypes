@@ -1,0 +1,11 @@
+{
+  "JSHINT_OPTS": {},
+  "JAVASCRIPT": {
+    "DIST_DIR": "dist",
+    "core": ["js/main.js"]
+  },
+  "CSS": {
+    "DIST_DIR": "dist",
+    "core": ["css/main.css"]
+  }
+}
