@@ -1,0 +1,26 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "Prototypes for Search field @ Marine Corps Template",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flurdulis/prototypes.git"
+  },
+  "keywords": [
+    "search",
+    "animation",
+    "marine",
+    "corps",
+    "flurdulis"
+  ],
+  "author": "Ella Musina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flurdulis/prototypes/issues"
+  },
+  "homepage": "https://github.com/flurdulis/prototypes#readme"
+}
