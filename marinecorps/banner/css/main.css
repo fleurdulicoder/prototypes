@@ -36,6 +36,10 @@ body {
   perspective: 1000px;
 }
 
+body::after {
+  content: url('../img/logo.png'), url('../img/img1.jpg'), url('../img/img2.jpg');
+}
+
 body.with-on-spot {
   -webkit-transform: translate3d(0, 60px, 0);
   -moz-transform: translate3d(0, 60px, 0);
@@ -121,15 +125,6 @@ h5 {
           align-items: center;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
-
-  /*transform-origin: bottom;
-  transition: transform 400ms cubic-bezier(.41,.91,.52,.94);
-  transform: rotateX(90deg) scaleX(1.1) translate3d(0, 0, 0);
-  transform-style: preserve-3d;*/
-}
-
-body.with-on-spot .on-point-bar {
-  /*transform: rotateX(0deg) scaleX(1);*/
 }
 
 .on-point-bar .on-point {
@@ -223,11 +218,8 @@ body.with-on-spot .on-point-bar .announcement {
   width: calc(100% - 185px);
   height: inherit;
   line-height: 60px;
-  background: transparent url('../img/grad.png') repeat-y top right;
   overflow: hidden;
 
-  /* new code */
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +268,6 @@ body.with-on-spot .on-point-bar .announcement {
 .on-point-bar .announcement .rotator .message .item {
   width: 100%;
   display: inline-block;
-  /*min-width: 100%; */
   min-width: 100%;
   height: inherit;
   line-height: 60px;
@@ -363,7 +354,7 @@ body.with-on-spot .on-point-bar .announcement {
 
 .nav-bar .container > .logo {
   text-align: left;
-  background: transparent url('../img/marine-corps-logo-sm.png') no-repeat center center;
+  background: transparent url('../img/logo.png') no-repeat center center;
   background-size: contain;
   width: 300px;
   height: inherit;
