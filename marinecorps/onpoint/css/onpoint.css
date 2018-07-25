@@ -10,7 +10,7 @@
   font-weight: 100;
   line-height: 60px;
   animation-name: flash-in;
-  animation-delay: 400ms;
+  animation-delay: 300ms;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(.41,.91,.52,.94);
   animation-fill-mode: forwards;
@@ -28,15 +28,15 @@ body.with-on-spot .on-point-bar .on-point h4 {
   -moz-transform: translate3d(10px, 0, 0);
   -o-transform: translate3d(10px, 0, 0);
   transform: translate3d(10px, 0, 0);
-  -webkit-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  -moz-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  -o-transition: all 400ms cubic-bezier(.67,.54,.43,.78);
-  transition: all 400ms cubic-bezier(.67,.54,.43,.78);
+  -webkit-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
+  -moz-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
+  -o-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
+  transition: all 600ms cubic-bezier(.67,.54,.43,.78);
   opacity: 0;
 }
 
 body.with-on-spot .on-point-bar .announcement {
-  transition-delay: 400ms;
+  transition-delay: 300ms;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
