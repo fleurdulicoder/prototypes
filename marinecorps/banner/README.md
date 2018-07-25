@@ -16,3 +16,10 @@ Banner auto-animation
 Custom Curves:
 * Custom Ease-In: cubic-bezier(.67,.54,.43,.78)
 * Custom Ease-Out: cubic-bezier(0,0,0,1.1)
+
+TODOS:
+
+Code bottom links prev/next navigation to go between slides. Outline:
+
+1. Stop automated cycling fully
+2. Shift into manipulating banner slides manually

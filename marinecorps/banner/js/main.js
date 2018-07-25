@@ -97,6 +97,7 @@ var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
   open();
 }
 
+// any carousel
 var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   var strip, pager, leftControl, rightControl, current, quantity;
   strip = stripId ? document.getElementById(stripId) : null;
@@ -171,8 +172,12 @@ var Banner = function(bannerId, bannerSlides) {
   var circles = [];
   var current = -1;
 
-  var prev = element.querySelector('div.navigate>.prev>.title');
-  var next = element.querySelector('div.navigate>.next>.title');
+  var navigation = {
+    nextLink: element.querySelector('div.navigate>.next'),
+    nextTitle: element.querySelector('div.navigate>.next>.title'),
+    prevLink: element.querySelector('div.navigate>.prev'),
+    prevTitle: element.querySelector('div.navigate>.prev>.title')
+  };
 
   function update(index, slide) {
     slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
@@ -187,6 +192,10 @@ var Banner = function(bannerId, bannerSlides) {
     load();
     preload();
     setInterval(fade, 5000);
+
+    // continue if approved to code
+    //navigation.nextLink.addEventListener();
+    //navigation.prevLink.addEventListener();
   }
 
   function makeCircles() {
@@ -213,8 +222,8 @@ var Banner = function(bannerId, bannerSlides) {
   function navigate() {
     var prevIndex = (current - 1) < 0 ? slides.length - 1 : current - 1;
     var nextIndex = (current + 1) >= slides.length ? 0 : current + 1;
-    prev.innerHTML = slides[prevIndex].title;
-    next.innerHTML = slides[nextIndex].title;
+    navigation.prevTitle.innerHTML = slides[prevIndex].title;
+    navigation.nextTitle.innerHTML = slides[nextIndex].title;
   }
 
   function preload() {
