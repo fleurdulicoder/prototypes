@@ -358,6 +358,7 @@ h5 {
   background: rgba(150, 0, 0, 0.5);
   height: 48px;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 .nav-bar .social .social-bar {
@@ -415,6 +416,7 @@ h5 {
   height: 100%;
   padding: 7px;
   box-sizing: border-box;
+  opacity: 0;
 }
 
 .search-bar .input-wrap input {
@@ -422,9 +424,15 @@ h5 {
   height: 100%;
   background: transparent;
   color: #FFF;
+  padding-left: 8px;
   border: 1px solid #FFF;
 }
 
+.search-bar .input-wrap input:focus {
+  outline-color: rgba(256,256,256,0.2);
+}
+
+.search-bar .input-wrap input::placeholder,
 .search-bar .input-wrap input::-webkit-input-placeholder,
 .search-bar .input-wrap input::-moz-placeholder,
 .search-bar .input-wrap input:-ms-input-placeholder,
@@ -633,7 +641,7 @@ h5 {
 }
 
 .card {
-    width: 50%;
+    width: 33%;
     box-sizing: border-box;
     border-radius: 4px;
 }

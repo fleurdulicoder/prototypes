@@ -2,7 +2,9 @@
   "JSHINT_OPTS": {},
   "JAVASCRIPT": {
     "DIST_DIR": "dist",
-    "core": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js"]
+    "core1": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version1.js"],
+    "core2": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version2.js"],
+    "core3": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version3.js"]
   },
   "CSS": {
     "DIST_DIR": "dist",
