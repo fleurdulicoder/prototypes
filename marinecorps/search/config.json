@@ -4,11 +4,13 @@
     "DIST_DIR": "dist",
     "core1": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version1.js"],
     "core2": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version2.js"],
-    "core3": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version3.js"]
+    "core3": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/main.js", "js/version3.js"],
+    "core4": ["js/TweenMax.min.js", "js/TimelineMax.min.js", "js/MorphSVGPlugin.min.js", "js/main.js", "js/version4.js"]
   },
   "CSS": {
     "DIST_DIR": "dist",
     "core": ["css/main.css"],
-    "proto": ["css/main.css", "css/protos.css"]
+    "proto": ["css/main.css", "css/protos.css"],
+    "proto4": ["css/main.css", "css/icon.css", "css/protos.css"]
   }
 }

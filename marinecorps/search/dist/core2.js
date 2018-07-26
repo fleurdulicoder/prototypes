@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   SearchAnimation.init();
 }, false);
 
+SearchAnimation = SearchAnimation || {};
 SearchAnimation.animate = function() {
   var timeline = new TimelineMax({ paused: true });
 
@@ -92,4 +93,4 @@ SearchAnimation.animate = function() {
       SearchAnimation.state = 0;
     }
   }, false);
-}
+};
