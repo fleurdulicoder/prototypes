@@ -10,13 +10,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.chevron-left, .chevron-right, .close, .arrows>*, a {
+.chevron-left, .chevron-right, .close, .arrows>*, a, svg {
   cursor: pointer;
 }
 
 body {
   position: relative;
-  font-family: "Arial";
+  font-family: 'Arial';
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4em;
@@ -61,7 +61,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Colossalis", Impact, Arial, sans-serif;
+  font-family: 'Colossalis', Impact, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 100;
   margin: 0 0 10px;
@@ -339,7 +339,7 @@ h5 {
   padding: 0;
 }
 
-nav>ul li, .nav-bar .social ul li {
+.nav-bar .container nav>ul li {
   position: relative;
   display: inline-block;
   height: inherit;
@@ -349,31 +349,87 @@ nav>ul li, .nav-bar .social ul li {
   box-sizing: border-box;
 }
 
+/* redone css for animation purposes */
 .nav-bar .social {
   position: absolute;
   top: 100%;
   right: 0;
-  width: auto;
+  width: 288px;
   background: rgba(150, 0, 0, 0.5);
-  height: 50px;
-  width: auto;
+  height: 48px;
   vertical-align: middle;
 }
 
-.nav-bar .social a {
-  display: inline-block;
-  position: relative;
-  width: 48px;
-  height: 48px;
-  text-decoration: none;
+.nav-bar .social .social-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  z-index: 7;
 }
 
-.nav-bar .social a > svg {
+.social .social-bar a {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.social .social-bar a:nth-child(1) { left: 0; }
+.social .social-bar a:nth-child(2) { left: 48px; }
+.social .social-bar a:nth-child(3) { left: 96px; }
+.social .social-bar a:nth-child(4) { left: 144px; }
+.social .social-bar a:nth-child(5) { left: 196px; }
+.social .social-bar a:nth-child(6) { left: 244px; }
+
+.social .social-bar a > svg {
   display: inline-block;
   fill: white;
   width: 16px;
   height: 16px;
   padding: 16px;
+}
+
+.nav-bar .social .search-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  z-index: 8;
+}
+
+.search-bar .input-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+}
+
+.search-bar .input-wrap input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: #FFF;
+  border: 1px solid #FFF;
+}
+
+.search-bar .input-wrap input::-webkit-input-placeholder,
+.search-bar .input-wrap input::-moz-placeholder,
+.search-bar .input-wrap input:-ms-input-placeholder,
+:-moz-placeholder input:-ms-input-placeholder {
+    color: #FFF;
 }
 
 /* main part of the application */
@@ -409,7 +465,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 .app .banner .current-slide {
-  background-image: url("../img/banner.jpg");
+  background-image: url('../img/banner.jpg');
   z-index: 3;
 }
 
