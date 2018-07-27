@@ -7,12 +7,12 @@ SearchAnimation.animate = function() {
   });
 
   timeline
-    .to(this.icons, 0.3, {
+    .to(this.icons, 0.5, {
       left: -48,
       opacity: 0,
-      ease: 'cubic-bezier(0,0,0,1.1)'
+      ease: 'cubic-bezier(0,0,.47,1.11)'
     })
-    .fromTo(this.input, 0.4, {
+    .fromTo(this.input, 0.3, {
       opacity: 0,
       transform: 'scaleX(0.001)',
       ease: 'cubic-bezier(0,0,0,1.1)'

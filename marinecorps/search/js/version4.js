@@ -13,7 +13,7 @@ SearchAnimation.animate = function() {
       transform: 'scale(0.5)',
       ease: 'cubic-bezier(0,0,0,1.1)'
     })
-    .fromTo(this.input, 0.4,{
+    .fromTo(this.input, 0.3,{
       opacity: 0,
       y: -5,
       ease: 'cubic-bezier(0,0,0,1.1)'
@@ -21,12 +21,12 @@ SearchAnimation.animate = function() {
       opacity: 1,
       y: 0,
       ease: 'cubic-bezier(0,0,0,1.1)'
-    })
+    }, "-=0.1")
   ;
 
   var morph = new TimelineMax({ paused: true });
   morph
-    .to('#magnifier', 0.4, {morphSVG: {shape: "#cross", shapeIndex:5}})
+    .to('#magnifier', 0.3, {morphSVG: {shape: "#cross", shapeIndex:5}})
   ;
 
   this.search.addEventListener('click', function(){
