@@ -11,7 +11,7 @@ SearchAnimation.animate = function() {
     .to(this.icons, 0.2, {
       opacity: 0,
       transform: 'scale(0.5)',
-      ease: 'ease-out'
+      ease: 'cubic-bezier(0,0,0,1.1)'
     })
     .fromTo(this.input, 0.4,{
       opacity: 0,
