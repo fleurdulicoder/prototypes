@@ -76,34 +76,41 @@ SearchAnimation = SearchAnimation || {};
 SearchAnimation.animate = function() {
   var timeline = new TimelineMax({ paused: true });
 
+  timeline.set(this.icons, {
+    transformOrigin: 'bottom center'
+  });
+
   timeline
-    .to(this.icons, 0.3, {
+    .to(this.icons, 0.2, {
       opacity: 0,
-      transform: 'rotate(90deg) scale(0.0001)',
-      ease: 'cubic-bezier(0,0,0,1.1)'
+      transform: 'scale(0.5)',
+      ease: 'ease-out'
     })
     .fromTo(this.input, 0.4,{
       opacity: 0,
-      transform: 'scaleX(0.001)',
+      y: -5,
       ease: 'cubic-bezier(0,0,0,1.1)'
     }, {
       opacity: 1,
-      transform: 'scaleX(1)',
+      y: 0,
       ease: 'cubic-bezier(0,0,0,1.1)'
-    }, "-=0.15")
+    })
+  ;
+
+  var morph = new TimelineMax({ paused: true });
+  morph
+    .to('#magnifier', 0.4, {morphSVG: {shape: "#cross", shapeIndex:5}})
   ;
 
   this.search.addEventListener('click', function(){
     if (SearchAnimation.state == 0) {
       timeline.play();
+      morph.play();
       SearchAnimation.state = 1;
     } else {
       timeline.reverse();
+      morph.reverse();
       SearchAnimation.state = 0;
     }
-  }, false);
-
-  this.search.addEventListener("click", function(){
-    TweenMax.to('#magnifier', 2, {MorphSVG: "#cross"});
   }, false);
 };

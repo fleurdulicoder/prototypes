@@ -1,7 +1,11 @@
 #show-search {
   position: relative;
   fill: #FFF;
-  width: 36px;
-  height: 36px;
+  width: 18px;
+  height: 18px;
   display: inline-block;
+}
+
+#cross {
+  visibility: hidden;
 }
