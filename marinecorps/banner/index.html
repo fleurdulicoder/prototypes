@@ -242,7 +242,6 @@
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
   <script type="text/javascript" src="dist/core.min.js"></script>
   <script>
     // feathers-icons package for the theme
@@ -252,7 +251,7 @@
     });
 
     // commenting out not to show in current prototype
-    var doAnnounce = true;
+    var doAnnounce = false;
 
     document.addEventListener('DOMContentLoaded', function() {
       if (doAnnounce) {
@@ -265,7 +264,7 @@
         );
       }
 
-      var banner = new Banner('banner', slides.slice(0, 7));
+      var banner = new Banner('banner', slides.slice(0, 5));
 
     }, false);
   </script>

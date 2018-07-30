@@ -117,21 +117,25 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   }
 
   function moveLeft() {
+    console.log('moving left');
     if (current + 1 <= 0) {
       pager.innerHTML = (Math.abs(current + 1) + 1) + ' of ' + quantity;
-      TweenLite.to(strip, 0.5, {
+      TweenMax.to(strip, 0.5, {
         x: (++current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)'
+        ease: 'cubic-bezier(.67,.54,.43,.78)',
+        onComplete: function(){ console.log('end');}
       });
     }
   }
 
   function moveRight() {
+    console.log('moving right');
     if (Math.abs(current - 1) < quantity) {
       pager.innerHTML = (Math.abs(current - 1) + 1) + ' of ' + quantity;
-      TweenLite.to(strip, 0.5, {
+      TweenMax.to(strip, 0.5, {
         x: (--current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)'
+        ease: 'cubic-bezier(.67,.54,.43,.78)',
+        onComplete: function(){ console.log('end');}
       });
     }
   }

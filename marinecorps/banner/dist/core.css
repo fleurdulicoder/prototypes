@@ -238,6 +238,9 @@ body.with-on-spot .on-point-bar .on-point h4 {
 }
 
 body.with-on-spot .on-point-bar .announcement {
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
   transition-delay: 300ms;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
@@ -304,10 +307,12 @@ body.with-on-spot .on-point-bar .announcement {
   height: inherit;
   line-height: 60px;
   padding: 0 1em;
-  box-sizing: border-box;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .on-point-bar .announcement .pager {
@@ -360,6 +365,8 @@ body.with-on-spot .on-point-bar .announcement {
   padding: 0 60px;
   background-color: rgba(0, 0, 0, 0.3);
   color: #FFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 99999;
 }
@@ -417,6 +424,8 @@ nav>ul li, .nav-bar .social ul li {
   font-size: 0.8rem;
   padding: 16px;
   margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -482,6 +491,8 @@ nav>ul li, .nav-bar .social ul li {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transform: translateZ(0, 0, 0);
   -moz-transform: translateZ(0, 0, 0);
@@ -505,7 +516,6 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* counter */
-
 .app .banner .counter {
   position: absolute;
   bottom: 100px;
@@ -541,14 +551,38 @@ nav>ul li, .nav-bar .social ul li {
   }
 }
 
-.paused {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
 }
 
 .fade-out {
   opacity: 1;
   -webkit-animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
+  -moz-animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
+  -o-animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
   animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
 }
 
@@ -608,7 +642,6 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* banner navigation */
-
 .app .banner .navigate {
   position: absolute;
   bottom: 0;
