@@ -216,15 +216,21 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     if (doRotation) rotation = setInterval(fade, 5000);
 
     navigation.nextLink.addEventListener('click', function(){
-      if (doRotation) clearTimeout(rotation);
+      if (doRotation) {
+        doRotation = false;
+        clearTimeout(rotation);
+      }
       current = reset(++current);
-      load(current);
+      fadeNext();
     }, false);
 
     navigation.prevLink.addEventListener('click', function(){
-      if (doRotation) clearTimeout(rotation);
+      if (doRotation) {
+        doRotation = false;
+        clearTimeout(rotation);
+      }
       current = reset(--current);
-      load(current);
+      fadeNext();
     }, false);
   }
 
@@ -282,6 +288,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     setContent(next, nextSlide);
   }
 
+  // automated animating
   function fade() {
     currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
@@ -290,5 +297,16 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
       currentSlide.element.className = 'current-slide';
     }, 500);
   }
+
+  // manual navigating
+  function fadeNext() {
+    preload(current);
+    currentSlide.element.className = 'current-slide fade-out';
+    setTimeout(function(){
+      load(current);
+      currentSlide.element.className = 'current-slide';
+    }, 500);
+  }
+
   init();
 };
