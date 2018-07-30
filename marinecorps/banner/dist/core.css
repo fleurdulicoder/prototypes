@@ -10,34 +10,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.chevron-left, .chevron-right, .close, .arrows>*, a {
-  cursor: pointer;
-}
-
 body {
   position: relative;
-  font-family: "Arial";
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.4em;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background: #000;
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4em;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  -webkit-transition: transform 400ms cubic-bezier(0,0,0,1.1);
-  -moz-transition: transform 400ms cubic-bezier(0,0,0,1.1);
-  -o-transition: transform 400ms cubic-bezier(0,0,0,1.1);
-  transition: transform 400ms cubic-bezier(0,0,0,1.1);
+  -webkit-transition: transform 400ms cubic-bezier(0, 0, 0, 1.1);
+  -moz-transition: transform 400ms cubic-bezier(0, 0, 0, 1.1);
+  -o-transition: transform 400ms cubic-bezier(0, 0, 0, 1.1);
+  transition: transform 400ms cubic-bezier(0, 0, 0, 1.1);
   perspective: 1000px;
 }
 
 body::after {
-  content: url('../img/logo.png'), url('../img/img1.jpg'), url('../img/img2.jpg');
+  content:
+    url('../img/logo.png'),
+    url('../img/img1.jpg'),
+    url('../img/img2.jpg')
+  ;
 }
 
 body.with-on-spot {
@@ -56,12 +56,8 @@ p {
   font-size: 14px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Colossalis", Impact, Arial, sans-serif;
+h1, h2, h3, h4, h5 {
+  font-family: 'Colossalis', Impact, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 100;
   margin: 0 0 10px;
@@ -75,19 +71,16 @@ h1 {
 
 h2 {
   font-size: 48px;
-  font-size: 3rem;
   line-height: 48px;
 }
 
 h3 {
   font-size: 36px;
-  font-size: 2.25rem;
   line-height: 36px;
 }
 
 h4 {
   font-size: 30px;
-  font-size: 1.875rem;
   line-height: 30px;
 }
 
@@ -96,9 +89,8 @@ h5 {
   line-height: 20px;
 }
 
-.row {
-  position: relative;
-  padding: 70px 120px;
+.chevron-left, .chevron-right, .close, .arrows>*, a {
+  cursor: pointer;
 }
 
 .on-point-bar {
@@ -114,23 +106,23 @@ h5 {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -ms-flex-flow: flex-start;
-      flex-flow: flex-start;
+  flex-flow: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  align-content: stretch;
 }
 
 .on-point-bar .on-point {
   -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   width: 200px;
   height: inherit;
   max-height: 60px;
@@ -141,35 +133,79 @@ h5 {
   white-space: nowrap;
 }
 
-@keyframes flash-in {
-  0% { transform: scale(1); opacity: 1; }
-  5% { transform: scale(1.4); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+@-webkit-keyframes flash-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  5% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
+@-moz-keyframes flash-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  5% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes flash-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  5% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* announcement bar at the top */
 .on-point-bar .on-point h4 {
   margin: 0;
   padding: 0;
   font-weight: 100;
   line-height: 60px;
-  animation-name: flash-in;
-  animation-delay: 300ms;
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(.41,.91,.52,.94);
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
+  -webkit-animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
+  -moz-animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
+  -o-animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
+  animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
   animation-play-state: paused;
   opacity: 0;
 }
 
 body.with-on-spot .on-point-bar .on-point h4 {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
   animation-play-state: running;
 }
 
 .on-point-bar .announcement {
   -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  -ms-flex-order: 2;
+  order: 2;
   height: inherit;
   font-size: 0.85rem;
   width: calc(100% - 200px);
@@ -179,27 +215,26 @@ body.with-on-spot .on-point-bar .on-point h4 {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -ms-flex-flow: flex-start;
-      flex-flow: flex-start;
+  flex-flow: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: stretch;
-      align-content: stretch;
-
-    -webkit-transform: translate3d(10px, 0, 0);
-    -moz-transform: translate3d(10px, 0, 0);
-    -o-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-    -webkit-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
-    -moz-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
-    -o-transition: all 600ms cubic-bezier(.67,.54,.43,.78);
-    transition: all 600ms cubic-bezier(.67,.54,.43,.78);
-    opacity: 0;
+  align-content: stretch;
+  -webkit-transform: translate3d(10px, 0, 0);
+  -moz-transform: translate3d(10px, 0, 0);
+  -o-transform: translate3d(10px, 0, 0);
+  transform: translate3d(10px, 0, 0);
+  -webkit-transition: all 600ms cubic-bezier(.67, .54, .43, .78);
+  -moz-transition: all 600ms cubic-bezier(.67, .54, .43, .78);
+  -o-transition: all 600ms cubic-bezier(.67, .54, .43, .78);
+  transition: all 600ms cubic-bezier(.67, .54, .43, .78);
+  opacity: 0;
 }
 
 body.with-on-spot .on-point-bar .announcement {
@@ -213,30 +248,28 @@ body.with-on-spot .on-point-bar .announcement {
 
 .on-point-bar .announcement .rotator {
   -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  -ms-flex-order: 1;
+  order: 1;
   width: calc(100% - 185px);
   height: inherit;
   line-height: 60px;
   overflow: hidden;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -ms-flex-flow: flex-start;
-      flex-flow: flex-start;
+  flex-flow: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: stretch;
-      align-content: stretch;
-
+  align-content: stretch;
 }
 
 .on-point-bar .announcement .rotator .message {
@@ -248,21 +281,20 @@ body.with-on-spot .on-point-bar .announcement {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -ms-flex-flow: flex-start;
-      flex-flow: flex-start;
+  flex-flow: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: stretch;
-      align-content: stretch;
-
-      -webkit-box-flex: 1;
-              -ms-flex: 1;
-                  flex: 1;
+  align-content: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .on-point-bar .announcement .rotator .message .item {
@@ -273,7 +305,6 @@ body.with-on-spot .on-point-bar .announcement {
   line-height: 60px;
   padding: 0 1em;
   box-sizing: border-box;
-
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -281,8 +312,8 @@ body.with-on-spot .on-point-bar .announcement {
 
 .on-point-bar .announcement .pager {
   -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  -ms-flex-order: 2;
+  order: 2;
   width: 65px;
   height: inherit;
   line-height: 60px;
@@ -291,8 +322,8 @@ body.with-on-spot .on-point-bar .announcement {
 
 .on-point-bar .announcement .arrows {
   -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  -ms-flex-order: 3;
+  order: 3;
   width: 65px;
   height: inherit;
   line-height: 60px;
@@ -301,13 +332,15 @@ body.with-on-spot .on-point-bar .announcement {
 
 .on-point-bar .announcement .close {
   -webkit-box-ordinal-group: 5;
-      -ms-flex-order: 4;
-          order: 4;
+  -ms-flex-order: 4;
+  order: 4;
   width: 65px;
   height: inherit;
   line-height: 60px;
   text-align: center;
 }
+
+/* app */
 
 .app {
   position: absolute;
@@ -319,12 +352,13 @@ body.with-on-spot .on-point-bar .announcement {
 }
 
 /* navigation bar */
+
 .app .nav-bar {
   position: fixed;
   width: 100%;
   height: 120px;
   padding: 0 60px;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   color: #FFF;
   box-sizing: border-box;
   z-index: 99999;
@@ -337,22 +371,22 @@ body.with-on-spot .on-point-bar .announcement {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -ms-flex-flow: flex-start;
-      flex-flow: flex-start;
+  flex-flow: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  align-content: stretch;
   height: inherit;
   overflow: visible;
 }
 
-.nav-bar .container > .logo {
+.nav-bar .container>.logo {
   text-align: left;
   background: transparent url('../img/logo.png') no-repeat center center;
   background-size: contain;
@@ -369,7 +403,7 @@ body.with-on-spot .on-point-bar .announcement {
   width: calc(100% - 200px);
 }
 
-.nav-bar .container nav > ul {
+.nav-bar .container nav>ul {
   list-style-type: none;
   display: inline;
   margin: 0;
@@ -423,6 +457,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* main part of the application */
+
 .app .banner {
   position: relative;
   width: 100vw;
@@ -439,7 +474,7 @@ nav>ul li, .nav-bar .social ul li {
 
 .app .banner .overlay {
   opacity: 1;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0, 0, 0, .5);
   z-index: 4;
 }
 
@@ -470,6 +505,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* counter */
+
 .app .banner .counter {
   position: absolute;
   bottom: 100px;
@@ -489,16 +525,20 @@ nav>ul li, .nav-bar .social ul li {
   border-radius: 8px;
   -webkit-border-radius: 8px;
   margin: 0 6px;
-  background-color: rgba(256,256,256,0);
+  background-color: rgba(256, 256, 256, 0);
 }
 
 .app .banner .counter>.circle.current {
-  background-color: rgba(256,256,256, 1);
+  background-color: rgba(256, 256, 256, 1);
 }
 
-@-webkit-keyframes fadeOut{
-    0% { opacity:1 }
-    100% { opacity:0 }
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
 }
 
 .paused {
@@ -508,11 +548,12 @@ nav>ul li, .nav-bar .social ul li {
 
 .fade-out {
   opacity: 1;
-  -webkit-animation: fadeOut .5s cubic-bezier(.67,.54,.43,.78) 1 forwards;
-  animation: fadeOut .5s cubic-bezier(.67,.54,.43,.78) 1 forwards;
+  -webkit-animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
+  animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
 }
 
 /* banner content */
+
 .app .banner .content {
   position: absolute;
   bottom: 100px;
@@ -567,6 +608,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* banner navigation */
+
 .app .banner .navigate {
   position: absolute;
   bottom: 0;
@@ -595,7 +637,7 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 .navigate .prev, .navigate .next {
-  color:  #A7A7A7;
+  color: #A7A7A7;
   font-size: 13px;
 }
 
