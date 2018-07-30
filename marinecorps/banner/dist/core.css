@@ -639,6 +639,10 @@ nav>ul li, .nav-bar .social ul li {
   margin-right: 10px;
 }
 
+.app .banner .content a .title {
+  position: relative;
+}
+
 .app .banner .content svg {
   width: 14px;
   height: 14px;
@@ -680,6 +684,27 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 .navigate .prev span.title, .navigate .next span.title {
+  position: relative;
   color: #FFF;
   margin: 0 10px;
+}
+
+.navigate .prev span.title::after, .navigate .next span.title::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(150, 0, 0, 0);
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  -webkit-transition: all 75ms cubic-bezier(.67, .54, .43, .78);
+  -moz-transition: all 75ms cubic-bezier(.67, .54, .43, .78);
+  -o-transition: all 75ms cubic-bezier(.67, .54, .43, .78);
+  transition: all 75ms cubic-bezier(.67, .54, .43, .78);
+}
+
+.navigate .prev:hover span.title::after,
+.navigate .next:hover span.title::after,
+.banner .content a:hover .title::after {
+  content: '';
+  border: 1px solid rgba(150, 0, 0, 1);
 }
