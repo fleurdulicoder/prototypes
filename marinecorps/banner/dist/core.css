@@ -89,6 +89,11 @@ h5 {
   line-height: 20px;
 }
 
+.row {
+  position: relative;
+  padding: 70px 120px;
+}
+
 .chevron-left, .chevron-right, .close, .arrows>*, a {
   cursor: pointer;
 }
