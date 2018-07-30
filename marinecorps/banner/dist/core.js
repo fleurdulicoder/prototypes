@@ -165,7 +165,8 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   setup();
 }
 
-var Banner = function(bannerId, bannerSlides) {
+var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
+  var doRotation = autoRotateFlag || true, rotation;
   var element = document.getElementById(bannerId) || null;
   var slides = bannerSlides || [];
   if (!element || slides.length == 0) return;
@@ -212,15 +213,19 @@ var Banner = function(bannerId, bannerSlides) {
   function init() {
     makeCircles();
     load(++current);
-    setInterval(fade, 5000);
+    if (doRotation) rotation = setInterval(fade, 5000);
 
-    // navigation.nextLink.addEventListener('click', function(){
-    //   clearTimeout(rotation);
-    // }, false);
-    //
-    // navigation.prevLink.addEventListener('click', function(){
-    //   clearTimeout(rotation);
-    // }, false);
+    navigation.nextLink.addEventListener('click', function(){
+      if (doRotation) clearTimeout(rotation);
+      current = reset(++current);
+      load(current);
+    }, false);
+
+    navigation.prevLink.addEventListener('click', function(){
+      if (doRotation) clearTimeout(rotation);
+      current = reset(--current);
+      load(current);
+    }, false);
   }
 
   // set current nav circle
@@ -260,11 +265,14 @@ var Banner = function(bannerId, bannerSlides) {
     setBackground(index, currentSlide);
     setContent(index, currentSlide);
     setPrevNext(index);
-    preload(++index);
+    if (doRotation) preload(++index);
   }
 
   function reset(index) {
-    return (index < slides.length) ? index : 0;
+    return (index < slides.length)
+      ? ((index < 0) ? slides.length - 1 : index)
+      : 0
+    ;
   }
 
   function preload(index) {
