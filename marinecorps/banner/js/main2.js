@@ -183,19 +183,20 @@ var Banner = function(bannerId, bannerSlides) {
     prevTitle: element.querySelector('div.navigate>.prev>.title')
   };
 
-  function makeCircles() {
-    for (var i = 0; i < slides.length; i++) {
-      var circle = document.createElement('div');
-      circle.className = 'circle';
-      counter.appendChild(circle);
-      circles.push(circle);
-    }
+  function update(index, slide) {
+    slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
+    slide.title.innerHTML = slides[index].title;
+    slide.text.innerHTML = slides[index].text;
+    slide.url.setAttribute('href', slides[index].url);
+    slide.video.setAttribute('href', slides[index].video);
   }
 
+  var rotation;
   function init() {
     makeCircles();
-    load(++current);
-    setInterval(fade, 5000);
+    load();
+    preload();
+    rotation = setInterval(fade, 5000);
 
     // navigation.nextLink.addEventListener('click', function(){
     //   clearTimeout(rotation);
@@ -206,57 +207,47 @@ var Banner = function(bannerId, bannerSlides) {
     // }, false);
   }
 
-  // set current nav circle
-  function setCircle(index) {
-    for (var i = 0, len = slides.length; i < len; i++) {
-      circles[i].className = 'circle';
+  function makeCircles() {
+    for (var i = 0; i < slides.length; i++) {
+      var circle = document.createElement('div');
+      circle.className = 'circle';
+      counter.appendChild(circle);
+      circles.push(circle);
     }
-    if (index >= slides.length) index = 0;
-    circles[index].className = 'circle current';
   }
 
-  // set slide background
-  function setBackground(index,slide) {
-    slide.element.style.backgroundImage = "url(" + slides[index].image + ")";
+  function load() {
+    if (++current >= slides.length) current = 0;
+    circles[current].className = 'circle current';
+
+    if (current == 0) circles[slides.length - 1].className = 'circle';
+    else circles[current - 1].className = 'circle';
+
+    currentSlide.element.style.backgroundImage = "url(" + slides[current].image + ")";
+    update(current, currentSlide);
+    navigate();
   }
 
-  // load content into a slide
-  function setContent(index, slide) {
-    slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
-    slide.title.innerHTML = slides[index].title;
-    slide.text.innerHTML = slides[index].text;
-    slide.url.setAttribute('href', slides[index].url);
-    slide.video.setAttribute('href', slides[index].video);
-  }
-
-  function setPrevNext(index) {
-    var prevIndex = (index - 1) < 0 ? slides.length - 1 : index - 1;
-    var nextIndex = (index + 1) >= slides.length ? 0 : index + 1;
+  function navigate() {
+    var prevIndex = (current - 1) < 0 ? slides.length - 1 : current - 1;
+    var nextIndex = (current + 1) >= slides.length ? 0 : current + 1;
     navigation.prevTitle.innerHTML = slides[prevIndex].title;
     navigation.nextTitle.innerHTML = slides[nextIndex].title;
   }
 
-  // current slide load
-  function load(index) {
-    setCircle(index);
-    setBackground(index, currentSlide);
-    setContent(index, currentSlide);
-    setPrevNext(index);
-    preload(++index);
-  }
-
-  function preload(index) {
-    var next = (index >= slides.length) ? 0 : index;
-    setBackground(next, nextSlide);
-    setContent(next, nextSlide);
+  function preload() {
+    var next = ((current + 1) >= slides.length) ? 0 : current + 1;
+    nextSlide.element.style.backgroundImage = "url(" + slides[next].image + ")";
+    update(next, nextSlide);
   }
 
   function fade() {
     currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
-      load(++current);
+      load();
+      preload();
       currentSlide.element.className = 'current-slide';
     }, 500);
   }
   init();
-};
+}

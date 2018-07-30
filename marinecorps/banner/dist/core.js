@@ -200,25 +200,6 @@ var Banner = function(bannerId, bannerSlides) {
     prevTitle: element.querySelector('div.navigate>.prev>.title')
   };
 
-  function update(index, slide) {
-    slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
-    slide.title.innerHTML = slides[index].title;
-    slide.text.innerHTML = slides[index].text;
-    slide.url.setAttribute('href', slides[index].url);
-    slide.video.setAttribute('href', slides[index].video);
-  }
-
-  function init() {
-    makeCircles();
-    load();
-    preload();
-    setInterval(fade, 5000);
-
-    // continue if approved to code
-    //navigation.nextLink.addEventListener();
-    //navigation.prevLink.addEventListener();
-  }
-
   function makeCircles() {
     for (var i = 0; i < slides.length; i++) {
       var circle = document.createElement('div');
@@ -228,38 +209,71 @@ var Banner = function(bannerId, bannerSlides) {
     }
   }
 
-  function load() {
-    if (++current >= slides.length) current = 0;
-    circles[current].className = 'circle current';
+  function init() {
+    makeCircles();
+    load(++current);
+    setInterval(fade, 5000);
 
-    if (current == 0) circles[slides.length - 1].className = 'circle';
-    else circles[current - 1].className = 'circle';
-
-    currentSlide.element.style.backgroundImage = "url(" + slides[current].image + ")";
-    update(current, currentSlide);
-    navigate();
+    // navigation.nextLink.addEventListener('click', function(){
+    //   clearTimeout(rotation);
+    // }, false);
+    //
+    // navigation.prevLink.addEventListener('click', function(){
+    //   clearTimeout(rotation);
+    // }, false);
   }
 
-  function navigate() {
-    var prevIndex = (current - 1) < 0 ? slides.length - 1 : current - 1;
-    var nextIndex = (current + 1) >= slides.length ? 0 : current + 1;
+  // set current nav circle
+  function setCircle(index) {
+    for (var i = 0, len = slides.length; i < len; i++) {
+      circles[i].className = 'circle';
+    }
+    if (index >= slides.length) index = 0;
+    circles[index].className = 'circle current';
+  }
+
+  // set slide background
+  function setBackground(index,slide) {
+    slide.element.style.backgroundImage = "url(" + slides[index].image + ")";
+  }
+
+  // load content into a slide
+  function setContent(index, slide) {
+    slide.number.innerHTML = (index < 10) ? "0"+ (index+1) : (index+1);
+    slide.title.innerHTML = slides[index].title;
+    slide.text.innerHTML = slides[index].text;
+    slide.url.setAttribute('href', slides[index].url);
+    slide.video.setAttribute('href', slides[index].video);
+  }
+
+  function setPrevNext(index) {
+    var prevIndex = (index - 1) < 0 ? slides.length - 1 : index - 1;
+    var nextIndex = (index + 1) >= slides.length ? 0 : index + 1;
     navigation.prevTitle.innerHTML = slides[prevIndex].title;
     navigation.nextTitle.innerHTML = slides[nextIndex].title;
   }
 
-  function preload() {
-    var next = ((current + 1) >= slides.length) ? 0 : current + 1;
-    nextSlide.element.style.backgroundImage = "url(" + slides[next].image + ")";
-    update(next, nextSlide);
+  // current slide load
+  function load(index) {
+    setCircle(index);
+    setBackground(index, currentSlide);
+    setContent(index, currentSlide);
+    setPrevNext(index);
+    preload(++index);
+  }
+
+  function preload(index) {
+    var next = (index >= slides.length) ? 0 : index;
+    setBackground(next, nextSlide);
+    setContent(next, nextSlide);
   }
 
   function fade() {
     currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
-      load();
-      preload();
+      load(++current);
       currentSlide.element.className = 'current-slide';
     }, 500);
   }
   init();
-}
+};
