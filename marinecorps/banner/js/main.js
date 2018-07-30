@@ -216,7 +216,7 @@ var Banner = function(bannerId, bannerSlides) {
   }
 
   // set slide background
-  function setBackground(index,slide) {
+  function setBackground(index, slide) {
     slide.element.style.backgroundImage = "url(" + slides[index].image + ")";
   }
 
@@ -238,6 +238,7 @@ var Banner = function(bannerId, bannerSlides) {
 
   // current slide load
   function load(index) {
+    console.log('load ', index);
     setCircle(index);
     setBackground(index, currentSlide);
     setContent(index, currentSlide);
@@ -245,8 +246,13 @@ var Banner = function(bannerId, bannerSlides) {
     preload(++index);
   }
 
+  function reset(index) {
+    return (index < slides.length) ? index : 0;
+  }
+
   function preload(index) {
-    var next = (index >= slides.length) ? 0 : index;
+    var next = reset(index);
+    console.log('preload ', next);
     setBackground(next, nextSlide);
     setContent(next, nextSlide);
   }
@@ -254,7 +260,8 @@ var Banner = function(bannerId, bannerSlides) {
   function fade() {
     currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
-      load(++current);
+      current = reset(++current);
+      load(current);
       currentSlide.element.className = 'current-slide';
     }, 500);
   }
