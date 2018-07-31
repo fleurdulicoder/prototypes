@@ -543,6 +543,10 @@ nav>ul li, .nav-bar .social ul li {
   background-color: rgba(256, 256, 256, 0);
 }
 
+.app .banner .counter>.circle:hover {
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
 .app .banner .counter>.circle.current {
   background-color: rgba(256, 256, 256, 1);
 }

@@ -154,6 +154,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
   var slides = bannerSlides || [];
   if (!element || slides.length == 0) return;
 
+  // background slide
   var nextSlide = {
     element: element.querySelector('div.next-slide') || null,
     number: element.querySelector('div.next-slide>.content>.row>h5') || null,
@@ -169,6 +170,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     }
   };
 
+  // frontal slide
   var currentSlide = {
     element: element.querySelector('div.current-slide') || null,
     number: element.querySelector('div.current-slide>.content>.row>h5') || null,
@@ -188,13 +190,29 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
   var circles = [];
   var current = -1;
 
-
+  // create circles navigation
   function makeCircles() {
+    // load index from circle to load correct slide
+    var loadFromCircle = function(e){
+      var index = parseInt(e.target.getAttribute('data-load'));
+      if (doRotation) {
+        doRotation = false;
+        clearTimeout(rotation);
+      }
+      current = index;
+      fadeNext();
+    };
+
+    // build circles array, attach events
     for (var i = 0; i < slides.length; i++) {
       var circle = document.createElement('div');
       circle.className = 'circle';
+      circle.setAttribute('data-load', i);
       counter.appendChild(circle);
       circles.push(circle);
+
+      circle.addEventListener('click', loadFromCircle, false);
+      circle.addEventListener('touch', loadFromCircle, false);
     }
   }
 
@@ -203,23 +221,31 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     load(++current);
     if (doRotation) rotation = setInterval(fade, 5000);
 
-    currentSlide.nav.nextLink.addEventListener('click', function(){
+    // next slide loading
+    var rotatePlus = function(){
       if (doRotation) {
         doRotation = false;
         clearTimeout(rotation);
       }
       current = reset(++current);
       fadeNext();
-    }, false);
+    };
 
-    currentSlide.nav.prevLink.addEventListener('click', function(){
+    // previous slide loading
+    var rotateMinus = function(){
       if (doRotation) {
         doRotation = false;
         clearTimeout(rotation);
       }
       current = reset(--current);
       fadeNext();
-    }, false);
+    };
+
+    // attach click events to prev / next links
+    currentSlide.nav.nextLink.addEventListener('click', rotatePlus, false);
+    currentSlide.nav.nextLink.addEventListener('touch', rotatePlus, false);
+    currentSlide.nav.prevLink.addEventListener('click', rotateMinus, false);
+    currentSlide.nav.prevLink.addEventListener('touch', rotateMinus, false);
   }
 
   // set current nav circle
@@ -245,6 +271,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     slide.video.setAttribute('href', slides[index].video);
   }
 
+  // set titles of previous and next links
   function setPrevNext(index, slide) {
     var prevIndex = (index - 1) < 0 ? slides.length - 1 : index - 1;
     var nextIndex = (index + 1) >= slides.length ? 0 : index + 1;
@@ -254,7 +281,6 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
 
   // current slide load
   function load(index) {
-    console.log('load ', index);
     setCircle(index);
     setBackground(index, currentSlide);
     setContent(index, currentSlide);
@@ -262,10 +288,12 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     if (doRotation) preload(++index);
   }
 
+  // reset index every time it hits the edges of the array
   function reset(index) {
     return (index < slides.length) ? ((index < 0) ? slides.length - 1 : index) : 0;
   }
 
+  // load background slide for better transition between slides
   function preload(index) {
     var next = reset(index);
     setBackground(next, nextSlide);
@@ -273,7 +301,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     setPrevNext(index, nextSlide);
   }
 
-  // automated animating
+  // automated animating & navigating between slides
   function fade() {
     currentSlide.element.className = 'current-slide fade-out';
     setTimeout(function() {
@@ -283,7 +311,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     }, 500);
   }
 
-  // manual navigating
+  // manual animating & navigating between slides
   function fadeNext() {
     preload(current);
     currentSlide.element.className = 'current-slide fade-out';
