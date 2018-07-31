@@ -95,7 +95,7 @@ var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
   }
 
   open();
-};
+}
 
 // any carousel
 var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
@@ -108,7 +108,7 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
 
   function setup() {
     current = 0;
-    quantity = strip.children.length;
+    quantity = strip.children.length
     strip.style.width = quantity * 100 + '%';
     pager.innerHTML = (current + 1) + ' of ' + quantity;
     for (var i = 0; i < quantity; i++) {
@@ -146,7 +146,7 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   rightControl.addEventListener('touch', moveRight, false);
 
   setup();
-};
+}
 
 var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
   var doRotation = autoRotateFlag || true, rotation;
@@ -154,19 +154,14 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
   var slides = bannerSlides || [];
   if (!element || slides.length == 0) return;
 
+  var slides = bannerSlides;
   var nextSlide = {
     element: element.querySelector('div.next-slide') || null,
     number: element.querySelector('div.next-slide>.content>.row>h5') || null,
     title: element.querySelector('div.next-slide>.content>.row>h1') || null,
     text: element.querySelector('div.next-slide>.content>.row>p') || null,
     url: element.querySelector('div.next-slide>.content>.row>aside a:nth-child(1)') || null,
-    video: element.querySelector('div.next-slide>.content>.row>aside a:nth-child(2)') || null,
-    nav: {
-      nextLink: element.querySelector('div.next-slide>div.navigate>.next') || null,
-      nextTitle: element.querySelector('div.next-slide>div.navigate>.next>.title') || null,
-      prevLink: element.querySelector('div.next-slide>div.navigate>.prev') || null,
-      prevTitle: element.querySelector('div.next-slide>div.navigate>.prev>.title') || null
-    }
+    video: element.querySelector('div.next-slide>.content>.row>aside a:nth-child(2)') || null
   };
 
   var currentSlide = {
@@ -175,19 +170,19 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     title: element.querySelector('div.current-slide>.content>.row>h1') || null,
     text: element.querySelector('div.current-slide>.content>.row>p') || null,
     url: element.querySelector('div.current-slide>.content>.row>aside a:nth-child(1)') || null,
-    video: element.querySelector('div.current-slide>.content>.row>aside a:nth-child(2)') || null,
-    nav: {
-      nextLink: element.querySelector('div.current-slide>div.navigate>.next') || null,
-      nextTitle: element.querySelector('div.current-slide>div.navigate>.next>.title') || null,
-      prevLink: element.querySelector('div.current-slide>div.navigate>.prev') || null,
-      prevTitle: element.querySelector('div.current-slide>div.navigate>.prev>.title') || null
-    }
+    video: element.querySelector('div.current-slide>.content>.row>aside a:nth-child(2)') || null
   };
 
   var counter = element.querySelector('div.counter');
   var circles = [];
   var current = -1;
 
+  var navigation = {
+    nextLink: element.querySelector('div.navigate>.next'),
+    nextTitle: element.querySelector('div.navigate>.next>.title'),
+    prevLink: element.querySelector('div.navigate>.prev'),
+    prevTitle: element.querySelector('div.navigate>.prev>.title')
+  };
 
   function makeCircles() {
     for (var i = 0; i < slides.length; i++) {
@@ -203,7 +198,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     load(++current);
     if (doRotation) rotation = setInterval(fade, 5000);
 
-    currentSlide.nav.nextLink.addEventListener('click', function(){
+    navigation.nextLink.addEventListener('click', function(){
       if (doRotation) {
         doRotation = false;
         clearTimeout(rotation);
@@ -212,7 +207,7 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
       fadeNext();
     }, false);
 
-    currentSlide.nav.prevLink.addEventListener('click', function(){
+    navigation.prevLink.addEventListener('click', function(){
       if (doRotation) {
         doRotation = false;
         clearTimeout(rotation);
@@ -245,11 +240,11 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     slide.video.setAttribute('href', slides[index].video);
   }
 
-  function setPrevNext(index, slide) {
+  function setPrevNext(index) {
     var prevIndex = (index - 1) < 0 ? slides.length - 1 : index - 1;
     var nextIndex = (index + 1) >= slides.length ? 0 : index + 1;
-    slide.nav.prevTitle.innerHTML = slides[prevIndex].title;
-    slide.nav.nextTitle.innerHTML = slides[nextIndex].title;
+    navigation.prevTitle.innerHTML = slides[prevIndex].title;
+    navigation.nextTitle.innerHTML = slides[nextIndex].title;
   }
 
   // current slide load
@@ -258,19 +253,22 @@ var Banner = function(bannerId, bannerSlides, autoRotateFlag) {
     setCircle(index);
     setBackground(index, currentSlide);
     setContent(index, currentSlide);
-    setPrevNext(index, currentSlide);
+    setPrevNext(index);
     if (doRotation) preload(++index);
   }
 
   function reset(index) {
-    return (index < slides.length) ? ((index < 0) ? slides.length - 1 : index) : 0;
+    return (index < slides.length)
+      ? ((index < 0) ? slides.length - 1 : index)
+      : 0
+    ;
   }
 
   function preload(index) {
     var next = reset(index);
+    console.log('preload ', next);
     setBackground(next, nextSlide);
     setContent(next, nextSlide);
-    setPrevNext(index, nextSlide);
   }
 
   // automated animating
