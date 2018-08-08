@@ -18,3 +18,7 @@ Sass, CSS, HTML5, Ecma2015 (ES6) Modular JavaScript Programming
 Development
 -------------------------------------------------------------------------------
 Working example with all loaded prototypes into one large flow, website package
+
+Testing
+-------------------------------------------------------------------------------
+Using JEST framework for testing es6 code
