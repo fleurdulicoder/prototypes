@@ -19,7 +19,7 @@ var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
   }
 
   open();
-}
+};
 
 var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   var strip, pager, leftControl, rightControl, current, quantity;
@@ -42,9 +42,12 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   function moveLeft() {
     if (current + 1 <= 0) {
       pager.innerHTML = (Math.abs(current + 1) + 1) + ' of ' + quantity;
-      TweenLite.to(strip, 0.5, {
+      TweenMax.to(strip, 0.5, {
         x: (++current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)'
+        ease: 'cubic-bezier(.67,.54,.43,.78)',
+        onComplete: function(){
+          console.log('moving left >>> carousel');
+        }
       });
     }
   }
@@ -52,9 +55,12 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   function moveRight() {
     if (Math.abs(current - 1) < quantity) {
       pager.innerHTML = (Math.abs(current - 1) + 1) + ' of ' + quantity;
-      TweenLite.to(strip, 0.5, {
+      TweenMax.to(strip, 0.5, {
         x: (--current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)'
+        ease: 'cubic-bezier(.67,.54,.43,.78)',
+        onComplete: function(){
+          console.log('moving right >>> carousel');
+        }
       });
     }
   }
@@ -65,4 +71,4 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   rightControl.addEventListener('touch', moveRight, false);
 
   setup();
-}
+};

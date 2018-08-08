@@ -2,7 +2,7 @@
   "JSHINT_OPTS": {},
   "JAVASCRIPT": {
     "DIST_DIR": "dist",
-    "core": ["js/main.js"]
+    "core": ["js/TweenMax.min.js", "js/main.js"]
   },
   "CSS": {
     "DIST_DIR": "dist",
