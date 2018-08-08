@@ -22,8 +22,8 @@ module.exports = {
             options: {
               minimize: false,
               removeComments: true,
-              collapseWhitespace: false
-            }
+              collapseWhitespace: false,
+            },
           },
         ],
       },
@@ -63,7 +63,7 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'resolve-url-loader',

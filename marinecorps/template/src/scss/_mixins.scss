@@ -1,8 +1,6 @@
 // autoprefixing mixins not needed, we are using postcss
 @mixin x-calc($property, $expression) {
-	#{$property}: -moz-calc(#{$expression});
-	#{$property}: -webkit-calc(#{$expression});
-	#{$property}: calc(#{$expression});
+  #{$property}: calc(#{$expression});
 }
 
 @mixin x-fullspace {
@@ -10,4 +8,10 @@
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+@mixin x-keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
 }

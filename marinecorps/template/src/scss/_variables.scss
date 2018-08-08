@@ -1,33 +1,51 @@
 // body
 $body-margin-left: 200px;
 $body-margin-right: 200px;
-$base-font-size: 16px;
-$font-color: #FFF;
+$base-font-size: 14px;
+$font-color: #fff;
 $bg-color: #000;
 
 // marine corp colors
-$black-color: #000;
-$red-color: #940000;
+$base-color: #000;
+$accent-color: #940000;
 $burgundy-color: #960000;
-$brown-color: #84754E;
+$golden-color: #84754e;
 $darkgrey-color: #818283;
-$lightgrey-color: #A7A7A7;
-$white-color: #FFF;
+$lightgrey-color: #a7a7a7;
+$white-color: #fff;
 
 // font family
-$font-family-title: 'Colossalis';
-$font-family-body: 'Arial';
+$font-family-title: "Colossalis";
+$font-family-body: "Arial";
+$font-weight-body: 300;
+$font-lineheight-body: 1.4rem;
 $letter-spacing: 2px;
 
+// font weights
+$font-weight-normal: 300;
+$font-weight-thin: 100;
+$font-weight-bold: 400;
+$font-weight-bolder: 500;
+
 // font sizes
-$font-size-h1: 5rem; // 80pt;
-$font-size-h2: 3rem; // 48pt;
-$font-size-h3: 2.25rem; // 36pt;
-$font-size-h4: 1.875rem; // 30pt;
-$font-size-h5: 1.125rem; // 18pt;
-$font-size-h6: 0.875rem; // 14pt;
-$font-size-lead: 1.125rem; // 18pt;
-$font-size-body: 1rem; // 16pt;
+$font-size-h1: 60px; // 4.3rem - 80pt;
+$font-size-h2: 48px; // 3.4rem - 48pt;
+$font-size-h3: 36px; // 2.6rem - 36pt;
+$font-size-h4: 30px; // 2.14rem - 30pt;
+$font-size-h5: 22px; // 1.6rem - 18pt;
+$font-size-h6: 18px; // 0.875rem - 14pt; confirm??
+$font-size-lead: 16px; // 1.125rem - 18pt;
+$font-size-body: 14px; // 1rem - 16pt;
+
+// row
+$row-vertical-padding: 70px;
+$row-horizontal-padding: 120px;
 
 // on-point-bar
-$on-point-bar-height: 80px;
+$on-point-bar-height: 60px;
+$on-point-width: 200px;
+$on-point-pager-width: 65px;
+
+
+// navigation
+$navbar-height: 120px;

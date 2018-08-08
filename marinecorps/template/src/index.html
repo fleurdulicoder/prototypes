@@ -5,31 +5,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Marines Template</title>
+  <title>Marine Corps: Banner Prototype</title>
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
-<body>
+<body class="with-on-point">
   <div class="on-point-bar">
     <div class="on-point">
       <h4>On Point</h4>
     </div>
-    <div class="announcement">
+    <div class="announcement" id="announcement">
       <div class="rotator">
-        <div class="message">
-          test
+        <div id="on-point-message" class="message">
+          <div class="item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read more...</div>
+          <div class="item">Vestibulum porttitor, ipsum eget feugiat lobortis, purus purus malesuada...</div>
+          <div class="item">Etiam semper dolor justo, tincidunt vestibulum libero tincidunt sed. Read more.</div>
         </div>
       </div>
-      <div class="pager">1 of 3</div>
-      <div class="close">x</div>
+      <div id="on-point-pager" class="pager"></div>
+      <div class="arrows">
+        <i id="on-point-chevron-left" data-feather="chevron-left"></i>
+        <i id="on-point-chevron-right" data-feather="chevron-right"></i>
+      </div>
+      <div class="close"><i id="on-point-close" data-feather="x"></i></div>
     </div>
   </div>
-  </div>
-  <!-- app -->
-
-  <div id="app" class="app">
+  <!--<div id="app" class="app">
     <div class="nav-bar">
       <div class="container">
-        <div class="logo" id="logo"></div>
+        <a class="logo" id="logo" href="/">Marine Corps</a>
         <nav>
           <ul>
             <li><a hred="/units">Units</a> <i data-feather="chevron-down"></i></li>
@@ -169,8 +173,8 @@
     <div class="banner" id="banner">
       <div class="next-slide">
         <div class="navigate">
-          <a class="prev uppercased">&xlarr; Previous <span class="title" id="prev-slide-title"></span></a>
-          <a class="next uppercased"><span class="title" id="next-slide-title"></span> Next &xrarr;</a>
+          <a class="prev uppercased">&xlarr; Previous <span class="title" id="prev-slide-title">Title-</span></a>
+          <a class="next uppercased"><span class="title" id="next-slide-title">Title+</span> Next &xrarr;</a>
         </div>
         <div class="overlay"></div>
         <div class="content">
@@ -204,15 +208,16 @@
       </div>
       <div class="current-slide">
         <div class="navigate">
-          <a class="prev uppercased">&xlarr; Previous <span class="title" id="prev-slide-title"></span></a>
-          <a class="next uppercased"><span class="title" id="next-slide-title"></span> Next &xrarr;</a>
+          <a class="prev uppercased">&xlarr; Previous <span class="title" id="prev-slide-title">--Title</span></a>
+          <a class="next uppercased"><span class="title" id="next-slide-title">Title++</span> Next &xrarr;</a>
         </div>
         <div class="overlay"></div>
         <div class="content">
           <div class="row">
-            <h5></h5>
-            <h1></h1>
-            <p></p>
+            <h5>01</h5>
+            <h1>Test Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis porta molestie. Etiam sed nulla bibendum, iaculis purus et, elementum ipsum. Morbi nec magna mollis diam lobortis scelerisque quis non lorem. Integer dapibus sodales
+              sapien at aliquam. Nullam tempor malesuada massa at volutpat.</p>
             <aside>
               <a href="#">
                 <svg version="1.1" id="currlink1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 44 44">
@@ -239,9 +244,32 @@
       </div>
       <div class="counter"></div>
     </div>
-  </div>
+  </div>-->
+  <!--script type="text/javascript" src="dist/core.min.js"></script-->
+  <script>
+    // feathers-icons package for the theme
+    feather.replace({
+      width: 18,
+      height: 18
+    });
 
-  <!-- end app -->
+    // commenting out not to show in current prototype
+    //var doAnnounce = false;
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   if (doAnnounce) {
+    //     var announcer = new Announcer(
+    //       'on-point-message',
+    //       'on-point-chevron-left',
+    //       'on-point-chevron-right',
+    //       'on-point-pager',
+    //       'on-point-close'
+    //     );
+    //   }
+    //
+    //   var banner = new Banner('banner', slides.slice(0, 5), true);
+    //}, false);
+  </script>
 </body>
 
 </html>
