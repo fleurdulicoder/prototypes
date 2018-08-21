@@ -2,7 +2,6 @@ import TweenMax from 'gsap/TweenMax';
 
 class Carousel {
   constructor(stripId, pagerId, leftControlId, rightControlId) {
-    console.log('carousel >>>>');
     this.strip = stripId ? document.getElementById(stripId) : null;
     this.pager = pagerId ? document.getElementById(pagerId) : null;
     this.leftControl = leftControlId ? document.getElementById(leftControlId) : null;
