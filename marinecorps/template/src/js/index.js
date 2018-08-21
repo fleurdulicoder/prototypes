@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', () => {
     'on-point-pager',
     'on-point-close',
   );
-  announcer.open();
+  announcer.show();
 }, false);

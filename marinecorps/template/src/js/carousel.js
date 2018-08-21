@@ -2,18 +2,15 @@ import TweenMax from 'gsap/TweenMax';
 
 class Carousel {
   constructor(stripId, pagerId, leftControlId, rightControlId) {
+    console.log('carousel >>>>');
     this.strip = stripId ? document.getElementById(stripId) : null;
     this.pager = pagerId ? document.getElementById(pagerId) : null;
     this.leftControl = leftControlId ? document.getElementById(leftControlId) : null;
     this.rightControl = rightControlId ? document.getElementById(rightControlId) : null;
-    if (!this.strip || !this.leftControl || !this.rightControl) return;
-
-    this.leftControl.addEventListener('click', this.moveLeft, false);
-    this.rightControl.addEventListener('click', this.moveRight, false);
-    this.leftControl.addEventListener('touch', this.moveLeft, false);
-    this.rightControl.addEventListener('touch', this.moveRight, false);
+    if (!this.strip || !this.leftControl || !this.rightControl || !this.pager) return;
 
     this.init();
+    this.observe();
   }
 
   init() {
@@ -24,6 +21,13 @@ class Carousel {
     for (let i = 0; i < this.quantity; i += 1) {
       this.strip.children[i].style.width = `${100 / this.quantity}%`;
     }
+  }
+
+  observe() {
+    this.leftControl.addEventListener('click', e => this.moveLeft(e), false);
+    this.rightControl.addEventListener('click', e => this.moveRight(e), false);
+    this.leftControl.addEventListener('touch', e => this.moveLeft(e), false);
+    this.rightControl.addEventListener('touch', e => this.moveRight(e), false);
   }
 
   moveLeft() {
