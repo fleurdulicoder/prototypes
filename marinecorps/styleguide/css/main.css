@@ -408,8 +408,6 @@ nav>ul li, .nav-bar .social ul li {
 /* main */
 main {}
 
-
-
 main > .row .content {
   display: flex;
 }
@@ -420,6 +418,11 @@ main > .row .content .col-side {
 
 main > .row .content .col-main {
   width: 70%;
+}
+
+main h2 {
+  color: rgba(150, 0, 0, 1);
+  border-bottom: 1px solid #a7a7a7;
 }
 
 /* footer */
