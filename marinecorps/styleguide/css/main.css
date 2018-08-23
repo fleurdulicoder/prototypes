@@ -289,7 +289,6 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* banner content */
-
 .app .banner .content {
   position: absolute;
   left: 0;
@@ -407,8 +406,20 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* main */
-main {
+main {}
 
+
+
+main > .row .content {
+  display: flex;
+}
+
+main > .row .content .col-side {
+  width: 25%;
+}
+
+main > .row .content .col-main {
+  width: 70%;
 }
 
 /* footer */
