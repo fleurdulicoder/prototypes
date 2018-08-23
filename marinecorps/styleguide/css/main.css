@@ -1,0 +1,474 @@
+@font-face {
+  font-family: 'Colossalis';
+  src: url(../fonts/ColossalisRegular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "Arial";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
+body::after {
+  content:
+    url('../img/logo.png'),
+    url('../img/img1.jpg')
+  ;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+p {
+  padding: 0 0 10px;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Colossalis', Impact, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 36px;
+}
+
+h4 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+h5 {
+  font-size: 22px;
+  line-height: 20px;
+}
+
+.row {
+  position: relative;
+  padding: 70px 120px;
+}
+
+.chevron-left, .chevron-right, .close, .arrows>*, a {
+  cursor: pointer;
+}
+
+.app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+/* navbar */
+.app .nav-bar {
+  position: fixed;
+  width: 100%;
+  height: 120px;
+  padding: 0 34px 0 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 99999;
+}
+
+.nav-bar .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-flow: flex-start;
+  flex-flow: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  height: inherit;
+  overflow: visible;
+}
+
+/* logo */
+.logo {
+  background: transparent url('../img/logo.png') no-repeat center center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-bar .container>.logo {
+  text-align: left;
+  width: 300px;
+  height: inherit;
+}
+
+/* nav */
+.nav-bar .container nav {
+  text-align: right;
+  width: auto;
+  vertical-align: middle;
+  width: calc(100% - 200px);
+}
+
+.nav-bar .container nav>ul {
+  list-style-type: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar .container nav>ul a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* social */
+nav>ul li, .nav-bar .social ul li {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  height: inherit;
+  font-size: 0.8rem;
+  padding: 16px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nav-bar .social {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: auto;
+  background: rgba(150, 0, 0, 0.5);
+  height: 50px;
+  vertical-align: middle;
+}
+
+.nav-bar .social ul {
+  text-align: right;
+  width: auto;
+  vertical-align: middle;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar .social ul li {
+  display: inline;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar .social svg {
+  display: inline-block;
+  fill: white;
+  width: 16px;
+  height: 16px;
+  padding: 16px;
+}
+
+/* main part of the application */
+.app .banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.banner.short {
+  height: 500px !important;
+}
+
+.app .banner .overlay, .app .banner .next-slide, .app .banner .current-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.app .banner .overlay {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 4;
+}
+
+.app .banner .current-slide {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0, 0, 0);
+  -moz-transform: translateZ(0, 0, 0);
+  -o-transform: translateZ(0, 0, 0);
+  transform: translateZ(0, 0, 0);
+}
+
+.app .banner .current-slide {
+  background-image: url("../img/img1.jpg");
+  z-index: 3;
+}
+
+.app .banner .current-slide aside {
+  display: block;
+  margin-top: 16px;
+}
+
+/* counter */
+.app .banner .counter {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  text-align: center;
+  min-height: 20px;
+  z-index: 6;
+}
+
+.app .banner .counter>.circle {
+  border: 1px solid #fff;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  margin: 0 6px;
+  background-color: rgba(256, 256, 256, 0);
+}
+
+.app .banner .counter>.circle:hover {
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.app .banner .counter>.circle.current {
+  background-color: rgba(256, 256, 256, 1);
+}
+
+/* banner content */
+
+.app .banner .content {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  width: 100%;
+  color: #fff;
+  height: auto;
+  vertical-align: bottom;
+  z-index: 5;
+}
+
+.app .banner.short .content {
+    bottom: 50px !important;
+}
+
+.app .banner .content h1 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.app .banner .content h5 {
+  display: inline-block;
+  width: 4em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(150, 0, 0, 1);
+}
+
+.app .banner .content p {
+  font-size: 13px;
+  line-height: 1.4em;
+  padding: 0;
+  margin: 0 0 10px;
+  width: 400px;
+}
+
+.app .banner .content a {
+  text-decoration: none;
+  font-family: 'Colossalis', Arial, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-right: 10px;
+}
+
+.banner .content a .title {
+  position: relative;
+  padding: 7px 0;
+}
+
+.banner .content a:hover .title {
+  color: rgba(150, 0, 0, 1);
+}
+
+.app .banner .content svg {
+  width: 14px;
+  height: 14px;
+  fill: rgba(150, 0, 0, 1);
+  margin-right: 4px;
+}
+
+/* banner navigation */
+.app .banner .navigate {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  color: white;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.navigate .prev {
+  padding-left: 100px;
+}
+
+.navigate .next {
+  padding-right: 100px;
+}
+
+.navigate .prev, .navigate .next {
+  color: #A7A7A7;
+  font-size: 13px;
+}
+
+.navigate .prev span.title, .navigate .next span.title {
+  position: relative;
+  color: #fff;
+  margin: 0 10px;
+  padding: 7px 0;
+}
+
+.navigate .prev span.title::after,
+.navigate .next span.title::after,
+.banner .content a .title::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(150, 0, 0, 0);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.navigate .prev:hover span.title::after,
+.navigate .next:hover span.title::after,
+.banner .content a:hover .title::after {
+  content: '';
+  border: 1px solid rgba(150, 0, 0, 1);
+}
+
+/* main */
+main {
+
+}
+
+/* footer */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+footer .flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+footer .flex > div {
+  width: 20%;
+}
+
+footer .flex > div:first-child {
+  width: 40%;
+}
+
+footer .flex .logo {
+  margin-top: 40px;
+  background-position: left center;
+  height: 50px;
+  height: 50px;
+}
+
+footer .flex > div > header {
+  position: relative;
+  font-family: 'Colossalis', Impact, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+footer .flex > div > header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  border-bottom: 1px solid rgba(150, 0, 0, 1);
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+footer ul > li {
+  padding: 3px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #a7a7a7;
+}
