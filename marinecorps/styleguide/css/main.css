@@ -412,6 +412,10 @@ main {}
 
 main > .row .content {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 main > .row .content .col-side {
@@ -419,7 +423,7 @@ main > .row .content .col-side {
 }
 
 main > .row .content .col-main {
-  width: 65%;
+  width: 70%;
 }
 
 main h2 {
