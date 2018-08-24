@@ -6,9 +6,8 @@ Main Components
 .cd-accordion-menu {
   width: 90%;
   max-width: 600px;
-  background: #4d5158;
-  margin: 4em auto;
-  box-shadow: 0 4px 40px #70ac76;
+  margin: 0 auto;
+  border-bottom: 1px solid #a7a7a7;
 }
 .cd-accordion-menu ul {
   /* by default hide all sub menus */
@@ -20,6 +19,16 @@ Main Components
   -ms-user-select: none;
   user-select: none;
 }
+
+.cd-accordion-menu > li > label {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: 'Colossalis', Impact, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  border-top: 1px solid #a7a7a7;
+}
+
 .cd-accordion-menu input[type=checkbox] {
   /* hide native checkbox */
   position: absolute;
@@ -29,11 +38,9 @@ Main Components
 .cd-accordion-menu label, .cd-accordion-menu a {
   position: relative;
   display: block;
-  padding: 18px 18px 18px 64px;
-  background: #4d5158;
-  box-shadow: inset 0 -1px #555960;
-  color: #ffffff;
+  padding: 4px 12px 4px 12px;
   font-size: 1.6rem;
+  color: rgba(150, 0, 0, 1);
 }
 .no-touch .cd-accordion-menu label:hover, .no-touch .cd-accordion-menu a:hover {
   background: #52565d;
@@ -99,13 +106,11 @@ Main Components
 }
 .cd-accordion-menu ul label,
 .cd-accordion-menu ul a {
-  background: #35383d;
-  box-shadow: inset 0 -1px #41444a;
-  padding-left: 82px;
+  padding-left: 12px;
 }
 .no-touch .cd-accordion-menu ul label:hover, .no-touch
 .cd-accordion-menu ul a:hover {
-  background: #3c3f45;
+  color: rgba(150, 0, 0, 1);
 }
 .cd-accordion-menu > li:last-of-type > label,
 .cd-accordion-menu > li:last-of-type > a,
@@ -114,26 +119,26 @@ Main Components
   box-shadow: none;
 }
 .cd-accordion-menu ul label::before {
-  left: 36px;
+  left: 20px;
 }
 .cd-accordion-menu ul label::after,
 .cd-accordion-menu ul a::after {
-  left: 59px;
+  left: 39px;
 }
 .cd-accordion-menu ul ul label,
 .cd-accordion-menu ul ul a {
-  padding-left: 100px;
+  padding-left: 40px;
 }
 .cd-accordion-menu ul ul label::before {
-  left: 54px;
+  left: 34px;
 }
 .cd-accordion-menu ul ul label::after,
 .cd-accordion-menu ul ul a::after {
-  left: 77px;
+  left: 50px;
 }
 .cd-accordion-menu ul ul ul label,
 .cd-accordion-menu ul ul ul a {
-  padding-left: 118px;
+  padding-left: 70px;
 }
 .cd-accordion-menu ul ul ul label::before {
   left: 72px;
@@ -144,8 +149,8 @@ Main Components
 }
 @media only screen and (min-width: 600px) {
   .cd-accordion-menu label, .cd-accordion-menu a {
-    padding: 24px 24px 24px 82px;
-    font-size: 1.9rem;
+    padding: 12px 0 12px 0;
+    font-size: 0.85rem;;
   }
   .cd-accordion-menu label::before {
     left: 24px;
@@ -155,7 +160,7 @@ Main Components
   }
   .cd-accordion-menu ul label,
   .cd-accordion-menu ul a {
-    padding-left: 106px;
+    padding-left: 24px 12px 12px 12px;
   }
   .cd-accordion-menu ul label::before {
     left: 48px;
@@ -166,7 +171,7 @@ Main Components
   }
   .cd-accordion-menu ul ul label,
   .cd-accordion-menu ul ul a {
-    padding-left: 130px;
+    padding-left: 32px;
   }
   .cd-accordion-menu ul ul label::before {
     left: 72px;
