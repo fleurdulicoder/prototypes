@@ -10,10 +10,10 @@ jQuery(document).ready(function(){
 				var checkbox = $(this);
 				if ( checkbox.prop('checked') ) {
 					checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300);
-					checkbox.siblings('label').children('span').addClass('rotate');
+					checkbox.siblings('label').addClass('rotate');
 				} else {
 					checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
-					checkbox.siblings('label').children('span').removeClass('rotate');
+					checkbox.siblings('label').removeClass('rotate');
 				}
 			});
 		});

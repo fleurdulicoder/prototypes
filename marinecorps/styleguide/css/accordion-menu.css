@@ -9,10 +9,11 @@ Main Components
   margin: 0 auto;
   border-bottom: 1px solid #a7a7a7;
 }
+
 .cd-accordion-menu ul {
-  /* by default hide all sub menus */
   display: none;
 }
+
 .cd-accordion-menu li {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -30,7 +31,6 @@ Main Components
 }
 
 .cd-accordion-menu input[type=checkbox] {
-  /* hide native checkbox */
   position: absolute;
   font-size: 1.6rem;
   opacity: 0;
@@ -41,12 +41,15 @@ Main Components
   padding: 4px 12px 4px 12px;
   font-size: 1.6rem;
   color: rgba(150, 0, 0, 1);
+  text-decoration: none;
 }
-.no-touch .cd-accordion-menu label:hover, .no-touch .cd-accordion-menu a:hover {
+.no-touch .cd-accordion-menu label:hover,
+.no-touch .cd-accordion-menu a:hover {
   background: #52565d;
 }
-.cd-accordion-menu label::before, .cd-accordion-menu label::after, .cd-accordion-menu a::after {
-  /* icons */
+/*.cd-accordion-menu label::before,
+.cd-accordion-menu label::after,
+.cd-accordion-menu a::after {
   content: '';
   display: inline-block;
   width: 16px;
@@ -58,9 +61,11 @@ Main Components
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+}*/
+
 .cd-accordion-menu label {
   position: relative;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -73,14 +78,16 @@ Main Components
   transition: transform 300ms ease-in-out;
 }
 
-.cd-accordion-menu label > span.lnr.rotate {
+.cd-accordion-menu label.rotate > span.lnr {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }
 
+.cd-accordion-menu > ul li > ul li > label.rotate {
+  font-weight: bold;
+}
 
 .cd-accordion-menu input[type=checkbox]:checked + label::before {
-  /* rotate arrow */
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
