@@ -8,8 +8,13 @@ jQuery(document).ready(function(){
 			// detect change in the input[type="checkbox"] value
 			accordion.on('change', 'input[type="checkbox"]', function(){
 				var checkbox = $(this);
-				console.log(checkbox.prop('checked'));
-				( checkbox.prop('checked') ) ? checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300) : checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+				if ( checkbox.prop('checked') ) {
+					checkbox.siblings('ul').attr('style', 'display:none;').slideDown(300);
+					checkbox.siblings('label').children('span').addClass('rotate');
+				} else {
+					checkbox.siblings('ul').attr('style', 'display:block;').slideUp(300);
+					checkbox.siblings('label').children('span').removeClass('rotate');
+				}
 			});
 		});
 	}
