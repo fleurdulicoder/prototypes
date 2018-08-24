@@ -1,0 +1,11 @@
+{
+  "name": "styleguide",
+  "version": "1.0.0",
+  "description": "Branding, Iconography, Typograpy, Components, Prototypes Style Guidewq",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ella Musina",
+  "license": "ISC"
+}
