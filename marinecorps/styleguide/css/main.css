@@ -455,13 +455,20 @@ main > .row .content .col-side {
 }
 
 main > .row .content .col-main {
-  width: calc(100% - 250px - 24px);
+  width: calc(100% - 250px - 80px);
 }
 
 main h2, main h3 {
   color: rgba(150, 0, 0, 1);
   border-bottom: 1px solid #a7a7a7;
+  margin-top: 40px;
 }
+
+main h2:first-child, main h3:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 
 /* footer */
 footer {
@@ -531,6 +538,10 @@ footer a {
   margin: 20px 0;
 }
 
+h3+.list-of-colors {
+  margin-top: 40px;
+}
+
 .list-of-colors .color {
   width: 20%;
 }
@@ -543,6 +554,7 @@ footer a {
 
 .list-of-colors .color > p {
   text-align: center;
+  margin-top: 20px;
 }
 
 .color.primary span {
