@@ -46,7 +46,7 @@ Main Components
 }
 
 .cd-accordion-menu ul > li > label {
-  padding: 12px 12px 12px 32px;
+  padding: 12px 12px 12px 24px;
 }
 
 .no-touch .cd-accordion-menu label:hover,
@@ -101,7 +101,7 @@ Main Components
 .cd-accordion-menu ul label.rotate::before {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -6px;
   width: 34px;
   bottom: 0;
   content: '';
@@ -152,7 +152,7 @@ Main Components
 
 .cd-accordion-menu ul ul label,
 .cd-accordion-menu ul ul a {
-  padding-left: 32px;
+  padding-left: 36px;
 }
 
 .cd-accordion-menu ul ul label::before {

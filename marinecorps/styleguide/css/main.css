@@ -446,7 +446,7 @@ main > .row .content .col-main {
   width: 70%;
 }
 
-main h2 {
+main h2, main h3 {
   color: rgba(150, 0, 0, 1);
   border-bottom: 1px solid #a7a7a7;
 }
@@ -514,6 +514,10 @@ footer a {
 }
 
 @media screen and (max-width: 900px) {
+  nav {
+      display: none;
+  }
+
   .col-side {
     display: none;
   }
