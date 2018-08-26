@@ -102,7 +102,16 @@ h5 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 250ms cubic-bezier(.41, .91, .52, .94);
+  transition: all 250ms cubic-bezier(.41, .91, .52, .94);
   z-index: 99999;
+}
+
+.nav-bar.sticky {
+  height: 70px;
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .nav-bar .container {
@@ -139,6 +148,17 @@ h5 {
   text-align: left;
   width: 300px;
   height: inherit;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 250ms cubic-bezier(.41, .91, .52, .94);
+  transition: all 250ms cubic-bezier(.41, .91, .52, .94);
+}
+
+.nav-bar.sticky .container>.logo {
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
 }
 
 /* nav */

@@ -1,11 +1,15 @@
-// $('body').on('scroll', function(){
-//   var top = ($(window).scrollTop() || $("body").scrollTop());
-//   console.log(top);
-// });
-//
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {
+  stickIt();
+};
 
+var header = document.getElementById("navbar");
+var sticky = document.getElementById("main").offsetTop - 120;
 
-document.body.addEventListener('scroll', function(){
-  var top = document.body.scrollTop || window.scrollTop;
-  console.log(top);
-}, false);
+function stickIt() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
