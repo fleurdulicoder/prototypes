@@ -57,16 +57,29 @@ jQuery(document).ready(function(){
 
 // When the user scrolls the page, execute myFunction
 window.onscroll = function() {
-  stickIt();
+  console.log(window.pageYOffset);
+  collapseHeader();
+  pinSidebar();
 };
 
 var header = document.getElementById("navbar");
-var sticky = document.getElementById("main").offsetTop - 120;
+var stickyHeaderPos = document.getElementById("main").offsetTop - 120;
 
-function stickIt() {
-  if (window.pageYOffset > sticky) {
+function collapseHeader() {
+  if (window.pageYOffset > stickyHeaderPos) {
     header.classList.add("sticky");
   } else {
     header.classList.remove("sticky");
+  }
+}
+
+var sidemenu = document.getElementById("sidemenu");
+var stickySidemenuPos = sidemenu.offsetTop;
+
+function pinSidebar() {
+  if (window.pageYOffset > 499) {
+    sidemenu.classList.add("sticky");
+  } else {
+    sidemenu.classList.remove("sticky");
   }
 }

@@ -53,9 +53,9 @@ Main Components
 
 -------------------------------- */
 .cd-accordion-menu {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
   border-bottom: 1px solid #a7a7a7;
 }
 
@@ -307,6 +307,14 @@ h4 {
 h5 {
   font-size: 22px;
   line-height: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .row {
@@ -664,8 +672,6 @@ nav>ul li, .nav-bar .social ul li {
 }
 
 /* main */
-main {}
-
 main > .row .content {
   display: flex;
   flex-direction: row;
@@ -675,11 +681,18 @@ main > .row .content {
 }
 
 main > .row .content .col-side {
-  width: 25%;
+  width: 250px;
 }
 
+#sidemenu.sticky {
+  position: fixed;
+  top: 69px;
+  width: 250px;
+}
+
+
 main > .row .content .col-main {
-  width: 70%;
+  width: calc(100% - 250px - 24px);
 }
 
 main h2, main h3 {
@@ -748,6 +761,10 @@ footer a {
   text-decoration: none;
   color: #a7a7a7;
 }
+
+/* colors */
+.list-of-colors {}
+
 
 @media screen and (max-width: 900px) {
   nav {
