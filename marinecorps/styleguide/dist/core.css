@@ -728,3 +728,33 @@ footer a {
   text-decoration: none;
   color: #a7a7a7;
 }
+
+@media screen and (max-width: 900px) {
+  .col-side {
+    display: none;
+  }
+
+  footer  .flex {
+    flex-direction: column;
+  }
+
+  footer  .flex > div {
+    width: 100%;
+  }
+
+  footer .flex .logo {
+    margin-top: 0px;
+  }
+
+  footer .flex > div:first-child {
+    width: 100% !important;
+  }
+  footer .flex > div:nth-child(2),
+  footer .flex > div:nth-child(3) {
+    display: none;
+  }
+
+  footer .flex > div:last-child {
+    margin-top: 20px;
+  }
+}
