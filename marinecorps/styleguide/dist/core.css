@@ -690,7 +690,6 @@ main > .row .content .col-side {
   width: 250px;
 }
 
-
 main > .row .content .col-main {
   width: calc(100% - 250px - 24px);
 }
@@ -763,8 +762,49 @@ footer a {
 }
 
 /* colors */
-.list-of-colors {}
+.list-of-colors {
+  width: 100%;
+  margin: 20px 0;
+}
 
+.list-of-colors .color {
+  width: 20%;
+}
+
+.list-of-colors .color > span {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+.list-of-colors .color > p {
+  text-align: center;
+}
+
+.color.primary span {
+  background-color: #000000;
+}
+.color.secondary span {
+  background-color: rgba(150, 0, 0, 1);
+}
+.color.burgundy span {
+  background-color: #960000;
+}
+.color.golden span {
+  background-color: #84754E;
+}
+.color.grey span {
+  background-color: #818283;
+}
+.color.silver span {
+  background-color: #a7a7a7;
+}
+.color.white span {
+  background-color: #ffffff;
+}
+.border {
+  border: 1px solid #a7a7a7;
+}
 
 @media screen and (max-width: 900px) {
   nav {
