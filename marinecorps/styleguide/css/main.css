@@ -81,6 +81,30 @@ h5 {
   align-items: flex-start;
 }
 
+.flex > .half {
+  width: 48%;
+}
+
+.flex > .third {
+  width: 31%;
+}
+
+.flex > .fourth {
+  width: 23%;
+}
+
+.flex > .fifth {
+  width: 18%;
+}
+
+.flex > .third {
+  width: 33%;
+}
+
+.flex > .two-thirds {
+  width: 64%;
+}
+
 .row {
   position: relative;
   padding: 70px 120px;
