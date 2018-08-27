@@ -36,41 +36,59 @@ svg {
 }
 
 p {
-  padding: 0 0 10px;
+  padding: 0 0 12px;
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Colossalis', Impact, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 100;
-  margin: 0 0 10px;
+  margin: 20px 0 10px;
   padding: 0;
 }
 
 h1 {
   font-size: 60px;
   line-height: 60px;
+  color: #940000;
 }
 
 h2 {
   font-size: 48px;
   line-height: 48px;
+  color: #940000;
 }
 
 h3 {
   font-size: 36px;
   line-height: 36px;
+  color: #940000;
 }
 
 h4 {
   font-size: 30px;
   line-height: 30px;
+  color: #940000;
 }
 
 h5 {
   font-size: 22px;
   line-height: 20px;
+  color: #940000;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+  font-family: Arial;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: #a7a7a7;
 }
 
 .flex {
@@ -361,12 +379,14 @@ nav>ul li, .nav-bar .social ul li {
 .app .banner .content h1 {
   margin-bottom: 0px;
   padding-bottom: 0px;
+  color: #fff;
 }
 
 .app .banner .content h5 {
   display: inline-block;
   width: auto;
   padding-bottom: 10px;
+  color: #fff;
   border-bottom: 1px solid rgba(150, 0, 0, 1);
 }
 
@@ -482,6 +502,20 @@ main > .row .content .col-main {
   width: calc(100% - 250px - 80px);
 }
 
+.col-main ul, .col-main ol {
+  display: block;
+}
+
+.col-main ul {
+  list-style-type: circle !important;
+}
+
+.col-main ul > li,
+.col-main ol > li {
+  display: block;
+  margin: 12px 0;
+}
+
 section h1:first-child,
 section h2:first-child,
 section h3:first-child {
@@ -491,6 +525,7 @@ section h3:first-child {
   border-bottom: 1px solid #a7a7a7;
   margin-bottom: 40px;
 }
+
 section {
   padding-bottom: 40px;
 }
@@ -582,29 +617,64 @@ h3+.list-of-colors {
   margin-top: 20px;
 }
 
-.color.primary span {
+.bg.primary {
   background-color: #000000;
 }
-.color.secondary span {
+.bg.secondary {
   background-color: rgba(150, 0, 0, 1);
 }
-.color.burgundy span {
+.bg.burgundy {
   background-color: #960000;
 }
-.color.golden span {
+.bg.golden {
   background-color: #84754E;
 }
-.color.grey span {
+.bg.grey {
   background-color: #818283;
 }
-.color.silver span {
+.bg.silver {
   background-color: #a7a7a7;
 }
-.color.white span {
+.bg.white {
   background-color: #ffffff;
 }
-.border {
+.bg.border {
   border: 1px solid #a7a7a7;
+}
+
+.txt.primary {
+  color: #000000;
+}
+.txt.secondary {
+  color: rgba(150, 0, 0, 1);
+}
+.txt.burgundy {
+  color: #960000;
+}
+.txt.golden {
+  color: #84754E;
+}
+.txt.grey {
+  color: #818283;
+}
+.txt.silver {
+  color: #a7a7a7;
+}
+.txt.white {
+  color: #ffffff;
+}
+
+.txt.large {
+  font-size: 18px;
+}
+.txt.x-large {
+  font-size: 20px;
+}
+.txt.xx-large {
+  font-size: 22px;
+}
+.txt.xxx-large {
+  font-size: 24px;
 }
 
 @media screen and (max-width: 900px) {
