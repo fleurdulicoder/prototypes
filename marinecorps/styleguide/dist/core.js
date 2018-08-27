@@ -81,3 +81,15 @@ function pinSidebar() {
     sidemenu.classList.remove("sticky");
   }
 }
+
+$(".nav a").each(function(index, element){
+  $(this).click(function(e){
+    e.preventDefault();
+    TweenMax.to(window, 0.35, {
+      scrollTo: {
+        y: $(element).attr('href'),
+        offsetY: 73
+      }
+    });
+  });
+});
