@@ -819,12 +819,24 @@ h3+.list-of-colors {
 }
 
 @media screen and (max-width: 900px) {
+  .row {
+    padding: 36px;
+  }
+
+  .current-slide .content .row > p {
+    width: 100%;
+  }
+
   nav {
       display: none;
   }
 
   .col-side {
     display: none;
+  }
+
+  main > .row .content .col-main {
+    width: 100%;
   }
 
   footer  .flex {
