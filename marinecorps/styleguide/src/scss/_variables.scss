@@ -1,0 +1,79 @@
+// theme color, add more if needed
+$primary-color: #000;
+$secondary-color: #940000;
+$tertiary-color: #960000;
+$quaternary: #84754e;
+
+$background: $primary-color;
+$foreground: #fff;
+
+$auxiliary1: #818283;
+$auxiliary2: #a7a7a7;
+// $complimentary1:
+// $complimentary2:
+// $accent1:
+// $accent2:
+
+$text-over-dark: $foreground;
+$text-over-light: $background;
+
+// font family
+$font-family-title: "Colossalis", Impact, sans-serif;
+$font-lineheight-title: 1.4em;
+$font-family-body: "Arial", sans-serif;
+$font-lineheight-body: 1.4rem;
+$letter-spacing: 2px;
+
+// font weights
+$font-weight-normal: 300;
+$font-weight-thin: 100;
+$font-weight-bold: 400;
+$font-weight-bolder: 500;
+
+// font sizes
+$font-size-h1: 60px; // 4.3rem - 80pt;
+$font-size-h2: 48px; // 3.4rem - 48pt;
+$font-size-h3: 36px; // 2.6rem - 36pt;
+$font-size-h4: 30px; // 2.14rem - 30pt;
+$font-size-h5: 22px; // 1.6rem - 18pt;
+$font-size-h6: 18px; // 0.875rem - 14pt; confirm??
+$font-size-lead: 16px; // 1.125rem - 18pt;
+$font-size-body: 14px; // 1rem - 16pt;
+
+// font sizes plus
+$font-size-large: 18px;
+$font-size-x-large: 20px;
+$font-size-xx-large: 22px;
+$font-size-xxx-large: 24px;
+
+// row
+$row-vertical-padding: 70px;
+$row-horizontal-padding: 120px;
+$mobile-row-vertical-padding: 36px;
+$mobile-row-horizontal-padding: 36px;
+
+// padding
+$base-padding: 6px;
+$padding1: 12px;
+$padding2: 18px;
+$padding3: 24px;
+$padding4: 30px;
+$padding5: 36px;
+
+// margin
+$base-margin: 4px;
+$margin1: 8px;
+$margin2: 12px;
+$margin3: 16px;
+$margin4: 20px;
+$margin5: 24px;
+
+// navigation
+$navbar-height: 120px;
+
+// custom easing functions
+$ease-out: cubic-bezier(.41, .91, .52, .94);
+$ease-in: cubic-bezier(0, 0, 0, 1.1);
+
+// media
+$breaking-point-large: 900px;
