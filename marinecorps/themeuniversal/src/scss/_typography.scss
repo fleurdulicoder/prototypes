@@ -1,0 +1,7 @@
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@font-face {
+  font-family: "Colossalis";
+  src: url("../fonts/ColossalisRegular.otf"), url("../fonts/ColossalisMedium.otf"), url("../fonts/ColossalisBold.otf");
+}
