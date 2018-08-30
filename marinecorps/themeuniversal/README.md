@@ -19,7 +19,7 @@ $ npm install -g http-server
 $ cd dist/
 $ http-server
 
-Copy http address and past into the browser and review the html.
+Copy http address and pass it to the browser for viewing the html.
 
 
 Universal SCSS
