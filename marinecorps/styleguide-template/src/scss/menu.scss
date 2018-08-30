@@ -1,0 +1,103 @@
+.side-menu {
+  width: 100%;
+  max-width: 600px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $auxiliary-color-2;
+
+  &.sticky {
+    position: fixed;
+    top: 69px;
+    width: 250px;
+  }
+
+  &.animated label::before {
+    transition: transform 0.3s $ease-out;
+  }
+
+  ul {
+    display: none;
+    list-style-type: none;
+
+    li {
+      user-select: none;
+      list-style-type: none;
+    }
+
+    li:last-child {
+      margin-bottom: $margin2;
+    }
+
+    label.rotate::before {
+      position: absolute;
+      top: 50%;
+      margin-top: -13px;
+      left: -24px;
+      width: 24px;
+      bottom: 0;
+      content: "\F101";
+      font-size: 24px;
+      font-family: FontAwesome;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 $padding3;
+    }
+  }
+
+  > li > label {
+    font-size: $font-size-large;
+    letter-spacing: $letter-spacing;
+    font-family: $font-family-title;
+    font-weight: $font-weight-thin;
+    text-transform: uppercase;
+    padding: $padding1;
+    border-top: 1px solid $auxiliary-color-1;
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    font-size: 1rem;
+    opacity: 0;
+  }
+
+  label,
+  a {
+    position: relative;
+    display: block;
+    padding: $base-padding;
+    color: rgba($secondary-color, 1);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  label {
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+
+    > span.lnr {
+      position: absolute;
+      right: 0;
+      transform: translate3d(0, 0, 0);
+      transition: transform 300ms ease-in-out;
+    }
+
+    &.rotate > span.lnr {
+      transform: rotate(180deg);
+    }
+  }
+
+  input[type=checkbox]:checked + label + ul,
+  input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+    display: block;
+  }
+
+  ul label,
+  ul a {
+    padding-left: 0;
+    font-size: $font-size-small;
+  }
+}
