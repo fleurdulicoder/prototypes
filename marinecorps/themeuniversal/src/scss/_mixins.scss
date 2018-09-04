@@ -1,0 +1,6 @@
+@function getcolor($key: "primary") {
+  @if $theme == null {
+      $theme: "light";
+  }
+  @return map-get(map-get($palette, $theme), $key);
+}
