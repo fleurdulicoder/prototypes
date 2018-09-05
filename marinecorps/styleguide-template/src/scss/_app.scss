@@ -33,10 +33,10 @@ h4,
 h5 {
   font-family: $font-family-title;
   font-weight: $font-weight-thin;
-  text-transform: uppercase;
   letter-spacing: $letter-spacing;
   color: $color-text-heading;
-  margin: $margin4 0 $margin2;
+  margin: $margin-base * 5 0 $margin-base * 3;
+  text-transform: uppercase;
   padding: 0;
 }
 
@@ -73,7 +73,7 @@ h6 {
   }
   line-height: $font-size-h6;
   letter-spacing: $letter-spacing;
-  margin: $margin2 0 $margin1;
+  margin: $margin-base * 3 0 $margin-base * 2;
   text-transform: uppercase;
 }
 
@@ -95,7 +95,7 @@ svg {
 }
 
 p {
-  padding: 0 0 $padding1;
+  padding: 0 0 $padding-base * 4;
   font-size: $font-size-body;
 }
 
@@ -117,7 +117,8 @@ p {
     background-color: $color-quaternary;
   }
 
-  &.quinary {
+  &.quinary,
+  &.foreground {
     background-color: $color-quinary;
   }
 
@@ -315,7 +316,7 @@ nav {
       height: inherit;
       font-size: 0.8rem;
       margin: 0;
-      padding: $padding2;
+      padding: 6 * $padding-base;
       box-sizing: border-box;
     }
   }
@@ -375,7 +376,7 @@ nav {
     font-size: 13px;
     line-height: 1.4em;
     padding: 0;
-    margin: 0 0 $margin2;
+    margin: 0 0 $margin-base * 3;
     width: 400px;
   }
 
@@ -385,11 +386,11 @@ nav {
     color: $color-text-link;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
-    margin-right: $margin2;
+    margin-right: $margin-base * 3;
 
     .title {
       position: relative;
-      padding: $base-padding 0;
+      padding: $padding-base 0;
     }
 
     .title::after {
@@ -419,7 +420,7 @@ nav {
     width: 14px;
     height: 14px;
     fill: rgba($color-accent, 1);
-    margin-right: $base-margin;
+    margin-right: $margin-base;
   }
 }
 
@@ -433,7 +434,7 @@ nav {
 
   aside {
     display: block;
-    margin-top: $margin3;
+    margin-top: $margin-base * 4;
   }
 
   .content {
@@ -478,12 +479,12 @@ main {
 
   ul {
     list-style-type: circle;
-    margin: $margin1 0;
+    margin: $margin-base * 2 0;
     padding: 0;
 
     li {
       display: block;
-      padding: $padding1 0;
+      padding: $padding-base * 4 0;
     }
   }
 }
@@ -498,7 +499,7 @@ section {
     padding-top: 0;
     color: rgba($color-accent, 1);
     border-bottom: 1px solid $color-shade-lighter;
-    margin-bottom: $margin4;
+    margin-bottom: 5 * $margin-base;
   }
 }
 
@@ -550,11 +551,11 @@ footer {
     ul {
       list-style-type: none;
       margin: 0;
-      padding: $padding1 0;
+      padding: $padding-base * 4 0;
     }
 
     li {
-      padding: 3px 0;
+      padding: $padding-base 0;
     }
 
     a {
@@ -593,7 +594,7 @@ footer {
       }
 
       > div:last-child {
-        margin-top: $margin5;
+        margin-top: $margin-base * 6;
       }
     }
   }
@@ -601,7 +602,7 @@ footer {
 
 .list-of-colors {
   width: 100%;
-  margin: $margin4 0;
+  margin: $margin-base * 5 0;
 
   .color {
     width: 20%;
@@ -614,7 +615,7 @@ footer {
 
     > p {
       text-align: center;
-      margin-top: $margin4;
+      margin-top: $margin-base * 5;
     }
   }
 }

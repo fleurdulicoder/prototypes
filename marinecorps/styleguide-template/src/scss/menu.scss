@@ -26,7 +26,7 @@
     }
 
     li:last-child {
-      margin-bottom: $margin2;
+      margin-bottom: $margin-base * 3;
     }
 
     label.rotate::before {
@@ -43,7 +43,7 @@
 
     ul {
       margin: 0;
-      padding: 0 $padding3;
+      padding: 0 $padding-base * 8;
     }
   }
 
@@ -55,7 +55,7 @@
     }
     letter-spacing: $letter-spacing;
     text-transform: uppercase;
-    padding: $padding1;
+    padding: $padding-base * 3;
     border-top: 1px solid $color-shade;
   }
 
@@ -69,7 +69,7 @@
   a {
     position: relative;
     display: block;
-    padding: $base-padding;
+    padding: $padding-base * 2;
     color: rgba($color-accent, 1);
     text-decoration: none;
     font-size: 0.85rem;
