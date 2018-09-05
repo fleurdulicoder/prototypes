@@ -86,7 +86,7 @@
       margin-top: -$margin-base * 2;
       right: 0;
       transform: translate3d(0, 0, 0);
-      transition: transform 300ms ease-in-out;
+      transition: transform 300ms $ease-out;
     }
 
     &.rotate > span.lnr {
