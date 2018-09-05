@@ -121,11 +121,11 @@ p {
     background-color: $color-quinary;
   }
 
-  &.auxiliary1 {
+  &.shade {
     background-color: $color-shade;
   }
 
-  &.auxiliary2 {
+  &.shade-lighter {
     background-color: $color-shade-lighter;
   }
 }
@@ -135,8 +135,7 @@ p {
 }
 
 .txt {
-  &.primary,
-  &.over-light {
+  &.primary {
     color: $color-primary;
   }
 
@@ -152,11 +151,11 @@ p {
     color: $color-quaternary;
   }
 
-  &.auxiliary1 {
+  &.shade {
     color: $color-shade;
   }
 
-  &.auxiliary2 {
+  &.shade-lighter {
     color: $color-shade-lighter;
   }
 
@@ -298,7 +297,15 @@ nav {
 
     a {
       text-decoration: none;
-      color: $color-text;
+      color: $color-nav-primary-link;
+    }
+
+    a:hover {
+      color: $color-nav-primary-link-hover;
+    }
+
+    a:visited {
+      color: $color-nav-primary-link-visited;
     }
 
     li {
@@ -349,18 +356,19 @@ nav {
     }
   }
 
+  h5 {
+    display: inline-block;
+    width: auto;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    color: $color-text;
+    border-bottom: 1px solid rgba($color-accent, 1);
+  }
+
   h1 {
     margin-bottom: 0;
     padding-bottom: 0;
     color: $color-text;
-  }
-
-  h5 {
-    display: inline-block;
-    width: auto;
-    padding-bottom: 10px;
-    color: $color-text;
-    border-bottom: 1px solid rgba($color-accent, 1);
   }
 
   p {
@@ -551,15 +559,15 @@ footer {
 
     a {
       text-decoration: none;
-      color: $color-shade-lighter;
+      color: $color-nav-secondary-link;
     }
 
     a:hover {
-      color: $color-shade-lighter;
+      color: $color-nav-secondary-link-hover;
     }
 
     a:visited {
-      color: $color-shade-lighter;
+      color: $color-nav-secondary-link-visited;
     }
   }
 

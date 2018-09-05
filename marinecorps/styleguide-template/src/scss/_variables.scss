@@ -45,14 +45,6 @@ $color-header: getcolor("background");
 $color-footer: getcolor("background");
 
 
-
-
-
-
-
-
-
-
 // GENERIC OTHER STYLES
 // font family
 $font-family-title: "Colossalis", Impact, sans-serif;
@@ -62,8 +54,8 @@ $font-lineheight-body: 1.4rem;
 $letter-spacing: 2px;
 
 // font weights
-$font-weight-normal: 300;
 $font-weight-thin: 100;
+$font-weight-normal: 300;
 $font-weight-bold: 400;
 $font-weight-bolder: 500;
 
@@ -80,10 +72,10 @@ $font-size-body: 14px; // 1rem - 16pt;
 // font sizes plus
 $font-size-small: 0.85rem;
 $font-size-normal: $font-size-body;
-$font-size-large: 18px;
-$font-size-x-large: 20px;
-$font-size-xx-large: 22px;
-$font-size-xxx-large: 24px;
+$font-size-large: 15px;
+$font-size-x-large: 16px;
+$font-size-xx-large: 18px;
+$font-size-xxx-large: 20px;
 
 // row
 $row-vertical-padding: 70px;
