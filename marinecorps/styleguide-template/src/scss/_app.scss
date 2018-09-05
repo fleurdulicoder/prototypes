@@ -10,11 +10,14 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: $font-family-body;
-  font-size: $font-size-body;
-  font-weight: $font-weight-normal;
+  font: {
+    family: $font-family-body;
+    size: $font-size-body;
+    weight: $font-weight-normal;
+  }
   line-height: $font-lineheight-body;
-  background: $foreground-color;
+  background: $color-background;
+  color: $color-text;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -30,10 +33,10 @@ h4,
 h5 {
   font-family: $font-family-title;
   font-weight: $font-weight-thin;
-  color: $secondary-color;
   text-transform: uppercase;
-  margin: $margin4 0 $margin2;
   letter-spacing: $letter-spacing;
+  color: $color-text-heading;
+  margin: $margin4 0 $margin2;
   padding: 0;
 }
 
@@ -63,18 +66,28 @@ h5 {
 }
 
 h6 {
-  font-size: $font-size-h6;
-  font-family: $font-family-body;
+  font: {
+    family: $font-family-body;
+    size: $font-size-h6;
+    weight: $font-weight-thin;
+  }
   line-height: $font-size-h6;
   letter-spacing: $letter-spacing;
   margin: $margin2 0 $margin1;
   text-transform: uppercase;
-  font-weight: $font-weight-thin;
 }
 
 a {
   text-decoration: none;
-  color: $auxiliary-color-1;
+  color: $color-text-link;
+
+  &:hover {
+    color: $color-text-link-hover;
+  }
+
+  &:visited {
+    color: $color-text-link-visited;
+  }
 }
 
 svg {
@@ -89,66 +102,62 @@ p {
 .bg {
   &.primary,
   &.background {
-    background-color: $primary-color;
+    background-color: $color-primary;
   }
 
   &.secondary {
-    background-color: $secondary-color;
+    background-color: $color-secondary;
   }
 
   &.tertiary {
-    background-color: $tertiary-color;
+    background-color: $color-tertiary;
   }
 
   &.quaternary {
-    background-color: $quaternary-color;
+    background-color: $color-quaternary;
+  }
+
+  &.quinary {
+    background-color: $color-quinary;
   }
 
   &.auxiliary1 {
-    background-color: $auxiliary-color-1;
+    background-color: $color-shade;
   }
 
   &.auxiliary2 {
-    background-color: $auxiliary-color-2;
-  }
-
-  &.foreground {
-    background-color: $foreground-color;
+    background-color: $color-shade-lighter;
   }
 }
 
 .border {
-  border: 1px solid $auxiliary-color-2;
+  border: 1px solid $color-shade-lighter;
 }
 
 .txt {
   &.primary,
   &.over-light {
-    color: $primary-color;
-  }
-
-  &.over-dark {
-    color: $text-over-dark;
+    color: $color-primary;
   }
 
   &.secondary {
-    color: $secondary-color;
+    color: $color-secondary;
   }
 
   &.tertiary {
-    color: $tertiary-color;
+    color: $color-tertiary;
   }
 
   &.quaternary {
-    color: $quaternary-color;
+    color: $color-quaternary;
   }
 
   &.auxiliary1 {
-    color: $auxiliary-color-1;
+    color: $color-shade;
   }
 
   &.auxiliary2 {
-    color: $auxiliary-color-2;
+    color: $color-shade-lighter;
   }
 
   &.large {
@@ -237,13 +246,13 @@ a {
   box-sizing: border-box;
   transform: translate3d(0, 0, 0);
   transition: all 250ms $ease-out;
-  background-color: rgba($background-color, 0.3);
-  color: $foreground-color;
+  background-color: rgba($color-background, 0.3);
+  color: $color-text;
   z-index: 99999;
 
   &.sticky {
     height: 70px;
-    background-color: rgba($background-color, 1);
+    background-color: rgba($color-background, 1);
 
     .logo {
       transform: scale(0.75);
@@ -289,7 +298,7 @@ nav {
 
     a {
       text-decoration: none;
-      color: $foreground-color;
+      color: $color-text;
     }
 
     li {
@@ -320,7 +329,7 @@ nav {
 
   .overlay {
     opacity: 1;
-    background-color: rgba($background-color, .5);
+    background-color: rgba($color-background, .5);
     z-index: 4;
   }
 
@@ -343,15 +352,15 @@ nav {
   h1 {
     margin-bottom: 0;
     padding-bottom: 0;
-    color: $text-over-dark;
+    color: $color-text;
   }
 
   h5 {
     display: inline-block;
     width: auto;
     padding-bottom: 10px;
-    color: $text-over-dark;
-    border-bottom: 1px solid rgba($secondary-color, 1);
+    color: $color-text;
+    border-bottom: 1px solid rgba($color-accent, 1);
   }
 
   p {
@@ -365,7 +374,7 @@ nav {
   a {
     text-decoration: none;
     font-family: $font-family-title;
-    color: $text-over-dark;
+    color: $color-text-link;
     text-transform: uppercase;
     letter-spacing: $letter-spacing;
     margin-right: $margin2;
@@ -378,22 +387,30 @@ nav {
     .title::after {
       content: "";
       position: absolute;
-      border: 1px solid rgba($secondary-color, 0);
+      border: 1px solid rgba($color-accent, 0);
       left: 0;
       right: 0;
       bottom: 0;
     }
+  }
 
-    &:hover .title {
+  a:hover {
+    color: $color-text-link-hover;
+
+    .title {
       content: "";
-      color: rgba($secondary-color, 1);
+      color: rgba($color-accent, 1);
     }
+  }
+
+  &:visited {
+    color: $color-text-link-visited;
   }
 
   svg {
     width: 14px;
     height: 14px;
-    fill: rgba($secondary-color, 1);
+    fill: rgba($color-accent, 1);
     margin-right: $base-margin;
   }
 }
@@ -416,7 +433,7 @@ nav {
     left: 0;
     bottom: 100px;
     width: 100%;
-    color: $text-over-dark;
+    color: $color-text;
     height: auto;
     vertical-align: bottom;
     z-index: 5;
@@ -424,7 +441,8 @@ nav {
 }
 
 main {
-  background-color: $foreground-color;
+  background-color: $color-background-invert;
+  color: $color-text-invert;
 
   .row > .content {
     display: flex;
@@ -470,16 +488,16 @@ section {
   h3:first-child {
     margin-top: 0;
     padding-top: 0;
-    color: rgba($secondary-color, 1);
-    border-bottom: 1px solid $auxiliary-color-2;
+    color: rgba($color-accent, 1);
+    border-bottom: 1px solid $color-shade-lighter;
     margin-bottom: $margin4;
   }
 }
 
 footer {
   position: relative;
-  background: $background-color;
-  color: $foreground-color;
+  background: $color-footer;
+  color: $color-text;
   padding: 0;
   margin: 0;
   z-index: 5;
@@ -518,7 +536,7 @@ footer {
       width: 80%;
       bottom: 0;
       left: 0;
-      border-bottom: 1px solid rgba($secondary-color, 1);
+      border-bottom: 1px solid rgba($color-accent, 1);
     }
 
     ul {
@@ -533,7 +551,15 @@ footer {
 
     a {
       text-decoration: none;
-      color: $auxiliary-color-2;
+      color: $color-shade-lighter;
+    }
+
+    a:hover {
+      color: $color-shade-lighter;
+    }
+
+    a:visited {
+      color: $color-shade-lighter;
     }
   }
 
