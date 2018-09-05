@@ -1,3 +1,4 @@
+// @COLOR THEME CONFIGURATION
 // configuring application variables
 $theme: "dark";
 $color-primary: getcolor("primary");
@@ -16,12 +17,16 @@ $color-text-heading: getcolor("accent");
 
 // defining links
 $color-nav-primary-link: getcolor("foreground");
-$color-nav-secondary-link: getcolor("shade");
-$color-text-link: getcolor("shade-lighter");
-$color-text-link-visited: getcolor("shade-lighter");
-$color-text-link-hover: getcolor("shade");
+$color-nav-secondary-link: getcolor("neutral1");
+$color-text-link: getcolor("neutral2");
+$color-text-link-visited: getcolor("neutral1");
+$color-text-link-hover: getcolor("neutral2");
 
 // borders and shadows
 $color-border: getcolor("neutral2");
 $color-shade: getcolor("neutral1");
 $color-shadow: lighten(getcolor("neutral2"), 20%);
+
+// detailed color options: new variables to be added...
+$color-header: getcolor("background");
+$color-footer: getcolor("background");

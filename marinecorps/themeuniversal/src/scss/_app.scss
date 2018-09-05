@@ -1,1 +1,275 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font: {
+    family: Arial, sans-serif;
+    size: 14px;
+    weight: 300;
+  }
+  line-height: 1.4em;
+  background: $color-background;
+  color: $color-text;
+  overflow: hidden;
+  overflow-y: visible;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font: {
+    family: "Colossalis", Impact, sans-serif;
+    weight: 100;
+  }
+  color: $color-text-heading;
+  padding: 6px 0;
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 33px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font: {
+    size: 14px;
+    family: Arial, sans-serif;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .half {
+    width: 50%;
+  }
+
+  .third {
+    width: 33%;
+  }
+
+  .fourth {
+    width: 25%;
+  }
+
+  .fifth {
+    width: 20%;
+  }
+
+  .two-thirds {
+    width: 66%;
+  }
+}
+
+.container {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.row {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  footer {
+    height: 100px;
+    background-color: $color-footer;
+    color: $color-text;
+  }
+
+  main {
+    background-color: $color-background-invert;
+    color: $color-text-invert;
+  }
+
+  header {
+    background-color: $color-header;
+
+    .topline {
+      background-color: $color-accent;
+      height: 20px;
+    }
+
+    .navbar {
+      height: 80px;
+    }
+  }
+}
+
+.navbar {
+  .container {
+    display: table;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .logo {
+    display: table-cell;
+    height: inherit;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .nav {
+    display: table-cell;
+    height: inherit;
+    vertical-align: middle;
+    text-align: right;
+  }
+}
+
+.logo > img {
+  width: 150px;
+  height: auto;
+}
+
+nav {
+  ul {
+    list-style-type: none;
+    display: inline;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      padding: 12px 24px;
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+      color: $color-nav-primary-link;
+    }
+  }
+}
+
+.banner {
+  position: relative;
+  background: transparent url("img/banner.jpg") center center no-repeat;
+  background-size: cover;
+  height: auto;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-background, 0.2);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+
+    h1 {
+      display: block;
+      color: $color-text;
+      margin: 0.2em 0;
+    }
+
+    h5 {
+      display: inline-block;
+      width: auto;
+      min-width: 7em;
+      color: $color-text;
+      border-bottom: 1px solid $color-accent;
+    }
+
+    p {
+      color: $color-text;
+      padding: 12px 0;
+      margin: 0.4em 0;
+    }
+  }
+}
+
+main {
+  section:nth-child(odd) {
+    background-color: $color-background;
+    color: $color-text;
+  }
+
+  section:nth-child(even) {
+    background-color: $color-background-invert;
+    color: $color-text-invert;
+  }
+}
+
+footer {
+  header {
+    position: relative;
+    font-family: "Colossalis", Impact, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  header::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid $color-accent;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    width: 80%;
+    padding: 6px 0;
+  }
+
+  li {
+    padding: 3px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text-link;
+
+    &:hover {
+      color: $color-text-link-hover;
+    }
+  }
+}
