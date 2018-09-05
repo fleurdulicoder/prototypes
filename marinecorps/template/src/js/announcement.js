@@ -4,7 +4,7 @@ class Announcer {
   constructor(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
     this.root = document.body;
     this.close = document.getElementById(btnCloseId) || null;
-    this.carousel = new Carousel(id, pagerId, btnLeftId, btnRightId);
+    this.carousel = new Carousel(id, btnLeftId, btnRightId, pagerId);
     this.observe();
   }
 

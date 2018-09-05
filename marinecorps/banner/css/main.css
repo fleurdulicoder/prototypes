@@ -132,7 +132,7 @@ h5 {
   height: inherit;
   max-height: 60px;
   background-color: #940000;
-  color: #FFF;
+  color: #fff;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
@@ -143,10 +143,12 @@ h5 {
     transform: scale(1);
     opacity: 1;
   }
+
   5% {
     transform: scale(1.4);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -158,10 +160,12 @@ h5 {
     transform: scale(1);
     opacity: 1;
   }
+
   5% {
     transform: scale(1.4);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -173,10 +177,12 @@ h5 {
     transform: scale(1);
     opacity: 1;
   }
+
   5% {
     transform: scale(1.4);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -214,7 +220,7 @@ body.with-on-spot .on-point-bar .on-point h4 {
   height: inherit;
   font-size: 0.85rem;
   width: calc(100% - 200px);
-  color: #FFF;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,7 +375,7 @@ body.with-on-spot .on-point-bar .announcement {
   height: 120px;
   padding: 0 60px;
   background-color: rgba(0, 0, 0, 0.3);
-  color: #FFF;
+  color: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -441,7 +447,6 @@ nav>ul li, .nav-bar .social ul li {
   width: auto;
   background: rgba(150, 0, 0, 0.5);
   height: 50px;
-  width: auto;
   vertical-align: middle;
 }
 
@@ -602,7 +607,7 @@ nav>ul li, .nav-bar .social ul li {
   bottom: 100px;
   left: 0;
   width: 100%;
-  color: #FFF;
+  color: #fff;
   height: auto;
   vertical-align: bottom;
   z-index: 5;
@@ -628,16 +633,10 @@ nav>ul li, .nav-bar .social ul li {
   width: 400px;
 }
 
-.uppercased {
-  font-family: 'Colossalis', Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
 .app .banner .content a {
   text-decoration: none;
   font-family: 'Colossalis', Arial, sans-serif;
-  color: #FFF;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-right: 10px;
@@ -668,9 +667,7 @@ nav>ul li, .nav-bar .social ul li {
   height: 100px;
   color: white;
   z-index: 5;
-}
 
-.app .banner .navigate {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -694,7 +691,7 @@ nav>ul li, .nav-bar .social ul li {
 
 .navigate .prev span.title, .navigate .next span.title {
   position: relative;
-  color: #FFF;
+  color: #fff;
   margin: 0 10px;
   padding: 7px 0;
 }
