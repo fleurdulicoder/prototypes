@@ -17,7 +17,11 @@ $color-text-heading: getcolor("accent");
 
 // defining links
 $color-nav-primary-link: getcolor("foreground");
+$color-nav-primary-link-hover: getcolor("foreground");
+$color-nav-primary-link-visited: getcolor("foreground");
 $color-nav-secondary-link: getcolor("neutral1");
+$color-nav-secondary-link-hover: getcolor("neutral1");
+$color-nav-secondary-link-visited: getcolor("neutral1");
 $color-text-link: getcolor("neutral2");
 $color-text-link-visited: getcolor("neutral1");
 $color-text-link-hover: getcolor("neutral2");

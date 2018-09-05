@@ -179,6 +179,14 @@ nav {
       padding: 0;
       color: $color-nav-primary-link;
     }
+
+    a:hover {
+      color: $color-nav-primary-link-hover;
+    }
+
+    a:visited {
+      color: $color-nav-primary-link-visited;
+    }
   }
 }
 
@@ -270,6 +278,10 @@ footer {
 
     &:hover {
       color: $color-text-link-hover;
+    }
+
+    &:visited {
+      color: $color-text-link-visited;
     }
   }
 }
