@@ -1,6 +1,8 @@
 // @COLOR THEME CONFIGURATION
 // configuring application variables
 $theme: "dark";
+$theme-fullwidth: 100%;
+
 $color-primary: getcolor("primary");
 $color-accent: getcolor("accent");
 $color-highlight: getcolor("highlight");

@@ -106,7 +106,8 @@ h6 {
 
 .page {
   position: relative;
-  width: 100%;
+  width: $theme-fullwidth;
+  margin: 0 auto;
   height: auto;
 
   footer {
