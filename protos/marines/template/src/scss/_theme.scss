@@ -13,7 +13,23 @@ $brand: (
 // PALETTE: DARK / LIGHT
 // Configure a palette for your project based on brand colors
 $palette: (
-  light: (),
+  light: (
+    "primary": lighten(map-get($brand, "black"), 50%),
+    "secondary": lighten(map-get($brand, "red"), 50%),
+    "tertiary": lighten(map-get($brand, "burgundy"), 50%),
+    "quarternary": lighten(map-get($brand, "gold"), 50%),
+    "quinary": lighten(map-get($brand, "white"), 50%),
+    "senary": lighten(map-get($brand, "silver"), 50%),
+    "septenary": lighten(map-get($brand, "quick-silver"), 50%),
+
+    "accent": lighten(map-get($brand, "red"), 50%),
+    "complimentary": lighten(map-get($brand, "burgundy"), 50%),
+    "highlight": lighten(map-get($brand, "gold"), 50%),
+    "shade": lighten(map-get($brand, "black"), 50%),
+
+    "background": lighten(map-get($brand, "black"), 50%),
+    "foreground": lighten(map-get($brand, "white"), 50%),
+  ),
   dark: (
     "primary": map-get($brand, "black"),
     "secondary": map-get($brand, "red"),

@@ -14,66 +14,106 @@ $color-quinary: getcolor("quinary");
 $color-senary: getcolor("senary");
 $color-septenary: getcolor("septenary");
 
-// theme tone: assigned meaninfulness
+// theme tone: assigned meaningfulness
 $color-accent: getcolor("accent");
 $color-highlight: getcolor("highlight");
 $color-compliment: getcolor("compliment");
+
+// theme neutrals: mix of black/grey/white
 $color-shade: getcolor("shade");
+$color-shade-90: rgba(getcolor("shade"), 0.9);
+$color-shade-80: rgba(getcolor("shade"), 0.8);
+$color-shade-70: rgba(getcolor("shade"), 0.7);
+$color-shade-60: rgba(getcolor("shade"), 0.6);
+$color-shade-50: rgba(getcolor("shade"), 0.5);
+$color-shade-40: rgba(getcolor("shade"), 0.4);
+$color-shade-30: rgba(getcolor("shade"), 0.3);
+$color-shade-20: rgba(getcolor("shade"), 0.2);
+$color-shade-10: rgba(getcolor("shade"), 0.1);
 
+// theme backgrounds
+$background: getcolor("background");
+$background-header: getcolor("background");
+$background-footer: getcolor("background");
+$background-main: getcolor("foreground");
+$background-invert: getcolor("foreground");
+$background-overlay:rgba($background, 0.5);
 
+// theme primary navigation
+$color-nav-primary-link: getcolor("foreground");
+$color-nav-primary-link-hover: getcolor("foreground");
+$color-nav-primary-link-visited: getcolor("foreground");
+$color-nav-secondary-link: getcolor("senary");
+$color-nav-secondary-link-hover: getcolor("senary");
+$color-nav-secondary-link-visited: getcolor("senary");
+$color-text-link: getcolor("septenary");
+$color-text-link-visited: getcolor("septenary");
+$color-text-link-hover: getcolor("septenary");
 
+// theme images
+$logo: "../../img/marines-logo.png";
+$banner: "../../img/marines-banner.jpg";
 
+// borders and shadows
+$border-color: getcolor("septenary");
+$box-shadow-color: $color-shade-10;
+$text-shadow-color: $color-shade-10;
 
-
-
-// body
-$body-margin-left: 200px;
-$body-margin-right: 200px;
-$base-font-size: 14px;
-$font-color: #fff;
-$bg-color: #000;
-
-// marine corp colors
-$base-color: #000;
-$accent-color: #940000;
-$burgundy-color: #960000;
-$golden-color: #84754e;
-$darkgrey-color: #818283;
-$lightgrey-color: #a7a7a7;
-$white-color: #fff;
-
-// font family
-$font-family-title: "Colossalis";
-$font-family-body: "Arial";
-$font-weight-body: 300;
-$font-lineheight-body: 1.4rem;
-$letter-spacing: 2px;
+// theme fonts
+$font-family: Arial, sans-serif;
+$color: getcolor("foreground");
+$color-invert: getcolor("background");
+$font-weight: 300;
+$letter-spacing: 0;
+$font-size: 14px;
+$line-height: 1.4em;
 
 // font weights
-$font-weight-normal: 300;
 $font-weight-thin: 100;
+$font-weight-normal: 300;
 $font-weight-bold: 400;
 $font-weight-bolder: 500;
 
-// font sizes
-$font-size-h1: 60px; // 4.3rem - 80pt;
+// font sizes plus
+$font-size-x-small: 11px;
+$font-size-small: 13px;
+$font-size-normal: 14px;
+$font-size-large: 15px;
+$font-size-x-large: 16px;
+$font-size-xx-large: 18px;
+$font-size-xxx-large: 20px;
+
+// theme headings
+$font-family-heading: "Colossalis", Impact, sans-serif;
+$color-heading: getcolor("accent");
+$color-heading-invert: getcolor("quinary");
+$font-weight-heading: $font-weight-thin;
+$letter-spacing-heading: 2px;
+$line-height-heading: 1.2em;
+
+// font sizes headings
+$font-size-h1: 60px; // 4.3rem - 80pt
 $font-size-h2: 48px; // 3.4rem - 48pt;
 $font-size-h3: 36px; // 2.6rem - 36pt;
 $font-size-h4: 30px; // 2.14rem - 30pt;
-$font-size-h5: 22px; // 1.6rem - 18pt;
-$font-size-h6: 18px; // 0.875rem - 14pt; confirm??
-$font-size-lead: 16px; // 1.125rem - 18pt;
-$font-size-body: 14px; // 1rem - 16pt;
+$font-size-h5: 16px; // 1.6rem - 18pt;
+$font-size-h6: 13px; // 0.875rem - 14pt; confirm??
 
-// row
-$row-vertical-padding: 70px;
-$row-horizontal-padding: 120px;
-
-// on-point-bar
-$on-point-bar-height: 60px;
-$on-point-width: 200px;
-$on-point-pager-width: 65px;
-
+// base paddings & margins
+$padding-base: 3px;
+$margin-base: 4px;
+$padding-vertical-row: 70px;
+$padding-horizontal-row: 120px;
+$padding-vertical-row-mobile: 36px;
+$padding-horizontal-row-mobile: 36px;
 
 // navigation
 $navbar-height: 120px;
+
+// custom easing functions
+$ease-out: cubic-bezier(.41, .91, .52, .94);
+$ease-in: cubic-bezier(0, 0, 0, 1.1);
+$ease-in-out: ease-in-out;
+
+// media
+$breaking-point-large: 900px;

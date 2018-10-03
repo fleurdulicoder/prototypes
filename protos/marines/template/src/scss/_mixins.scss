@@ -1,3 +1,10 @@
+@function getcolor($key: "primary") {
+  @if $theme == null {
+      $theme: "light";
+  }
+  @return map-get(map-get($palette, $theme), $key);
+}
+
 // autoprefixing mixins not needed, we are using postcss
 @mixin x-calc($property, $expression) {
   #{$property}: calc(#{$expression});
