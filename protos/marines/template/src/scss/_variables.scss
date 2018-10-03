@@ -1,3 +1,31 @@
+// COLOR THEME CONFIGURATION
+// These variables are the same cross themes,
+// Please identify both, a theme variable as "light" or "dark"
+// All the variables below get populated through _theme.scss
+$theme: "dark";
+$theme-fullwidth: 100%;
+
+// theme palette: main colors
+$color-primary: getcolor("primary");
+$color-secondary: getcolor("secondary");
+$color-tertiary: getcolor("tertiary");
+$color-quaternary: getcolor("quaternary");
+$color-quinary: getcolor("quinary");
+$color-senary: getcolor("senary");
+$color-septenary: getcolor("septenary");
+
+// theme tone: assigned meaninfulness
+$color-accent: getcolor("accent");
+$color-highlight: getcolor("highlight");
+$color-compliment: getcolor("compliment");
+$color-shade: getcolor("shade");
+
+
+
+
+
+
+
 // body
 $body-margin-left: 200px;
 $body-margin-right: 200px;

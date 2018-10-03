@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 
 module.exports = {
   entry: ['./src/js/index.js'],
@@ -28,11 +29,18 @@ module.exports = {
         ],
       },
       {
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'eslint-loader',
+          options: {
+            configFile: '.eslintrc',
+          },
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        loader: 'babel-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -101,5 +109,12 @@ module.exports = {
       filename: 'css/[name].min.css',
       chunkFilename: 'css/[id].min.css',
     }),
+    new FlowBabelWebpackPlugin({
+      failOnError: true,
+      reportingSeverety: 'error',
+      printFlowOutput: true,
+      verbose: false,
+      flowPath: require.main.require('flow-bin'),
+    })
   ],
 };

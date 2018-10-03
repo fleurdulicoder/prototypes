@@ -22,3 +22,10 @@ Working example with all loaded prototypes into one large flow, website package
 Testing
 -------------------------------------------------------------------------------
 Using JEST framework for testing es6 code
+
+Debugging
+-------------------------------------------------------------------------------
+
+1. To trace deprecation:
+
+- $ node --trace-deprecation ./node_modules/.bin/webpack --bail --env dist -p

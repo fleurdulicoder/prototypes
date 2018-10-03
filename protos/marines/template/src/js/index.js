@@ -1,5 +1,5 @@
 import Announcer from './announcement';
-import '~bootstrap/scss/bootstrap-grid.scss';
+// import '~bootstrap/scss/bootstrap-grid.scss';
 import '../scss/index.scss';
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "gsap": "^2.0.1",
+    "jquery": "^3.3.1",
     "modernizr": "^3.6.0",
     "reset-css": "^4.0.1"
   },
@@ -13,7 +14,9 @@
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-flow-comments": "^6.22.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-minify": "^0.5.0-alpha.3cc09dcf",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
@@ -23,6 +26,8 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "file-loader": "^1.1.11",
+    "flow-babel-webpack-plugin": "^1.1.1",
+    "flow-bin": "^0.82.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "imagemin-gifsicle": "^5.2.0",
@@ -47,7 +52,8 @@
     "start": "webpack-dev-server --mode production --open --content-base dist/",
     "build": "webpack --mode production",
     "lint": "eslint **/*.js",
-    "lint-fix": "eslint --fix **/*.js"
+    "lint-fix": "eslint --fix **/*.js",
+    "flow": "flow"
   },
   "author": "Ella Musina",
   "license": "ISC"

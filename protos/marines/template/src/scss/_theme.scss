@@ -1,0 +1,34 @@
+// BRAND CONFIGURATION
+// Place brand colors with their names
+$brand: (
+  "black": #000,
+  "red": #940000,
+  "burgundy": #960000,
+  "gold": #84754e,
+  "white": #fff,
+  "silver": #818283,
+  "quick-silver": #a7a7a7,
+);
+
+// PALETTE: DARK / LIGHT
+// Configure a palette for your project based on brand colors
+$palette: (
+  light: (),
+  dark: (
+    "primary": map-get($brand, "black"),
+    "secondary": map-get($brand, "red"),
+    "tertiary": map-get($brand, "burgundy"),
+    "quaternary": map-get($brand, "gold"),
+    "quinary": map-get($brand, "white"),
+    "senary": map-get($brand, "silver"),
+    "septenary": map-get($brand, "quick-silver"),
+
+    "accent": map-get($brand, "red"),
+    "compliment": map-get($brand, "burgundy"),
+    "highlight": map-get($brand, "gold"),
+    "shade": map-get($brand, "black"),
+
+    "background": map-get($brand, "black"),
+    "foreground": map-get($brand, "white"),
+  ),
+);
