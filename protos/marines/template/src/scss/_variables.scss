@@ -6,13 +6,13 @@ $theme: "dark";
 $theme-fullwidth: 100%;
 
 // theme palette: main colors
-$color-primary: getcolor("primary");
-$color-secondary: getcolor("secondary");
-$color-tertiary: getcolor("tertiary");
-$color-quaternary: getcolor("quaternary");
-$color-quinary: getcolor("quinary");
-$color-senary: getcolor("senary");
-$color-septenary: getcolor("septenary");
+$color-primary: getcolor("primary"); // black
+$color-secondary: getcolor("secondary"); // red
+$color-tertiary: getcolor("tertiary"); // burgundy
+$color-quaternary: getcolor("quaternary"); // gold
+$color-quinary: getcolor("quinary"); // white
+$color-senary: getcolor("senary"); // silver
+$color-septenary: getcolor("septenary"); // quick-silver
 
 // theme tone: assigned meaningfulness
 $color-accent: getcolor("accent");
@@ -33,6 +33,7 @@ $color-shade-10: rgba(getcolor("shade"), 0.1);
 
 // theme backgrounds
 $background: getcolor("background");
+$foreground: getcolor("foreground");
 $background-header: getcolor("background");
 $background-footer: getcolor("background");
 $background-main: getcolor("foreground");
@@ -51,8 +52,8 @@ $color-text-link-visited: getcolor("septenary");
 $color-text-link-hover: getcolor("septenary");
 
 // theme images
-$logo: "../../img/logo.png";
-$banner: "../../img/img1.jpg";
+$logo: "../img/logo.png";
+$banner: "../img/img1.jpg";
 
 // borders and shadows
 $border-color: getcolor("septenary");
@@ -131,5 +132,13 @@ $media-breakpoint-md: 768px;
 $media-breakpoint-lg: 992px;
 $media-breakpoint-xl: 1200px;
 
-// navigation
-$navbar-height: 120px;
+// MARINE THEME CONFIGURATION
+// Here is custom unique variables for the Marines Theme application
+
+// marine theme heights
+$height-navbar: 120px;
+$height-onpoint: 60px;
+
+// marine theme widths
+$width-onpoint: 120px;
+$width-onpoint-pager: 65px;

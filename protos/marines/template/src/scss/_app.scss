@@ -1,30 +1,35 @@
-@import "mixins";
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
   position: relative;
-  @include x-fullspace();
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font: {
-    family: $font-family-body;
-    size: $font-size-body;
-    weight: $font-weight-normal;
+    family: $font-family;
+    size: $font-size;
+    weight: $font-weight;
   }
-  line-height: $font-lineheight-body;
-  background: $base-color;
+  color: $foreground;
+  background: $background;
+  line-height: $line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transform: translate3d(0, 0, 0);
-  transition: transform 400ms cubic-bezier(0, 0, 0, 1.1);
+  transition: transform 400ms $ease-in;
 
   &.with-on-point {
     transform: translate3d(0, 60px, 0);
   }
-}
 
-body::after {
-  content: url("../img/logo.png"), url("../img/img1.jpg"), url("../img/img2.jpg");
+  &::after {
+    content: url("#{$logo}"), url("#{$banner}");
+  }
 }
 
 h1,
@@ -32,11 +37,16 @@ h2,
 h3,
 h4,
 h5 {
-  color: $white-color;
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-thin;
+  }
+  color: $color-heading;
   text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-family: $font-family-title, $font-family-body, sans-serif;
-  font-weight: $font-weight-thin;
+  letter-spacing: $letter-spacing-heading;
+  line-height: $line-height-heading;
+  margin: $margin-base * 5 0 $margin-base * 3;
+  padding: 0;
 }
 
 h1 {
@@ -64,24 +74,42 @@ h5 {
   line-height: $font-size-h5;
 }
 
+h6 {
+  font: {
+    family: $font-family;
+    size: $font-size-h6;
+    weight: $font-weight-thin;
+  }
+  line-height: $font-size-h6;
+  letter-spacing: $letter-spacing-heading;
+  text-transform: uppercase;
+  margin: $margin-large 0 $margin;
+  padding: 0;
+}
+
 svg {
   vertical-align: middle;
 }
 
 p {
   padding: 0 0 10px;
-  font-size: $font-size-body;
+  font-size: $font-size;
 }
 
+// compare to bootstrap
+// .container {}
+// .row {}
+
 .row {
+  // add to mobile version
   position: relative;
-  padding: $row-vertical-padding $row-horizontal-padding;
+  padding: $padding-vertical-row $padding-horizontal-row;
 }
 
 .uppercased {
-  font-family: $font-family-title, $font-family-body, sans-serif;
+  font-family: $font-family-heading;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: $letter-spacing-heading;
 }
 
 .chevron-left,
@@ -111,12 +139,12 @@ a {
 
 .on-point-bar {
   position: absolute;
-  top: -$on-point-bar-height;
+  top: -$height-onpoint;
   left: 0;
   width: 100%;
-  height: $on-point-bar-height;
-  line-height: $on-point-bar-height;
-  background-color: $golden-color;
+  height: $height-onpoint;
+  line-height: $height-onpoint;
+  background-color: $color-highlight;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -125,11 +153,11 @@ a {
   align-content: stretch;
 
   .on-point {
-    width: $on-point-width;
+    width: $width-onpoint;
     height: inherit;
-    max-height: $on-point-bar-height;
-    background-color: $accent-color;
-    color: $white-color;
+    max-height: $height-onpoint;
+    background-color: $color-accent;
+    color: $color-quinary;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -137,7 +165,7 @@ a {
     h4 {
       margin: 0;
       padding: 0;
-      line-height: $on-point-bar-height;
+      line-height: $height-onpoint;
       animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
       animation-play-state: paused;
       opacity: 0;
@@ -146,9 +174,9 @@ a {
 
   .announcement {
     height: inherit;
-    @include x-calc(width, '100% - #{$on-point-width}');
-    background-color: $golden-color;
-    color: $white-color;
+    @include x-calc(width, '100% - #{$width-onpoint}');
+    background-color: $color-highlight;
+    color: $color-quinary;
     font-size: 0.85em;
 
     display: flex;
@@ -163,10 +191,10 @@ a {
     opacity: 0;
 
     .rotator {
-      @include x-calc(width, "100% - #{$on-point-pager-width} * 3");
+      @include x-calc(width, "100% - #{$width-onpoint-pager} * 3");
       width: 100%;
       height: inherit;
-      line-height: $on-point-bar-height;
+      line-height: $height-onpoint;
       overflow: hidden;
 
       display: flex;
@@ -180,9 +208,9 @@ a {
     .pager,
     .arrows,
     .close {
-      width: $on-point-pager-width;
+      width: $width-onpoint-pager;
       height: inherit;
-      line-height: $on-point-bar-height;
+      line-height: $height-onpoint;
       text-align: center;
     }
   }
@@ -203,7 +231,7 @@ a {
 .rotator>.message {
   width: 100%;
   height: inherit;
-  line-height: $on-point-bar-height;
+  line-height: $height-onpoint;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -216,7 +244,7 @@ a {
     width: 100%;
     min-width: 100%;
     height: inherit;
-    line-height: $on-point-bar-height;
+    line-height: $height-onpoint;
     padding: 0 1em;
     overflow: hidden;
     white-space: nowrap;
@@ -229,7 +257,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: $theme-fullwidth;
   height: 100%;
   min-height: 100%;
 }
@@ -238,9 +266,9 @@ a {
   position: fixed;
   width: 100%;
   height: $navbar-height;
-  background-color: rgba($base-color, 0.3);
+  background-color: $color-shade-30;
   padding: 0 60px;
-  color: $white-color;
+  color: $color-quinary;
   box-sizing: border-box;
   z-index: 99999;
 
@@ -264,7 +292,7 @@ a {
   width: 300px;
   height: inherit;
   border: 0;
-  color: rgba($white-color, 0);
+  color: rgba($color-quinary, 0);
   text-decoration: none;
 }
 
@@ -295,14 +323,14 @@ nav {
   position: absolute;
   top: 100%;
   right: 0;
-  background: rgba($accent-color, 0.5);
+  background: rgba($color-compliment, 0.5);
   height: 50px;
   width: auto;
   vertical-align: middle;
 
   svg {
     display: inline-block;
-    fill: $white-color;
+    fill: $color-quinary;
     width: 16px;
     height: 16px;
     padding: 16px;
@@ -350,14 +378,17 @@ nav {
   .next-slide,
   .current-slide {
     position: absolute;
-    @include x-fullspace();
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     top: 0;
     left: 0;
   }
 
   .overlay {
     opacity: 1;
-    background-color: rgba($base-color, 0.5);
+    background-color: $color-shade-50;
     z-index: 4;
   }
 
@@ -393,19 +424,19 @@ nav {
 
   >.circle {
     display: inline-block;
-    border: 1px solid $white-color;
+    border: 1px solid $color-quinary;
     width: 8px;
     height: 8px;
     border-radius: 8px;
     margin: 0 6px;
-    background-color: rgba($white-color, 0);
+    background-color: rgba($color-quinary, 0);
 
     &:hover {
-      background-color: rgba($white-color, 0.5);
+      background-color: rgba($color-quinary, 0.5);
     }
 
     &.current {
-      background-color: rgba($white-color, 1);
+      background-color: rgba($color-quinary, 1);
     }
   }
 }
@@ -416,7 +447,7 @@ nav {
   height: auto;
   bottom: 100px;
   left: 0;
-  color: $white-color;
+  color: $color-quinary;
   vertical-align: bottom;
   z-index: 5;
 
@@ -429,13 +460,13 @@ nav {
     display: inline-block;
     width: 4em;
     padding-bottom: 10px;
-    border-bottom: 1px solid $accent-color;
+    border-bottom: 1px solid $color-accent;
   }
 
   svg {
     width: 14px;
     height: 14px;
-    fill: $accent-color;
+    fill: $color-accent;
     margin-right: 4px;
   }
 
@@ -455,8 +486,8 @@ nav {
 
 aside>a {
   text-decoration: none;
-  font-family: $font-family-title, $font-family-body, sans-serif;
-  color: $white-color;
+  font-family: $font-family-heading;
+  color: $color-quinary;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-right: 10px;
@@ -469,19 +500,19 @@ aside>a {
   .title::after {
     content: "";
     position: absolute;
-    border: 1px solid rgba($accent-color, 0);
+    border: 1px solid rgba($color-accent, 0);
     left: 0;
     right: 0;
     bottom: 0;
   }
 
   &:hover>.title {
-    color: $accent-color;
+    color: $color-accent;
   }
 
   &:hover>.title::after {
     content: "";
-    border: 1px solid $accent-color;
+    border: 1px solid $color-accent;
   }
 }
 
@@ -491,7 +522,7 @@ aside>a {
   left: 0;
   right: 0;
   height: 100px;
-  color: $white-color;
+  color: $color-quinary;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -510,12 +541,12 @@ aside>a {
 
   .prev,
   .next {
-    color: $lightgrey-color;
+    color: $color-septenary;
     font-size: 13px;
 
     span.title {
       position: relative;
-      color: $white-color;
+      color: $color-quinary;
       margin: 0 10px;
       padding: 7px 0;
     }
@@ -523,7 +554,7 @@ aside>a {
     span.title::after {
       position: absolute;
       content: "";
-      border: 1px solid rgba($accent-color, 0);
+      border: 1px solid rgba($color-accent, 0);
       left: 0;
       right: 0;
       bottom: 0;
@@ -531,7 +562,7 @@ aside>a {
 
     &:hover span.title::after {
       content: "";
-      border: 1px solid $accent-color;
+      border: 1px solid $color-accent;
     }
   }
 }
