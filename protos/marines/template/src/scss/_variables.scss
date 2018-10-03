@@ -92,28 +92,44 @@ $letter-spacing-heading: 2px;
 $line-height-heading: 1.2em;
 
 // font sizes headings
-$font-size-h1: 60px; // 4.3rem - 80pt
-$font-size-h2: 48px; // 3.4rem - 48pt;
-$font-size-h3: 36px; // 2.6rem - 36pt;
-$font-size-h4: 30px; // 2.14rem - 30pt;
-$font-size-h5: 16px; // 1.6rem - 18pt;
-$font-size-h6: 13px; // 0.875rem - 14pt; confirm??
+$font-size-h1: 60px;
+$font-size-h2: 48px;
+$font-size-h3: 36px;
+$font-size-h4: 30px;
+$font-size-h5: 16px;
+$font-size-h6: 13px;
 
-// base paddings & margins
+// theme padding breadkdown
 $padding-base: 3px;
-$margin-base: 4px;
-$padding-vertical-row: 70px;
-$padding-horizontal-row: 120px;
-$padding-vertical-row-mobile: 36px;
-$padding-horizontal-row-mobile: 36px;
+$padding: $padding-base * 2;
+$padding-large: $padding-base * 3;
+$padding-x-large: $padding-base * 4;
+$padding-xx-large: $padding-base * 12;
+$padding-vertical-row: $padding-base * 24;
+$padding-horizontal-row: $padding-base * 40;
+$padding-vertical-row-mobile: $padding-base * 12;
+$padding-horizontal-row-mobile: $padding-base * 12;
 
-// navigation
+// theme margin breakdown
+$margin-base: 4px;
+$margin: $margin-base * 2;
+$margin-large: $margin-base * 3;
+$margin-x-large: $margin-base * 4;
+
+// theme navigation
 $navbar-height: 120px;
 
-// custom easing functions
+// theme custom easing functions
 $ease-out: cubic-bezier(.41, .91, .52, .94);
 $ease-in: cubic-bezier(0, 0, 0, 1.1);
 $ease-in-out: ease-in-out;
+$ease: ease;
 
-// media
-$breaking-point-large: 900px;
+// theme media queries: 4 bootstrap values
+$media-breakpoint-xs: 576px;
+$media-breakpoint-md: 768px;
+$media-breakpoint-lg: 992px;
+$media-breakpoint-xl: 1200px;
+
+// navigation
+$navbar-height: 120px;
