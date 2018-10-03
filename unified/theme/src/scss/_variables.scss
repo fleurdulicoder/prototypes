@@ -1,23 +1,49 @@
-// @COLOR THEME CONFIGURATION
-// configuring application variables
+
+// COLOR THEME CONFIGURATION
+// These variables are the same cross themes,
+// Please identify both, a theme variable as "light" or "dark"
+// All the variables below get populated through _theme.scss
 $theme: "dark";
 $theme-fullwidth: 100%;
 
+// theme palette: main colors
 $color-primary: getcolor("primary");
+$color-secondary: getcolor("secondary");
+$color-tertiary: getcolor("tertiary");
+$color-quaternary: getcolor("quaternary");
+$color-quinary: getcolor("quinary");
+$color-senary: getcolor("senary");
+$color-septenary: getcolor("septenary");
+
+// theme tone: assigned meaningfulness
 $color-accent: getcolor("accent");
 $color-highlight: getcolor("highlight");
 $color-compliment: getcolor("compliment");
-$color-shade: getcolor("neutral1");
-$color-shade-lighter: getcolor("neutral2");
 
-// defining generic variables
-$color-background: getcolor("background");
-$color-background-invert: getcolor("foreground");
-$color-text: getcolor("foreground");
-$color-text-invert: getcolor("background");
-$color-text-heading: getcolor("accent");
+// theme neutrals: mix of black/grey/white
+$color-shade: getcolor("shade");
+$color-shade-90: rgba(getcolor("shade"), 90%);
+$color-shade-80: rgba(getcolor("shade"), 80%);
+$color-shade-70: rgba(getcolor("shade"), 70%);
+$color-shade-60: rgba(getcolor("shade"), 60%);
+$color-shade-50: rgba(getcolor("shade"), 50%);
+$color-shade-40: rgba(getcolor("shade"), 40%);
+$color-shade-30: rgba(getcolor("shade"), 30%);
+$color-shade-20: rgba(getcolor("shade"), 20%);
+$color-shade-10: rgba(getcolor("shade"), 10%);
 
-// defining links
+// theme backgrounds
+$background: getcolor("background");
+$background-header: getcolor("background");
+$background-footer: getcolor("background");
+$background-main: getcolor("foreground");
+$background-invert: invert($background);
+
+// theme font color
+$color-border: getcolor("tertiary");
+$color-shadow: $color-shade-10;
+
+// theme primary navigation
 $color-nav-primary-link: getcolor("foreground");
 $color-nav-primary-link-hover: getcolor("foreground");
 $color-nav-primary-link-visited: getcolor("foreground");
@@ -28,11 +54,27 @@ $color-text-link: getcolor("neutral2");
 $color-text-link-visited: getcolor("neutral1");
 $color-text-link-hover: getcolor("neutral2");
 
-// borders and shadows
-$color-border: getcolor("neutral2");
-$color-shade: getcolor("neutral1");
-$color-shadow: lighten(getcolor("neutral2"), 20%);
+// theme images
+$logo: "../img/logo.png";
+$banner: "../img/banner.jpg";
 
-// detailed color options: new variables to be added...
-$color-header: getcolor("background");
-$color-footer: getcolor("background");
+// theme font
+$font-family: Arial, sans-serif;
+$font-color: getcolor("primary");
+$font-color-invert: invert($font-color);
+$font-weight: 300;
+$font-line-height: 1.4em;
+$font-size: 14px;
+
+// theme headings
+$font-family-heading: "Colossalis", Impact, sans-serif;
+$font-color-heading: getcolor("accent");
+$font-color-heading-invert: getcolor("quinary");
+$font-weight-heading: 100;
+$font-line-height-heading: 1.2em;
+$font-size-h1: 60px;
+$font-size-h2: 33px;
+$font-size-h3: 28px;
+$font-size-h4: 24px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;

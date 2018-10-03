@@ -1,4 +1,5 @@
-// brand configuration
+// BRAND CONFIGURATION
+// Place brand colors with their names
 $brand: (
   "black": #000,
   "red": #940000,
@@ -9,7 +10,8 @@ $brand: (
   "quick-silver": #a7a7a7,
 );
 
-// light & dark palettes
+// PALETTE: DARK / LIGHT
+// Configure a palette for your project based on brand colors
 $palette: (
   light: (
     "primary": lighten(map-get($brand, "black"), 50%),
@@ -17,15 +19,16 @@ $palette: (
     "tertiary": lighten(map-get($brand, "burgundy"), 50%),
     "quarternary": lighten(map-get($brand, "gold"), 50%),
     "quinary": lighten(map-get($brand, "white"), 50%),
+    "senary": lighten(map-get($brand, "silver"), 50%),
+    "septenary": lighten(map-get($brand, "quick-silver"), 50%),
 
     "accent": lighten(map-get($brand, "red"), 50%),
     "complimentary": lighten(map-get($brand, "burgundy"), 50%),
     "highlight": lighten(map-get($brand, "gold"), 50%),
+    "shade": lighten(map-get($brand, "black"), 50%),
+
     "background": lighten(map-get($brand, "black"), 50%),
     "foreground": lighten(map-get($brand, "white"), 50%),
-
-    "neutral1": lighten(map-get($brand, "silver"), 50%),
-    "neutral2": lighten(map-get($brand, "quick-silver"), 50%),
   ),
   dark: (
     "primary": map-get($brand, "black"),
@@ -33,14 +36,15 @@ $palette: (
     "tertiary": map-get($brand, "burgundy"),
     "quarternary": map-get($brand, "gold"),
     "quinary": map-get($brand, "white"),
+    "senary": map-get($brand, "silver"),
+    "septenary": map-get($brand, "quick-silver"),
 
     "accent": map-get($brand, "red"),
     "complimentary": map-get($brand, "burgundy"),
     "highlight": map-get($brand, "gold"),
+    "shade": map-get($brand, "black"),
+
     "background": map-get($brand, "black"),
     "foreground": map-get($brand, "white"),
-
-    "neutral1": map-get($brand, "silver"),
-    "neutral2": map-get($brand, "quick-silver"),
   ),
 );
