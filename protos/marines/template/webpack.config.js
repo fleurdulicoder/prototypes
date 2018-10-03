@@ -90,7 +90,7 @@ module.exports = {
         bail: false,
         plugins: ImageMinGifsicle({
           interlaced: true,
-          optimizationLevel: 5,
+          optimizationLevel: 3,
         }),
       },
     }),
@@ -98,8 +98,8 @@ module.exports = {
       { from: './img/**/*.{jpg,jpeg,png,gif}', to: '' },
     ]),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css',
+      filename: 'css/[name].min.css',
+      chunkFilename: 'css/[id].min.css',
     }),
   ],
 };
