@@ -20,11 +20,13 @@ body {
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   transform: translate3d(0, 0, 0);
   transition: transform 400ms $ease-in;
+  perspective: 1000px;
 
   &.with-on-point {
-    transform: translate3d(0, 60px, 0);
+    transform: translate3d(0, $height-onpoint, 0);
   }
 
   &::after {
@@ -112,6 +114,7 @@ p {
   letter-spacing: $letter-spacing-heading;
 }
 
+.logo,
 .chevron-left,
 .chevron-right,
 .close,
@@ -165,8 +168,9 @@ a {
     h4 {
       margin: 0;
       padding: 0;
+      color: $color-quinary;
       line-height: $height-onpoint;
-      animation: flash-in 1s cubic-bezier(.41, .91, .52, .94) 300ms 1 forwards;
+      animation: flash-in 1s $ease-out 300ms 1 forwards;
       animation-play-state: paused;
       opacity: 0;
     }
@@ -177,7 +181,7 @@ a {
     @include x-calc(width, '100% - #{$width-onpoint}');
     background-color: $color-highlight;
     color: $color-quinary;
-    font-size: 0.85em;
+    font-size: 0.85rem;
 
     display: flex;
     flex-direction: row;
@@ -265,11 +269,10 @@ a {
 .app>.nav-bar {
   position: fixed;
   width: 100%;
-  height: $navbar-height;
+  height: $height-navbar;
   background-color: $color-shade-30;
   padding: 0 60px;
   color: $color-quinary;
-  box-sizing: border-box;
   z-index: 99999;
 
   .container {
@@ -285,7 +288,7 @@ a {
   }
 }
 
-.logo {
+.nav-bar .container>.logo {
   text-align: left;
   background: transparent url("../img/logo.png") no-repeat center center;
   background-size: contain;
@@ -300,6 +303,7 @@ nav {
   text-align: right;
   vertical-align: middle;
   width: calc(100% - 300px);
+  font-size: $font-size-small;
 
   ul {
     list-style-type: none;
@@ -311,11 +315,26 @@ nav {
       position: relative;
       display: inline-block;
       height: inherit;
-      font-size: 0.8rem;
       padding: 16px;
       margin: 0;
       box-sizing: border-box;
     }
+  }
+
+  a,
+  a:active {
+    color: $color-nav-primary-link;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $color-nav-primary-link-hover;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $color-nav-primary-link-visited;
+    text-decoration: none;
   }
 }
 
