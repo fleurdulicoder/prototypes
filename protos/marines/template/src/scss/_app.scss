@@ -1,3 +1,20 @@
+@keyframes flash-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  5% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -18,9 +35,16 @@ body {
   color: $foreground;
   background: $background;
   line-height: $line-height;
+
+  // test cross browser
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+  font-variant-ligatures: none;
+  text-shadow: $text-shadow-color 0 0 1px;
 
+  // body animation prep for on-point
   transform: translate3d(0, 0, 0);
   transition: transform 400ms $ease-in;
   perspective: 1000px;
@@ -44,9 +68,9 @@ h5 {
     weight: $font-weight-thin;
   }
   color: $color-heading;
-  text-transform: uppercase;
   letter-spacing: $letter-spacing-heading;
   line-height: $line-height-heading;
+  text-transform: uppercase;
   margin: $margin-base * 5 0 $margin-base * 3;
   padding: 0;
 }
@@ -89,29 +113,40 @@ h6 {
   padding: 0;
 }
 
-svg {
-  vertical-align: middle;
+.facebook {
+  background: transparent url("#{$facebook}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/facebook.svg"), linear-gradient(transparent, transpaent);
 }
 
-p {
-  padding: 0 0 10px;
-  font-size: $font-size;
+.twitter {
+  background: transparent url("#{$twitter}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/twitter.svg"), linear-gradient(transparent, transpaent);
 }
 
-// compare to bootstrap
-// .container {}
-// .row {}
-
-.row {
-  // add to mobile version
-  position: relative;
-  padding: $padding-vertical-row $padding-horizontal-row;
+.rss {
+  background: transparent url("#{$rss}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/twitter.svg"), linear-gradient(transparent, transpaent);
 }
 
-.uppercased {
-  font-family: $font-family-heading;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing-heading;
+.youtube {
+  background: transparent url("#{$youtube}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/youtube.svg"), linear-gradient(transparent, transpaent);
+}
+
+.instagram {
+  background: transparent url("#{$instagram}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/instagram.svg"), linear-gradient(transparent, transpaent);
+}
+
+.flickr {
+  background: transparent url("#{$flickr}") no-repeat center center;
+  background-size: auto 18px;
+  // background: url("../img/flickr.svg"), linear-gradient(transparent, transpaent);
 }
 
 .logo,
@@ -123,24 +158,16 @@ a {
   cursor: pointer;
 }
 
-@keyframes flash-in {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  5% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+svg {
+  vertical-align: middle;
 }
 
-.on-point-bar {
+p {
+  padding: 0 0 10px;
+  font-size: $font-size;
+}
+
+.on-point {
   position: absolute;
   top: -$height-onpoint;
   left: 0;
@@ -155,12 +182,12 @@ a {
   align-items: center;
   align-content: stretch;
 
-  .on-point {
+  .heading {
     width: $width-onpoint;
     height: inherit;
     max-height: $height-onpoint;
     background-color: $color-accent;
-    color: $color-quinary;
+    color: $color-septenary;
     text-transform: uppercase;
     text-align: center;
     white-space: nowrap;
@@ -168,7 +195,7 @@ a {
     h4 {
       margin: 0;
       padding: 0;
-      color: $color-quinary;
+      color: $color-heading-invert;
       line-height: $height-onpoint;
       animation: flash-in 1s $ease-out 300ms 1 forwards;
       animation-play-state: paused;
@@ -180,7 +207,7 @@ a {
     height: inherit;
     @include x-calc(width, '100% - #{$width-onpoint}');
     background-color: $color-highlight;
-    color: $color-quinary;
+    color: $color-septenary;
     font-size: 0.85rem;
 
     display: flex;
@@ -250,29 +277,28 @@ a {
     height: inherit;
     line-height: $height-onpoint;
     padding: 0 1em;
-    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    box-sizing: border-box;
+    overflow: hidden;
   }
 }
 
 .app {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: $theme-fullwidth;
   height: 100%;
   min-height: 100%;
+  margin: 0 auto;
 }
 
 .app>.nav-bar {
-  position: fixed;
+  position: absolute;
   width: 100%;
+  padding: 0;
+  margin: 0;
   height: $height-navbar;
   background-color: $color-shade-30;
-  padding: 0 60px;
-  color: $color-quinary;
+  color: $color-septenary;
   z-index: 99999;
 
   .container {
@@ -284,6 +310,8 @@ a {
     align-items: center;
     align-content: stretch;
     height: inherit;
+    padding-left: $padding-vertical-row;
+    padding-right: $padding-vertical-row;
     overflow: visible;
   }
 }
@@ -295,46 +323,65 @@ a {
   width: 300px;
   height: inherit;
   border: 0;
-  color: rgba($color-quinary, 0);
+  color: rgba($color-septenary, 0);
   text-decoration: none;
 }
 
 nav {
-  text-align: right;
-  vertical-align: middle;
   width: calc(100% - 300px);
-  font-size: $font-size-small;
+  font-size: $font-size;
+  height: 100%;
+  text-align: right;
 
   ul {
     list-style-type: none;
-    display: inline;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: inherit;
     margin: 0;
     padding: 0;
 
     >li {
       position: relative;
-      display: inline-block;
+      display: list-item;
       height: inherit;
-      padding: 16px;
+      line-height: $height-navbar;
+      padding: 0 20px;
       margin: 0;
       box-sizing: border-box;
     }
+
+    >li:last-child {
+      padding-right: 0;
+    }
+
+    >li:first-child {
+      padding-left: 0;
+    }
   }
 
-  a,
-  a:active {
+  a {
     color: $color-nav-primary-link;
     text-decoration: none;
+
+    &:active {
+      color: $color-nav-primary-link;
+    }
+
+    &:hover {
+      color: $color-nav-primary-link-hover;
+    }
+
+    &:visited {
+      color: $color-nav-primary-link-visited;
+    }
   }
 
-  a:hover {
-    color: $color-nav-primary-link-hover;
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: $color-nav-primary-link-visited;
-    text-decoration: none;
+  .fa.fa-search {
+    font-size: $font-size-large;
   }
 }
 
@@ -342,33 +389,92 @@ nav {
   position: absolute;
   top: 100%;
   right: 0;
+  min-width: 288px;
+  height: $height-social;
   background: rgba($color-compliment, 0.5);
-  height: 50px;
-  width: auto;
   vertical-align: middle;
+  overflow: hidden;
+  z-index: 1;
 
-  svg {
-    display: inline-block;
-    fill: $color-quinary;
-    width: 16px;
-    height: 16px;
-    padding: 16px;
+  .search {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    z-index: 8;
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      opacity: 1; // keep at 0 for animation purpose
+    }
+
+    button {
+      position: absolute;
+      top: 16px;
+      right: 14px;
+      color: $color-septenary;
+      font-size: 24px;
+      background: none;
+      border: 0;
+    }
+
+    input {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding-left: 8px;
+      padding-right: 28px;
+      background: transparent;
+      color: $color-septenary;
+      border: 1px solid $color-septenary;
+    }
+
+    input:focus {
+      outline-color: rgba($color-septenary, 0.01);
+    }
+
+    input::placeholder {
+      color: $color-septenary;
+    }
   }
 
-  ul {
-    text-align: right;
-    width: auto;
-    vertical-align: middle;
+  .icons {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: inherit;
     height: inherit;
-    margin: 0;
-    padding: 0;
+    white-space: nowrap;
+    z-index: 7;
 
-    li {
-      display: inline;
-      width: 36px;
-      height: 36px;
+    // svg {
+    //  display: inline-block;
+    //  fill: $color-septenary;
+    //  width: 16px;
+    //  height: 16px;
+    //  padding: 0 20px;
+    // }
+
+    >a {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      max-width: 48px;
+      height: 100%;
       padding: 0;
       margin: 0;
+      border: 0;
+      outline: 0;
+      color: $color-septenary;
+      text-decoration: none;
+      text-indent: -2000px;
     }
   }
 }
@@ -390,7 +496,7 @@ nav {
 
 .banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   .overlay,
@@ -407,7 +513,7 @@ nav {
 
   .overlay {
     opacity: 1;
-    background-color: $color-shade-50;
+    background: $background-overlay;
     z-index: 4;
   }
 
@@ -426,7 +532,7 @@ nav {
   }
 
   .current-slide {
-    background-image: url("../img/img1.jpg");
+    background-image: url("../img/banner.jpg");
     z-index: 3;
   }
 }
@@ -443,19 +549,19 @@ nav {
 
   >.circle {
     display: inline-block;
-    border: 1px solid $color-quinary;
+    border: 1px solid $color-septenary;
     width: 8px;
     height: 8px;
     border-radius: 8px;
     margin: 0 6px;
-    background-color: rgba($color-quinary, 0);
+    background-color: rgba($color-septenary, 0);
 
     &:hover {
-      background-color: rgba($color-quinary, 0.5);
+      background-color: rgba($color-septenary, 0.5);
     }
 
     &.current {
-      background-color: rgba($color-quinary, 1);
+      background-color: rgba($color-septenary, 1);
     }
   }
 }
@@ -466,7 +572,7 @@ nav {
   height: auto;
   bottom: 100px;
   left: 0;
-  color: $color-quinary;
+  color: $color-septenary;
   vertical-align: bottom;
   z-index: 5;
 
@@ -506,7 +612,7 @@ nav {
 aside>a {
   text-decoration: none;
   font-family: $font-family-heading;
-  color: $color-quinary;
+  color: $color-septenary;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-right: 10px;
@@ -541,7 +647,7 @@ aside>a {
   left: 0;
   right: 0;
   height: 100px;
-  color: $color-quinary;
+  color: $color-septenary;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -565,7 +671,7 @@ aside>a {
 
     span.title {
       position: relative;
-      color: $color-quinary;
+      color: $color-septenary;
       margin: 0 10px;
       padding: 7px 0;
     }
@@ -583,5 +689,19 @@ aside>a {
       content: "";
       border: 1px solid $color-accent;
     }
+  }
+}
+
+main {
+  .container {
+    position: relative;
+    padding-left: $padding-horizontal-row;
+    padding-right: $padding-horizontal-row;
+  }
+
+  .row {
+    position: relative;
+    padding-top: $padding-vertical-row;
+    padding-bottom: $padding-vertical-row;
   }
 }
