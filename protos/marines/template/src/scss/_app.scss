@@ -188,6 +188,7 @@ p {
 
 .container {
   position: relative;
+  width: 100%;
   padding-left: $padding-horizontal-row;
   padding-right: $padding-horizontal-row;
 }
@@ -625,58 +626,56 @@ nav {
     }
   }
 
-  >.navigate {
+  .navigate {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     height: 100px;
-    color: $color-septenary;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-grow: 1;
-    justify-content: space-between;
     z-index: 5;
+
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-grow: 1;
+      justify-content: space-between;
+      height: 100%;
+    }
 
     .prev,
     .next {
-      color: $color-septenary;
+      font-family: $font-family-heading;
+      color: $color-senary;
       font-size: $font-size;
+      text-transform: uppercase;
     }
 
-    // span.title {
-    //   position: relative;
-    //   color: $color-septenary;
-    //   margin: 0 15px;
-    //   padding: 7px 0;
-    // }
+    span.title {
+      position: relative;
+      color: $color-septenary;
+      margin: 0 15px;
+      padding: 7px 0;
+    }
 
-    // span.title::after {
-    //   position: absolute;
-    //   content: "";
-    //   bottom: -5px;
-    //   left: 0;
-    //   width: 0%;
-    //   border-bottom: 2px solid rgba($color-accent, 0);
-    //   transition: 0.4s;
-    // }
+    span.title::after {
+      border-color: rgba($color-accent, 0);
+    }
 
     // .prev:hover span.title::after,
     // .next:hover span.title::after {
     //    content: "";
     //    border: 1px solid $color-accent;
     // }
-
   }
 }
 
 aside>a {
   text-decoration: none;
   font-family: $font-family-heading;
+  letter-spacing: $letter-spacing-heading;
   text-transform: uppercase;
-  letter-spacing: 3px;
   margin-right: 15px;
 
   svg,
