@@ -1,3 +1,20 @@
+@keyframes flash-in {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  5% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -99,37 +116,31 @@ h6 {
 .facebook {
   background: transparent url("#{$facebook}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/facebook.svg"), linear-gradient(transparent, transpaent);
 }
 
 .twitter {
   background: transparent url("#{$twitter}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/twitter.svg"), linear-gradient(transparent, transpaent);
 }
 
 .rss {
   background: transparent url("#{$rss}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/twitter.svg"), linear-gradient(transparent, transpaent);
 }
 
 .youtube {
   background: transparent url("#{$youtube}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/youtube.svg"), linear-gradient(transparent, transpaent);
 }
 
 .instagram {
   background: transparent url("#{$instagram}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/instagram.svg"), linear-gradient(transparent, transpaent);
 }
 
 .flickr {
   background: transparent url("#{$flickr}") no-repeat center center;
   background-size: auto 18px;
-  // background: url("../img/flickr.svg"), linear-gradient(transparent, transpaent);
 }
 
 .logo,
@@ -150,21 +161,10 @@ p {
   font-size: $font-size;
 }
 
-@keyframes flash-in {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  5% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.container {
+  position: relative;
+  padding-left: $padding-horizontal-row;
+  padding-right: $padding-horizontal-row;
 }
 
 .on-point {
@@ -291,7 +291,7 @@ p {
   margin: 0 auto;
 }
 
-.app>.nav-bar {
+.nav-bar {
   position: absolute;
   width: 100%;
   padding: 0;
@@ -302,7 +302,6 @@ p {
   z-index: 99999;
 
   .container {
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -310,21 +309,19 @@ p {
     align-items: center;
     align-content: stretch;
     height: inherit;
-    padding-left: $padding-vertical-row;
-    padding-right: $padding-vertical-row;
     overflow: visible;
-  }
-}
 
-.nav-bar .container>.logo {
-  text-align: left;
-  background: transparent url("../img/logo.png") no-repeat center center;
-  background-size: contain;
-  width: 300px;
-  height: inherit;
-  border: 0;
-  color: rgba($color-septenary, 0);
-  text-decoration: none;
+    >.logo {
+      text-align: left;
+      background: transparent url("../img/logo.png") no-repeat center center;
+      background-size: contain;
+      width: 300px;
+      height: inherit;
+      border: 0;
+      color: rgba($color-septenary, 0);
+      text-decoration: none;
+    }
+  }
 }
 
 nav {
@@ -380,7 +377,7 @@ nav {
     }
   }
 
-  .fa.fa-search {
+  i.fa.fa-search {
     font-size: $font-size-large;
   }
 }
@@ -397,13 +394,13 @@ nav {
   z-index: 1;
 
   .search {
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
     z-index: 8;
-    display: none; // decide on animation
+    display: none;
 
     .wrapper {
       position: absolute;
@@ -455,14 +452,6 @@ nav {
     white-space: nowrap;
     z-index: 7;
 
-    // svg {
-    //  display: inline-block;
-    //  fill: $color-septenary;
-    //  width: 16px;
-    //  height: 16px;
-    //  padding: 0 20px;
-    // }
-
     >a {
       position: relative;
       display: inline-block;
@@ -497,7 +486,7 @@ nav {
 
 .banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   .overlay,
@@ -510,19 +499,6 @@ nav {
     padding: 0;
     top: 0;
     left: 0;
-  }
-
-  .overlay {
-    opacity: 1;
-    background: $background-overlay;
-    // background: -moz-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-    // background: -webkit-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -o-linear-gradient(to bottom, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -ms-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: linear-gradient(to bottom, rgba($color-shade, 0), rgba($color-shade, 0), rgba($color-shade, 1));
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color-shade}', endColorstr='#{$color-shade}', GradientType=0);
-    z-index: 4;
   }
 
   .next-slide,
@@ -544,21 +520,27 @@ nav {
     z-index: 3;
   }
 
+  .overlay {
+    opacity: 1;
+    background: $background-overlay;
+    // background: -moz-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+    // background: -webkit-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    // background: -o-linear-gradient(to bottom, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    // background: -ms-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    // background: linear-gradient(to bottom, rgba($color-shade, 0), rgba($color-shade, 0), rgba($color-shade, 1));
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color-shade}', endColorstr='#{$color-shade}', GradientType=0);
+    z-index: 4;
+  }
+
   .content {
     position: absolute;
     width: 100%;
     height: auto;
     bottom: 100px;
     left: 0;
-    color: $color-septenary;
     vertical-align: bottom;
     z-index: 5;
-
-    .container {
-      position: relative;
-      padding-left: $padding-horizontal-row;
-      padding-right: $padding-horizontal-row;
-    }
 
     h1 {
       margin-bottom: 0;
@@ -568,17 +550,19 @@ nav {
 
     h5 {
       display: inline-block;
-      min-width: 4em;
-      padding-bottom: 10px;
+      width: 4em;
       color: $color-septenary;
       border-bottom: 1px solid $color-accent;
+      padding-bottom: 10px;
     }
 
     p {
-      width: 50%;
-      line-height: 1.5em;
+      font-size: $font-size;
+      line-height: 1.5;
       padding: 0;
       margin: 0 0 30px;
+      width: 50%;
+      color: $color-septenary;
     }
 
     aside {
@@ -586,12 +570,86 @@ nav {
       margin-top: 16px;
     }
   }
+
+  >.counter {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    text-align: center;
+    min-height: 20px;
+    z-index: 6;
+
+    >.circle {
+      display: inline-block;
+      border: 1px solid $color-septenary;
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      margin: 0 6px;
+      background-color: rgba($color-septenary, 0);
+    }
+
+    .circle:hover {
+      background-color: rgba($color-septenary, 0.5);
+    }
+
+    .circle.current {
+      background-color: rgba($color-septenary, 1);
+    }
+  }
+
+  >.navigate {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    color: $color-septenary;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    justify-content: space-between;
+    z-index: 5;
+
+    .prev,
+    .next {
+      color: $color-septenary;
+      font-size: $font-size;
+    }
+
+    span.title {
+      position: relative;
+      color: $color-septenary;
+      margin: 0 15px;
+      padding: 7px 0;
+    }
+
+    // span.title::after {
+    //   position: absolute;
+    //   content: "";
+    //   bottom: -5px;
+    //   left: 0;
+    //   width: 0%;
+    //   border-bottom: 2px solid rgba($color-accent, 0);
+    //   transition: 0.4s;
+    // }
+
+    // .prev:hover span.title::after,
+    // .next:hover span.title::after {
+    //    content: "";
+    //    border: 1px solid $color-accent;
+    // }
+
+  }
 }
 
 aside>a {
   text-decoration: none;
   font-family: $font-family-heading;
-  color: $color-septenary;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-right: 15px;
@@ -600,7 +658,6 @@ aside>a {
   i.fas {
     width: 16px;
     height: 16px;
-    font-size: 16px;
     fill: $color-accent;
     color: $color-accent;
     margin-right: 4px;
@@ -608,16 +665,22 @@ aside>a {
 
   .title {
     position: relative;
-    padding: 7px 0;
+    color: $color-septenary;
+    padding: 5px 0;
   }
 
   .title::after {
     content: "";
     position: absolute;
-    border: 1px solid rgba($color-accent, 0);
+    border: 1px;
+    border-style: solid;
+    border-color: rgba($color-accent, 0);
     left: 0;
     right: 0;
     bottom: 0;
+    transform-origin: left;
+    transform: scaleX(0.01);
+    transition: all 400ms $ease-out;
   }
 
   &:hover>.title {
@@ -626,90 +689,8 @@ aside>a {
 
   &:hover>.title::after {
     content: "";
-    border: 1px solid $color-accent;
-  }
-}
-
-
-
-.banner>.counter {
-  position: absolute;
-  bottom: 100px;
-  left: 0;
-  right: 0;
-  height: 20px;
-  text-align: center;
-  min-height: 20px;
-  z-index: 6;
-
-  >.circle {
-    display: inline-block;
-    border: 1px solid $color-septenary;
-    width: 8px;
-    height: 8px;
-    border-radius: 8px;
-    margin: 0 6px;
-    background-color: rgba($color-septenary, 0);
-
-    &:hover {
-      background-color: rgba($color-septenary, 0.5);
-    }
-
-    &.current {
-      background-color: rgba($color-septenary, 1);
-    }
-  }
-}
-
-
-.navigate {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  color: $color-septenary;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-  justify-content: space-between;
-  z-index: 5;
-
-  >.prev {
-    padding-left: 100px;
-  }
-
-  >.next {
-    padding-right: 100px;
-  }
-
-  .prev,
-  .next {
-    color: $color-septenary;
-    font-size: 13px;
-
-    span.title {
-      position: relative;
-      color: $color-septenary;
-      margin: 0 10px;
-      padding: 7px 0;
-    }
-
-    span.title::after {
-      position: absolute;
-      content: "";
-      border: 1px solid rgba($color-accent, 0);
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-
-    &:hover span.title::after {
-      content: "";
-      border: 1px solid $color-accent;
-    }
+    transform: scaleX(1);
+    border-color: rgba($color-accent, 1);
   }
 }
 
