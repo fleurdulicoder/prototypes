@@ -113,6 +113,31 @@ h6 {
   padding: 0;
 }
 
+a > span {
+  position: relative;
+  padding: 5px 0;
+}
+
+a > span::after {
+  content: "";
+  position: absolute;
+  border: 1px;
+  border-style: solid;
+  border-color: rgba($color-septenary, 0);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform-origin: left;
+  transform: scaleX(0.01);
+  transition: all 400ms $ease-out;
+}
+
+a:hover > span::after {
+  content: "";
+  transform: scaleX(1);
+  border-color: rgba($color-septenary, 1);
+}
+
 .facebook {
   background: transparent url("#{$facebook}") no-repeat center center;
   background-size: auto 18px;
@@ -552,7 +577,7 @@ nav {
       display: inline-block;
       width: 4em;
       color: $color-septenary;
-      border-bottom: 1px solid $color-accent;
+      border-bottom: 2px solid $color-accent;
       padding-bottom: 10px;
     }
 
@@ -621,12 +646,12 @@ nav {
       font-size: $font-size;
     }
 
-    span.title {
-      position: relative;
-      color: $color-septenary;
-      margin: 0 15px;
-      padding: 7px 0;
-    }
+    // span.title {
+    //   position: relative;
+    //   color: $color-septenary;
+    //   margin: 0 15px;
+    //   padding: 7px 0;
+    // }
 
     // span.title::after {
     //   position: absolute;
@@ -664,23 +689,11 @@ aside>a {
   }
 
   .title {
-    position: relative;
     color: $color-septenary;
-    padding: 5px 0;
   }
 
   .title::after {
-    content: "";
-    position: absolute;
-    border: 1px;
-    border-style: solid;
     border-color: rgba($color-accent, 0);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform-origin: left;
-    transform: scaleX(0.01);
-    transition: all 400ms $ease-out;
   }
 
   &:hover>.title {
@@ -688,8 +701,6 @@ aside>a {
   }
 
   &:hover>.title::after {
-    content: "";
-    transform: scaleX(1);
     border-color: rgba($color-accent, 1);
   }
 }
