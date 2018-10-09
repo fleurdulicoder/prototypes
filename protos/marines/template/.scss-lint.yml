@@ -12,6 +12,11 @@ linters:
   DeclarationOrder:
     enabled: false
 
+  DuplicateProperty:
+    ignore_consecutive:
+      background: true
+      transition: true
+
   ExtendDirective:
     enabled: true
 
