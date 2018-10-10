@@ -29,3 +29,7 @@ Debugging
 1. To trace deprecation:
 
 - $ node --trace-deprecation ./node_modules/.bin/webpack --bail --env dist -p
+
+Bootstrap 4 Grid
+-------------------------------------------------------------------------------
+https://www.npmjs.com/package/bootstrap-4-grid
