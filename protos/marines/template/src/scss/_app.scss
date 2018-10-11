@@ -171,10 +171,11 @@ p {
 }
 
 // overriding bootstrap
-// .container {
-//   padding-left: $padding-horizontal-row;
-//   padding-right: $padding-horizontal-row;
-// }
+.container {
+  @media (min-width: 1200px) {
+    max-width: 1261px;
+  }
+}
 
 @keyframes flash-in {
   0% {
@@ -639,11 +640,11 @@ nav {
       border-color: rgba($color-accent, 0);
     }
 
-    &:hover>.title {
+    a:hover>.title {
       color: $color-accent;
     }
 
-    &:hover>.title::after {
+    a:hover>.title::after {
       border-color: rgba($color-accent, 1);
     }
   }
