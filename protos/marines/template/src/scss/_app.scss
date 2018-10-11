@@ -360,11 +360,21 @@ p {
       text-align: left;
       background: transparent url("#{$logo}") no-repeat center center;
       background-size: contain;
-      width: 300px;
+      width: 350px;
       height: inherit;
       border: 0;
       color: rgba($color-septenary, 0);
       text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: $media-breakpoint-xs) {
+    .wrapper {
+      >.logo {
+        background: transparent url("#{$logo-icon}") no-repeat center center;
+        background-size: contain;
+        width: 58px;
+      }
     }
   }
 }
