@@ -120,10 +120,11 @@ $padding-vertical-row-mobile: $padding-base * 12;
 $padding-horizontal-row-mobile: $padding-base * 12;
 
 // theme margin breakdown
-$margin-base: 4px;
+$margin-base: 5px;
 $margin: $margin-base * 2;
 $margin-large: $margin-base * 3;
 $margin-x-large: $margin-base * 4;
+$margin-2x-large: $margin-base * 5;
 
 // theme custom easing functions
 $ease-out: cubic-bezier(.41, .91, .52, .94);

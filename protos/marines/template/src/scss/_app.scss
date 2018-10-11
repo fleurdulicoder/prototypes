@@ -53,7 +53,7 @@ h5 {
   letter-spacing: $letter-spacing-heading;
   line-height: $line-height-heading;
   text-transform: uppercase;
-  margin: $margin-base * 5 0 $margin-base * 3;
+  margin: $margin-2x-large 0 $margin-large;
   padding: 0;
 }
 
@@ -358,7 +358,7 @@ p {
 
     >.logo {
       text-align: left;
-      background: transparent url("../img/logo.png") no-repeat center center;
+      background: transparent url("#{$logo}") no-repeat center center;
       background-size: contain;
       width: 300px;
       height: inherit;
@@ -601,7 +601,7 @@ nav {
     width: 4em;
     color: $color-septenary;
     border-bottom: 2px solid $color-accent;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
 
   p {
@@ -726,8 +726,10 @@ nav {
 }
 
 section {
+  position: relative;
   width: 100%;
   min-height: 100px;
+  padding: $padding-vertical-row 0;
 }
 
 .bg {
@@ -760,8 +762,6 @@ section {
   }
 }
 
-
-
 // footer
 footer {
   background: $background;
@@ -769,11 +769,17 @@ footer {
   padding: 60px 0;
   margin: 0;
 
-  img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    border-style: none;
+  h1>.logo {
+    display: inline-block;
+    text-align: left;
+    background: transparent url("#{$logo}") no-repeat 50%;
+    background-size: contain;
+    width: 80%;
+    height: 100%;
+    border: 0;
+    color: rgba($color-primary, 0);
+    text-decoration: none;
+    margin-bottom: $margin-large;
   }
 
   header {
@@ -784,7 +790,7 @@ footer {
     text-transform: uppercase;
 
     &.download {
-      margin-top: 15px;
+      margin-top: $margin-large;
     }
 
     &.download::after {
