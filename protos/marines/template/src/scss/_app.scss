@@ -385,6 +385,17 @@ nav {
   height: 100%;
   text-align: right;
 
+  button {
+    display: none;
+    background: 0;
+    border: 0;
+    outline: 0;
+    font-size: 30px;
+    color: $color-septenary;
+    -webkit-appearance: button;
+    height: inherit;
+  }
+
   ul {
     list-style-type: none;
     display: flex;
@@ -434,6 +445,16 @@ nav {
 
   i.fa.fa-search {
     font-size: $font-size-large;
+  }
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    button {
+      display: inline-block;
+    }
+
+    ul {
+      display: none;
+    }
   }
 }
 
