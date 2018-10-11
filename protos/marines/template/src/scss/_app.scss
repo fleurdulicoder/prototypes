@@ -368,6 +368,14 @@ p {
     }
   }
 
+  @media screen and (max-width: $media-breakpoint-xl) {
+    .wrapper {
+      >.logo {
+        width: 250px;
+      }
+    }
+  }
+
   @media screen and (max-width: $media-breakpoint-xs) {
     .wrapper {
       >.logo {
@@ -380,7 +388,7 @@ p {
 }
 
 nav {
-  width: calc(100% - 300px);
+  @include x-calc(width, "100% - 300px");
   font-size: $font-size;
   height: 100%;
   text-align: right;
@@ -412,7 +420,7 @@ nav {
       display: list-item;
       height: inherit;
       line-height: $height-navbar;
-      padding: 0 20px;
+      padding: 0 15px;
       margin: 0;
       box-sizing: border-box;
     }
@@ -447,7 +455,9 @@ nav {
     font-size: $font-size-large;
   }
 
-  @media screen and (max-width: $media-breakpoint-lg) {
+  @media screen and (max-width: $media-breakpoint-xl) {
+    @include x-calc(width, "100% - 250px");
+
     button {
       display: inline-block;
     }
@@ -455,6 +465,10 @@ nav {
     ul {
       display: none;
     }
+  }
+
+  @media screen and (max-width: $media-breakpoint-xs) {
+    @include x-calc(width, "100% - 58px");
   }
 }
 
