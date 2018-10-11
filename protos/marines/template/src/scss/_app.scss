@@ -537,24 +537,28 @@ nav {
     position: relative;
     top: 0;
     right: 0;
-    width: inherit;
-    height: inherit;
+    width: auto;
+    height: auto;
     white-space: nowrap;
     z-index: 7;
 
     >a {
       position: relative;
       display: inline-block;
-      width: 48px;
-      max-width: 48px;
-      height: 100%;
       padding: 0;
       margin: 0;
       border: 0;
       outline: 0;
       color: $color-septenary;
       text-decoration: none;
-      text-indent: -2000px;
+    }
+
+    i {
+      display: inline-block;
+      width: 48px;
+      height: 63px;
+      line-height: 63px;
+      text-align: center;
     }
   }
 
