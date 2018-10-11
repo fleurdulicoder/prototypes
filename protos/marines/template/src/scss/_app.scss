@@ -166,7 +166,7 @@ svg {
 }
 
 p {
-  padding: 0 0 10px;
+  padding: 0 0 15px;
   font-size: $font-size;
 }
 
@@ -529,6 +529,7 @@ nav {
   animation: fadeOut .5s cubic-bezier(.67, .54, .43, .78) 1 forwards;
 }
 
+
 .banner {
   position: relative;
   width: 100%;
@@ -567,14 +568,16 @@ nav {
 
   .overlay {
     opacity: 1;
+    // scss-lint:disable VendorPrefix DuplicateProperty
     background: $background-overlay;
-    // background: -moz-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-    // background: -webkit-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -o-linear-gradient(to bottom, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: -ms-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
-    // background: linear-gradient(to bottom, rgba($color-shade, 0), rgba($color-shade, 0), rgba($color-shade, 1));
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color-shade}', endColorstr='#{$color-shade}', GradientType=0);
+    background: -moz-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $color-shade), color-stop(100%, $color-shade));
+    background: -webkit-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    background: -o-linear-gradient(to bottom, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    background: -ms-linear-gradient(top, rgba($color-shade, 0) 0%, rgba($color-shade, 1) 100%);
+    background: linear-gradient(to bottom, rgba($color-shade, 0), rgba($color-shade, 0), rgba($color-shade, 1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color-shade}', endColorstr='#{$color-shade}', GradientType=0);
+    // scss-lint:enable VendorPrefix DuplicateProperty
     z-index: 4;
   }
 
@@ -586,42 +589,34 @@ nav {
     left: 0;
     vertical-align: bottom;
     z-index: 5;
+  }
 
-    h1 {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      color: $color-septenary;
-    }
+  h1 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: $color-septenary;
+  }
 
-    h5 {
-      display: inline-block;
-      width: 4em;
-      color: $color-septenary;
-      border-bottom: 2px solid $color-accent;
-      padding-bottom: 10px;
-    }
+  h5 {
+    display: inline-block;
+    width: 4em;
+    color: $color-septenary;
+    border-bottom: 2px solid $color-accent;
+    padding-bottom: 10px;
+  }
 
-    p {
-      font-size: $font-size;
-      line-height: 1.5;
-      padding: 0;
-      margin: 0 0 30px;
-      width: 50%;
-      color: $color-septenary;
-    }
+  p {
+    font-size: $font-size;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0 0 30px;
+    width: 50%;
+    color: $color-septenary;
+  }
 
-    aside {
-      display: block;
-      margin-top: 16px;
-    }
-
-    a {
-      text-decoration: none;
-      font-family: $font-family-heading;
-      letter-spacing: $letter-spacing-heading;
-      text-transform: uppercase;
-      margin-right: 15px;
-    }
+  aside {
+    display: block;
+    margin-top: 16px;
 
     svg,
     i.fas {
@@ -632,6 +627,14 @@ nav {
       margin-right: 4px;
     }
 
+    a {
+      text-decoration: none;
+      font-family: $font-family-heading;
+      letter-spacing: $letter-spacing-heading;
+      text-transform: uppercase;
+      margin-right: 15px;
+    }
+
     .title {
       color: $color-septenary;
     }
@@ -640,13 +643,15 @@ nav {
       border-color: rgba($color-accent, 0);
     }
 
+    // scss-lint:disable SelectorDepth
     a:hover>.title {
       color: $color-accent;
     }
 
-    a:hover>.title::after {
+    a:hover .title::after {
       border-color: rgba($color-accent, 1);
     }
+    // scss-lint: enable SelectorDepth
   }
 
   >.counter {
