@@ -478,7 +478,7 @@ nav {
   right: 0;
   min-width: 288px;
   height: $height-social;
-  background: rgba($color-compliment, 0.5);
+  background: rgba($color-compliment, 0.75);
   vertical-align: middle;
   overflow: hidden;
   z-index: 1;
@@ -556,6 +556,10 @@ nav {
       text-decoration: none;
       text-indent: -2000px;
     }
+  }
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    display: none;
   }
 }
 
