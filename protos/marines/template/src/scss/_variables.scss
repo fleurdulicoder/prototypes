@@ -82,6 +82,7 @@ $font-weight-bold: 400;
 $font-weight-bolder: 500;
 
 // font sizes plus
+$font-size-4x-small: 12px;
 $font-size-3x-small: 13px;
 $font-size-2x-small: 14px;
 $font-size-x-small: 15px;
@@ -109,15 +110,18 @@ $font-size-h5: 24px;
 $font-size-h6: 18px;
 
 // base paddings & margins
-$padding-base: 3px;
+$padding-base: 4px;
 $padding: $padding-base * 2;
 $padding-large: $padding-base * 3;
 $padding-x-large: $padding-base * 4;
-$padding-xx-large: $padding-base * 12;
 $padding-vertical-row: $padding-base * 12;
 $padding-horizontal-row: $padding-base * 40;
-$padding-vertical-row-mobile: $padding-base * 12;
-$padding-horizontal-row-mobile: $padding-base * 12;
+// $padding-x-large: $padding-base * 4;
+// $padding-xx-large: $padding-base * 12;
+// $padding-vertical-row: $padding-base * 12;
+// $padding-horizontal-row: $padding-base * 40;
+// $padding-vertical-row-mobile: $padding-base * 12;
+// $padding-horizontal-row-mobile: $padding-base * 12;
 
 // theme margin breakdown
 $margin-base: 5px;

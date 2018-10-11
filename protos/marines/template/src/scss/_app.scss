@@ -98,7 +98,7 @@ h6 {
 // underline animation for links
 a > span {
   position: relative;
-  padding: 5px 0;
+  padding: $padding-base 0;
 }
 
 a > span::after {
@@ -825,5 +825,23 @@ footer {
   a {
     text-decoration: none;
     color: $color-senary;
+  }
+
+  p.copyright {
+    padding-top: 60px;
+    font-size: $font-size-4x-small;
+    color: darken($color-quinary, 20%);
+
+    a {
+      color: darken($color-quinary, 20%);
+      text-decoration: none;
+    }
+
+    *:nth-child(2) {
+      padding: 0 $padding-large;
+      margin: 0 $margin-large;
+      border-left: 1px solid darken($color-quinary, 20%);
+      border-right: 1px solid darken($color-quinary, 20%);
+    }
   }
 }
