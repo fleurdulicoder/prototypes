@@ -141,8 +141,14 @@ p {
 
 // overriding bootstrap
 .container {
-  @media (min-width: 1200px) {
+  @media (min-width: $media-breakpoint-xl) {
     max-width: 1261px;
+  }
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    width: 100vw;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
 
@@ -704,6 +710,10 @@ nav {
     .circle.current {
       background-color: rgba($color-septenary, 1);
     }
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      display: none;
+    }
   }
 
   .navigate {
@@ -714,6 +724,12 @@ nav {
     height: 107px;
     line-height: 107px;
     z-index: 5;
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      background: $color-contrast;
+      height: 57px;
+      line-height: 57px;
+    }
   }
 
   .prev,
@@ -750,6 +766,12 @@ nav {
 
   .next {
     text-align: right;
+  }
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    span.title {
+      display: none;
+    }
   }
 }
 
