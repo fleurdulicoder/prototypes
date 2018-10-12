@@ -33,12 +33,10 @@ $color-shade-20: rgba(getcolor("shade"), 0.2);
 $color-shade-10: rgba(getcolor("shade"), 0.1);
 
 // theme backgrounds - reconfirm values (?)
-$background: getcolor("background");
-$foreground: getcolor("foreground");
+$background: getcolor("background"); // black
+$foreground: getcolor("foreground"); // white
 $background-header: getcolor("background");
 $background-footer: getcolor("background");
-$background-main: getcolor("foreground");
-$background-invert: getcolor("foreground");
 $background-overlay:rgba($background, 0.5);
 
 // theme primary navigation
@@ -65,7 +63,7 @@ $text-shadow-color: rgba($color-shade, 0.01);
 // theme fonts
 $font-family: Arial, sans-serif;
 $color: getcolor("foreground");
-$color-invert: getcolor("background");
+$color-invert: invert($color);
 $font-weight: 300;
 $letter-spacing: 0;
 $font-size: 18px;
@@ -103,25 +101,20 @@ $font-size-h5: 24px;
 $font-size-h6: 18px;
 
 // base paddings & margins
-$padding-base: 4px;
-$padding: $padding-base * 2;
-$padding-large: $padding-base * 3;
-$padding-x-large: $padding-base * 4;
-$padding-vertical-row: $padding-base * 12;
-$padding-horizontal-row: $padding-base * 40;
-// $padding-x-large: $padding-base * 4;
-// $padding-xx-large: $padding-base * 12;
-// $padding-vertical-row: $padding-base * 12;
-// $padding-horizontal-row: $padding-base * 40;
-// $padding-vertical-row-mobile: $padding-base * 12;
-// $padding-horizontal-row-mobile: $padding-base * 12;
+$padding-base: 5px;
+$padding: $padding-base * 3; // 9px
+$padding-large: $padding-base * 4; // 12px
+$padding-x-large: $padding-base * 5; // 15px
+$padding-2x-large: $padding-base * 6; // 18px
+$padding-vertical-row: $padding-base * 15; // 60px
+$padding-horizontal-row: $padding-base * 40; // 120px
 
 // theme margin breakdown
 $margin-base: 5px;
-$margin: $margin-base * 2;
-$margin-large: $margin-base * 3;
-$margin-x-large: $margin-base * 4;
-$margin-2x-large: $margin-base * 5;
+$margin: $margin-base * 2; // 10px
+$margin-large: $margin-base * 3;  // 15px
+$margin-x-large: $margin-base * 4; // 20px
+$margin-2x-large: $margin-base * 5; // 25px
 
 // theme custom easing functions
 $ease-out: cubic-bezier(.41, .91, .52, .94);
