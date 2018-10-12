@@ -146,7 +146,7 @@ p {
   }
 
   @media screen and (max-width: $media-breakpoint-lg) {
-    width: 100vw;
+    max-width: 100vw;
     padding-left: 25px;
     padding-right: 25px;
   }
@@ -769,8 +769,11 @@ nav {
   }
 
   @media screen and (max-width: $media-breakpoint-lg) {
-    span.title {
-      display: none;
+    .prev,
+    .next {
+      span.title {
+        display: none;
+      }
     }
   }
 }
