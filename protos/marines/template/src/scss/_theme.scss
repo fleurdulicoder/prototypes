@@ -8,6 +8,7 @@ $brand: (
   "silver": #818283,
   "quick-silver": #a7a7a7,
   "white": #fff,
+  "deep-lilac": #182732,
 );
 
 // PALETTE: DARK / LIGHT
@@ -26,6 +27,7 @@ $palette: (
     "accent": map-get($brand, "red"),
     "compliment": map-get($brand, "burgundy"),
     "highlight": map-get($brand, "gold"),
+    "contrast": map-get($brand, "deep-lilac"),
     "shade": map-get($brand, "black"),
 
     "background": map-get($brand, "black"),
