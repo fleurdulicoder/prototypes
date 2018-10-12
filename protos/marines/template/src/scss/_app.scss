@@ -616,6 +616,10 @@ nav {
     left: 0;
     vertical-align: bottom;
     z-index: 5;
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      bottom: 90px;
+    }
   }
 
   h4 {
@@ -640,6 +644,10 @@ nav {
     margin: 0 0 30px;
     width: 50%;
     color: $color-septenary;
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      width: 100%;
+    }
   }
 
   aside {
