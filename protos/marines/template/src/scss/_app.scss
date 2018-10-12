@@ -95,6 +95,12 @@ h6 {
   padding: 0;
 }
 
+@media screen and (max-width: $media-breakpoint-lg) {
+  h1 {
+    font-size: 41px;
+  }
+}
+
 // underline animation for links
 a > span {
   position: relative;

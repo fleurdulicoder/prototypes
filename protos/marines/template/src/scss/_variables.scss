@@ -18,7 +18,7 @@ $color-septenary: getcolor("septenary"); // white
 $color-accent: getcolor("accent"); // red
 $color-highlight: getcolor("highlight"); // gold
 $color-compliment: getcolor("compliment"); // burgundy
-$color-contrast: getcolor("contrast");
+$color-contrast: getcolor("contrast"); // purple
 
 // theme neutrals: mix of black/grey/white
 $color-shade: getcolor("shade");
@@ -85,9 +85,6 @@ $font-size-x-small: 15px;
 $font-size-small: 16px;
 $font-size: 18px;
 $font-size-large: 20px;
-$font-size-x-large: 22px;
-$font-size-2x-large: 24px;
-$font-size-3x-large: 26px;
 
 // theme headings
 $font-family-heading: "Colossalis", Impact, sans-serif;
