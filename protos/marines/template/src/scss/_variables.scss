@@ -2,6 +2,10 @@
 // These variables are the same cross themes,
 // Please identify both, a theme variable as "light" or "dark"
 // All the variables below get populated through _theme.scss
+
+// MARINES THEME CUSTOMIZATION
+// Dark Slide: black background with white text + white headings
+// Light Slide = Inversion: white background with black text + red headings
 $theme: "dark";
 $theme-fullwidth: 100%;
 
@@ -32,38 +36,17 @@ $color-shade-30: rgba(getcolor("shade"), 0.3);
 $color-shade-20: rgba(getcolor("shade"), 0.2);
 $color-shade-10: rgba(getcolor("shade"), 0.1);
 
-// theme backgrounds - reconfirm values (?)
-$background: getcolor("background"); // black
-$foreground: getcolor("foreground"); // white
-$background-header: getcolor("background");
-$background-footer: getcolor("background");
-$background-overlay:rgba($background, 0.5);
-
-// theme primary navigation
-$color-nav-primary-link: getcolor("septenary");
-$color-nav-primary-link-hover: getcolor("septenary");
-$color-nav-primary-link-visited: getcolor("septenary");
-$color-nav-secondary-link: getcolor("quinary");
-$color-nav-secondary-link-hover: getcolor("quinary");
-$color-nav-secondary-link-visited: getcolor("quinary");
-$color-text-link: getcolor("senary"); // confirm (?)
-$color-text-link-visited: getcolor("senary"); // confirm (?)
-$color-text-link-hover: getcolor("senary"); // confirm (?)
-
-// theme images
-$logo: "../img/logo.png";
-$logo-icon: "../img/ega.png";
-$banner: "../img/banner.jpg";
-
-// borders and shadows
-$border-color: getcolor("senary");
-$box-shadow-color: $color-shade-10;
-$text-shadow-color: rgba($color-shade, 0.01);
+// theme backgrounds: reconfirm values
+$background: getcolor("primary"); // black
+$background-invert: getcolor("septenary"); // white
+$background-header: getcolor("primary");
+$background-footer: getcolor("primary");
+$background-overlay: $color-shade-50;
 
 // theme fonts
 $font-family: Arial, sans-serif;
-$color: getcolor("foreground");
-$color-invert: invert($color);
+$color: getcolor("septenary");
+$color-invert: getcolor("primary");
 $font-weight: 300;
 $letter-spacing: 0;
 $font-size: 18px;
@@ -86,8 +69,8 @@ $font-size-large: 20px;
 
 // theme headings
 $font-family-heading: "Colossalis", Impact, sans-serif;
-$color-heading: getcolor("accent");
-$color-heading-invert: getcolor("septenary");
+$color-heading: getcolor("septenary");
+$color-heading-invert: getcolor("accent");
 $font-weight-heading: $font-weight-thin;
 $letter-spacing-heading: 3px;
 $line-height-heading: 1.2em;
@@ -99,6 +82,14 @@ $font-size-h3: 36px;
 $font-size-h4: 30px;
 $font-size-h5: 24px;
 $font-size-h6: 18px;
+
+// mobile: font size headings
+$font-size-h1-mobile: 41px;
+$font-size-h2-mobile: 30px;
+$font-size-h3-mobile: 26px; // confirm (?)
+$font-size-h4-mobile: 22px; // confirm (?)
+$font-size-h5-mobile: 18px; // confirm (?)
+$font-size-h6-mobile: 14px; // confirm (?)
 
 // base paddings & margins
 $padding-base: 5px;
@@ -128,8 +119,26 @@ $media-breakpoint-md: 768px;
 $media-breakpoint-lg: 992px;
 $media-breakpoint-xl: 1200px;
 
-// MARINE THEME CONFIGURATION
-// Here is custom unique variables for the Marines Theme application
+// theme primary navigation
+$color-nav-primary-link: getcolor("septenary");
+$color-nav-primary-link-hover: getcolor("septenary");
+$color-nav-primary-link-visited: getcolor("septenary");
+$color-nav-secondary-link: getcolor("quinary");
+$color-nav-secondary-link-hover: getcolor("quinary");
+$color-nav-secondary-link-visited: getcolor("quinary");
+$color-text-link: getcolor("senary"); // confirm (?)
+$color-text-link-visited: getcolor("senary"); // confirm (?)
+$color-text-link-hover: getcolor("senary"); // confirm (?)
+
+// theme images
+$logo: "../img/logo.png";
+$logo-icon: "../img/ega.png";
+$banner: "../img/banner.jpg";
+
+// borders and shadows
+$border-color: getcolor("senary");
+$box-shadow-color: $color-shade-10;
+$text-shadow-color: rgba($color-shade, 0.01);
 
 // marine theme heights
 $height-navbar: 137px;

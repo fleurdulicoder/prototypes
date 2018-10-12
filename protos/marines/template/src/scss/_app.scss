@@ -15,7 +15,7 @@ body {
     size: $font-size;
     weight: $font-weight;
   }
-  color: $foreground;
+  color: $color;
   background: $background;
   line-height: $line-height;
 
@@ -60,26 +60,51 @@ h5 {
 h1 {
   font-size: $font-size-h1;
   line-height: $font-size-h1;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h1-mobile;
+    line-height: 1;
+  }
 }
 
 h2 {
   font-size: $font-size-h2;
   line-height: $font-size-h2;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h2-mobile;
+    line-height: 1;
+  }
 }
 
 h3 {
   font-size: $font-size-h3;
   line-height: $font-size-h3;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h3-mobile;
+    line-height: 1;
+  }
 }
 
 h4 {
   font-size: $font-size-h4;
   line-height: $font-size-h4;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h4-mobile;
+    line-height: 1;
+  }
 }
 
 h5 {
   font-size: $font-size-h5;
   line-height: $font-size-h5;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h5-mobile;
+    line-height: 1;
+  }
 }
 
 h6 {
@@ -93,6 +118,11 @@ h6 {
   text-transform: uppercase;
   margin: $margin-base * 3 0 $margin-base * 2;
   padding: 0;
+
+  @media screen and (max-width: $media-breakpoint-lg) {
+    font-size: $font-size-h6-mobile;
+    line-height: 1;
+  }
 }
 
 // underline animation for links
@@ -135,7 +165,7 @@ svg {
 }
 
 p {
-  padding: 0 0 15px;
+  padding: 0 0 $padding-base * 3;
   font-size: $font-size;
 }
 
@@ -147,8 +177,8 @@ p {
 
   @media screen and (max-width: $media-breakpoint-lg) {
     max-width: 100vw;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: $padding-base * 5;
+    padding-right: $padding-base * 5;
   }
 }
 
@@ -171,7 +201,15 @@ p {
 
 // on-point
 // please adjust code below (code from prototypes)
+// temporary off via inline display: none in html
 .on-point {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-flow: flex-start;
+  align-items: center;
+  align-content: stretch;
+
   position: absolute;
   top: -$height-onpoint;
   left: 0;
@@ -179,12 +217,6 @@ p {
   height: $height-onpoint;
   line-height: $height-onpoint;
   background-color: $color-highlight;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  flex-flow: flex-start;
-  align-items: center;
-  align-content: stretch;
 
   .heading {
     width: $width-onpoint;
@@ -628,14 +660,18 @@ nav {
     width: 4em;
     padding: 0 0 $padding-base * 5;
     margin: 0;
-    color: $color-septenary;
     border-bottom: 1px solid $color-accent;
   }
 
   h1 {
     padding: 0;
     margin: $margin-base * 5 0 0;
-    color: $color-septenary;
+  }
+
+  a>h1 {
+    padding: 0;
+    margin: $margin-base * 5 0 0;
+    color: $color-heading-invert;
   }
 
   p {
@@ -644,7 +680,7 @@ nav {
     padding: 0;
     margin: 0 0 $padding-base * 6;
     width: 50%;
-    color: $color-septenary;
+    color: $color;
 
     @media screen and (max-width: $media-breakpoint-lg) {
       width: 100%;
@@ -668,13 +704,13 @@ nav {
       text-decoration: none;
       font-family: $font-family-heading;
       letter-spacing: $letter-spacing-heading;
-      color: $color-septenary;
+      color: $color;
       text-transform: uppercase;
       margin-right: $margin-base * 3;
     }
 
     .underline {
-      color: $color-septenary;
+      color: $color;
     }
 
     .underline::after {
@@ -827,11 +863,10 @@ section {
 // footer
 footer {
   background: $background;
-  color: $foreground;
   padding: $padding-base * 12 0;
   margin: 0;
 
-  h1>.logo {
+  .logo {
     display: inline-block;
     text-align: left;
     background: transparent url("#{$logo}") no-repeat 50%;
@@ -842,6 +877,11 @@ footer {
     color: rgba($color-primary, 0);
     text-decoration: none;
     margin-bottom: $margin-base * 3;
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      width: 100%;
+      height: 65px;
+    }
   }
 
   header {
@@ -866,15 +906,18 @@ footer {
     bottom: 0;
     left: 0;
     width: 80%;
-    // font-size: $font-size-small;
     font-weight: $font-weight-bold;
     border-bottom: 2px solid $color-accent;
+
+    @media screen and (max-width: $media-breakpoint-lg) {
+      width: 100%;
+    }
   }
 
   ul {
     list-style-type: none;
     margin: 0;
-    padding: $padding-base * 2 0;
+    padding: 0 0 $padding-base * 5;
 
     li {
       padding: 0;
@@ -886,7 +929,7 @@ footer {
 
   a {
     text-decoration: none;
-    color: $color-senary;
+    color: $color-quinary;
   }
 
   p.copyright {

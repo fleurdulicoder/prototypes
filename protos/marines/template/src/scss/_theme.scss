@@ -29,8 +29,5 @@ $palette: (
     "highlight": map-get($brand, "gold"),
     "contrast": map-get($brand, "deep-lilac"),
     "shade": map-get($brand, "black"),
-
-    "background": map-get($brand, "black"),
-    "foreground": map-get($brand, "white"),
   ),
 );
