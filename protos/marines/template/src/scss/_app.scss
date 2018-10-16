@@ -459,7 +459,11 @@ nav {
     }
   }
 
-  i.fa.fa-search {
+  i {
+    vertical-align: middle;
+  }
+
+  .fa-search {
     font-size: $font-size-large;
   }
 
