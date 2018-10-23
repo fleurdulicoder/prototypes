@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -124,10 +123,6 @@ module.exports = {
       printFlowOutput: true,
       verbose: false,
       flowPath: require.main.require('flow-bin'),
-    }),
-    new webpack.ProviderPlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
     })
   ]
 };
