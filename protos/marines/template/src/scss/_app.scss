@@ -448,6 +448,38 @@ p {
   }
 }
 
+// when aligning the above via secondarybar
+.secondarybar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: auto;
+  z-index: 10;
+
+  .breadcrumbs,
+  .social {
+    position: relative;
+    display: block;
+    top: 0;
+  }
+
+  .breadcrumbs {
+    flex-basis: auto;
+    flex-grow: 2;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
 // application layout
 .app {
   position: relative;

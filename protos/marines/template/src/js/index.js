@@ -1,7 +1,7 @@
 // import Announcer from './announcement';
 import '../scss/index.scss';
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 //   // commenting out for now
 //   const announcer = new Announcer(
 //     'on-point-message',
@@ -11,4 +11,4 @@ import '../scss/index.scss';
 //     'on-point-close',
 //   );
 //   announcer.show();
-// }, false);
+}, false);
