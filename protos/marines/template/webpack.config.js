@@ -1,24 +1,48 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
+const help = require( './config/helper' );
 
 module.exports = {
-  entry: ['./src/js/index.ts'],
-  devtool: 'inline-source-map',
+  context: help.root( 'src/app' ),
+  entry: ['./index.ts'],
+  devtool: 'source-map',
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [ '.ts', '.js', '.json', '.css', '.less', '.html', '.scss' ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    filename: 'js/main.min.js',
+    path: help.root( 'dist' ),
+    publicPath: '/',
+    filename: 'js/[name].[chunkhash].js'
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   module: {
+    noParse: /\/node_modules\/(jquery|lodash|moment)/,
     rules: [
+      {
+        test: /\.ts$/,
+        loaders: [ 'awesome-typescript-loader' ],
+        include: help.root( 'src/app' )
+      },
+      {
+        test: /\.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: {
+          configFile: 'tslint.json',
+          tsConfigFile: 'tsconfig.json'
+        }
+      },
       {
         test: /\.html$/,
         use: [
@@ -31,20 +55,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          configFile: '.eslintrc',
-        },
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'ts-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -68,10 +78,6 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: { sourceMap: true, publicPath: '../' },
-          },
-          {
-            loader: 'style-loader',
-            options: { sourceMap: true },
           },
           {
             loader: 'css-loader',
@@ -98,8 +104,10 @@ module.exports = {
       root: path.join(__dirname, 'dist/'),
       beforeEmit: true,
     }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new ImageminWebpackPlugin({
       imageminOptions: {
@@ -117,12 +125,10 @@ module.exports = {
       filename: 'css/[name].min.css',
       chunkFilename: 'css/[id].min.css',
     }),
-    new FlowBabelWebpackPlugin({
-      failOnError: true,
-      reportingSeverety: 'error',
-      printFlowOutput: true,
-      verbose: false,
-      flowPath: require.main.require('flow-bin'),
+    new HardSourceWebpackPlugin({
+      cacheDirectory: help.root( 'node_modules' ) + '/.cache/hard-source/[confighash]',
+      recordsPath: help.root( 'node_modules' ) + '/.cache/hard-source/[confighash]/records.json',
+      configHash: require( 'node-object-hash' )( { sort: false } ).hash,
     })
   ]
 };

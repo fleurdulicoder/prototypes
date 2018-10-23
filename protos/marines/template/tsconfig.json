@@ -6,8 +6,11 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "jsx": "react",
+    "lib": ["es2017", "dom"],
     "allowJs": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "silent": true
   },
   "exclude": [
     "node_modules"
