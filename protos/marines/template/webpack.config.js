@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,7 +9,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/js/index.js'],
+  entry: ['./src/js/index.ts'],
+  devtool: 'inline-source-map',
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: 'js/main.min.js',
@@ -29,18 +34,18 @@ module.exports = {
         ],
       },
       {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader',
-          options: {
-            configFile: '.eslintrc',
-          },
-      },
-      {
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'eslint-loader',
+        options: {
+          configFile: '.eslintrc',
+        },
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'ts-loader',
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -64,6 +69,10 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: { sourceMap: true, publicPath: '../' },
+          },
+          {
+            loader: 'style-loader',
+            options: { sourceMap: true },
           },
           {
             loader: 'css-loader',
@@ -115,6 +124,10 @@ module.exports = {
       printFlowOutput: true,
       verbose: false,
       flowPath: require.main.require('flow-bin'),
+    }),
+    new webpack.ProviderPlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
-  ],
+  ]
 };
