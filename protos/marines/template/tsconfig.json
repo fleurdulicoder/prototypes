@@ -1,16 +1,13 @@
 {
-  "buildOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "es6",
     "target": "es5",
-    "lib": ["es2017", "dom"],
-    "allowJs": true
-  },
-  "awesomeTypescriptLoaderOptions": {
-    "silent": true
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "lib": ["es2017", "dom"]
   },
   "exclude": [
     "node_modules"
