@@ -1,9 +1,9 @@
 'use strict'
 const path = require('path')
 const TSLintPlugin = require('tslint-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const utils = require('./utils')
 const config = require('./config')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -20,6 +20,11 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   module: {
     rules: [
@@ -89,6 +94,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].min.css',
       chunkFilename: 'static/css/[id].min.css',
-    }),
+    })
   ]
 }
