@@ -110,7 +110,7 @@ module.exports = {
       chunkFilename: 'css/[id].min.css',
     }),
     new FlowWebpackPlugin({
-      failOnError: false,
+      failOnError: true,
       reportingSeverity: 'error',
       printFlowOutput: true,
       verbose: false,
