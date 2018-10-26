@@ -111,12 +111,10 @@ module.exports = {
     }),
     new FlowWebpackPlugin({
       failOnError: false,
-      failOnErrorWatch: false,
       reportingSeverity: 'error',
       printFlowOutput: true,
-      flowPath: require.main.require('flow-bin'),
-      flowArgs: ['--color=always'],
       verbose: false,
+      flowPath: require.main.require('flow-bin'),
     })
   ],
 };
