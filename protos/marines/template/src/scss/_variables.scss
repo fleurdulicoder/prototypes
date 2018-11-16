@@ -56,7 +56,8 @@ $line-height: 1.4em;
 $font-weight-thin: 100;
 $font-weight-normal: 300;
 $font-weight-bold: 400;
-$font-weight-bolder: 500;
+$font-weight-x-bold: 500;
+$font-weight-2x-bold: 700;
 
 // font sizes plus
 $font-size-4x-small: 12px;
@@ -134,6 +135,7 @@ $color-text-link-hover: getcolor("senary"); // confirm (?)
 $logo: "../img/logo.png";
 $logo-icon: "../img/ega.png";
 $banner: "../img/banner.jpg";
+$banner-2: "../img/banner-2.jpg";
 
 // borders and shadows
 $border-color: getcolor("senary");

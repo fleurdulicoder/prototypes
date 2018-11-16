@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Marine Corps Template</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-  <script src="https://unpkg.com/feather-icons"></script>
+  <!--link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"-->
+  <!--script src="https://unpkg.com/feather-icons"></script-->
   <!--link rel="stylesheet" href="fonts/fontawesome-all.min.css">
   <link rel="stylesheet" href="fonts/ionicons.min.css">
   <link rel="stylesheet" href="fonts/material-icons.min.css">
@@ -32,17 +32,23 @@
       </div>
       <div id="on-point-pager" class="pager"></div>
       <div class="arrows">
-        <i id="on-point-chevron-left" data-feather="chevron-left"></i>
-        <i id="on-point-chevron-right" data-feather="chevron-right"></i>
+        <!--<i id="on-point-chevron-left" data-feather="chevron-left"></i>-->
+        <!--<i id="on-point-chevron-right" data-feather="chevron-right"></i>-->
+        <i class="fas fa-angle-left" id="on-point-chevron-left"></i>
+        <i class="fas fa-angle-right" id="on-point-chevron-right"></i>
       </div>
-      <div class="close"><i id="on-point-close" data-feather="x"></i></div>
+      <div class="close">
+        <!--<i id="on-point-close" data-feather="x"></i>-->
+        <i class="fas fa-times" id="on-point-close"></i>
+      </div>
     </div>
   </div>
   <!-- End of On-Point -->
   <!-- Start App -->
   <div id="app" class="app">
-    <!-- Start NavBar -->
-    <div class="navbar">
+    <!-- Start Header -->
+    <header class="navbar">
+      <!-- NavBar -->
       <div class="wrapper">
         <!-- Start Logo -->
         <a class="logo" id="logo" href="/">Marine Corps</a>
@@ -50,39 +56,55 @@
         <!-- Start Nav -->
         <nav>
           <button><i class="fas fa-bars"></i></button>
-          <ul>
-            <li><a href="#"><span>Units</span></a></li>
-            <li><a href="#"><span>News</span> <i data-feather="chevron-down"></i></a></li>
-            <li><a href="#"><span>Photos</span></a></li>
-            <li><a href="#"><span>Leaders</span></a></li>
-            <li><a href="#"><span>Marines</span></a></li>
-            <li><a href="#"><span>Family</span></a></li>
-            <li><a href="#"><span>Community</span> <i data-feather="chevron-down"></i></a></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#"><span>Units</span></a></li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle"><span>News</span> <i class="fas fa-angle-down"></i></a>
+              <ul class="dropdown-menu dropdown-menu-right hang-left-sub" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item">s</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#"><span>Photos</span></a></li>
+            <li class="nav-item"><a href="#"><span>Leaders</span></a></li>
+            <li class="nav-item"><a href="#"><span>Marines</span></a></li>
+            <li class="nav-item"><a href="#"><span>Family</span></a></li>
+            <li class="nav-item"><a href="#"><span>Community</span><i class="fas fa-angle-down"></i></a></li>
             <li><i class="fa fa-search" id="search-button"></i></li>
           </ul>
         </nav>
         <!-- End Nav -->
       </div>
-      <!-- Start Social -->
-      <div class="social">
-        <div class="search" id="search-form">
-          <div class="wrapper">
-            <input type="search" name="search" value="" placeholder="Search..." />
-            <button><span class="lnr lnr-cross"></span></button>
+      <!-- End NavBar -->
+      <!-- SecondaryBar -->
+      <div class="secondarybar">
+        <!-- Breadcrumb -->
+        <div class="breadcrumbs">
+          <a href="#">Home</a> <i class="fas fa-angle-right"></i> Units
+        </div>
+        <!-- End Breadcrumb -->
+        <!-- Start Social -->
+        <div class="social">
+          <div class="search" id="search-form">
+            <div class="wrapper">
+              <input type="search" name="search" value="" placeholder="Search..." />
+              <button><!--<span class="lnr lnr-cross"></span>--><i class="fas fa-times" id="on-point-close"></i></button>
+            </div>
+          </div>
+          <div class="icons" id="social-icons">
+            <a href="https://www.facebook.com/marines"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/usmc"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/Marines"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/marines/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.flickr.com/photos/marine_corps/"><i class="fab fa-flickr"></i></a>
+            <a href="#"><i class="fa fa-rss"></i></a>
           </div>
         </div>
-        <div class="icons" id="social-icons">
-          <a href="https://www.facebook.com/marines"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/usmc"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.youtube.com/Marines"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.instagram.com/marines/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.flickr.com/photos/marine_corps/"><i class="fab fa-flickr"></i></a>
-          <a href="#"><i class="fa fa-rss"></i></a>
-        </div>
+        <!-- End Social -->
       </div>
-      <!-- End Social -->
-    </div>
-    <!-- End NavBar -->
+      <!-- End SecondaryBar -->
+    </header>
+    <!-- End Header -->
+
     <!-- Start Banner -->
     <div class="banner" id="banner">
       <div class="next-slide">
@@ -90,12 +112,13 @@
           <div class="container">
             <div class="row">
               <a class="col-6 prev">
-                <i class="lnr lnr-arrow-left"></i> Previous
+                <i class="fas fa-arrow-left"></i>
+                <!--<i class="lnr lnr-arrow-left"></i>-->&xlarr; Previous
                 <span class="title" id="prev-slide-title">VMGR-152'S PME</span>
               </a>
               <a class="col-6 next">
                 <span class="title" id="next-slide-title">Secnav Visits America</span> Next
-                <i class="lnr lnr-arrow-right"></i>
+                <!--<i class="lnr lnr-arrow-right"></i>-->&xrarr;
               </a>
             </div>
           </div>
@@ -124,12 +147,12 @@
           <div class="container">
             <div class="row">
               <a class="col-6 prev">
-                <i class="lnr lnr-arrow-left"></i> Previous
+                <!--<i class="lnr lnr-arrow-left"></i>-->&xlarr; Previous
                 <span class="title" id="prev-slide-title">VMGR-152'S PME</span>
               </a>
               <a class="col-6 next">
                 <span class="title" id="next-slide-title">Secnav Visits America</span> Next
-                <i class="lnr lnr-arrow-right"></i>
+                <!--<i class="lnr lnr-arrow-right"></i>-->&xrarr;
               </a>
             </div>
           </div>
@@ -309,13 +332,5 @@
 
   </div>
   <!-- End App -->
-  <script>
-    // feathers-icons package for the theme
-    feather.replace({
-      width: 18,
-      height: 18
-    });
-  </script>
 </body>
-
 </html>

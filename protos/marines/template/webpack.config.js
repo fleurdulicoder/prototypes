@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { ImageminWebpackPlugin } = require('imagemin-webpack');
 const ImageMinGifsicle = require('imagemin-gifsicle');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 
 module.exports = {
   entry: ['./src/js/index.js'],
@@ -109,9 +109,9 @@ module.exports = {
       filename: 'css/[name].min.css',
       chunkFilename: 'css/[id].min.css',
     }),
-    new FlowBabelWebpackPlugin({
+    new FlowWebpackPlugin({
       failOnError: true,
-      reportingSeverety: 'error',
+      reportingSeverity: 'error',
       printFlowOutput: true,
       verbose: false,
       flowPath: require.main.require('flow-bin'),
