@@ -46,8 +46,9 @@
   <!-- End of On-Point -->
   <!-- Start App -->
   <div id="app" class="app">
-    <!-- Start NavBar -->
-    <div class="navbar">
+    <!-- Start Header -->
+    <header class="navbar">
+      <!-- NavBar -->
       <div class="wrapper">
         <!-- Start Logo -->
         <a class="logo" id="logo" href="/">Marine Corps</a>
@@ -55,20 +56,26 @@
         <!-- Start Nav -->
         <nav>
           <button><i class="fas fa-bars"></i></button>
-          <ul>
-            <li><a href="#"><span>Units</span></a></li>
-            <li><a href="#"><span>News</span> <!--<i data-feather="chevron-down"></i>--><i class="fas fa-angle-down"></i></a></li>
-            <li><a href="#"><span>Photos</span></a></li>
-            <li><a href="#"><span>Leaders</span></a></li>
-            <li><a href="#"><span>Marines</span></a></li>
-            <li><a href="#"><span>Family</span></a></li>
-            <li><a href="#"><span>Community</span> <!--<i data-feather="chevron-down"></i>--><i class="fas fa-angle-down"></i></a></li>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#"><span>Units</span></a></li>
+            <li class="nav-item">
+              <a href="#" class="nav-link dropdown-toggle"><span>News</span> <i class="fas fa-angle-down"></i></a>
+              <ul class="dropdown-menu dropdown-menu-right hang-left-sub" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item">s</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="#"><span>Photos</span></a></li>
+            <li class="nav-item"><a href="#"><span>Leaders</span></a></li>
+            <li class="nav-item"><a href="#"><span>Marines</span></a></li>
+            <li class="nav-item"><a href="#"><span>Family</span></a></li>
+            <li class="nav-item"><a href="#"><span>Community</span><i class="fas fa-angle-down"></i></a></li>
             <li><i class="fa fa-search" id="search-button"></i></li>
           </ul>
         </nav>
         <!-- End Nav -->
       </div>
-
+      <!-- End NavBar -->
+      <!-- SecondaryBar -->
       <div class="secondarybar">
         <!-- Breadcrumb -->
         <div class="breadcrumbs">
@@ -94,8 +101,9 @@
         </div>
         <!-- End Social -->
       </div>
-    </div>
-    <!-- End NavBar -->
+      <!-- End SecondaryBar -->
+    </header>
+    <!-- End Header -->
 
     <!-- Start Banner -->
     <div class="banner" id="banner">
