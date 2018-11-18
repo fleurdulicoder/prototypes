@@ -1,0 +1,296 @@
+
+.navbar-rtl,
+.navbar-rtl ul,
+.navbar-rtl li {
+  direction: rtl;
+  text-align: right;
+}
+
+.navbar-nav::after {
+  content: "";
+  display: block;
+  height: 0;
+  font: 0/0 serif;
+  clear: both;
+  overflow: hidden;
+}
+
+.navbar-nav *,
+.navbar-nav *::before,
+.navbar-nav *::after {
+  box-sizing: inherit;
+}
+
+.navbar-nav {
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
+  -webkit-tap-highlight-color: rgba($color-shade, 0);
+  vertical-align: middle;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+  text-align: left;
+  z-index: 9999;
+
+  ul,
+  li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    text-align: left;
+  }
+
+  ul {
+    display: none;
+  }
+
+  li,
+  a {
+    position: relative;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    color: $color;
+    text-decoration: none;
+  }
+
+  a {
+    display: block;
+    padding: $padding-base * 2 $padding-base * 4;
+
+    &.current {
+      color: $color;
+    }
+
+    &.disabled {
+      color: $color-senary;
+      cursor: default;
+    }
+
+    .sub-arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -17px;
+      left: auto;
+      right: 4px;
+      width: 34px;
+      height: 34px;
+      overflow: hidden;
+      font: bold 14px/34px monospace;
+      text-align: center;
+      text-shadow: none;
+    }
+
+    .sub-arrow::after {
+      content: "\f105";
+      font-family: "Font Awesome 5 Free";
+    }
+
+    &.highlighted .sub-arrow::after {
+      content: "";
+    }
+  }
+
+  > li > a {
+    height: 137px;
+    line-height: 137px;
+    padding: 0 $padding-base * 3;
+
+    &.has-submenu::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-left: $padding-base * 1.5;
+      font-size: $font-size-3x-small;
+      content: "\f078";
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    ul {
+      position: absolute;
+      width: 12em;
+      padding: 0.8rem 0;
+      line-height: 1;
+      box-shadow: 0 1px 1px $color-shade-20;
+      background-color: $color-accent;
+
+      ul {
+        background-color: $color-compliment;
+      }
+
+      a {
+        font-size: $font-size-2x-small;
+        padding: $padding-base * 1.5 $padding-base * 4;
+      }
+
+      a.has-submenu {
+        padding-right: $padding-base * 4;
+      }
+
+      a.has-submenu::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f105";
+        position: absolute;
+        right: $padding-base * 3;
+      }
+
+      a .sub-arrow {
+        left: 8px;
+        right: auto;
+      }
+
+      &:hover {
+        box-shadow: 0 0 10px $color-shade;
+      }
+    }
+
+    li {
+      float: left;
+    }
+
+    &.sm-rtl li {
+      float: right;
+    }
+
+    ul li,
+    &.sm-rtl ul li,
+    &.sm-vertical li {
+      float: none;
+    }
+
+    ul a,
+    &.sm-vertical a {
+      white-space: normal;
+    }
+
+    .sm-nowrap > li > a,
+    .sm-nowrap > li > :not(ul) a {
+      white-space: nowrap;
+    }
+
+    a,
+    a:hover,
+    a:focus,
+    a:active,
+    a.highlighted {
+      color: $color;
+    }
+
+    a:hover,
+    a:focus,
+    a:active,
+    a.highlighted {
+      background: transparent;
+    }
+
+    a {
+      white-space: nowrap;
+
+      &.current {
+        background: transparents;
+        color: $color;
+      }
+
+      &.disabled {
+        color: $color-septenary;
+      }
+
+      .sub-arrow {
+        top: 50%;
+        margin-top: -8px;
+        right: 20px;
+        width: 8px;
+        height: 16px;
+        font: 14px/16px monospace;
+        background: transparent;
+      }
+    }
+
+    > li {
+      border-top: 0;
+    }
+
+    > li:first-child {
+      border-left: 0;
+    }
+
+    .scroll-up,
+    .scroll-down {
+      position: absolute;
+      display: none;
+      visibility: hidden;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .scroll-up-arrow,
+    .scroll-down-arrow {
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      margin-left: -8px;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      border-width: 8px;
+    }
+
+    .scroll-down-arrow {
+      top: 6px;
+    }
+
+    &.sm-rtl a.has-submenu {
+      padding-right: 20px;
+      padding-left: 32px;
+    }
+
+    &.sm-rtl a .sub-arrow {
+      left: 20px;
+      right: auto;
+    }
+
+    &.sm-rtl.sm-vertical a.has-submenu {
+      padding: 11px 20px;
+    }
+
+    &.sm-rtl.sm-vertical a .sub-arrow {
+      left: auto;
+      right: 8px;
+    }
+
+    &.sm-rtl ul a.has-submenu {
+      padding: 11px 20px;
+    }
+
+    &.sm-rtl ul a .sub-arrow {
+      left: auto;
+      right: 8px;
+    }
+
+    &.sm-vertical a .sub-arrow {
+      left: 8px;
+      right: auto;
+    }
+
+    &.sm-vertical li {
+      border-left: 0;
+    }
+
+    &.sm-vertical > li:first-child {
+      border-top: 0;
+    }
+  }
+}

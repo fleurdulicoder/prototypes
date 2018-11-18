@@ -573,7 +573,7 @@ nav {
     height: inherit;
   }
 
-  ul {
+  >ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -596,6 +596,7 @@ nav {
 
     >li:last-child {
       padding-right: 0;
+      padding-left: $padding-base * 3; // menu
     }
 
     >li:first-child {
