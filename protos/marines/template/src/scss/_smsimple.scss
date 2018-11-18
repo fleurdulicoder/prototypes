@@ -133,23 +133,25 @@
       a {
         font-size: $font-size-2x-small;
         padding: $padding-base * 1.5 $padding-base * 4;
-      }
 
-      a.has-submenu {
-        padding-right: $padding-base * 4;
-      }
+        // scss-lint:disable NestingDepth
+        &.has-submenu {
+          padding-right: $padding-base * 4;
+        }
 
-      a.has-submenu::after {
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: "\f105";
-        position: absolute;
-        right: $padding-base * 3;
-      }
+        &.has-submenu::after {
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f105";
+          position: absolute;
+          right: $padding-base * 3;
+        }
 
-      a .sub-arrow {
-        left: 8px;
-        right: auto;
+        // scss-lint:disable SelectorDepth
+        .sub-arrow {
+          left: 8px;
+          right: auto;
+        }
       }
 
       &:hover {
@@ -176,6 +178,7 @@
       white-space: normal;
     }
 
+    // scss-lint:disable SelectorDepth
     .sm-nowrap > li > a,
     .sm-nowrap > li > :not(ul) a {
       white-space: nowrap;
