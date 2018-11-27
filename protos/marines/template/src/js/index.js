@@ -4,6 +4,7 @@ import $ from 'jquery';
 import 'smartmenus';
 import 'smartmenus-bootstrap-4';
 import 'smartmenus-keyboard';
+import VideoFactory from './videomodal';
 
 document.addEventListener('DOMContentLoaded', () => {
   // commenting out for now
@@ -21,4 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     subMenusSubOffsetY: 0,
     subIndicators: false,
   });
+
+  VideoFactory();
 }, false);
