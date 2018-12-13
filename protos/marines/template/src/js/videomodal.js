@@ -1,29 +1,41 @@
 function VideoModal(id) {
-  console.log('creating video modal > ', id);
   const element = id ? document.getElementById(id) : null;
 
-  const init = () => {
-    element.classList.add('fade');
+  const bg = document.createElement('div');
+  bg.className = 'video-background';
+  document.body.appendChild(bg);
+
+  const hide = () => {
+    element.style.display = 'none';
+    document.body.classList.remove('noscroll');
+    document.removeEventListener('click', close);
+    document.removeEventListener('touch', close);
+    document.body.removeChild(bg);
   };
 
   const show = () => {
-    console.log('adding body > noscroll, modal > block, show');
     element.style.display = 'block';
     document.body.classList.add('noscroll');
-    element.classList.add('show');
-  };
-
-  const close = () => {
-    console.log('close > no show, display none, scroll');
-    element.classList.remove('show');
     window.setTimeout(() => {
-      element.style.display = 'none';
-      document.body.classList.remove('noscroll');
-    }, 2000);
+      element.classList.add('show');
+    }, 600);
   };
 
-  element.addEventListener('click', close, false);
-  element.addEventListener('touch', close, false);
+  const close = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(e.target, e.currentTarget);
+    if (!element.contains(e.target)) {
+      element.classList.remove('show');
+      window.setTimeout(() => hide(), 600);
+    }
+  };
+
+  const init = () => {
+    element.classList.add('fade');
+    document.addEventListener('click', e => close(e), false);
+    document.addEventListener('touch', e => close(e), false);
+  };
 
   if (element) {
     init();
@@ -39,7 +51,9 @@ function VideoFactory() {
 
   const load = (e) => {
     e.preventDefault();
-    const el = e.target || e.srcElement;
+    e.stopPropagation();
+    let el = e.target || e.srcElement;
+    if (el.nodeType === 3) el = el.parentNode;
     const attr = el.hasAttribute('data-load')
       ? el.getAttribute('data-load')
       : el.parentNode.getAttribute('data-load');
@@ -47,9 +61,9 @@ function VideoFactory() {
     if (modal) modal.show();
   };
 
-  videotriggers.forEach((obj) => {
-    obj.addEventListener('click', load, false);
-    obj.addEventListener('touch', load, false);
+  videotriggers.forEach((trigger) => {
+    trigger.addEventListener('click', load, false);
+    trigger.addEventListener('touch', load, false);
   });
 }
 

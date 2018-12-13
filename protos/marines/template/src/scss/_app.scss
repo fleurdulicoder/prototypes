@@ -716,8 +716,9 @@ nav {
 
   a.video-overlay {
     position: relative;
-    padding-left: 70px;
+    display: block;
     min-height: 70px;
+    padding: 0;
     top: 40%;
     left: 50%;
     line-height: 70px;
@@ -1090,46 +1091,45 @@ footer {
   }
 }
 
-.video-modal {
+.video-background {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 100000;
-  display: none;
   overflow: hidden;
   outline: 0;
   background-color: $color-shade-30;
+}
 
-  > .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: auto;
-    margin: .5rem;
-    pointer-events: none;
+.video-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  display: none;
+  margin: .5rem;
+  z-index: 100001;
 
-    .video-holder {
+  > .video-holder {
+    padding: 0;
+
+    video {
+      position: relative;
+      width: 100%;
+      right: 0;
+      bottom: 0;
+      display: block;
+      margin: 0;
       border: 10px solid $color-quinary;
-      padding: 0;
     }
-  }
-
-  video {
-    position: relative;
-    width: 100%;
-    right: 0;
-    bottom: 0;
-    display: block;
-    border: 0;
-    margin: 0;
   }
 
   &.fade {
     opacity: 0;
-    transition: opacity 225ms $ease-out;
+    transition: opacity 225ms ease-in-out;
 
     &.show {
       opacity: 1;
@@ -1139,8 +1139,8 @@ footer {
 
 @media (min-width: 576px) {
   .video-modal {
-    > .wrapper {
-      max-width: 500px;
+    > .video-holder {
+      max-width: 70%;
       margin: 1.75rem auto;
     }
   }
