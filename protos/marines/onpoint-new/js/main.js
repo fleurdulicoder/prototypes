@@ -1,10 +1,17 @@
 // on-point announcer
-var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
-  var close = btnCloseId ? document.getElementById(btnCloseId) : null;
-  var carousel = new Carousel(id, pagerId, btnLeftId, btnRightId);
+var Announcer = function(config) {
+  if (!config && !config.id && !config.btnCloseId)  return;
+  var element = document.getElementById(config.id);
+  var close = document.getElementById(config.btnCloseId);
+  if (!element && !close) return;
 
   function hide() {
     document.body.className = document.body.className.replace(' with-on-spot', '');
+    if (carousel && config.autoRotate) {
+      carousel.pause();
+      element.removeEventListener('mouseover', carousel.pause, false);
+      element.removeEventListener('mouseout', carousel.rotate, false);
+    }
   }
 
   function open() {
@@ -18,16 +25,26 @@ var Announcer = function(id, btnLeftId, btnRightId, pagerId, btnCloseId) {
     close.addEventListener('touch', hide, false);
   }
 
+  var carousel = new Carousel(config);
+  if (carousel && config.autoRotate) {
+    element.addEventListener('mouseover', carousel.pause, false);
+    element.addEventListener('mouseout', carousel.rotate, false);
+    carousel.rotate();
+  }
+
   open();
 };
 
-var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
-  var strip, pager, leftControl, rightControl, current, quantity;
-  strip = stripId ? document.getElementById(stripId) : null;
-  pager = pagerId ? document.getElementById(pagerId) : null;
-  leftControl = leftControlId ? document.getElementById(leftControlId) : null;
-  rightControl = rightControlId ? document.getElementById(rightControlId) : null;
-  if (!strip || !leftControl || !rightControl) return;
+var Carousel = function(config) {
+  var strip, pager, leftControl, rightControl, current, quantity, autoRotate, timer;
+  strip = config.carouselId ? document.getElementById(config.carouselId) : null;
+  pager = config.pagerId ? document.getElementById(config.pagerId) : null;
+  leftControl = config.btnLeft ? document.getElementById(config.btnLeft) : null;
+  rightControl = config.btnRight ? document.getElementById(config.btnRight) : null;
+  autoRotate = config.doRotate || false;
+  rotateDuration = config.rotateDuration || 5000; // milliseconds
+  transitionDuration = config.transitionDuration || 1000; // milliseconds
+  if (!strip || !leftControl || !rightControl || !pager) return;
 
   function setup() {
     current = 0;
@@ -41,28 +58,46 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
 
   function moveLeft() {
     if (current + 1 <= 0) {
-      pager.innerHTML = (Math.abs(current + 1) + 1) + ' of ' + quantity;
-      TweenMax.to(strip, 0.5, {
-        x: (++current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)',
-        onComplete: function(){
-          console.log('moving left >>> carousel');
-        }
-      });
+      ++current;
+    } else if (current + 1 == 1) {
+      current = -quantity + 1;
+      TweenMax.set(strip, {x:  (-quantity * 100)+ '%'});
     }
+    TweenMax.to(strip, transitionDuration/1000, {
+      x: (current * 100) + '%',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
+      onComplete: function(){
+        pager.innerHTML = (Math.abs(current) + 1) + ' of ' + quantity;
+      }
+    });
   }
 
   function moveRight() {
     if (Math.abs(current - 1) < quantity) {
-      pager.innerHTML = (Math.abs(current - 1) + 1) + ' of ' + quantity;
-      TweenMax.to(strip, 0.5, {
-        x: (--current * 100) + '%',
-        ease: 'cubic-bezier(.67,.54,.43,.78)',
-        onComplete: function(){
-          console.log('moving right >>> carousel');
-        }
-      });
+      current--;
+    } else if (Math.abs(current - 1) == quantity) {
+      current = 0;
+      TweenMax.set(strip, {x: 100 + '%'});
     }
+    TweenMax.to(strip, transitionDuration/1000, {
+      x: (current * 100) + '%',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
+      onComplete: function(){
+        pager.innerHTML = (Math.abs(current) + 1) + ' of ' + quantity;
+      }
+    });
+  }
+
+  function rotate() {
+    console.log('rotate please');
+    var totalTime = transitionDuration + rotateDuration;
+    timer = window.setInterval(function(){
+      moveRight();
+    }, totalTime);
+  }
+
+  function pause() {
+    window.clearInterval(timer);
   }
 
   leftControl.addEventListener('click', moveLeft, false);
@@ -71,4 +106,9 @@ var Carousel = function(stripId, pagerId, leftControlId, rightControlId) {
   rightControl.addEventListener('touch', moveRight, false);
 
   setup();
+
+  return {
+    pause: pause,
+    rotate: rotate
+  };
 };
