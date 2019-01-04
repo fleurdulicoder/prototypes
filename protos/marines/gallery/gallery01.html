@@ -227,95 +227,381 @@
       <div class="counter"></div>
     </div>
 
-    <section id="explore-gallery" class="dma-slideshow explore">
-      <div class="container-transparent">
+    <style type="text/css">
+      .explore {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      .explore .headline {
+        display: block;
+      }
+
+      .explore .gallery {
+        position: relative;
+        height: 580px;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        align-content: flex-start;
+      }
+
+      .explore .gallery .view {
+        position: relative;
+        height: 100%;
+        width: 60%;
+        bottom: 0;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .explore .gallery .carousel {
+        position: relative;
+        width: 40%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .explore .gallery .view .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+        background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(transparent), to(#000));
+        background: linear-gradient(180deg, transparent, transparent, #000);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000", endColorstr="#000", GradientType=0);
+        z-index: 10;
+      }
+
+      .explore .gallery .carousel .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .explore .preview {
+        display: none;
+        opacity: 0;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.8);
+        border-left: 1px solid #000;
+      }
+
+      /* starting out with 2d set of images */
+      .explore .preview:nth-child(3) {
+        display: block;
+        opacity: 1;
+      }
+
+      .explore .preview:nth-child(4) {
+        display: block;
+        opacity: 1;
+      }
+
+      .explore .preview:nth-child(even) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 50%;
+      }
+
+      .explore .preview:nth-child(even) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        width: 50%;
+      }
+
+      .explore .preview img {
+        position: relative;
+        height: 100%;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+      }
+
+      .explore .preview .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        vertical-align: middle;
+        background-color: rgba(148, 0, 0, 0);
+        transition: background-color 125ms cubic-bezier(.38, .66, .45, 1.04);
+      }
+
+      .explore .preview .overlay a {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-top: 48%;
+        font-family: Colossalis;
+        letter-spacing: 2px;
+        font-size: 18px;
+        padding: 5px 0;
+        color: #fff;
+      }
+
+      .explore .preview:nth-child(odd)+.preview:nth-child(even) {
+        /*-ms-transform: translate3d(15%, 0, 0);
+        -moz-transform: translate3d(15%, 0, 0);
+        -webkit-transform: translate3d(15%, 0, 0);
+        transform: translate3d(15%, 0, 0);*/
+      }
+
+      .explore .preview:nth-child(even):hover {
+        /*-ms-transform: translate3d(-15%, 0, 0);
+        -moz-transform: translate3d(-15%, 0, 0);
+        -webkit-transform: translate3d(15%, 0, 0);
+        transform: translate3d(-15%, 0, 0);*/
+      }
+
+      .explore .preview .overlay a span::before {
+        content: "\2190";
+        display: inline-block;
+      }
+
+      .explore .preview .overlay a span::after {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        width: calc(100% - 20px);
+        border-bottom: 2px solid #fff;
+        content: "";
+      }
+
+      .explore .preview .overlay:hover {
+        background-color: rgba(148, 0, 0, 0.7);
+      }
+
+      /* please revew */
+      /*.explore .gallery .preview.next {
+        z-index: 3;
+        left: 60%;
+        background-color: #940000;
+        height: 100%;
+        background: url('img/img7.jpg') left center no-repeat;
+        background-position-x: left !important;
+        background-size: cover;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.8);
+        border-left: 1px solid #000;
+        background-size: cover;
+      }*/
+
+      /*.explore .gallery .preview.next-next {
+        z-index: 4;
+        left: 80%;
+        background: url('img/img6.jpg') left center no-repeat;
+        background-position-x: left !important;
+        background-size: cover;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.8);
+        transform: translate3d(0, 0, 0);
+        transition: transform 500ms cubic-bezier(.38, .66, .45, 1.04);
+      }*/
+
+      /*.explore .preview a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: rgba(148, 0, 0, 0);
+        transition: background-color 125ms cubic-bezier(.38, .66, .45, 1.04);
+      }*/
+
+
+      .explore .gallery .view img {
+        position: relative;
+        min-height: 100%;
+        min-width: 100%;
+        height: 100%;
+        width: auto;
+        vertical-align: middle;
+        text-align: center;
+        display: none;
+        opacity: 0;
+        z-index: 1;
+      }
+
+      .explore .gallery .view img:first-child {
+        display: block;
+        opacity: 1;
+      }
+
+      .explore .gallery .caption-section {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        z-index: 12;
+      }
+
+      .explore .gallery .caption-section.light h4 {
+        color: #fff;
+        margin: 0 0 5px;
+        letter-spacing: 2px;
+        padding: 0;
+      }
+
+      .explore .gallery .caption-section.light p {
+        color: #fff;
+        font-size: 13px;
+        padding: 0;
+        margin: 0 0 22px;
+        line-height: 1;
+      }
+
+      .explore .gallery a.download-link,
+      .explore .gallery a.details-link {
+        color: #fff;
+        font-family: Arial, sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        margin-right: 15px;
+        font-size: 18px;
+        text-decoration: none;
+      }
+
+      .explore .gallery a.download-link::before {
+        content: "\f358";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #940000;
+        margin-right: 0;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .explore .gallery a.details-link::before {
+        content: "\f055";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #940000;
+        margin-right: 0;
+        display: inline-block;
+        margin-right: 5px;
+      }
+
+      .explore .gallery a.download-link:hover,
+      .explore .gallery a.details-link:hover {
+        text-shadow: 2px 1px #000;
+      }
+
+      .explore .gallery h2 {
+        color: #fff;
+      }
+    </style>
+
+    <section class="dma-slideshow explore" id="explore">
+      <div class="headline">
         <div class="container">
-          <div class="row" style="padding-bottom: 15px;">
+          <div class="row">
             <div class="col-12">
               <h2>Explore Photos</h2>
             </div>
           </div>
         </div>
-        <div class="gallery" id="gallery01">
-          <div class="view current">
-            <div class="overlay dark"></div>
-            <img src="img/img5.jpg" class="actimg">
-            <div class="caption-section light">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <h4>Photo Title</h4>
-                    <p>Photo by Staff Joseph Jackob</p>
-                    <aside>
-                      <a href="#" class="download-link">Download</a>
-                      <a href="#" class="details-link">Details</a>
-                    </aside>
-                  </div>
+      </div>
+      <div class="gallery">
+        <!-- CURRENT VIEW -->
+        <div class="view">
+          <!-- main image swapping area -->
+          <img src="img/img11.jpg" id="mainimg-101" data-id="101" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com" />
+          <img src="img/img10.jpg" id="mainimg-202" data-id="202" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk" />
+          <img src="img/img9.jpg" id="mainimg-303" data-id="303" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com" />
+          <img src="img/img8.jpg" id="mainimg-404" data-id="404" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com" />
+          <img src="img/img7.jpg" id="mainimg-505" data-id="505" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com" />
+          <img src="img/img6.jpg" id="mainimg-606" data-id="606" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com" />
+          <img src="img/img5.jpg" id="mainimg-707" data-id="707" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com" />
+          <!-- overlay -->
+          <div class="overlay dark"></div>
+          <!-- start caption -->
+          <div class="caption-section light">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h4 class="title light" id="explore-imgtitle">My Photo Title</h4>
+                  <p class="author" id="explore-byline">Photo by Andrew Smith</p>
+                  <aside>
+                    <a href="#" class="download-link" download="img/img11.jpg" id="explore-download">Download</a>
+                    <a href="#" class="details-link" title="Details" id="explore-details">Details</a>
+                  </aside>
                 </div>
               </div>
             </div>
           </div>
-          <div class="preview next"><a href="#"><span>View</span></a></div>
-          <div class="preview next-next"><a href="#"><span>View</span></a></div>
+          <!-- end caption -->
         </div>
-      </div>
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-8" style="color: #fff;">
-              View Gallery
+        <!-- END CURRENT VIEW -->
+        <!-- CAROUSEL VIEWS -->
+        <div class="carousel">
+          <div class="slider">
+            <div class="preview">
+              <img alt="" src="img/img11.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
             </div>
-            <div class="col-4" style="color: #fff; white-space: nowrap;">
-              <i class="fas fa-chevron-left previous"></i>
-              <i class="fas fa-chevron-right next"></i>
+            <div class="preview">
+              <img alt="" src="img/img10.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
             </div>
-          </div>
-        </div>
-    </section>
-
-  </div>
-
-
-
-
-  <div class="dma-slideshow explore" id="explore-[ss:moduleid]">
-    <div class="headline-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h2>[ss:moduletitle]</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="gallery-section">
-      <div class="view current">
-        <div class="overlay dark"></div>
-        <img src="img11.jpg" class="actimg" id="explore-currentimage">
-        <div class="caption-section light">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h4 class="title light" id="explore-imgtitle"></h4>
-                <p class="author" id="explore-byline"></p>
-                <aside>
-                  <a href="#" class="download-link" download="img11.jpg" id="explore-download">Download</a>
-                  <a href="#" class="details-link" title="Details" id="explore-details">Details</a>
-                </aside>
+            <div class="preview">
+              <img alt="" src="img/img9.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
+            </div>
+            <div class="preview">
+              <img alt="" src="img/img8.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
+            </div>
+            <div class="preview">
+              <img alt="" src="img/img7.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
+            </div>
+            <div class="preview">
+              <img alt="" src="img/img6.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
+              </div>
+            </div>
+            <div class="preview">
+              <img alt="" src="img/img5.jpg" />
+              <div class="overlay">
+                <a href="#" class="view-trigger"><span>View</span></a>
               </div>
             </div>
           </div>
         </div>
+        <!-- END CAROUSEL VIEWS -->
       </div>
-      <div class="slides">
-        <div class="slide preview">
-          <img alt="" src="img10.jpg" class="" />
-          <a href="#" class="view-trigger"><span>View</span></a></div>
-      </div>
-      <div class="slide preview">
-        <img alt="img9.jpg" src="" class="" />
-        <a href="#" class="view-trigger"><span>View</span></a></div>
-    </div>
   </div>
   </div>
   <div class="pager-section">
@@ -323,34 +609,27 @@
     <i class="fas fa-chevron-left previous" id="explore-prev"></i>
     <i class="fas fa-chevron-right next" id="explore-next"></i>
   </div>
-  <div class="preloader-section">
-    <img src="img11.jpg" data-id="101" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com" />
-    <img src="img10.jpg" data-id="202" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk" />
-    <img src="img9.jpg" data-id="303" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com" />
-    <img src="img8.jpg" data-id="404" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com" />
-    <img src="img7.jpg" data-id="505" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com" />
-    <img src="img6.jpg" data-id="606" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com" />
-  </div>
+  </section>
   </div>
 
   <script type="text/javascript" src="dist/core.min.js"></script>
   <script>
     // commenting out not to show in current prototype
     var ExploreGallery = ExploreGallery || function(config)
-    // $(#carousel).carouFredSel({
-    //       items     : 2,
-    //       direction : "right",
-    //       scroll : {
-    //           items         : 1,
-    //           easing        : "elastic",
-    //           duration      : 1000,
-    //           pauseOnHover  : true
-    //       }
-    //   });
+    var element = config.componentId ? document.getElementById(config.componentId) : null;
+    var preloader = element !== null ? element.getElementsByTagName('img') : [];
+    var sets;
+
+
+    };
+
+    var Set = function() {
+
     };
 
     document.addEventListener('DOMContentLoaded', function() {
       var gallery[s: moduleid] = new ExploreGallery({
+        "componentId": "explore",
         "title": "explore-imgtitle",
         "author": "explore-byline",
         "download": "explore-download",
