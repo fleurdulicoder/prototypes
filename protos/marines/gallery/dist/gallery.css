@@ -706,13 +706,6 @@ nav>ul li, .nav-bar .social ul li {
   overflow: hidden;
 }
 
-.explore .gallery .preview-section {
-  position: relative;
-  width: 40%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .explore .gallery .view .overlay {
   position: absolute;
   top: 0;
@@ -724,6 +717,128 @@ nav>ul li, .nav-bar .social ul li {
   background: linear-gradient(180deg, transparent, transparent, #000);
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#000", endColorstr="#000", GradientType=0);
   z-index: 10;
+}
+
+/*.explore .gallery .view .items {
+  position: relative;
+  height: 505px;
+}*/
+.explore .gallery .view .item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0ms, opacity 500ms ease;
+  -moz-transition: visibility 0ms, opacity 500ms ease;
+  -ms-transition: visibility 0ms, opacity 500ms ease;
+  -o-transition: visibility 0ms, opacity 500ms ease;
+  transition: visibility 0ms, opacity 500ms ease;
+}
+
+/* default state test */
+.explore .gallery .view .item:first-child {
+  visibility: visible;
+  opacity: 1;
+}
+
+.explore .gallery .view .item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  min-height: 100%;
+  min-width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 1;
+}
+
+.explore .gallery .view .item.current {
+  visibility: visible;
+  opacity: 1;
+}
+
+.explore .gallery .caption-section {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 50px;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  z-index: 21;
+}
+
+.explore .gallery .view .item .caption-section {
+  display: none;
+}
+
+.explore .gallery .caption-section.light h4 {
+  color: #fff;
+  margin: 0 0 5px;
+  letter-spacing: 2px;
+  padding: 0;
+}
+
+.explore .gallery .caption-section.light p {
+  color: #fff;
+  font-size: 13px;
+  padding: 0;
+  margin: 0 0 22px;
+  line-height: 1;
+}
+
+.explore .gallery a.download-link,
+.explore .gallery a.details-link {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  margin-right: 15px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.explore .gallery a.download-link::before {
+  content: "\f358";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #940000;
+  margin-right: 0;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.explore .gallery a.details-link::before {
+  content: "\f055";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #940000;
+  margin-right: 0;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.explore .gallery a.download-link:hover,
+.explore .gallery a.details-link:hover {
+  text-shadow: 2px 1px #000;
+}
+
+.explore h2 {
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.explore .gallery .preview-section {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .explore .preview {
@@ -823,111 +938,6 @@ nav>ul li, .nav-bar .social ul li {
 
 .explore .preview .overlay:hover .title {
   opacity: 1;
-}
-
-.explore .gallery .view .item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: visibility 0ms, opacity 500ms ease;
-  -moz-transition: visibility 0ms, opacity 500ms ease;
-  -ms-transition: visibility 0ms, opacity 500ms ease;
-  -o-transition: visibility 0ms, opacity 500ms ease;
-  transition: visibility 0ms, opacity 500ms ease;
-}
-
-.explore .gallery .view .item img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: auto;
-  min-height: 100%;
-  min-width: 100%;
-  vertical-align: middle;
-  text-align: center;
-  z-index: 1;
-}
-
-.explore .gallery .view .item.current {
-  visibility: visible;
-  opacity: 1;
-}
-
-.explore .gallery .caption-section {
-  position: absolute;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 50px;
-  left: 0;
-  bottom: 0;
-  height: auto;
-  z-index: 21;
-}
-
-.explore .gallery .view .item .caption-section {
-  display: none;
-}
-
-.explore .gallery .caption-section.light h4 {
-  color: #fff;
-  margin: 0 0 5px;
-  letter-spacing: 2px;
-  padding: 0;
-}
-
-.explore .gallery .caption-section.light p {
-  color: #fff;
-  font-size: 13px;
-  padding: 0;
-  margin: 0 0 22px;
-  line-height: 1;
-}
-
-.explore .gallery a.download-link,
-.explore .gallery a.details-link {
-  color: #fff;
-  font-family: Arial, sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 5px 0;
-  margin-right: 15px;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.explore .gallery a.download-link::before {
-  content: "\f358";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #940000;
-  margin-right: 0;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.explore .gallery a.details-link::before {
-  content: "\f055";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #940000;
-  margin-right: 0;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.explore .gallery a.download-link:hover,
-.explore .gallery a.details-link:hover {
-  text-shadow: 2px 1px #000;
-}
-
-.explore h2 {
-  color: #fff;
-  letter-spacing: 2px;
 }
 
 .explore .preview:hover {
