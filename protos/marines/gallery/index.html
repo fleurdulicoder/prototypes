@@ -75,59 +75,57 @@
           </div>
           <div class="view">
             <!-- main image swapping area -->
-            <img src="img/img11.jpg" id="mainimg-101" data-id="101" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com" />
-            <img src="img/img10.jpg" id="mainimg-202" data-id="202" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk" />
-            <img src="img/img9.jpg" id="mainimg-303" data-id="303" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com" />
-            <img src="img/img8.jpg" id="mainimg-404" data-id="404" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com" />
-            <img src="img/img7.jpg" id="mainimg-505" data-id="505" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com" />
-            <img src="img/img6.jpg" id="mainimg-606" data-id="606" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com" />
-            <img src="img/img5.jpg" id="mainimg-707" data-id="707" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com" />
+            <!--<img src="img/img11.jpg" id="lrgimg101" class="current" />
+            <img src="img/img10.jpg" id="lrgimg202" />
+            <img src="img/img9.jpg" id="lrgimg303" />
+            <img src="img/img8.jpg" id="lrgimg404" />
+            <img src="img/img7.jpg" id="lrgimg505" />
+            <img src="img/img6.jpg" id="lrgimg606" />
+            <img src="img/img5.jpg" id="lrgimg505" />-->
             <!-- overlay -->
-            <div class="overlay dark">
-
-            </div>
+            <div class="overlay dark"></div>
           </div>
           <!-- END CURRENT VIEW -->
           <!-- preview-section VIEWS -->
           <div class="preview-section" id="gallery-preview">
-            <div class="preview">
+            <div class="preview" data-id="101" data-imgsrc="img/img11.jpg" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com">
               <img alt="" src="img/img11.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="202" data-imgsrc="img/img10.jpg" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk">
               <img alt="" src="img/img10.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="303" data-imgsrc="img/img9.jpg" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com">
               <img alt="" src="img/img9.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="404" data-imgsrc="img/img8.jpg" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com">
               <img alt="" src="img/img8.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="505" data-imgsrc="img/img7.jpg" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com">
               <img alt="" src="img/img7.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="606" data-imgsrc="img/img6.jpg" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com">
               <img alt="" src="img/img6.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
               </a>
             </div>
-            <div class="preview">
+            <div class="preview" data-id="707" data-imgsrc="img/img5.jpg" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com">
               <img alt="" src="img/img5.jpg" />
               <a class="overlay" href="#" class="view-trigger">
                 <span class="title"><span>View</span></span>
@@ -158,7 +156,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       var gallery = new ExploreGallery({
         "galleryId": "explore-gallery",
-        "inview": 3
+        "inview": 2
       });
     }, false);
   </script>
