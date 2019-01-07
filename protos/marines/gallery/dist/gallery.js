@@ -44,6 +44,26 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  var slideTemplate = function(obj) {
+    var html =
+    '<img src="'+obj.src+'" alt="'+obj.title+'" /> \
+     <div class="caption-section light"> \
+      <div class="container"> \
+        <div class="row"> \
+          <div class="col-12"> \
+            <h4 class="title light">'+obj.title+'</h4> \
+            <p class="author">'+obj.byline+'</p> \
+            <aside> \
+              <a href="'+obj.src+'" class="download-link" download="'+obj.src+'">Download</a> \
+              <a href="'+obj.link+'" class="details-link" title="Details">Details</a> \
+            </aside> \
+          </div> \
+        </div> \
+      </div> \
+    </div>';
+    return html;
+  };
+
   function observers() {
     if (prev && next) {
       prev.addEventListener('click', function(e){}, false);
@@ -51,7 +71,7 @@ var ExploreGallery = ExploreGallery || function(config) {
       prev.addEventListener('touch', function(e){}, false);
       next.addEventListener('touch', function(e){}, false);
     }
-    for (var x = 0; x < quantity; x++) { // querySelector('a')
+    for (var x = 0; x < quantity; x++) {
       previews[x].querySelector('a').addEventListener('click', function(e){
         loadTrio(e);
       }, false);
@@ -74,12 +94,23 @@ var ExploreGallery = ExploreGallery || function(config) {
   function preload() {
     console.log('Explore Gallery > Preload');
     var addMainImageTo = function(node) {
-      var image = document.createElement('img');
-      image.setAttribute('id', 'explore-image-'+node.getAttribute('data-id'));
-      image.setAttribute('src', node.getAttribute('data-imgsrc'));
-      image.setAttribute('alt', node.getAttribute('data-title'));
-      view.appendChild(image);
-      node.view = image;
+      // var image = document.createElement('img');
+      // image.setAttribute('id', 'explore-image-'+node.getAttribute('data-id'));
+      // image.setAttribute('src', node.getAttribute('data-imgsrc'));
+      // image.setAttribute('alt', node.getAttribute('data-title'));
+      // view.appendChild(image);
+      // node.view = image;
+      var slide = document.createElement('div');
+      slide.id = 'explore-view-slide-'+node.getAttribute('data-id');
+      slide.className = "item";
+      slide.innerHTML = slideTemplate({
+        src: node.getAttribute('data-imgsrc'),
+        title: node.getAttribute('data-title'),
+        byline: node.getAttribute('data-byline'),
+        link: node.getAttribute('data-link')
+      });
+      view.appendChild(slide);
+      node.view = slide;
     };
 
     for (var x = 0; x < quantity; x++) {
