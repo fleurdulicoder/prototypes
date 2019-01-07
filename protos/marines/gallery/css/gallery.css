@@ -158,10 +158,12 @@
 
 .explore .gallery .view img {
   position: absolute;
-  min-height: 100%;
-  min-width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
   width: auto;
+  min-height: 100%;
+  min-width: 100%;
   visibility: hidden;
   vertical-align: middle;
   text-align: center;

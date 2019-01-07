@@ -27,7 +27,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     next = element.querySelector('.pager-section .next');
   // if (!slider || !previews || !view || !prev || !next) return;
 
-  var sets = [], currentSet = 0, activeImage, increment = config.inview || 1, quantity = previews.length;
+  var currentSet = 0, activeImage, increment = config.inview || 1, quantity = previews.length;
 
   function loadTrio(e) {
     console.log('Explore Gallery > Load Trio');
@@ -36,9 +36,12 @@ var ExploreGallery = ExploreGallery || function(config) {
     while(!clicked.classList.contains('preview')) {
       clicked = clicked.parentNode;
     }
-    clicked.view.classList.add('current');
-    activeImage.classList.remove('current');
-    activeImage = clicked.view;
+    if (clicked.view.id !== activeImage.id) {
+      clicked.view.classList.add('current');
+      activeImage.classList.remove('current');
+      activeImage = clicked.view;
+      preloadNextSet();
+    }
   }
 
   function observers() {
@@ -55,6 +58,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  var sets = [];
   function breakIntoSets(num) {
     console.log('Explore Gallery > Break Into Sets At ', num);
     for (var i = 0; i < quantity; i += num) {
@@ -71,6 +75,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     console.log('Explore Gallery > Preload');
     var addMainImageTo = function(node) {
       var image = document.createElement('img');
+      image.setAttribute('id', 'explore-image-'+node.getAttribute('data-id'));
       image.setAttribute('src', node.getAttribute('data-imgsrc'));
       image.setAttribute('alt', node.getAttribute('data-title'));
       view.appendChild(image);
@@ -85,10 +90,11 @@ var ExploreGallery = ExploreGallery || function(config) {
 
   function getNextSet() {
     if ((currentSet + 1) < sets.length) {
-      currentSet++;
-      return sets[currentSet + 1];
+      console.log(sets[currentSet+1]);
+      return sets[++currentSet];
     } else {
       currentSet = 0;
+      console.log(sets[0]);
       return sets[0];
     }
   }
@@ -109,6 +115,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function preloadNextSet() {
+    console.log('Explore Gallery > Preload Next Set');
     removeSet();
     loadNextSet(getNextSet());
   }
