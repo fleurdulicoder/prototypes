@@ -6,14 +6,17 @@ var ExploreGallery = ExploreGallery || function(config) {
   var previews = [], sets = [];
   var view = element.querySelector('.view'),
     views = view.querySelectorAll('.item'),
-    slider = element.querySelector('.preview-section');
-
-  console.log(view, views, slider);
+    slider = element.querySelector('.preview-section'),
+    caption = element.querySelector('.caption-section'),
+    captionTitle = caption.querySelector('.title'),
+    captionByline = caption.querySelector('.byline'),
+    captionDownloadLink = caption.querySelector('.download-link'),
+    captionDetailsLink = caption.querySelector('.details-link');
 
   var  quantity = views.length,
     increment = 2,
-    currentSet = 0,
-    activeImage;
+    activeSet = 0,
+    activeImageSlide;
 
   function loadPreviews() {
     console.log('Explore Gallery > Load Previews');
@@ -42,100 +45,100 @@ var ExploreGallery = ExploreGallery || function(config) {
     };
 
     var totalSets = Math.floor(quantity / 2);
-    var count = -1, currentSetElement, currentPreview;
-    console.log(totalSets, quantity, count);
+    var count = -1, activeSetElement, activePreview;
     for (var i = 0; i < quantity; i++) {
-      console.log('i = ', i);
       if (i % 2 == 0) {
         count++;
         if (count >= totalSets) break;
-        currentSetElement = createSet(count);
-        sets.push(currentSetElement);
+        activeSetElement = createSet(count);
+        sets.push(activeSetElement);
       }
-      currentPreview = createPreview(views[i], currentSetElement);
+      activePreview = createPreview(views[i], activeSetElement);
     }
     console.log(sets);
   }
 
+  function loadCaption() {
+    if (activeImageSlide) {
+      captionTitle.innerHTML = activeImageSlide.getAttribute('data-title');
+      captionByline.innerHTML = activeImageSlide.getAttribute('data-byline');
+      captionDownloadLink.setAttribute('href', activeImageSlide.getAttribute('data-imgsrc'));
+      captionDownloadLink.setAttribute('download', activeImageSlide.getAttribute('data-imgsrc'));
+      captionDetailsLink.setAttribute('href', activeImageSlide.getAttribute('data-link'));
+    }
+  }
 
+  function setDefaultView() {
+    activeSet = 0;
+    activeImageSlide = views[0];
+    activeImageSlide.classList.add('current');
+    loadCaption();
+    preloadNextSet();
+  }
 
-  // function loadTrio(e) {
-  //   console.log('Explore Gallery > Load Trio');
-  //   e.preventDefault();
-  //   var clicked = e.target;
-  //   while(!clicked.classList.contains('preview')) {
-  //     clicked = clicked.parentNode;
-  //   }
-  //   if (clicked.view.id !== activeImage.id) {
-  //     clicked.view.classList.add('current');
-  //     activeImage.classList.remove('current');
-  //     activeImage = clicked.view;
-  //     preloadNextSet();
-  //   }
-  // }
+  function getNextSet() {
+    if ((activeSet + 1) < sets.length) {
+      return sets[++activeSet];
+    } else {
+      activeSet = 0;
+      return sets[activeSet];
+    }
+  }
 
-  // function observers() {
-  //   // if (prev && next) {
-  //   //   prev.addEventListener('click', function(e){}, false);
-  //   //   next.addEventListener('click', function(e){}, false);
-  //   //   prev.addEventListener('touch', function(e){}, false);
-  //   //   next.addEventListener('touch', function(e){}, false);
-  //   // }
-  //   for (var x = 0; x < quantity; x++) {
-  //     previews[x].querySelector('a').addEventListener('click', function(e){
-  //       loadTrio(e);
-  //     }, false);
-  //   }
-  // }
+  function loadNextSet(loadingSet) {
+    TweenMax.set(loadingSet, {
+      display: 'block',
+      opacity: 1
+    });
+  }
 
+  function removeSet() {
+    TweenMax.set(sets[activeSet], {
+      display: 'none',
+      opacity: 0
+    });
+  }
 
-  //
-  //
-  // function getNextSet() {
-  //   if ((currentSet + 1) < sets.length) {
-  //     console.log(sets[currentSet+1]);
-  //     return sets[++currentSet];
-  //   } else {
-  //     currentSet = 0;
-  //     console.log(sets[0]);
-  //     return sets[0];
-  //   }
-  // }
+  function preloadNextSet() {
+    console.log('Explore Gallery > Preload Next Set');
+    removeSet();
+    loadNextSet(getNextSet());
+  }
 
-  // function loadNextSet(loadingSet) {
-  //   TweenMax.set(loadingSet, {
-  //     display: 'block',
-  //     opacity: 1
-  //   });
-  // }
-  //
-  // function removeSet() {
-  //   var activeSet = sets[currentSet];
-  //   TweenMax.set(activeSet, {
-  //     display: 'none',
-  //     opacity: 0
-  //   });
-  // }
-  //
-  // function preloadNextSet() {
-  //   console.log('Explore Gallery > Preload Next Set');
-  //   removeSet();
-  //   loadNextSet(getNextSet());
-  // }
-  //
-  // function setDefaultView() {
-  //   currentSet = 0;
-  //   activeImage = previews[0].view;
-  //   activeImage.classList.add('current');
-  //   preloadNextSet();
-  // }
+  function loadTrio(e) {
+    console.log('Explore Gallery > Load Trio');
+    e.preventDefault();
+    var clicked = e.target;
+    while(!clicked.classList.contains('preview')) {
+      clicked = clicked.parentNode;
+    }
+    if (clicked.view.id !== activeImageSlide.id) {
+      clicked.view.classList.add('current');
+      activeImageSlide.classList.remove('current');
+      activeImageSlide = clicked.view;
+      preloadNextSet();
+    }
+  }
+
+  function observers() {
+    // if (prev && next) {
+    //   prev.addEventListener('click', function(e){}, false);
+    //   next.addEventListener('click', function(e){}, false);
+    //   prev.addEventListener('touch', function(e){}, false);
+    //   next.addEventListener('touch', function(e){}, false);
+    // }
+    for (var x = 0; x < quantity; x++) {
+      previews[x].querySelector('a').addEventListener('click', function(e){
+        loadTrio(e);
+      }, false);
+    }
+  }
 
   function setup() {
     console.log('Explore Gallery > Set Up');
     loadPreviews();
-    // setDefaultView();
-    // observers();
-    // createCarousel();
+    setDefaultView();
+    observers();
   }
 
   setup();
