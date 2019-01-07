@@ -58,7 +58,6 @@
   height: 100%;
   width: 50%;
   display: none;
-  overflow: hidden;
   opacity: 0;
   -webkit-transform: translateZ(0, 0, 0);
   -moz-transform: translateZ(0, 0, 0);
@@ -95,16 +94,6 @@
   transition: all 500ms ease;
 }
 
-.explore .preview:nth-child(3) {
-  display: block;
-  opacity: 1;
-}
-
-.explore .preview:nth-child(4) {
-  display: block;
-  opacity: 1;
-}
-
 .explore .preview img {
   position: relative;
   height: 100%;
@@ -113,7 +102,7 @@
   min-width: 100%;
 }
 
-.explore .preview a.overlay {
+.explore .preview .overlay {
   position: absolute;
   display: flex;
   align-items: center;
@@ -133,7 +122,7 @@
   transition: background-color 200ms cubic-bezier(.38, .66, .45, 1.04);
 }
 
-.explore .preview a.overlay .title {
+.explore .preview .overlay .title {
   position: relative;
   text-transform: uppercase;
   font-family: Colossalis;
@@ -145,12 +134,12 @@
   transition: all 300ms ease;
 }
 
-.explore .preview a.overlay .title span::before {
+.explore .preview .overlay .title span::before {
   content: "\2190";
   display: inline-block;
 }
 
-.explore .preview a.overlay .title span::after {
+.explore .preview .overlay .title span::after {
   position: absolute;
   bottom: 0;
   left: 20px;
@@ -159,30 +148,30 @@
   content: "";
 }
 
-.explore .preview a.overlay:hover {
+.explore .preview .overlay:hover {
   background-color: rgba(150, 0, 0, 0.8);
 }
 
-.explore .preview a.overlay:hover .title {
+.explore .preview .overlay:hover .title {
   opacity: 1;
 }
 
 .explore .gallery .view img {
-  position: relative;
+  position: absolute;
   min-height: 100%;
   min-width: 100%;
   height: 100%;
   width: auto;
+  visibility: hidden;
   vertical-align: middle;
   text-align: center;
-  visibility: hidden;
   opacity: 0;
   z-index: 1;
-  -webkit-transition: opacity 200ms ease;
-  -moz-transition: opacity 200ms ease;
-  -ms-transition: opacity 200ms ease;
-  -o-transition: opacity 200ms ease;
-  transition: opacity 200ms ease;
+  -webkit-transition: visibility 0ms, opacity 500ms ease;
+  -moz-transition: visibility 0ms, opacity 500ms ease;
+  -ms-transition: visibility 0ms, opacity 500ms ease;
+  -o-transition: visibility 0ms, opacity 500ms ease;
+  transition: visibility 0ms, opacity 500ms ease;
 }
 
 .explore .gallery .view img.current {
