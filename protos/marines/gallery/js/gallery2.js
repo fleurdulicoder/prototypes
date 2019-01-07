@@ -96,6 +96,12 @@ var ExploreGallery = ExploreGallery || function(config) {
   function preload() {
     console.log('Explore Gallery > Preload');
     var addMainImageTo = function(node) {
+      // var image = document.createElement('img');
+      // image.setAttribute('id', 'explore-image-'+node.getAttribute('data-id'));
+      // image.setAttribute('src', node.getAttribute('data-imgsrc'));
+      // image.setAttribute('alt', node.getAttribute('data-title'));
+      // view.appendChild(image);
+      // node.view = image;
       var slide = document.createElement('div');
       slide.id = 'explore-view-slide-'+node.getAttribute('data-id');
       slide.className = "item";

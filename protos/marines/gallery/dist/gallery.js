@@ -23,11 +23,30 @@ var ExploreGallery = ExploreGallery || function(config) {
   var view = element.querySelector('.view'),
     slider = element.querySelector('.preview-section'),
     previews = element.querySelectorAll('.preview');
-    prev = element.querySelector('.pager-section .previous'),
-    next = element.querySelector('.pager-section .next');
+    // prev = element.querySelector('.pager-section .pager-mobile .previous'),
+    // next = element.querySelector('.pager-section .pager-mobile .next');
   // if (!slider || !previews || !view || !prev || !next) return;
 
   var currentSet = 0, activeImage, increment = config.inview || 1, quantity = previews.length;
+
+  // var pager = element.querySelector('.pager-section');
+  // var prev = pager.querySelector('.pager-mobile .prev');
+  // var next = pager.querySelector('.pager-mobile .next');
+
+  function createCarousel() {
+    // $(view).carouFredSel({
+    //     items     : 1,
+    //     direction : "left",
+    //     prev: "#"+config.prev,
+    //     next: "#"+config.next,
+    //     scroll : {
+    //         items         : 1,
+    //         easing        : "elastic",
+    //         duration      : 1000,
+    //         pauseOnHover  : true
+    //     }
+    // });
+  }
 
   function loadTrio(e) {
     console.log('Explore Gallery > Load Trio');
@@ -65,12 +84,12 @@ var ExploreGallery = ExploreGallery || function(config) {
   };
 
   function observers() {
-    if (prev && next) {
-      prev.addEventListener('click', function(e){}, false);
-      next.addEventListener('click', function(e){}, false);
-      prev.addEventListener('touch', function(e){}, false);
-      next.addEventListener('touch', function(e){}, false);
-    }
+    // if (prev && next) {
+    //   prev.addEventListener('click', function(e){}, false);
+    //   next.addEventListener('click', function(e){}, false);
+    //   prev.addEventListener('touch', function(e){}, false);
+    //   next.addEventListener('touch', function(e){}, false);
+    // }
     for (var x = 0; x < quantity; x++) {
       previews[x].querySelector('a').addEventListener('click', function(e){
         loadTrio(e);
@@ -164,6 +183,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     preload();
     setDefaultView();
     observers();
+    createCarousel();
   }
 
   setup();

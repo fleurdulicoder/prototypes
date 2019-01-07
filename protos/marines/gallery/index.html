@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
   <link href="dist/gallery.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -148,8 +150,8 @@
             <span class="next"></span>
           </div>
           <div class="pager-mobile">
-            <span class="previous"></span>
-            <span class="next"></span>
+            <span class="previous" id="explore-main-prev"></span>
+            <span class="next" id="explore-main-next"></span>
           </div>
           <div class="container">
             <div class="row">
@@ -168,7 +170,9 @@
     document.addEventListener('DOMContentLoaded', function() {
       var gallery = new ExploreGallery({
         "galleryId": "explore-gallery",
-        "inview": 2
+        "inview": 2,
+        "next": "explore-main-next",
+        "prev": "explore-main-prev"
       });
     }, false);
   </script>
