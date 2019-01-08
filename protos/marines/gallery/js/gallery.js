@@ -22,7 +22,6 @@ var ExploreGallery = ExploreGallery || function(config) {
   gallery = createGallery();
 
   function createGallery() {
-    console.log('ExploreGallery > Create Gallery Objects');
     var images = []
     for (var i = 0; i < quantity; i++) {
       var item = {
@@ -37,10 +36,8 @@ var ExploreGallery = ExploreGallery || function(config) {
     return images;
   }
 
-  // views array and sets array are in stone, previews array is changeable
   var sets = []; // forever
   function createSet() {
-    console.log('Explore Gallery > Create Set');
     var tmp = document.createElement('div');
     tmp.className = 'preview-set';
     slider.appendChild(tmp);
@@ -48,9 +45,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     return tmp;
   }
 
-  // var previews = [];
   function createPreview(galleryItem, parent) {
-    console.log('Explore Gallery > Create Preview');
     var tmp = document.createElement('div');
     tmp.className = 'preview';
     tmp.view = galleryItem.view;
@@ -65,28 +60,39 @@ var ExploreGallery = ExploreGallery || function(config) {
       if (!parent.hasOwnProperty('previews')) {
         parent.previews = [];
       }
-      parent.previews.push(tmp); // ref
+      parent.previews.push(tmp);
     }
     return tmp;
   }
 
+  function DEBUGcreateSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
+    var total = Math.floor(quantity / increment) * increment;
+    var count = -1, activeSetElement;
+    for (var i = 0; i < total; i++) {
+      if (i % 2 == 0) {
+        count++;
+        activeSetElement = sets[count];
+        activeSetElement.previews = [];
+      }
+      reloadPreview(gallery[i], activeSetElement);
+    }
+  }
+
   function reloadPreview(galleryItem, parent) {
-    console.log('Explore Gallery > Reload Preview');
+    console.log('Explore Gallery > Reload Preview', galleryItem, parent);
     var reloadingPreview;
     if (parent) {
-      if (parent.hasOwnProperty('previews') && parent.previews.length == 0) {
-        reloadingPreview = parent.querySelector('.preview:nth-child(1)');
-      } else {
-        reloadingPreview = parent.querySelector('.preview:nth-child(2)');
-      }
+      var nthChild = parent.previews.length === 0 ? 1 : 2;
+      reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
       var image = reloadingPreview.querySelector('img');
       image.setAttribute('alt', galleryItem.title);
       image.setAttribute('src', galleryItem.src);
+      reloadingPreview.view = galleryItem.view;
+      parent.previews.push(reloadingPreview);
     }
   }
 
   function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
-    console.log('Create Sets with Previews >');
     var total = Math.floor(quantity / increment) * increment;
     var count = -1, activeSetElement;
     for (var i = 0; i < total; i++) {
@@ -111,6 +117,74 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  function getNextSet() {
+    if ((activeSet + 1) < sets.length) {
+      return sets[++activeSet];
+    } else {
+      activeSet = 0;
+      return sets[activeSet];
+    }
+  }
+
+  // remake
+  // function loadNextSet(loadingSet) {
+  //   TweenMax.set(loadingSet, {
+  //     display: 'block',
+  //     opacity: 1
+  //   });
+  // }
+  //
+  // function removeSet() {
+  //   TweenMax.set(sets[activeSet], {
+  //     display: 'none',
+  //     opacity: 0
+  //   });
+  // }
+
+  // function preloadNextSet() {
+  //   console.log('Explore Gallery > Preload Next Set');
+  //   removeSet();
+  //   loadNextSet(getNextSet());
+  // }
+
+  function loadTrio(e) {
+    // console.log('Explore Gallery > Load Trio');
+    e.preventDefault();
+    var clicked = e.target;
+    while(!clicked.classList.contains('preview')) {
+      clicked = clicked.parentNode;
+    }
+    clicked.view.classList.add('current');
+    activeImageSlide.classList.remove('current');
+    activeImageSlide = clicked.view;
+    reloadPreviewsInSets();
+  }
+
+  function observers() {
+    // if (prev && next) {
+    //   prev.addEventListener('click', function(e){}, false);
+    //   next.addEventListener('click', function(e){}, false);
+    //   prev.addEventListener('touch', function(e){}, false);
+    //   next.addEventListener('touch', function(e){}, false);
+    // }
+    for (var x = 0, len = sets.length; x < len; x++) {
+      sets[x].addEventListener('click', function(e) {
+        loadTrio(e);
+      }, false);
+    }
+  }
+
+  function reloadPreviewsInSets() {
+    console.log('Explore Gallery > Reload Previews');
+    reloadGallery();
+    createSetsWithPreviews(reloadPreview, function(){});
+  }
+
+  function reloadGallery() {
+    gallery.push(gallery.shift());
+    gallery.push(gallery.shift());
+  }
+
   function loadFirstSet() {
     TweenMax.set(sets[0], {
       display: 'block',
@@ -126,76 +200,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     loadCaption();
     reloadPreviewsInSets();
     // preloadNextSet();
-  }
-
-  function getNextSet() {
-    if ((activeSet + 1) < sets.length) {
-      return sets[++activeSet];
-    } else {
-      activeSet = 0;
-      return sets[activeSet];
-    }
-  }
-
-  function loadNextSet(loadingSet) {
-    TweenMax.set(loadingSet, {
-      display: 'block',
-      opacity: 1
-    });
-  }
-
-  function removeSet() {
-    TweenMax.set(sets[activeSet], {
-      display: 'none',
-      opacity: 0
-    });
-  }
-
-  function preloadNextSet() {
-    console.log('Explore Gallery > Preload Next Set');
-    removeSet();
-    loadNextSet(getNextSet());
-  }
-
-  function loadTrio(e) {
-    console.log('Explore Gallery > Load Trio');
-    e.preventDefault();
-    var clicked = e.target;
-    while(!clicked.classList.contains('preview')) {
-      clicked = clicked.parentNode;
-    }
-    clicked.view.classList.add('current');
-    activeImageSlide.classList.remove('current');
-    activeImageSlide = clicked.view;
-    reloadPreviewsInSets();
-    //preloadNextSet();
-    // resetPreviews();
-  }
-
-  function observers() {
-    // if (prev && next) {
-    //   prev.addEventListener('click', function(e){}, false);
-    //   next.addEventListener('click', function(e){}, false);
-    //   prev.addEventListener('touch', function(e){}, false);
-    //   next.addEventListener('touch', function(e){}, false);
-    // }
-    for (var x = 0, len = previews.length; x < len; x++) {
-      previews[x].addEventListener('click', function(e) {
-        loadTrio(e);
-      }, false);
-    }
-  }
-
-  // @// DEBUG:
-  function reloadPreviewsInSets() {
-    console.log('Explore Gallery > Reload Previews');
-    reloadGallery();
-    createSetsWithPreviews(reloadPreview, function(){});
-  }
-
-  function reloadGallery() {
-    gallery.push(gallery.shift());
-    gallery.push(gallery.shift());
   }
 
   function setup() {
