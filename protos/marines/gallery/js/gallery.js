@@ -62,8 +62,9 @@ var ExploreGallery = ExploreGallery || function(config) {
     ';
     if (parent) {
       parent.appendChild(tmp);
-      if (!parent.previews)
+      if (!parent.hasOwnProperty('previews')) {
         parent.previews = [];
+      }
       parent.previews.push(tmp); // ref
     }
     return tmp;
@@ -72,32 +73,31 @@ var ExploreGallery = ExploreGallery || function(config) {
   function reloadPreview(galleryItem, parent) {
     console.log('Explore Gallery > Reload Preview');
     var reloadingPreview;
-    if (parent.previews.length == 0) {
-      reloadingPreview = parent.querySelector('.preview:nth-child(1)');
-    } else {
-      reloadingPreview = parent.querySelector('.preview:nth-child(2)');
+    if (parent) {
+      if (parent.hasOwnProperty('previews') && parent.previews.length == 0) {
+        reloadingPreview = parent.querySelector('.preview:nth-child(1)');
+      } else {
+        reloadingPreview = parent.querySelector('.preview:nth-child(2)');
+      }
+      var image = reloadingPreview.querySelector('img');
+      image.setAttribute('alt', galleryItem.title);
+      image.setAttribute('src', galleryItem.src);
     }
-    var image = reloadingPreview.querySelector('img');
-    image.setAttribute('alt', galleryItem.title);
-    image.setAttribute('src', galleryItem.src);
   }
 
-  function createSetsWithPreviews(createSetCallback, reloadPreviewCallback) {
+  function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
     console.log('Create Sets with Previews >');
     var total = Math.floor(quantity / increment) * increment;
-    var newSets = [], newPreviews = [];
-    var count = -1, activeSetElement, activePreview;
+    var count = -1, activeSetElement;
     for (var i = 0; i < total; i++) {
       if (i % 2 == 0) {
         count++;
-        activeSetElement = sets.indexOf(count) > -1
-          ? sets[count]
-          : createSetCallback()
-        ;
-        if (activeSetElement.previews)
+        activeSetElement = sets[count] || createSetCallback(); // watch out
+        if (activeSetElement && activeSetElement.hasOwnProperty('previews')) {
           activeSetElement.previews = [];
+        }
       }
-      reloadPreviewCallback(gallery[i], activeSetElement); // previews.push()
+      reloadPreviewCallback(gallery[i], activeSetElement);
     }
   }
 
@@ -111,12 +111,21 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  function loadFirstSet() {
+    TweenMax.set(sets[0], {
+      display: 'block',
+      opacity: 1
+    });
+  }
+
   function setDefaultView() {
     activeSet = 0;
     activeImageSlide = views[0];
     activeImageSlide.classList.add('current');
+    loadFirstSet();
     loadCaption();
-    preloadNextSet();
+    reloadPreviewsInSets();
+    // preloadNextSet();
   }
 
   function getNextSet() {
@@ -181,12 +190,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   function reloadPreviewsInSets() {
     console.log('Explore Gallery > Reload Previews');
     reloadGallery();
-    createSetsWithPreviews(function(){
-      activeSet++;
-    }, function(){
-
-    });
-    console.log(sets);
+    createSetsWithPreviews(reloadPreview, function(){});
   }
 
   function reloadGallery() {
@@ -196,11 +200,9 @@ var ExploreGallery = ExploreGallery || function(config) {
 
   function setup() {
     console.log('Explore Gallery > Set Up');
-    createSetsWithPreviews(createSet, createPreview);
+    createSetsWithPreviews(createPreview, createSet);
     setDefaultView();
-    //observers();
-    reloadPreviewsInSets();
-    // sortPreviews();
+    observers();
   }
 
   setup();
