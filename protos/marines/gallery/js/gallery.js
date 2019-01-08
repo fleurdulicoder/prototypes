@@ -11,49 +11,93 @@ var ExploreGallery = ExploreGallery || function(config) {
     captionTitle = caption.querySelector('.title'),
     captionByline = caption.querySelector('.byline'),
     captionDownloadLink = caption.querySelector('.download-link'),
-    captionDetailsLink = caption.querySelector('.details-link');
+    captionDetailsLink = caption.querySelector('.details-link'),
+    previewObjects;
+  if (!view && !views) return;
 
-  var  quantity = views.length,
-    increment = 2,
-    activeSet = 0,
-    activeImageSlide;
+  var quantity, increment, activeSet, activeImageSlide, gallery;
+  quantity = views.length;
+  increment = 2;
+  activeSet = 0;
+  gallery = createGallery();
 
-  function loadPreviews() {
-    console.log('Explore Gallery > Load Previews');
-    var createPreview = function(item, parent) {
-      console.log('Explore Gallery > Create Preview');
-      var tmp = document.createElement('div');
-      tmp.className = 'preview';
-      tmp.view = item;
-      tmp.innerHTML =
-      '<img alt="" src="'+item.getAttribute('data-imgsrc')+'" /> \
-      <a class="overlay" href="#"> \
-        <span class="title"><span>View</span></span> \
-      </a> \
-      ';
-      if (parent) parent.appendChild(tmp);
-      return tmp;
-    };
+  function createGallery() {
+    console.log('ExploreGallery > Create Gallery Objects');
+    var images = []
+    for (var i = 0; i < quantity; i++) {
+      var item = {
+        src: views[i].getAttribute('data-src') || 'img/img1.jpg',
+        title: views[i].getAttribute('data-title') || 'Default Title',
+        byline: views[i].getAttribute('data-byline') || 'Photo By ByLine',
+        link: views[i].getAttribute('data-link') || 'www.google.com',
+        view: views[i]
+      };
+      images.push(item);
+    }
+    return images;
+  }
 
-    var createSet = function(index) {
-      console.log('Explore Gallery > Create Set');
-      var tmp = document.createElement('div');
-      tmp.className = 'preview-set';
-      tmp.setAttribute('data-id', index);
-      slider.appendChild(tmp);
-      return tmp;
-    };
+  // views array and sets array are in stone, previews array is changeable
+  var sets = []; // forever
+  function createSet() {
+    console.log('Explore Gallery > Create Set');
+    var tmp = document.createElement('div');
+    tmp.className = 'preview-set';
+    slider.appendChild(tmp);
+    sets.push(tmp);
+    return tmp;
+  }
 
+  // var previews = [];
+  function createPreview(galleryItem, parent) {
+    console.log('Explore Gallery > Create Preview');
+    var tmp = document.createElement('div');
+    tmp.className = 'preview';
+    tmp.view = galleryItem.view;
+    tmp.innerHTML =
+    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /> \
+    <a class="overlay" href="#"> \
+      <span class="title"><span>View</span></span> \
+    </a> \
+    ';
+    if (parent) {
+      parent.appendChild(tmp);
+      if (!parent.previews)
+        parent.previews = [];
+      parent.previews.push(tmp); // ref
+    }
+    return tmp;
+  }
+
+  function reloadPreview(galleryItem, parent) {
+    console.log('Explore Gallery > Reload Preview');
+    var reloadingPreview;
+    if (parent.previews.length == 0) {
+      reloadingPreview = parent.querySelector('.preview:nth-child(1)');
+    } else {
+      reloadingPreview = parent.querySelector('.preview:nth-child(2)');
+    }
+    var image = reloadingPreview.querySelector('img');
+    image.setAttribute('alt', galleryItem.title);
+    image.setAttribute('src', galleryItem.src);
+  }
+
+  function createSetsWithPreviews(createSetCallback, reloadPreviewCallback) {
+    console.log('Create Sets with Previews >');
     var total = Math.floor(quantity / increment) * increment;
+    var newSets = [], newPreviews = [];
     var count = -1, activeSetElement, activePreview;
     for (var i = 0; i < total; i++) {
       if (i % 2 == 0) {
         count++;
-        activeSetElement = createSet(count);
-        sets.push(activeSetElement);
+        activeSetElement = sets.indexOf(count) > -1
+          ? sets[count]
+          : createSetCallback()
+        ;
+        if (activeSetElement.previews)
+          activeSetElement.previews = [];
       }
-      activePreview = createPreview(views[i], activeSetElement);
-      previews.push(activePreview);
+      reloadPreviewCallback(gallery[i], activeSetElement); // previews.push()
     }
   }
 
@@ -84,7 +128,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
-  // redo
   function loadNextSet(loadingSet) {
     TweenMax.set(loadingSet, {
       display: 'block',
@@ -92,7 +135,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     });
   }
 
-  // redo
   function removeSet() {
     TweenMax.set(sets[activeSet], {
       display: 'none',
@@ -113,13 +155,12 @@ var ExploreGallery = ExploreGallery || function(config) {
     while(!clicked.classList.contains('preview')) {
       clicked = clicked.parentNode;
     }
-    console.log(clicked);
-    //if (clicked.view.id !== activeImageSlide.id) {
-      clicked.view.classList.add('current');
-      activeImageSlide.classList.remove('current');
-      activeImageSlide = clicked.view;
-      preloadNextSet();
-    //}
+    clicked.view.classList.add('current');
+    activeImageSlide.classList.remove('current');
+    activeImageSlide = clicked.view;
+    reloadPreviewsInSets();
+    //preloadNextSet();
+    // resetPreviews();
   }
 
   function observers() {
@@ -136,11 +177,30 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  // @// DEBUG:
+  function reloadPreviewsInSets() {
+    console.log('Explore Gallery > Reload Previews');
+    reloadGallery();
+    createSetsWithPreviews(function(){
+      activeSet++;
+    }, function(){
+
+    });
+    console.log(sets);
+  }
+
+  function reloadGallery() {
+    gallery.push(gallery.shift());
+    gallery.push(gallery.shift());
+  }
+
   function setup() {
     console.log('Explore Gallery > Set Up');
-    loadPreviews();
+    createSetsWithPreviews(createSet, createPreview);
     setDefaultView();
-    observers();
+    //observers();
+    reloadPreviewsInSets();
+    // sortPreviews();
   }
 
   setup();
