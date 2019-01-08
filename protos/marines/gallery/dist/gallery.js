@@ -61,18 +61,17 @@ var ExploreGallery = ExploreGallery || function(config) {
       return tmp;
     };
 
-    var totalSets = Math.floor(quantity / 2);
+    var total = Math.floor(quantity / increment) * increment;
     var count = -1, activeSetElement, activePreview;
-    for (var i = 0; i < quantity; i++) {
+    for (var i = 0; i < total; i++) {
       if (i % 2 == 0) {
         count++;
-        if (count >= totalSets) break;
         activeSetElement = createSet(count);
         sets.push(activeSetElement);
       }
       activePreview = createPreview(views[i], activeSetElement);
+      previews.push(activePreview);
     }
-    console.log(sets);
   }
 
   function loadCaption() {
@@ -144,8 +143,8 @@ var ExploreGallery = ExploreGallery || function(config) {
     //   prev.addEventListener('touch', function(e){}, false);
     //   next.addEventListener('touch', function(e){}, false);
     // }
-    for (var x = 0; x < quantity; x++) {
-      previews[x].querySelector('a').addEventListener('click', function(e){
+    for (var x = 0, len = previews.length; x < len; x++) {
+      previews[x].addEventListener('click', function(e){
         loadTrio(e);
       }, false);
     }
