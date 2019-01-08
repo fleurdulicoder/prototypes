@@ -84,6 +84,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  // redo
   function loadNextSet(loadingSet) {
     TweenMax.set(loadingSet, {
       display: 'block',
@@ -91,6 +92,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     });
   }
 
+  // redo
   function removeSet() {
     TweenMax.set(sets[activeSet], {
       display: 'none',
@@ -111,12 +113,13 @@ var ExploreGallery = ExploreGallery || function(config) {
     while(!clicked.classList.contains('preview')) {
       clicked = clicked.parentNode;
     }
-    if (clicked.view.id !== activeImageSlide.id) {
+    console.log(clicked);
+    //if (clicked.view.id !== activeImageSlide.id) {
       clicked.view.classList.add('current');
       activeImageSlide.classList.remove('current');
       activeImageSlide = clicked.view;
       preloadNextSet();
-    }
+    //}
   }
 
   function observers() {
@@ -127,7 +130,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     //   next.addEventListener('touch', function(e){}, false);
     // }
     for (var x = 0, len = previews.length; x < len; x++) {
-      previews[x].addEventListener('click', function(e){
+      previews[x].addEventListener('click', function(e) {
         loadTrio(e);
       }, false);
     }
