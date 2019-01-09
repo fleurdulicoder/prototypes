@@ -53,7 +53,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     return images;
   }
 
-  var sets = []; // forever
+  var sets = [];
   function createSet() {
     var tmp = document.createElement('div');
     tmp.className = 'preview-set';
@@ -80,19 +80,6 @@ var ExploreGallery = ExploreGallery || function(config) {
       parent.previews.push(tmp);
     }
     return tmp;
-  }
-
-  function DEBUGcreateSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
-    var total = Math.floor(quantity / increment) * increment;
-    var count = -1, activeSetElement;
-    for (var i = 0; i < total; i++) {
-      if (i % 2 == 0) {
-        count++;
-        activeSetElement = sets[count];
-        activeSetElement.previews = [];
-      }
-      reloadPreview(gallery[i], activeSetElement);
-    }
   }
 
   function reloadPreview(galleryItem, parent) {
@@ -126,6 +113,7 @@ var ExploreGallery = ExploreGallery || function(config) {
 
   function loadCaption() {
     if (activeImageSlide) {
+      console.log('activeImageSlide > ', activeImageSlide);
       captionTitle.innerHTML = activeImageSlide.getAttribute('data-title');
       captionByline.innerHTML = activeImageSlide.getAttribute('data-byline');
       captionDownloadLink.setAttribute('href', activeImageSlide.getAttribute('data-imgsrc'));
@@ -175,6 +163,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     activeImageSlide.classList.remove('current');
     activeImageSlide = clicked.view;
     reloadPreviewsInSets();
+    loadCaption();
   }
 
   function observers() {
