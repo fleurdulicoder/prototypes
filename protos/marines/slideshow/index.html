@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Slideshow Prototype</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
+  <link href="dist/gallery.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="app" class="app">
+    <section>
+      <div class="slideshow" id="slideshow">
+        <div class="view">
+          <a class="item" data-src="img/img1.jpg">
+            <img src="img/img1.jpg" alt="Image One" />
+          </a>
+          <a class="item" data-src="img/img2.jpg">
+            <img src="img/img2.jpg" alt="Image Two" />
+          </a>
+          <a class="item" data-src="img/img3.jpg">
+            <img src="img/img3.jpg" alt="Image Three" />
+          </a>
+          <a class="item" data-src="img/img4.jpg">
+            <img src="img/img4.jpg" alt="Image Four" />
+          </a>
+          <a class="item" data-src="img/img5.jpg">
+            <img src="img/img5.jpg" alt="Image Five" />
+          </a>
+          <a class="item" data-src="img/img6.jpg">
+            <img src="img/img6.jpg" alt="Image Six" />
+          </a>
+          <a class="item" data-src="img/img7.jpg">
+            <img src="img/img7.jpg" alt="Image Seven" />
+          </a>
+          <a class="item" data-src="img/img8.jpg">
+            <img src="img/img8.jpg" alt="Image Eight" />
+          </a>
+        </div>
+        <div class="pager">
+          <div class="prev"><i class="fas fa-chevron-left"></i></div>
+          <div class="carousel">
+            <a class="item" data-src="img/img1.jpg">
+              <img src="img/img1.jpg" alt="Image One" />
+            </a>
+            <a class="item" data-src="img/img2.jpg">
+              <img src="img/img2.jpg" alt="Image Two" />
+            </a>
+            <a class="item" data-src="img/img3.jpg">
+              <img src="img/img3.jpg" alt="Image Three" />
+            </a>
+            <a class="item" data-src="img/img4.jpg">
+              <img src="img/img4.jpg" alt="Image Four" />
+            </a>
+            <a class="item" data-src="img/img5.jpg">
+              <img src="img/img5.jpg" alt="Image Five" />
+            </a>
+            <a class="item" data-src="img/img6.jpg">
+              <img src="img/img6.jpg" alt="Image Six" />
+            </a>
+            <a class="item" data-src="img/img7.jpg">
+              <img src="img/img7.jpg" alt="Image Seven" />
+            </a>
+            <a class="item" data-src="img/img8.jpg">
+              <img src="img/img8.jpg" alt="Image Eight" />
+            </a>
+          </div>
+          <div class="next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script type="text/javascript" src="js/TweenMax.min.js">
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+  <script type="text/javascript" src="js/slideshow.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      /*var slideshow = new Sideshow({
+        "slideshowId": "slideshow"
+      });*/
+    }, false);
+  </script>
+</body>
+
+</html>
