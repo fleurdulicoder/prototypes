@@ -201,12 +201,8 @@ var ExploreGallery = ExploreGallery || function(config) {
     var tmp = document.createElement('div');
     tmp.className = 'preview';
     tmp.view = galleryItem.view;
-    tmp.innerHTML =
-    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /> \
-    <a class="overlay" href="#"> \
-      <span class="title"><span>View</span></span> \
-    </a> \
-    ';
+    tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+
+    '" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
     if (parent) {
       parent.appendChild(tmp);
       if (!parent.hasOwnProperty('previews')) {
@@ -299,12 +295,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     sets[0].classList.add('current');
   }
 
-  function loadFirstImage() {
-    activeSet = 0;
-    activeImageSlide = views[0];
-    activeImageSlide.classList.add('current');
-  }
-
   var carouselDesktop, carouselMobile;
   function loadCarousels() {
     carouselDesktop = new ExploreCarousel({
@@ -328,6 +318,9 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function setup() {
+    activeSet = 0;
+    activeImageSlide = views[0];
+    activeImageSlide.classList.add('current');
     createSetsWithPreviews(createPreview, createSet);
     loadDefaultView();
     observe();

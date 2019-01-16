@@ -719,10 +719,6 @@ nav>ul li, .nav-bar .social ul li {
   z-index: 10;
 }
 
-/*.explore .gallery .view .items {
-  position: relative;
-  height: 505px;
-}*/
 .explore .gallery .view .item {
   position: absolute;
   top: 0;
@@ -730,12 +726,13 @@ nav>ul li, .nav-bar .social ul li {
   width: 100%;
   height: 100%;
   visibility: hidden;
+  overflow: hidden;
   opacity: 0;
-  -webkit-transition: visibility 0ms, opacity 500ms ease;
-  -moz-transition: visibility 0ms, opacity 500ms ease;
-  -ms-transition: visibility 0ms, opacity 500ms ease;
-  -o-transition: visibility 0ms, opacity 500ms ease;
-  transition: visibility 0ms, opacity 500ms ease;
+  -webkit-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
+  -moz-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
+  -ms-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
+  -o-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
+  transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
 }
 
 .explore .gallery .view .item img {
@@ -842,7 +839,13 @@ nav>ul li, .nav-bar .social ul li {
   width: 100%;
   height: 100%;
   opacity: 0;
-  display: none;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.explore .preview-set.current {
+  visibility: visible;
+  opacity: 1;
 }
 
 .explore .preview {
@@ -851,24 +854,6 @@ nav>ul li, .nav-bar .social ul li {
   left: 0;
   height: 100%;
   width: 50%;
-  -webkit-transform: translateZ(0, 0, 0);
-  -moz-transform: translateZ(0, 0, 0);
-  transform: translateZ(0, 0, 0);
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  transition: all 500ms ease;
-  z-index: 22;
-}
-
-.explore .preview:nth-child(odd) {
-  transform-origin: left middle;
-}
-
-.explore .preview:nth-child(even) {
-  left: 50%;
-  transform-origin: right middle;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -878,6 +863,16 @@ nav>ul li, .nav-bar .social ul li {
   -ms-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  z-index: 22;
+}
+
+.explore .preview:nth-child(odd) {
+  transform-origin: left center;
+}
+
+.explore .preview:nth-child(even) {
+  left: 50%;
+  transform-origin: right center;
 }
 
 .explore .preview img {
@@ -934,16 +929,15 @@ nav>ul li, .nav-bar .social ul li {
   content: "";
 }
 
-.explore .preview .overlay:hover {
-  background-color: rgba(150, 0, 0, 0.8);
-}
-
-.explore .preview .overlay:hover .title {
-  opacity: 1;
-}
-
 .explore .preview:hover {
   width: 65%;
+}
+
+.explore .preview:nth-child(even):hover {
+  -webkit-transform: translate3d(-20%, 0, 0);
+  -moz-transform: translate3d(-20%, 0, 0);
+  -ms-transform: translate3d(-20%, 0, 0);
+  transform: translate3d(-20%, 0, 0);
 }
 
 .explore .preview:nth-child(odd):hover+.preview:nth-child(even) {
@@ -953,11 +947,12 @@ nav>ul li, .nav-bar .social ul li {
   transform: translate3d(20%, 0, 0);
 }
 
-.explore .preview:nth-child(even):hover {
-  -webkit-transform: translate3d(-20%, 0, 0);
-  -moz-transform: translate3d(-20%, 0, 0);
-  -ms-transform: translate3d(-20%, 0, 0);
-  transform: translate3d(-20%, 0, 0);
+.explore .preview:hover .overlay {
+  background-color: rgba(150, 0, 0, 0.8);
+}
+
+.explore .preview:hover .overlay .title {
+  opacity: 1;
 }
 
 .explore .button-primary {
@@ -1024,6 +1019,7 @@ nav>ul li, .nav-bar .social ul li {
   background-size: 24px 24px;
   background-position: center center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .explore .previous {

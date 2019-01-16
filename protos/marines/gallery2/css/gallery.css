@@ -100,6 +100,14 @@
   padding: 0;
 }
 
+.explore .gallery .caption-section.light h4::before {
+  content: "";
+  width: 50px;
+  border-bottom: 1px solid #940000;
+  display: block;
+  margin-bottom: 12px;
+}
+
 .explore .gallery .caption-section.light p {
   color: #fff;
   font-size: 13px;
@@ -155,6 +163,8 @@
   width: 40%;
   height: 100%;
   overflow: hidden;
+  box-shadow: -5px 0px 12px 0px rgba(0, 0, 0, 0.5);
+  z-index: 21;
 }
 
 .explore .preview-set {
@@ -179,6 +189,7 @@
   left: 0;
   height: 100%;
   width: 50%;
+  box-shadow: -5px 0px 12px 0px rgba(0, 0, 0, 0.5);
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -192,12 +203,11 @@
 }
 
 .explore .preview:nth-child(odd) {
-  transform-origin: left center;
+  transform-origin: left middle;
 }
 
 .explore .preview:nth-child(even) {
   left: 50%;
-  transform-origin: right center;
 }
 
 .explore .preview img {
@@ -254,30 +264,30 @@
   content: "";
 }
 
+.explore .preview .overlay:hover {
+  background-color: rgba(150, 0, 0, 0.8);
+}
+
+.explore .preview .overlay:hover .title {
+  opacity: 1;
+}
+
 .explore .preview:hover {
   width: 65%;
 }
 
-.explore .preview:nth-child(even):hover {
-  -webkit-transform: translate3d(-20%, 0, 0);
-  -moz-transform: translate3d(-20%, 0, 0);
-  -ms-transform: translate3d(-20%, 0, 0);
-  transform: translate3d(-20%, 0, 0);
-}
-
 .explore .preview:nth-child(odd):hover+.preview:nth-child(even) {
-  -webkit-transform: translate3d(20%, 0, 0);
-  -moz-transform: translate3d(20%, 0, 0);
-  -ms-transform: translate3d(20%, 0, 0);
-  transform: translate3d(20%, 0, 0);
+  -webkit-transform: translate3d(15%, 0, 0);
+  -moz-transform: translate3d(15%, 0, 0);
+  -ms-transform: translate3d(15%, 0, 0);
+  transform: translate3d(15%, 0, 0);
 }
 
-.explore .preview:hover .overlay {
-  background-color: rgba(150, 0, 0, 0.8);
-}
-
-.explore .preview:hover .overlay .title {
-  opacity: 1;
+.explore .preview:nth-child(even):hover {
+  -webkit-transform: translate3d(-15%, 0, 0);
+  -moz-transform: translate3d(-15%, 0, 0);
+  -ms-transform: translate3d(-15%, 0, 0);
+  transform: translate3d(-15%, 0, 0);
 }
 
 .explore .button-primary {
