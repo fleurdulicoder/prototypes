@@ -186,7 +186,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     tmp.className = 'preview';
     tmp.view = galleryItem.view;
     tmp.innerHTML =
-    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" id="'++'" /> \
+    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" id="" /> \
     <a class="overlay" href="#"> \
       <span class="title"><span>View</span></span> \
     </a> \

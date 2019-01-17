@@ -720,8 +720,8 @@ nav>ul li, .nav-bar .social ul li {
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  /*justify-content: center;*/
 }
 
 .slideshow .pager .next,
@@ -731,32 +731,52 @@ nav>ul li, .nav-bar .social ul li {
   width: 64px;
   vertical-align: middle;
   text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.slideshow .pager .carousel {
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .slideshow .pager .carousel a {
   display: inline-block;
-  width: 54px;
-  max-height: 54px;
-  max-width: 54px;
-  height: 54px;
+  width: 56px;
+  max-height: 56px;
+  max-width: 56px;
+  height: 56px;
   overflow: hidden;
   margin-right: 25px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
+  border-color: rgba(150, 0, 0, 0);
+  -webkit-transition: border-color 250ms ease;
+  -moz-transition: border-color 250ms ease;
+  -o-transition: border-color 250ms ease;
+  transition: border-color 250ms ease;
+  border: 3px solid;
 }
 
 .slideshow .pager .carousel a:last-child {
   margin-right: 0;
 }
 
-.slideshow .pager .carousel a.current {
-  border: 3px solid;
-  border-color: #660000;
+.slideshow .pager .carousel a.current,
+.slideshow .pager .carousel a:hover {
+  border-color: rgba(150, 0, 0, 1);
 }
 
 .slideshow .pager .carousel {
-  width: auto;
+  width: calc(100% - 128px);
   padding: 25px 0;
 }
