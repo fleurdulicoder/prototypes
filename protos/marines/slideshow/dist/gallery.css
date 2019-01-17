@@ -673,8 +673,6 @@ nav>ul li, .nav-bar .social ul li {
   content: '';
   border: 1px solid rgba(150, 0, 0, 1);
 }
-.slideshow {}
-
 .slideshow .view {
   display: block;
   height: 600px;

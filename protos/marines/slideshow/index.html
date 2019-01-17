@@ -46,28 +46,28 @@
         <div class="pager">
           <div class="prev"><i class="fas fa-chevron-left"></i></div>
           <div class="carousel">
-            <a class="item" data-src="img/img1.jpg">
+            <a class="item current">
               <img src="img/img1.jpg" alt="Image One" />
             </a>
-            <a class="item" data-src="img/img2.jpg">
+            <a class="item">
               <img src="img/img2.jpg" alt="Image Two" />
             </a>
-            <a class="item" data-src="img/img3.jpg">
+            <a class="item">
               <img src="img/img3.jpg" alt="Image Three" />
             </a>
-            <a class="item" data-src="img/img4.jpg">
+            <a class="item">
               <img src="img/img4.jpg" alt="Image Four" />
             </a>
-            <a class="item" data-src="img/img5.jpg">
+            <a class="item">
               <img src="img/img5.jpg" alt="Image Five" />
             </a>
-            <a class="item" data-src="img/img6.jpg">
+            <a class="item">
               <img src="img/img6.jpg" alt="Image Six" />
             </a>
-            <a class="item" data-src="img/img7.jpg">
+            <a class="item">
               <img src="img/img7.jpg" alt="Image Seven" />
             </a>
-            <a class="item" data-src="img/img8.jpg">
+            <a class="item">
               <img src="img/img8.jpg" alt="Image Eight" />
             </a>
           </div>
@@ -84,7 +84,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var slideshow = new Slideshow({
-        "id": "slideshow"
+        "id": "slideshow",
+        "autorotate": true,
+        "stoprotate": true
       });
     }, false);
   </script>
