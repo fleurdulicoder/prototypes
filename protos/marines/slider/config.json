@@ -2,10 +2,10 @@
   "JSHINT_OPTS": {},
   "JAVASCRIPT": {
     "DIST_DIR": "dist",
-    "gallery": ["js/TweenMax.min.js", "js/slideshow.js"]
+    "slider": ["js/jquery-3.3.1.js", "js/jquery.inview.js", "js/TweenMax.min.js", "js/slider.js"]
   },
   "CSS": {
     "DIST_DIR": "dist",
-    "gallery": ["css/main.css", "css/slideshow.css"]
+    "slider": ["css/main.css", "css/slider.css"]
   }
 }

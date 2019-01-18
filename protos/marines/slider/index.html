@@ -8,7 +8,7 @@
   <title>Slideshow Prototype</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
-  <link href="dist/gallery.min.css" rel="stylesheet">
+  <link href="dist/slider.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js" crossorigin="anonymous"></script>
 </head>
@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-12">
 
-            <div class="slideshow" id="slideshow">
+            <div class="slider" id="slider">
               <div class="view">
                 <a class="item" data-src="img/img1.jpg">
                   <img src="img/img1.jpg" alt="Image One" />
@@ -58,118 +58,48 @@
                 <a class="item" data-src="img/img12.jpg">
                   <img src="img/img8.jpg" alt="Image Eight" />
                 </a>
-                <a class="item" data-src="img/img1.jpg">
-                  <img src="img/img1.jpg" alt="Image One" />
-                </a>
-                <a class="item" data-src="img/img2.jpg">
-                  <img src="img/img2.jpg" alt="Image Two" />
-                </a>
-                <a class="item" data-src="img/img3.jpg">
-                  <img src="img/img3.jpg" alt="Image Three" />
-                </a>
-                <a class="item" data-src="img/img4.jpg">
-                  <img src="img/img4.jpg" alt="Image Four" />
-                </a>
-                <a class="item" data-src="img/img5.jpg">
-                  <img src="img/img5.jpg" alt="Image Five" />
-                </a>
-                <a class="item" data-src="img/img6.jpg">
-                  <img src="img/img6.jpg" alt="Image Six" />
-                </a>
-                <a class="item" data-src="img/img7.jpg">
-                  <img src="img/img7.jpg" alt="Image Seven" />
-                </a>
-                <a class="item" data-src="img/img8.jpg">
-                  <img src="img/img8.jpg" alt="Image Eight" />
-                </a>
-                <a class="item" data-src="img/img9.jpg">
-                  <img src="img/img9.jpg" alt="Image Eight" />
-                </a>
-                <a class="item" data-src="img/img10.jpg">
-                  <img src="img/img8.jpg" alt="Image Eight" />
-                </a>
-                <a class="item" data-src="img/img11.jpg">
-                  <img src="img/img8.jpg" alt="Image Eight" />
-                </a>
-                <a class="item" data-src="img/img12.jpg">
-                  <img src="img/img8.jpg" alt="Image Eight" />
-                </a>
               </div>
-              <div class="pager">
-                <div class="prev"><i class="fas fa-chevron-left"></i></div>
+              <div class="pager-section">
+                <div class="previous"><i class="fas fa-chevron-left"></i></div>
                 <div class="carousel">
-                  <a class="item current">
-                    <img src="img/img1.jpg" alt="Image One" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img2.jpg" alt="Image Two" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img3.jpg" alt="Image Three" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img4.jpg" alt="Image Four" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img5.jpg" alt="Image Five" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img6.jpg" alt="Image Six" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img7.jpg" alt="Image Seven" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img8.jpg" alt="Image Eight" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img9.jpg" alt="Image Nine" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img10.jpg" alt="Image Ten" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img11.jpg" alt="Image Eleven" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img12.jpg" alt="Image Twelve" />
-                  </a>
-                  <a class="item current">
-                    <img src="img/img1.jpg" alt="Image One" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img2.jpg" alt="Image Two" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img3.jpg" alt="Image Three" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img4.jpg" alt="Image Four" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img5.jpg" alt="Image Five" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img6.jpg" alt="Image Six" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img7.jpg" alt="Image Seven" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img8.jpg" alt="Image Eight" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img9.jpg" alt="Image Nine" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img10.jpg" alt="Image Ten" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img11.jpg" alt="Image Eleven" />
-                  </a>
-                  <a class="item">
-                    <img src="img/img12.jpg" alt="Image Twelve" />
-                  </a>
+                  <div class="wrapper">
+                    <a class="item current">
+                      <img src="img/img1.jpg" alt="Image One" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img2.jpg" alt="Image Two" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img3.jpg" alt="Image Three" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img4.jpg" alt="Image Four" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img5.jpg" alt="Image Five" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img6.jpg" alt="Image Six" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img7.jpg" alt="Image Seven" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img8.jpg" alt="Image Eight" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img9.jpg" alt="Image Nine" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img10.jpg" alt="Image Ten" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img11.jpg" alt="Image Eleven" />
+                    </a>
+                    <a class="item">
+                      <img src="img/img12.jpg" alt="Image Twelve" />
+                    </a>
+                  </div>
                 </div>
                 <div class="next"><i class="fas fa-chevron-right"></i></div>
               </div>
@@ -184,14 +114,15 @@
   <script type="text/javascript" src="js/TweenMax.min.js">
   </script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
-  <script type="text/javascript" src="js/slideshow.js"></script>
+  <script type="text/javascript" src="js/slider.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var slideshow = new Slideshow({
-        "id": "slideshow",
-        "autorotate": false,
-        "stoprotate": false,
-        "animateInView": true
+      var slider = new Slider({
+        id: "slider",
+        autorotate: false,
+        stoprotate: false,
+        rotateduration: 5000,
+        animateinview: false
       });
     }, false);
   </script>
