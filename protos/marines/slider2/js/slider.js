@@ -1,4 +1,4 @@
-var Slideshow = Slideshow || function(config) {
+var Slider = Slider|| function(config) {
   var element = config.id ? document.getElementById(config.id) : null;
   if (!element) return;
   var view = element.querySelector('.view');

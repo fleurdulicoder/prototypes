@@ -158,7 +158,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   gallery = createGallery();
 
   function createGallery() {
-    var images = []
+    var images = [];
     for (var i = 0; i < quantity; i++) {
       var item = {
         src: views[i].getAttribute('data-src') || 'img/img1.jpg',
@@ -172,7 +172,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     return images;
   }
 
-  var sets = [];
   function createSet() {
     var tmp = document.createElement('div');
     tmp.className = 'preview-set';
@@ -186,11 +185,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     tmp.className = 'preview';
     tmp.view = galleryItem.view;
     tmp.innerHTML =
-    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" id="" /> \
-    <a class="overlay" href="#"> \
-      <span class="title"><span>View</span></span> \
-    </a> \
-    ';
+    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
     if (parent) {
       parent.appendChild(tmp);
       if (!parent.hasOwnProperty('previews')) {
@@ -248,26 +243,18 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
-  // remake
-  // function loadNextSet(loadingSet) {
-  //   TweenMax.set(loadingSet, {
-  //     display: 'block',
-  //     opacity: 1
-  //   });
-  // }
-  //
-  // function removeSet() {
-  //   TweenMax.set(sets[activeSet], {
-  //     display: 'none',
-  //     opacity: 0
-  //   });
-  // }
+  // instead of reloading all images, we only swap between 2
+  var currentSwap = quantity;
+  function swapSets() {
+    if (currentSwap - 1 > 0) {
+      var swapSet = sets[--currentSwap];
+      // activeSet, swapSet->
+      var tmpPreviews = swapSet.previews;
+      // currentSet.children[0];
+      // currentSet.children[1];
 
-  // function preloadNextSet() {
-  //   console.log('Explore Gallery > Preload Next Set');
-  //   removeSet();
-  //   loadNextSet(getNextSet());
-  // }
+    }
+  }
 
   function loadTrio(e) {
     e.preventDefault();
@@ -329,7 +316,6 @@ var ExploreGallery = ExploreGallery || function(config) {
     loadFirstImage();
     loadCaption();
     reloadPreviewsInSets();
-    // preloadNextSet();
   }
 
   function setup() {

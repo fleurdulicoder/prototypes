@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
   <link href="dist/gallery.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
         <div class="row">
           <div class="col-12">
 
-            <div class="slideshow" id="slideshow">
+            <div class="slider" id="slider">
               <div class="view">
                 <a class="item" data-src="img/img1.jpg">
                   <img src="img/img1.jpg" alt="Image One" />
@@ -95,7 +94,7 @@
                   <img src="img/img8.jpg" alt="Image Eight" />
                 </a>
               </div>
-              <div class="pager">
+              <div class="pager-section">
                 <div class="prev"><i class="fas fa-chevron-left"></i></div>
                 <div class="carousel">
                   <a class="item current">
@@ -181,14 +180,13 @@
     </section>
 
   </div>
-  <script type="text/javascript" src="js/TweenMax.min.js">
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+  <script type="text/javascript" src="js/TweenMax.min.js"></script>
+  <script type="text/javascript" src="js/TimelineMax.min.js"></script>
   <script type="text/javascript" src="js/slideshow.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var slideshow = new Slideshow({
-        "id": "slideshow",
+      var slider = new Slider({
+        "id": "slider",
         "autorotate": false,
         "stoprotate": false,
         "animateInView": true

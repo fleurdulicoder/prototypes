@@ -1,0 +1,34 @@
+/* color overrides */
+.dma-slideshow.explore .gallery-section a.details-link:before,
+.dma-slideshow.explore .gallery-section a.download-link:before {
+  color: #940000
+}
+
+.dma-slideshow.explore .gallery-section .caption-section h4:before {
+  border-color: #940000
+}
+
+.dma-slideshow.explore .preview .overlay {
+  background-color: rgba(148, 0, 0, 0)
+}
+
+.dma-slideshow.explore .preview .overlay .title span {
+  color: #fff
+}
+
+.dma-slideshow.explore .preview .overlay .title span:after {
+  border-color: #fff
+}
+
+.dma-slideshow.explore .preview .overlay:hover {
+  background-color: rgba(148, 0, 0, .8)
+}
+
+.dma-slideshow.explore .button-primary {
+  background-color: #940000;
+  color: #fff
+}
+
+.dma-slideshow.explore .button-primary:before {
+  background-color: #fff
+}

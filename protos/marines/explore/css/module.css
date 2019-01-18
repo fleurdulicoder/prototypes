@@ -1,0 +1,257 @@
+/************************************ Generic Layout Support ****************************/
+.dma-slideshow {
+  background: transparent;
+}
+
+.dma-slideshow .caption-section.light,
+.dma-slideshow .headline-section.light {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dma-slideshow .caption-section.dark,
+.dma-slideshow .headline-section.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dma-slideshow .caption-section.medium-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dma-slideshow .caption-section.transparent {
+  background-color: transparent;
+}
+
+.dma-slideshow .caption-section .title.dark,
+.dma-slideshow .headline-section .title.dark {
+  color: #666;
+}
+
+.dma-slideshow .caption-section .title.light,
+.dma-slideshow .headline-section .title.light {
+  color: #fff;
+}
+
+/*For caption overlaying an image- ie Carousel in new layouts*/
+.dma-slideshow .caption-overlay-transparent {
+  color: #fff;
+  background: rgba(0, 0, 0, .5)
+}
+
+.dma-slideshow .caption-section .text.light {
+  color: #fff;
+}
+
+.dma-slideshow .caption-section .text.dark {
+  color: #878785;
+}
+
+.dma-slideshow .caption-section .text.light:hover {
+  color: #fff;
+}
+
+.dma-slideshow .caption-section .text.dark:hover {
+  color: #666;
+}
+
+.dma-slideshow.pager-section.dark {
+  background-color: #222;
+}
+
+.dma-slideshow.pager-section.light {
+  background-color: #fff;
+}
+
+.dma-slideshow.pager-section.transparent {
+  background-color: transparent;
+}
+
+.dma-slideshow.pager-section .previous .link.dark, .dma-slideshow.pager-section .next .link.dark {
+  color: #878785;
+}
+
+.dma-slideshow.pager-section .previous .text.dark, .dma-slideshow.pager-section .next .text.dark {
+  color: #878785;
+}
+
+.dma-slideshow.pager-section .previous .link.light, .dma-slideshow.pager-section .next .link.light {
+  color: #fff;
+}
+
+.dma-slideshow.pager-section .previous .text.light, .dma-slideshow.pager-section .next .text.light {
+  color: #fff;
+}
+
+.dma-slideshow.pager-section .previous a.dark:visited, .dma-slideshow.pager-section .next a.dark:visited {
+  color: #666;
+}
+
+.dma-slideshow.pager-section .previous a.light:visited, .dma-slideshow.pager-section .next a.light:visited {
+  color: #fff;
+}
+
+.dma-slideshow.pager-section .previous a.dark:active, .dma-slideshow.pager-section .next a.dark:active {
+  color: #666;
+}
+
+.dma-slideshow.pager-section .previous a.light:active, .dma-slideshow.pager-section .next a.light:active {
+  color: #fff;
+}
+
+.dma-slideshow .actimg.dark a:visited {
+  color: #666;
+}
+
+.dma-slideshow .actimg.light a:visited {
+  color: #fff;
+}
+
+/*Dark Pager- Hover command Active make it light*/
+.dma-slideshow .pager-dark:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.dma-slideshow .pager-dark-active {
+  background-color: #fff !important;
+  color: black !important;
+}
+
+.dma-slideshow .pager-dark {
+  background-color: black;
+  color: #fff;
+}
+
+/*Image With Caption overlayed*/
+.dma-slideshow .caption-overlay-gradient .title a {
+  color: #fff;
+}
+
+.dma-slideshow .caption-overlay-gradient .description {
+  color: #fff;
+  text-shadow: 3px 3px 2px rgba(0, 0, 0, .9);
+}
+
+/*Light Pager- Hover and Active make it dark*/
+.dma-slideshow .pager-light {
+  color: black;
+  background-color: #fff;
+}
+
+.dma-slideshow .pager-light-active {
+  color: #fff;
+  background-color: black;
+}
+
+.dma-slideshow .pager-light:hover {
+  color: #fff;
+  background-color: black;
+}
+
+/*caption-(with)-light(background)*/
+.dma-slideshow .caption-light .description {
+  color: black;
+}
+
+.dma-slideshow .caption-light .title a {
+  color: black;
+}
+
+/* extra styled elements */
+.dma-slideshow .caption-section.transparent .title.light.underline {
+  border-color: #858587;
+}
+
+.dma-slideshow .caption-section.transparent a:hover .title.light.mouseover {
+  color: #858587;
+}
+
+.dma-slideshow .pager-circles.light a {
+  background-color: rgba(256, 256, 256, 0);
+  border-color: #fff;
+}
+
+.dma-slideshow .pager-circles.light a:hover {
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.dma-slideshow .pager-circles.light a.activeSlide {
+  background-color: rgba(256, 256, 256, 1);
+}
+
+.dma-slideshow .video-overlay.light span {
+  color: #fff;
+}
+
+.dma-slideshow .video-overlay.light span::after {
+  border-color: #858587;
+}
+
+.dma-slideshow .video-overlay.light button {
+  border-color: #fff;
+}
+
+.dma-slideshow .video-overlay.light button::after {
+  border-left-color: #000;
+}
+
+.dma-slideshow .video-overlay.light:hover span::after {
+  border-color: #858587;
+}
+
+.dma-slideshow .pager-section .next.text.dark,
+.dma-slideshow .pager-section .previous.text.dark {
+  color: #858587;
+}
+
+.dma-slideshow .text.dark.decorated a {
+  color: #858587;
+}
+
+.dma-slideshow .text.dark.decorated a span {
+  color: #fff;
+}
+
+.dma-slideshow .text.dark.decorated a:hover span {
+  color: #858587;
+}
+
+.dma-slideshow .text.dark.decorated a::before {
+  color: #858587;
+}
+
+.dma-slideshow .pager-section .next.text.dark>span.text.light,
+.dma-slideshow .pager-section .previous.text.dark>span.text.light {
+  color: #fff;
+}
+
+.dma-slideshow .text.dark.decorated::after,
+.dma-slideshow .pager-section .next.text.dark>span::after,
+.dma-slideshow .pager-section .previous.text.dark>span::after {
+  border-color: rgba(129, 130, 131, 0);
+}
+
+.dma-slideshow .text.dark.decorated a:hover>span::after,
+.dma-slideshow .pager-section .next.text.dark>span::after,
+.dma-slideshow .pager-section .previous.text.dark>span::after {
+  border-color: rgba(129, 130, 131, 1);
+}
+
+.dma-slideshow .icon.light {
+  color: #fff;
+}
+
+.dma-slideshow .button-primary.dark {
+  background-color: #222;
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .dma-slideshow .pager-section.light.mobile-background {
+    background: #444;
+  }
+
+  .dma-slideshow .pager-section.light.mobile-background .next,
+  .dma-slideshow .pager-section.light.mobile-background .previous {
+    color: #fff;
+  }
+}

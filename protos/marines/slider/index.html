@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
   <link href="dist/slider.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.caroufredsel/6.2.1/jquery.carouFredSel.packed.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,7 +16,7 @@
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-8">
 
             <div class="slider" id="slider">
               <div class="view">
@@ -106,15 +104,14 @@
             </div>
 
           </div>
+          <div class="col-4">
+            Test Column On Right
+          </div>
         </div>
       </div>
     </section>
-
   </div>
-  <script type="text/javascript" src="js/TweenMax.min.js">
-  </script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
-  <script type="text/javascript" src="js/slider.js"></script>
+  <script type="text/javascript" src="dist/slider.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var slider = new Slider({

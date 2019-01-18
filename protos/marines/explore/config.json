@@ -1,0 +1,11 @@
+{
+  "JSHINT_OPTS": {},
+  "JAVASCRIPT": {
+    "DIST_DIR": "dist",
+    "explore": ["js/jquery-3.3.1.min.js", "js/jquery.touchSwipe.min.js", "js/TweenMax.min.js", "js/TimelineMax.min.js", "js/explore.js"]
+  },
+  "CSS": {
+    "DIST_DIR": "dist",
+    "explore": ["css/base.css", "css/module.css", "css/explore.css", "css/skin.css"]
+  }
+}

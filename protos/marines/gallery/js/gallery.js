@@ -5,7 +5,7 @@
 */
 
 var ExploreCarousel = ExploreCarousel || function(config) {
-  console.log('Explore Carousel >>', config);
+  console.log('ExploreCarousel >>', config);
   var container = config.container;
   var slides = container.children;
   var prev = config.prev;
@@ -15,19 +15,25 @@ var ExploreCarousel = ExploreCarousel || function(config) {
   console.log(slides);
 
   function observe() {
-    console.log('Explore Carousel > observe');
+    console.log('ExploreCarousel > observe');
     if (prev && next) {
       prev.addEventListener('click', function(e){
-        if (!isAnimating) slideInPrev();
+        //if (!isAnimating)
+        console.log('Click > PREV');
+        slideInPrev();
       }, false);
       next.addEventListener('click', function(e){
-        if (!isAnimating) slideInNext();
+        //if (!isAnimating)
+        console.log('Click > NEXT');
+        slideInNext();
       }, false);
       prev.addEventListener('touch', function(e){
-        if (!isAnimating) slideInPrev();
+        //if (!isAnimating)
+        slideInPrev();
       }, false);
       next.addEventListener('touch', function(e){
-        if (!isAnimating) slideInPrev();
+        //if (!isAnimating)
+        slideInPrev();
       }, false);
     }
   }
@@ -45,7 +51,7 @@ var ExploreCarousel = ExploreCarousel || function(config) {
 
   function slideInNext() {
     console.log('Explore Carousel > slideInNext');
-    isAnimating = true;
+    //isAnimating = true;
     getCurrentSlide();
     if ((currentIndex + 1) < quantity) {
       nextSlide = slides[++currentIndex];
@@ -61,7 +67,7 @@ var ExploreCarousel = ExploreCarousel || function(config) {
         currentSlide.classList.remove('current');
         nextSlide.classList.add('current');
         currentSlide = nextSlide;
-        isAnimating = false;
+        //isAnimating = false;
       }
     });
 
@@ -85,7 +91,7 @@ var ExploreCarousel = ExploreCarousel || function(config) {
 
   function slideInPrev() {
     console.log('Explore Carousel > slideInPrev');
-    isAnimating = true;
+    //isAnimating = true;
     getCurrentSlide();
     if ((currentIndex - 1) >= 0) {
       prevSlide = slides[--currentIndex];
@@ -101,7 +107,7 @@ var ExploreCarousel = ExploreCarousel || function(config) {
         currentSlide.classList.remove('current');
         prevSlide.classList.add('current');
         currentSlide = prevSlide;
-        isAnimating = false;
+        //isAnimating = false;
       }
     });
 
@@ -185,11 +191,7 @@ var ExploreGallery = ExploreGallery || function(config) {
     tmp.className = 'preview';
     tmp.view = galleryItem.view;
     tmp.innerHTML =
-    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /> \
-    <a class="overlay" href="#"> \
-      <span class="title"><span>View</span></span> \
-    </a> \
-    ';
+    '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
     if (parent) {
       parent.appendChild(tmp);
       if (!parent.hasOwnProperty('previews')) {
@@ -214,6 +216,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
+    console.log('Explore > createSetsWithPreviews()');
     var total = Math.floor(quantity / increment) * increment;
     var count = -1, activeSetElement;
     for (var i = 0; i < total; i++) {
@@ -229,6 +232,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function loadCaption() {
+    console.log('Explore > loadCaption()');
     if (activeImageSlide) {
       captionTitle.innerHTML = activeImageSlide.getAttribute('data-title');
       captionByline.innerHTML = activeImageSlide.getAttribute('data-byline');
@@ -239,6 +243,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function getNextSet() {
+    console.log('Explore > getNextSet()');
     if ((activeSet + 1) < sets.length) {
       return sets[++activeSet];
     } else {
@@ -247,7 +252,21 @@ var ExploreGallery = ExploreGallery || function(config) {
     }
   }
 
+  // instead of reloading all images, we only swap between 2
+  // var currentSwap = quantity;
+  // function swapSets() {
+  //   if (currentSwap - 1 > 0) {
+  //     var swapSet = sets[--currentSwap];
+  //     // activeSet, swapSet->
+  //     var tmpPreviews = swapSet.previews;
+  //     // currentSet.children[0];
+  //     // currentSet.children[1];
+  //
+  //   }
+  // }
+
   function loadTrio(e) {
+    console.log('Explore > loadTrio()');
     e.preventDefault();
     var clicked = e.target;
     while(!clicked.classList.contains('preview')) {
@@ -261,6 +280,7 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function observe() {
+    console.log('Explore > observe()');
     for (var x = 0, len = sets.length; x < len; x++) {
       sets[x].addEventListener('click', function(e) {
         loadTrio(e);
@@ -269,20 +289,24 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function reloadPreviewsInSets() {
+    console.log('Explore > reloadPreviewsInSets()');
     reloadGallery();
     createSetsWithPreviews(reloadPreview, function(){});
   }
 
   function reloadGallery() {
+    console.log('Explore > reloadGallery()');
     gallery.push(gallery.shift());
     gallery.push(gallery.shift());
   }
 
   function loadFirstSet() {
+    console.log('Explore > loadFirstSet()');
     sets[0].classList.add('current');
   }
 
   function loadFirstImage() {
+    console.log('Explore > loadFirstImage()');
     activeSet = 0;
     activeImageSlide = views[0];
     activeImageSlide.classList.add('current');
@@ -290,6 +314,7 @@ var ExploreGallery = ExploreGallery || function(config) {
 
   var carouselDesktop, carouselMobile;
   function loadCarousels() {
+    console.log('Explore > loadCarousels()');
     carouselDesktop = new ExploreCarousel({
       container: slider,
       prev: element.querySelector('.pager-section .pager-desktop .previous'),
@@ -303,14 +328,15 @@ var ExploreGallery = ExploreGallery || function(config) {
   }
 
   function loadDefaultView() {
+    console.log('Explore > loadDefaultView()');
     loadFirstSet();
     loadFirstImage();
     loadCaption();
     reloadPreviewsInSets();
-    // preloadNextSet();
   }
 
   function setup() {
+    console.log('Explore > setup()');
     createSetsWithPreviews(createPreview, createSet);
     loadDefaultView();
     observe();

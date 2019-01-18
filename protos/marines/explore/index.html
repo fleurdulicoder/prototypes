@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Gallery Prototype</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap-grid.css" crossorigin="anonymous">
+  <link href="dist/explore.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="app" class="app">
+    <div class="nav-bar">
+      <div class="container">
+        <div class="logo" id="logo"></div>
+        <nav>
+          <ul>
+            <li><a hred="/units">Units</a> <i data-feather="chevron-down"></i></li>
+            <li><a hred="#">News</a> <i data-feather="chevron-down"></i></li>
+            <li><a hred="#">Photos</a></li>
+            <li><a hred="#">Leaders</a></li>
+            <li><a hred="#">Marines</a> <i data-feather="chevron-down"></i></li>
+            <li><a hred="#">Family</a> <i data-feather="chevron-down"></i></li>
+            <li><a hred="#">Community</a> <i data-feather="chevron-down"></i></li>
+            <li><i data-feather="search"></i></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="social">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner" id="banner">
+      <div class="current-slide">
+        <div class="overlay"></div>
+      </div>
+    </div>
+
+    <section style="margin-top: -74px; z-index: 10; position: relative;">
+      <div class="dma-slideshow explore" id="explore">
+        <div class="headline">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="title light">Explore Photos</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-section">
+          <!-- CURRENT VIEW -->
+          <div class="caption-section transparent">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h4 class="title light">My Photo Title</h4>
+                  <p class="text light byline">Photo by Andrew Smith</p>
+                  <aside>
+                    <a href="#" class="download-link" download=""><span class="text light">Download</span></a>
+                    <a href="#" class="details-link"><span class="text light">Details</span></a>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="view">
+            <div class="item" id="explore-item-101" data-id="101" data-src="img/img1.jpg" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com">
+              <div class="overlay dark"></div>
+              <img src="img/img1.jpg" alt="Image One" />
+              <div class="caption-section transparent">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo One</h4>
+                      <p class="text light byline">My Author One</p>
+                      <aside>
+                        <a href="img/img1.jpg" class="download-link" download="img/img1.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 2d -->
+            <div class="item" id="explore-item-202" data-id="202" data-src="img/img2.jpg" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk">
+              <div class="overlay dark"></div>
+              <img src="img/img2.jpg" alt="Image Two" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo Two</h4>
+                      <p class="text light byline">My Author Two</p>
+                      <aside>
+                        <a href="img/img2.jpg" class="download-link" download="img/img2.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 3d -->
+            <div class="item" id="explore-item-303" data-id="303" data-src="img/img3.jpg" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com">
+              <div class="overlay dark"></div>
+              <img src="img/img3.jpg" alt="Image Three" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo Three</h4>
+                      <p class="text light byline">My Author Three</p>
+                      <aside>
+                        <a href="img/img3.jpg" class="download-link" download="img/img3.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 4th -->
+            <div class="item" id="explore-item-404" data-id="404" data-src="img/img4.jpg" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com">
+              <div class="overlay dark"></div>
+              <img src="img/img4.jpg" alt="Image Four" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo Four</h4>
+                      <p class="text light byline">My Author Four</p>
+                      <aside>
+                        <a href="img/img4.jpg" class="download-link" download="img/img4.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 5th -->
+            <div class="item" id="explore-item-505" data-id="505" data-src="img/img5.jpg" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com">
+              <div class="overlay dark"></div>
+              <img src="img/img5.jpg" alt="Image Five" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo One</h4>
+                      <p class="text light byline">My Author One</p>
+                      <aside>
+                        <a href="img/img5.jpg" class="download-link" download="img/img5.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 6th -->
+            <div class="item" id="explore-item-606" data-id="606" data-src="img/img6.jpg" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com">
+              <div class="overlay dark"></div>
+              <img src="img/img6.jpg" alt="Image One" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo Six</h4>
+                      <p class="text light byline">My Author Six</p>
+                      <aside>
+                        <a href="img/img6.jpg" class="download-link" download="img/img6.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 7th -->
+            <div class="item" id="explore-item-707" data-id="707" data-src="img/img7.jpg" data-title="Picture Six" data-byline="Pic 5 Athor" data-link="http://www.google.com">
+              <div class="overlay dark"></div>
+              <img src="img/img7.jpg" alt="Image Seven" />
+              <div class="caption-section light">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="title light">Photo One</h4>
+                      <p class="text light byline">My Author One</p>
+                      <aside>
+                        <a href="img/img7.jpg" class="download-link" download="img/img7.jpg"><span class="text light">Download</span></a>
+                        <a href="http://www.google.com" class="details-link" title="Details"><span class="text light">Details</span></a>
+                      </aside>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end slide -->
+          </div>
+          <!-- END CURRENT VIEW -->
+          <!-- preview-section VIEWS -->
+          <div class="preview-section" id="gallery-preview"></div>
+          <!-- END preview-section VIEWS -->
+        </div>
+        <div class="pager-section">
+          <div class="pager-desktop">
+            <span class="previous" id="explore-previews-prev"></span>
+            <span class="next" id="explore-previews-next"></span>
+          </div>
+          <div class="pager-mobile">
+            <span class="previous" id="explore-views-prev"></span>
+            <span class="next" id="explore-views-next"></span>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <button class="button-primary">View Full Gallery</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script type="text/javascript" src="dist/explore.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var gallery = new ExploreGallery({
+        "galleryId": "explore"
+      });
+    }, false);
+  </script>
+</body>
+
+</html>
