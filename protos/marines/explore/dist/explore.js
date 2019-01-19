@@ -224,7 +224,6 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
       return images;
     }
 
-    var sets = [];
     function createSet() {
       var tmp = document.createElement('div');
       tmp.className = 'preview-set';
@@ -237,12 +236,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
       var tmp = document.createElement('div');
       tmp.className = 'preview';
       tmp.view = galleryItem.view;
-      tmp.innerHTML =
-      '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /> \
-      <a class="overlay" href="#"> \
-        <span class="title"><span>View</span></span> \
-      </a> \
-      ';
+      tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
       if (parent) {
         parent.appendChild(tmp);
         if (!parent.hasOwnProperty('previews')) {
