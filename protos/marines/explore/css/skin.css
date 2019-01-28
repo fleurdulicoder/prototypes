@@ -9,7 +9,7 @@
 }
 
 .dma-slideshow.explore .preview .overlay {
-  background-color: rgba(148, 0, 0, 0)
+  background-color: rgba(148, 0, 0, .8)
 }
 
 .dma-slideshow.explore .preview .overlay .title span {
@@ -18,10 +18,6 @@
 
 .dma-slideshow.explore .preview .overlay .title span:after {
   border-color: #fff
-}
-
-.dma-slideshow.explore .preview .overlay:hover {
-  background-color: rgba(148, 0, 0, .8)
 }
 
 .dma-slideshow.explore .button-primary {

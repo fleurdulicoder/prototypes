@@ -1,4 +1,4 @@
-  /*
+/*
     ExploreCarousel - requires TimeMax & TimelineMax Libraries
     to be loaded via SharedLibrary UseGSAP) or Node (via skin).
     @developer Ella Musina (emusina@omnitecinc.com)
@@ -154,11 +154,12 @@
       previewObjects, isAnimating = false;
     if (!view && !views) return;
 
-    var quantity, increment, activeSet, activeImageSlide, gallery;
-    quantity = views.length;
-    increment = 2;
-    activeSet = 0;
-    gallery = createGallery();
+    var quantity = views.length,
+      increment = 2,
+      activeSet = 0,
+      swapSet = sets.length,
+      activeImageSlide = views[0];
+      gallery = createGallery();
 
     function createGallery() {
       var images = [];
@@ -183,15 +184,13 @@
       return tmp;
     }
 
-    function createPreview(galleryItem, parent) {
+    function createPreview(index, galleryItem, parent) {
       var tmp = document.createElement('div');
+      tmp.setAttribute('data-index', index);
       tmp.className = 'preview';
       tmp.view = galleryItem.view;
-      // @safari: cannot do immediate image src swap witout visible delay
-      // tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-      tmp.style.backgroundImage = 'url("'+galleryItem.src+'")';
-      tmp.innerHTML = '<a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-
+      tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /> \
+      <a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
       if (parent) {
         parent.appendChild(tmp);
         if (!parent.hasOwnProperty('previews')) {
@@ -202,134 +201,157 @@
       return tmp;
     }
 
-    function reloadPreview(galleryItem, parent) {
-      var reloadingPreview;
-      if (parent) {
-        var nthChild = parent.previews.length === 0 ? 1 : 2;
-        reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
-        reloadingPreview.style.backgroundImage = 'url("'+galleryItem.src+'")';
-        // @safari: cannot do immediate image src swap witout visible delay
-        // var image = reloadingPreview.querySelector('img');
-        // image.setAttribute('alt', galleryItem.title);
-        // image.setAttribute('src', galleryItem.src);
-        reloadingPreview.view = galleryItem.view;
-        parent.previews.push(reloadingPreview);
-      }
-    }
-
     function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
       var total = Math.floor(quantity / increment) * increment;
       var count = -1, activeSetElement;
       for (var i = 0; i < total; i++) {
         if (i % 2 == 0) {
           count++;
-          activeSetElement = sets[count] ||
-            (createSetCallback ? createSetCallback() : null);
+          activeSetElement = sets[count] || createSetCallback(); // watch out
           if (activeSetElement && activeSetElement.hasOwnProperty('previews')) {
             activeSetElement.previews = [];
           }
         }
-        if (reloadPreviewCallback) {
-          reloadPreviewCallback(gallery[i], activeSetElement);
-        }
+        reloadPreviewCallback(i, gallery[i], activeSetElement);
       }
     }
 
-    function loadCaption() {
-      if (activeImageSlide) {
-        captionTitle.innerHTML = activeImageSlide.getAttribute('data-title');
-        captionByline.innerHTML = activeImageSlide.getAttribute('data-byline');
-        captionDownloadLink.setAttribute('href', activeImageSlide.getAttribute('data-imgsrc'));
-        captionDownloadLink.setAttribute('download', activeImageSlide.getAttribute('data-imgsrc'));
-        captionDetailsLink.setAttribute('href', activeImageSlide.getAttribute('data-link'));
+    function swapPreview(index, swap, parent) {
+      console.log(index, swap, parent);
+      var child = parent.children[index];
+      child.setAttribute('data-index', swap.getAttribute('data-index'));
+      var image = child.querySelector('img');
+      if (image) {
+        image.setAttribute('alt', swap.getAttribute('data-title'));
+        image.setAttribute('src', swap.getAttribute('data-src'));
+        child.view = swap.view;
       }
     }
 
-    function getNextSet() {
-      if ((activeSet + 1) < sets.length) {
-        return sets[++activeSet];
-      } else {
-        activeSet = 0;
-        return sets[activeSet];
+    function swapSets() {
+      swapSet--;
+      if (swapSet < 0) {
+        swapSet = sets.length - 1;
       }
+      var tmp = sets[activeSet];
+      swapPreview(0, sets[swapSet].previews[0], sets[activeSet]);
+      swapPreview(1, sets[swapSet].previews[1], sets[activeSet]);
+      sets[activeSet].previews = sets[swapSet].previews;
+      swapPreview(0, tmp.previews[0], sets[swapSet]);
+      swapPreview(1, tmp.previews[1], sets[swapSet]);
+      sets[swapSet] = tmp.previews;
+      console.log('ALL SETS >>>', sets);
+      console.log();
     }
 
-    function loadTrio(e) {
-      e.preventDefault();
-      var clicked = e.target;
-      while(!clicked.classList.contains('preview')) {
-        clicked = clicked.parentNode;
-      }
-      if (activeImageSlide.id !== clicked.view.id) {
-        console.log(activeImageSlide.id,clicked.view.id);
-        clicked.view.classList.add('current');
-        activeImageSlide.classList.remove('current');
-        activeImageSlide = clicked.view;
-        reloadGallery();
-        createSetsWithPreviews(reloadPreview);
-        loadCaption();
-      }
-      isAnimating = false;
-    }
+  //   // function reloadPreview(index, galleryItem, parent) {
+  //   //   var reloadingPreview;
+  //   //   if (parent) {
+  //   //     var nthChild = parent.previews.length === 0 ? 1 : 2;
+  //   //     reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
+  //   //     var image = reloadingPreview.querySelector('img');
+  //   //     image.setAttribute('alt', galleryItem.title);
+  //   //     image.setAttribute('src', galleryItem.src);
+  //   //     reloadingPreview.view = gallesryItem.view;
+  //   //     parent.previews.push(reloadingPreview);
+  //   //   }
+  //   // }
+  //
+  //
 
-    function observe() {
-      for (var x = 0, len = sets.length; x < len; x++) {
-        sets[x].addEventListener('click', function(e) {
-          if (!isAnimating) {
-            isAnimating = true;
-            loadTrio(e);
-          }
-        }, false);
-      }
-    }
+  //
+  //   var nextSet = sets.length - 1,
+  //   function getNextSet() {
+  //     if ((activeSet + 1) < sets.length) {
+  //       return sets[++activeSet];
+  //     } else {
+  //       activeSet = 0;
+  //       return sets[activeSet];
+  //     }
+  //   }
+  //
+  //
+  //   function loadTrio(e) {
+  //     e.preventDefault();
+  //     var clicked = e.target;
+  //     while(!clicked.classList.contains('preview')) {
+  //       clicked = clicked.parentNode;
+  //     }
+  //     if (activeImageSlide.id !== clicked.view.id) {
+  //       console.log(activeImageSlide.id,clicked.view.id);
+  //       clicked.view.classList.add('current');
+  //       activeImageSlide.classList.remove('current');
+  //       activeImageSlide = clicked.view;
+  //       //reloadPreviewsInSets();
+  //       swapSets();
+  //       loadCaption();
+  //     }
+  //     isAnimating = false;
+  //   }
+  //
+  //   function observe() {
+  //     for (var x = 0, len = sets.length; x < len; x++) {
+  //       sets[x].addEventListener('click', function(e) {
+  //         if (!isAnimating) {
+  //           isAnimating = true;
+  //           loadTrio(e);
+  //         }
+  //       }, false);
+  //     }
+  //   }
+  //
+  //   function reloadPreviewsInSets() {
+  //     reloadGallery();
+  //     createSetsWithPreviews(reloadPreview, function(){});
+  //   }
+  //
+  //   function reloadGallery() {
+  //     gallery.push(gallery.shift());
+  //     gallery.push(gallery.shift());
+  //   }
+  //
+  //   var carouselDesktop, carouselMobile;
+  //   function loadCarousels() {
+  //     carouselDesktop = new ExploreCarousel({
+  //       container: slider,
+  //       prev: element.querySelector('.pager-section .pager-desktop .previous'),
+  //       next: element.querySelector('.pager-section .pager-desktop .next'),
+  //     });
+  //     carouselMobile = new ExploreCarousel({
+  //       container: view,
+  //       prev: element.querySelector('.pager-section .pager-mobile .previous'),
+  //       next: element.querySelector('.pager-section .pager-mobile .next')
+  //     });
+  //   }
+  //
 
-    function reloadGallery() {
-      gallery.push(gallery.shift());
-      gallery.push(gallery.shift());
+  function loadCaption() {
+    if (activeImageSlide) {
+      captionTitle.innerHTML = activeImageSlide.getAttribute('data-title');
+      captionByline.innerHTML = activeImageSlide.getAttribute('data-byline');
+      captionDownloadLink.setAttribute('href', activeImageSlide.getAttribute('data-imgsrc'));
+      captionDownloadLink.setAttribute('download', activeImageSlide.getAttribute('data-imgsrc'));
+      captionDetailsLink.setAttribute('href', activeImageSlide.getAttribute('data-link'));
     }
+  }
 
-    function loadFirstSet() {
-      sets[0].classList.add('current');
-    }
+  function loadDefaultView() {
+    sets[0].classList.add('current')
+    activeImageSlide.classList.add('current');
+    loadCaption();
+  }
 
-    function loadFirstImage() {
-      activeSet = 0;
-      activeImageSlide = views[0];
-      activeImageSlide.classList.add('current');
-    }
+  function setup() {
+    createSetsWithPreviews(createPreview, createSet);
+    loadDefaultView();
+    swapSets();
+    // observe();
+    // if (sets.length <= 1) {
+    //   pager.style.display = "none";
+    // } else {
+    //   loadCarousels();
+    // }
+  }
 
-    var carouselDesktop, carouselMobile;
-    function loadCarousels() {
-      carouselDesktop = new ExploreCarousel({
-        container: slider,
-        prev: element.querySelector('.pager-section .pager-desktop .previous'),
-        next: element.querySelector('.pager-section .pager-desktop .next'),
-      });
-      carouselMobile = new ExploreCarousel({
-        container: view,
-        prev: element.querySelector('.pager-section .pager-mobile .previous'),
-        next: element.querySelector('.pager-section .pager-mobile .next')
-      });
-    }
-
-    function loadDefaultView() {
-      loadFirstSet();
-      loadFirstImage();
-      loadCaption();
-      reloadGallery();
-      createSetsWithPreviews(reloadPreview);
-    }
-
-    function setup() {
-      createSetsWithPreviews(createPreview, createSet);
-      loadDefaultView();
-      observe();
-      if (sets.length <= 1) {
-        pager.style.display = "none";
-      } else {
-        loadCarousels();
-      }
-    }
-
-    setup();
-  };
+  setup();
+};

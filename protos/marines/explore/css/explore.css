@@ -201,16 +201,19 @@
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
   box-shadow: -5px 0px 12px 0px rgba(0, 0, 0, 0.5);
+  background-position: top left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.explore .preview img {
+/* @safari: cannot swap imgsrc without visible delay */
+/*.explore .preview img {
   position: relative;
   height: 100%;
   width: auto;
   min-height: 100%;
   min-width: 100%;
-}
-
+}*/
 .explore .preview .overlay {
   position: absolute;
   display: flex;
@@ -224,7 +227,6 @@
   text-align: center;
   text-decoration: none;
   opacity: 0;
-  background-color: rgba(150, 0, 0, 1);
   -webkit-transition: opacity 200ms cubic-bezier(.38, .66, .45, 1.04);
   -moz-transition: opacity 200ms cubic-bezier(.38, .66, .45, 1.04);
   -ms-transition: opacity 200ms cubic-bezier(.38, .66, .45, 1.04);
@@ -346,39 +348,6 @@
   padding: 0 48px;
 }
 
-/* dmabasetheme greyscale */
-/* color overrides */
-.dma-slideshow.explore .gallery-section a.details-link:before,
-.dma-slideshow.explore .gallery-section a.download-link:before {
-  color: #940000
-}
-
-.dma-slideshow.explore .gallery-section .caption-section h4:before {
-  border-color: #940000
-}
-
-.dma-slideshow.explore .preview .overlay {
-  background-color: rgba(148, 0, 0, .8)
-}
-
-.dma-slideshow.explore .preview .overlay .title span {
-  color: #fff
-}
-
-.dma-slideshow.explore .preview .overlay .title span:after {
-  border-color: #fff
-}
-
-.dma-slideshow.explore .button-primary {
-  background-color: #940000;
-  color: #fff
-}
-
-.dma-slideshow.explore .button-primary:before {
-  background-color: #fff
-}
-
-/* media queries */
 @media screen and (max-width: 812px) {
   .explore .gallery-section>.caption-section {
     width: 100%;

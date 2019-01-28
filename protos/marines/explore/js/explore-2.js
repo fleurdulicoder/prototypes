@@ -1,4 +1,4 @@
-  /*
+/*
     ExploreCarousel - requires TimeMax & TimelineMax Libraries
     to be loaded via SharedLibrary UseGSAP) or Node (via skin).
     @developer Ella Musina (emusina@omnitecinc.com)
@@ -187,11 +187,7 @@
       var tmp = document.createElement('div');
       tmp.className = 'preview';
       tmp.view = galleryItem.view;
-      // @safari: cannot do immediate image src swap witout visible delay
-      // tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-      tmp.style.backgroundImage = 'url("'+galleryItem.src+'")';
-      tmp.innerHTML = '<a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-
+      tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
       if (parent) {
         parent.appendChild(tmp);
         if (!parent.hasOwnProperty('previews')) {
@@ -207,11 +203,9 @@
       if (parent) {
         var nthChild = parent.previews.length === 0 ? 1 : 2;
         reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
-        reloadingPreview.style.backgroundImage = 'url("'+galleryItem.src+'")';
-        // @safari: cannot do immediate image src swap witout visible delay
-        // var image = reloadingPreview.querySelector('img');
-        // image.setAttribute('alt', galleryItem.title);
-        // image.setAttribute('src', galleryItem.src);
+        var image = reloadingPreview.querySelector('img');
+        image.setAttribute('alt', galleryItem.title);
+        image.setAttribute('src', galleryItem.src);
         reloadingPreview.view = galleryItem.view;
         parent.previews.push(reloadingPreview);
       }
@@ -223,15 +217,12 @@
       for (var i = 0; i < total; i++) {
         if (i % 2 == 0) {
           count++;
-          activeSetElement = sets[count] ||
-            (createSetCallback ? createSetCallback() : null);
+          activeSetElement = sets[count] || createSetCallback(); // watch out
           if (activeSetElement && activeSetElement.hasOwnProperty('previews')) {
             activeSetElement.previews = [];
           }
         }
-        if (reloadPreviewCallback) {
-          reloadPreviewCallback(gallery[i], activeSetElement);
-        }
+        reloadPreviewCallback(gallery[i], activeSetElement);
       }
     }
 
@@ -265,8 +256,7 @@
         clicked.view.classList.add('current');
         activeImageSlide.classList.remove('current');
         activeImageSlide = clicked.view;
-        reloadGallery();
-        createSetsWithPreviews(reloadPreview);
+        reloadPreviewsInSets();
         loadCaption();
       }
       isAnimating = false;
@@ -281,6 +271,11 @@
           }
         }, false);
       }
+    }
+
+    function reloadPreviewsInSets() {
+      reloadGallery();
+      createSetsWithPreviews(reloadPreview, function(){});
     }
 
     function reloadGallery() {
@@ -316,8 +311,7 @@
       loadFirstSet();
       loadFirstImage();
       loadCaption();
-      reloadGallery();
-      createSetsWithPreviews(reloadPreview);
+      reloadPreviewsInSets();
     }
 
     function setup() {

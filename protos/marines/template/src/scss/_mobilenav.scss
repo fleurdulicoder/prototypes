@@ -1,0 +1,137 @@
+nav button {
+  cursor: poiner;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 80px 0 0;
+  font-family: Colossalis;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #940000;
+  background-image: url("img/mobile-nav-bg.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s;
+  z-index: 100000;
+  overflow: hidden;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  overflow: hidden;
+}
+
+.mobile-nav header {
+  position: relative;
+  height: 54px;
+  padding: 15px 0;
+  background: transparent url('../img/marines-logo-xs-white@2x.png');
+  background-position: 40px 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.mobile-nav header h3 {
+  display: inline-block;
+  width: 80%;
+  padding: 0 15px;
+  margin: 0;
+  text-indent: 3000px;
+  display: inline-block;
+  height: 54px;
+}
+
+.mobile-nav button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 54px;
+  outline: none;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAABIkb+zAAABTElEQVR4Ae2aAYbDUBRFC6jKdgIBgdlvZwBjilHodqqkUbiFB2grdfNd5ZwVnENa/7//NgAAAAAAAACwDHX6Vb9pgHr9qWutv9NJ0kV9A/2LpJN2bfWPklQJ6+tL0rFZgral7yc81a+EbRv9gwo/4Zl+cWiQoL2KVwm+frFfP2DUvH6Chof6s0bfeHnCYOhPvr6fMGkI6AcSDP18gq+fT/D18wm+fj5B40P9qYG+IeKE+/hfsq2fT/D18wm+fj7B188n+Pr5BOsQmE/Ql3cMzyfc8vre5SSvb10Pff18gq+fT/D18wm+fj7gXAF8QvyIM3+jAf18gq8/6xpN8Gecr2eqHKe50ESvlFzqk2MVBlux0SLD3cB4nQeO/BMTj3z5Z1Yeus0ZZz5BP4b++wnfn7RuMyxZt2HhKb5yxtJfoU7/+bVLAAAAAAAAALgDgwkQi+9iTO0AAAAASUVORK5CYII=');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}
+
+.mobile-nav ul {
+  padding: 30px 20px;
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.mobile-nav ul > li > ul {
+  padding: 0 0 0 40px;
+}
+
+.mobile-nav ul > li {
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  padding-left: 40px;
+}
+
+.mobile-nav a[data-toggle="dropdown"]::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  line-height: 2;
+  font-size: $font-size-large;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  color: $color-septenary;
+}
+
+.mobile-nav .mobile-search {
+  display: block;
+  position: relative;
+  height: 64px;
+  background: $color-contrast;
+}
+
+.mobile-nav .mobile-search input {
+  display: inline-block;
+  background: transparent;
+  height: 64px;
+  color: $color-septenary;
+  font-family: Colossalis;
+  font-size: 16px;
+  letter-spacing: 3px;
+  border: 0;
+  outline: 0;
+}
+
+.mobile-nav .mobile-search input::placeholder {
+  color: $color-septenary;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.mobile-nav .mobile-search button {
+  border: 0;
+  width: 64px;
+  font-size: 18px;
+  color: $color-septenary;
+  background: none;
+  outline: none;
+}
