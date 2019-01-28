@@ -32,16 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
   VideoFactory();
 
   buttonOpen.addEventListener('click', () => {
-    TweenMax.to(mobilenav, 0.8, {
-      x: 0,
-      ease: 'ease-in-out',
+    TweenMax.to(mobilenav, 0.6, {
+      x: '0%',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
     });
   }, false);
 
   buttonClose.addEventListener('click', () => {
-    TweenMax.to(mobilenav, 0.8, {
+    TweenMax.to(mobilenav, 0.6, {
       x: '-100%',
-      ease: 'ease-in-out',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
     });
   }, false);
 }, false);
