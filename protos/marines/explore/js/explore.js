@@ -77,11 +77,11 @@
         })
         .to(currentSlide, 0.5, {
           x: '-100%',
-          ease: 'cubic-bezier(0, 0, 0, 1.1)'
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
         }, 0.1)
         .to(nextSlide, 0.5, {
           x: '0%',
-          ease:'cubic-bezier(0, 0, 0, 1.1)'
+          ease:'cubic-bezier(0.0, 0.0, 0.2, 1)'
         }, 0.1);
 
       timeline.play();
@@ -117,11 +117,11 @@
         })
         .to(prevSlide, 0.5, {
           x: '0%',
-          ease: 'cubic-bezier(0, 0, 0, 1.1)'
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
         }, 0.1)
         .to(currentSlide, 0.5, {
           x: '100%',
-          ease: 'cubic-bezier(0, 0, 0, 1.1)'
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
         }, 0.1);
 
       timeline.play();
@@ -190,11 +190,8 @@
       var tmp = document.createElement('div');
       tmp.className = 'preview';
       tmp.view = galleryItem.view;
-      // @safari: cannot do immediate image src swap witout visible delay
-      // tmp.innerHTML = '<img alt="'+galleryItem.title+'" src="'+galleryItem.src+'" /><a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-      tmp.style.backgroundImage = 'url("'+galleryItem.src+'")';
-      tmp.innerHTML = '<a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
-
+      tmp.innerHTML = '<div class="imgswap" style="url('+galleryItem.src+')"></div>'+
+      '<a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
       if (parent) {
         parent.appendChild(tmp);
         if (!parent.hasOwnProperty('previews')) {
@@ -210,11 +207,10 @@
       if (parent) {
         var nthChild = parent.previews.length === 0 ? 1 : 2;
         reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
-        reloadingPreview.style.backgroundImage = 'url("'+galleryItem.src+'")';
-        // @safari: cannot do immediate image src swap witout visible delay
-        // var image = reloadingPreview.querySelector('img');
-        // image.setAttribute('alt', galleryItem.title);
-        // image.setAttribute('src', galleryItem.src);
+        if (!reloadingPreview.img) {
+          reloadingPreview.img = reloadingPreview.querySelector('.imgswap');
+        }
+        reloadingPreview.img.style.backgroundImage = 'url("'+galleryItem.src+'")';
         reloadingPreview.view = galleryItem.view;
         parent.previews.push(reloadingPreview);
       }
