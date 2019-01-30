@@ -75,9 +75,9 @@
             </div>
           </div>
           <div class="view">
-            <div class="item" id="explore-item-101" data-id="101" data-src="img/img1.jpg" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com">
+            <div href="#" style="background-image: url('img/img1.jpg')" class="item" id="explore-item-101" data-id="101" data-src="img/img1.jpg" data-title="Picture One" data-byline="Saint Terese Reporter" data-link="http://www.google.com">
               <div class="overlay dark"></div>
-              <img src="img/img1.jpg" alt="Image One" />
+              <!-- img src="img/img1.jpg" alt="Image One" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -94,9 +94,9 @@
               </div>
             </div>
             <!-- 2d -->
-            <div class="item" id="explore-item-202" data-id="202" data-src="img/img2.jpg" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk">
+            <div href="#" style="background-image: url('img/img2.jpg');" class="item" id="explore-item-202" data-id="202" data-src="img/img2.jpg" data-title="Picture Two" data-byline="Master &amp; Margarita" data-link="http://bbc.co.uk">
               <div class="overlay dark"></div>
-              <img src="img/img2.jpg" alt="Image Two" />
+              <!-- img src="img/img2.jpg" alt="Image Two" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -113,9 +113,9 @@
               </div>
             </div>
             <!-- 3d -->
-            <div class="item" id="explore-item-303" data-id="303" data-src="img/img3.jpg" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com">
+            <div href="#" style="background-image: url('img/img3.jpg');" class="item" id="explore-item-303" data-id="303" data-src="img/img3.jpg" data-title="Picture Three" data-byline="Angels &amp; Masters" data-link="http://www.abc.com">
               <div class="overlay dark"></div>
-              <img src="img/img3.jpg" alt="Image Three" />
+              <!-- img src="img/img3.jpg" alt="Image Three" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -132,9 +132,9 @@
               </div>
             </div>
             <!-- 4th -->
-            <div class="item" id="explore-item-404" data-id="404" data-src="img/img4.jpg" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com">
+            <div href="#" style="background-image: url('img/img4.jpg');" class="item" id="explore-item-404" data-id="404" data-src="img/img4.jpg" data-title="Picture Four" data-byline="Pic 4 Author" data-link="http://www.google.com">
               <div class="overlay dark"></div>
-              <img src="img/img4.jpg" alt="Image Four" />
+              <!-- img src="img/img4.jpg" alt="Image Four" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -151,9 +151,9 @@
               </div>
             </div>
             <!-- 5th -->
-            <div class="item" id="explore-item-505" data-id="505" data-src="img/img5.jpg" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com">
+            <div href="#" style="background-image: url('img/img5.jpg');" class="item" id="explore-item-505" data-id="505" data-src="img/img5.jpg" data-title="Picture Five" data-byline="Pic 5 Author" data-link="http://www.google.com">
               <div class="overlay dark"></div>
-              <img src="img/img5.jpg" alt="Image Five" />
+              <!-- img src="img/img5.jpg" alt="Image Five" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -170,9 +170,9 @@
               </div>
             </div>
             <!-- 6th -->
-            <div class="item" id="explore-item-606" data-id="606" data-src="img/img6.jpg" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com">
+            <div href="#" style="background-image: url('img/img6.jpg');" class="item" id="explore-item-606" data-id="606" data-src="img/img6.jpg" data-title="Picture Six" data-byline="Pic 6 Athor" data-link="http://www.google.com">
               <div class="overlay dark"></div>
-              <img src="img/img6.jpg" alt="Image One" />
+              <!-- img src="img/img6.jpg" alt="Image One" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -189,9 +189,9 @@
               </div>
             </div>
             <!-- 7th -->
-            <div class="item" id="explore-item-707" data-id="707" data-src="img/img7.jpg" data-title="Picture Six" data-byline="Pic 5 Athor" data-link="http://www.google.com">
+            <div href="#" style="background-image: url('img/img7.jpg');" class="item" id="explore-item-707" data-id="707" data-src="img/img7.jpg" data-title="Picture Six" data-byline="Pic 5 Athor" data-link="http://www.google.com">
               <div class="overlay dark"></div>
-              <img src="img/img7.jpg" alt="Image Seven" />
+              <!-- img src="img/img7.jpg" alt="Image Seven" /-->
               <div class="caption-section transparent">
                 <div class="container">
                   <div class="row">
@@ -244,29 +244,6 @@
   <script type="text/javascript" src="js/TimelineMax.min.js"></script>
   <script type="text/javascript" src="js/explore.js"></script>
   <script>
-    /*
-      Preload Function
-    */
-    (function($) {
-      $.fn.preLoadImages = $.fn.preLoadImages || function(cb) {
-        var urls = [],
-          promises = [],
-          $imgs = $(this).find('img');
-        $imgs.each(function() {
-          var promise = $.Deferred();
-          var img = new Image();
-          img.onload = function() {
-            promise.resolve(img.src);
-          };
-          img.src = $(this).attr('src');
-          promises.push(promise);
-        });
-
-        $.when.apply(null, promises).done(cb);
-      }
-    })(jQuery);
-    $('#gallery').preLoadImages();
-
     document.addEventListener('DOMContentLoaded', function() {
       var gallery = new ExploreGallery({
         "galleryId": "explore"

@@ -991,6 +991,10 @@ nav>ul li, .nav-bar .social ul li {
   -ms-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
   -o-transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
   transition: visibility 0ms, opacity 500ms cubic-bezier(0, 0, 0, 1.1);
+  background-color: transparent;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .explore .gallery-section .view .item img {

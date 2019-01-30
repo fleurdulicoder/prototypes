@@ -192,7 +192,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
     var sets = [];
     var view = element.querySelector('.view'),
-      views = view.querySelectorAll('.item'),
+      views = element.querySelectorAll('.view > .item');
       slider = element.querySelector('.preview-section'),
       pager = element.querySelector('.pager-section'),
       caption = element.querySelector('.caption-section'),
@@ -200,10 +200,13 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
       captionByline = caption.querySelector('.byline'),
       captionDownloadLink = caption.querySelector('.download-link'),
       captionDetailsLink = caption.querySelector('.details-link'),
-      previewObjects, isAnimating = false;
+      isAnimating = false;
     if (!view && !views) return;
 
-    var quantity, increment, activeSet, activeImageSlide, gallery;
+    console.log('view:', view);
+    console.log('views: ',views);
+
+    var quantity, increment, activeSet, activeImageSlide, gallery, previewObjects;
     quantity = views.length;
     increment = 2;
     activeSet = 0;
@@ -268,12 +271,13 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
     function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
       var total = Math.floor(quantity / increment) * increment;
+      console.log('Total Pictures: ', total);
       var count = -1, activeSetElement;
       for (var i = 0; i < total; i++) {
         if (i % 2 == 0) {
           count++;
-          activeSetElement = sets[count] ||
-            (createSetCallback ? createSetCallback() : null);
+          console.log('Count: ', count);
+          activeSetElement = sets[count] || createSetCallback();
           if (activeSetElement && activeSetElement.hasOwnProperty('previews')) {
             activeSetElement.previews = [];
           }
@@ -315,7 +319,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         activeImageSlide.classList.remove('current');
         activeImageSlide = clicked.view;
         reloadGallery();
-        createSetsWithPreviews(reloadPreview);
+        createSetsWithPreviews(reloadPreview, function(){});
         loadCaption();
       }
       isAnimating = false;
@@ -366,7 +370,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
       loadFirstImage();
       loadCaption();
       reloadGallery();
-      createSetsWithPreviews(reloadPreview);
+      createSetsWithPreviews(reloadPreview, function(){});
     }
 
     function setup() {

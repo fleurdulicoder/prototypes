@@ -1,3 +1,25 @@
+
+  /*
+    Preload Function
+  */
+  (function($) {
+      $.fn.preLoadImages = $.fn.preLoadImages || function(cb) {
+          var urls = [], promises = [], $imgs = $(this).find('img');
+          $imgs.each(function(){
+              var promise = $.Deferred();
+              var img = new Image();
+              img.onload = function(){
+                  promise.resolve(img.src);
+              };
+              img.src = $(this).attr('src');
+              promises.push(promise);
+          });
+
+          $.when.apply(null, promises).done(cb);
+      }
+  })(jQuery);
+  jQuery('#explore-420').preLoadImages();
+
   /*
     ExploreCarousel - requires TimeMax & TimelineMax Libraries
     to be loaded via SharedLibrary UseGSAP) or Node (via skin).
@@ -143,7 +165,7 @@
 
     var sets = [];
     var view = element.querySelector('.view'),
-      views = element.querySelectorAll('.view > .item');
+      views = view.querySelectorAll('.item'),
       slider = element.querySelector('.preview-section'),
       pager = element.querySelector('.pager-section'),
       caption = element.querySelector('.caption-section'),
@@ -151,20 +173,17 @@
       captionByline = caption.querySelector('.byline'),
       captionDownloadLink = caption.querySelector('.download-link'),
       captionDetailsLink = caption.querySelector('.details-link'),
-      isAnimating = false;
+      previewObjects, isAnimating = false;
     if (!view && !views) return;
 
-    console.log('view:', view);
-    console.log('views: ',views);
-
-    var quantity, increment, activeSet, activeImageSlide, gallery, previewObjects;
+    var quantity, increment, activeSet, activeImageSlide, gallery;
     quantity = views.length;
     increment = 2;
     activeSet = 0;
     gallery = createGallery();
 
     function createGallery() {
-      var images = [];
+      var images = []
       for (var i = 0; i < quantity; i++) {
         var item = {
           src: views[i].getAttribute('data-src') || '',
@@ -210,11 +229,11 @@
       if (parent) {
         var nthChild = parent.previews.length === 0 ? 1 : 2;
         reloadingPreview = parent.querySelector('.preview:nth-child('+nthChild+')');
-        reloadingPreview.style.backgroundImage = 'url("'+galleryItem.src+'")';
         // @safari: cannot do immediate image src swap witout visible delay
         // var image = reloadingPreview.querySelector('img');
         // image.setAttribute('alt', galleryItem.title);
         // image.setAttribute('src', galleryItem.src);
+        reloadingPreview.style.backgroundImage = 'url("'+galleryItem.src+'")';
         reloadingPreview.view = galleryItem.view;
         parent.previews.push(reloadingPreview);
       }
@@ -222,13 +241,12 @@
 
     function createSetsWithPreviews(reloadPreviewCallback, createSetCallback) {
       var total = Math.floor(quantity / increment) * increment;
-      console.log('Total Pictures: ', total);
       var count = -1, activeSetElement;
       for (var i = 0; i < total; i++) {
         if (i % 2 == 0) {
           count++;
-          console.log('Count: ', count);
-          activeSetElement = sets[count] || createSetCallback();
+          activeSetElement = sets[count] ||
+            (createSetCallback ? createSetCallback() : null);
           if (activeSetElement && activeSetElement.hasOwnProperty('previews')) {
             activeSetElement.previews = [];
           }
@@ -269,8 +287,7 @@
         clicked.view.classList.add('current');
         activeImageSlide.classList.remove('current');
         activeImageSlide = clicked.view;
-        reloadGallery();
-        createSetsWithPreviews(reloadPreview, function(){});
+        reloadPreviewsInSets();
         loadCaption();
       }
       isAnimating = false;
@@ -285,6 +302,11 @@
           }
         }, false);
       }
+    }
+
+    function reloadPreviewsInSets() {
+      reloadGallery();
+      createSetsWithPreviews(reloadPreview, function(){});
     }
 
     function reloadGallery() {
@@ -320,8 +342,7 @@
       loadFirstSet();
       loadFirstImage();
       loadCaption();
-      reloadGallery();
-      createSetsWithPreviews(reloadPreview, function(){});
+      reloadPreviewsInSets();
     }
 
     function setup() {
@@ -337,3 +358,9 @@
 
     setup();
   };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var explore420 = new ExploreGallery({
+      "galleryId": "explore-420"
+    });
+  }, false);
