@@ -1,7 +1,3 @@
-nav button {
-  cursor: poiner;
-}
-
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -25,6 +21,11 @@ nav button {
   -o-transform: translateX(-100%);
   transform: translateX(-100%);
   overflow: hidden;
+}
+
+.mobile-nav .content {
+  width: 100%;
+  height: 100%;
 }
 
 .mobile-nav header {

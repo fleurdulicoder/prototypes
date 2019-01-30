@@ -142,20 +142,32 @@
 
     function moveThumbsRight() {
       if (jump - 1 >= 0) {
-        TweenMax.to(wrapper, 0.5, {
-          x: -(--jump * distance) + 'px',
-          ease: 'cubic-bezier(0, 0, 0, 1.1)'
+        jump--;
+      } else {
+        jump = totalJumps - 1;
+        TweenMax.set(wrapper, {
+          x: -totalJumps * distance+ 'px'
         });
       }
+      TweenMax.to(wrapper, 0.5, {
+        x: -(jump * distance) + 'px',
+        ease: 'cubic-bezier(0, 0, 0, 1.1)'
+      });
     }
 
     function moveThumbsLeft() {
       if (jump + 1 < totalJumps) {
-        TweenMax.to(wrapper, 0.5, {
-          x: -(++jump * distance) + 'px',
-          ease: 'cubic-bezier(0, 0, 0, 1.1)'
+        jump++;
+      } else {
+        jump = 0;
+        TweenMax.set(wrapper, {
+          x: distance + 'px'
         });
       }
+      TweenMax.to(wrapper, 0.5, {
+        x: -(jump * distance) + 'px',
+        ease: 'cubic-bezier(0, 0, 0, 1.1)'
+      });
     }
 
     function observe() {
