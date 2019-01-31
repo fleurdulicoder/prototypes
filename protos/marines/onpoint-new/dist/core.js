@@ -82,7 +82,7 @@ var Carousel = function(config) {
     }
     TweenMax.to(strip, transitionDuration/1000, {
       x: (current * 100) + '%',
-      ease: 'cubic-bezier(.67,.54,.43,.78)',//'cubic-bezier(.19,1.05,.38,1.03)', //'',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
       onComplete: function(){
         pager.innerHTML = (Math.abs(current) + 1) + ' of ' + quantity;
       }
@@ -98,7 +98,7 @@ var Carousel = function(config) {
     }
     TweenMax.to(strip, transitionDuration/1000, {
       x: (current * 100) + '%',
-      ease: 'cubic-bezier(.67,.54,.43,.78)', //'cubic-bezier(.19,1.05,.38,1.03)',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
       onComplete: function(){
         pager.innerHTML = (Math.abs(current) + 1) + ' of ' + quantity;
       }

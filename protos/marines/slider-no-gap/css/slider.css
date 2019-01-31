@@ -24,17 +24,14 @@
   min-width: 100% !important;
   min-height: 100% !important;
   width: auto;
+  height: 100%;
 }
 
 .slider .view a>img {
   height: 100%;
-  object-fit: contain;
-  object-position: center;
 }
 
 .slider .pager-section a>img {
-  object-fit: cover;
-  object-position: center;
   height: 53px;
 }
 

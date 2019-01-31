@@ -1,0 +1,11 @@
+{
+  "JSHINT_OPTS": {},
+  "JAVASCRIPT": {
+    "DIST_DIR": "dist",
+    "slider": ["js/jquery-3.3.1.js", "js/jquery.inview.js", "js/TweenMax.min.js", "js/TimelineMax.min.js", "js/slider.js"]
+  },
+  "CSS": {
+    "DIST_DIR": "dist",
+    "slider": ["css/main.css", "css/slider.css"]
+  }
+}
