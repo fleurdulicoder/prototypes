@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head id="Head">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <title>News Listing</title>
+  <meta id="MetaDescription" name="DESCRIPTION" content="The latest news across the corps" />
+  <meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" />
+  <link href="css/all.min.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/default.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/photodashboard.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/articlecs.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/articlecsdashboard.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/articlecslistarticle.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/heropane.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/skin.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/skipnav.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/marinesil3.css?cdv=182" type="text/css" rel="stylesheet" />
+  <link href="css/colorbox.css?cdv=182" type="text/css" rel="stylesheet" />
+  <script src="js/jquery.js?cdv=182" type="text/javascript"></script>
+  <script src="js/jquery-migrate.js?cdv=182" type="text/javascript"></script>
+  <script src="js/jquery-ui.js?cdv=182" type="text/javascript"></script>
+  <link rel='SHORTCUT ICON' href='/Portals/0/faviconmdm.ico?ver=2018-11-09-120838-830' type='image/x-icon' />
+  <!--[if IE 8 ]><script type="text/javascript">jQuery("html").addClass("ie ie8");</script><![endif]-->
+  <!--[if IE 9 ]><script type="text/javascript">jQuery("html").addClass("ie ie9");</script><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+</head>
+
+<body>
+
+  <form method="post" action="/News" id="Form" enctype="multipart/form-data">
+    <script src="js/skin.build.js?cdv=182" type="text/javascript"></script>
+    <script src="js/mobile-detect.js?cdv=182" type="text/javascript"></script>
+    <script src="js/jquery.inview.min.js?cdv=182" type="text/javascript"></script>
+    <script src="js/moment.js?cdv=182" type="text/javascript"></script>
+    <script src="js/ArticleCS.js?cdv=182" type="text/javascript"></script>
+    <script src="js/jquery.colorbox.js?cdv=182" type="text/javascript"></script>
+    <script src="js/image-set-polyfill.js?cdv=182" type="text/javascript"></script>
+    <script type="text/javascript">
+      var skinvars = {
+        "SiteName": "Marines.mil",
+        "SiteShortName": "Base Template",
+        "SiteSubTitle": "",
+        "aid": "",
+        "IsSecureConnection": true,
+        "IsBackEnd": true,
+        "IsAuthenticated": false,
+        "SearchDomain": "search.usa.gov",
+        "SiteUrl": "https://skin-dnn9.usmc.afpimsstaging.mil/",
+        "LastLogin": null,
+        "IsLastLoginFail": false,
+        "IncludePiwik": false,
+        "PiwikSiteID": -1,
+        "SocialLinks": {
+          "Facebook": {
+            "Url": "http://www.facebook.com/marines",
+            "Window": "_blank"
+          },
+          "Twitter": {
+            "Url": "https://twitter.com/#!/usmc",
+            "Window": "_blank"
+          },
+          "YouTube": {
+            "Url": "http://www.youtube.com/Marines",
+            "Window": "_blank"
+          },
+          "Flickr": {
+            "Url": "http://www.flickr.com/photos/marine_corps/",
+            "Window": "_blank"
+          },
+          "Pintrest": {
+            "Url": "http://www.pinterest.com/usmc/",
+            "Window": "_blank"
+          },
+          "GooglePlus": {
+            "Url": "",
+            "Window": "_blank"
+          },
+          "Instagram": {
+            "Url": "http://www.instagram.com/marines",
+            "Window": "_blank"
+          },
+          "Blog": {
+            "Url": "",
+            "Window": ""
+          },
+          "RSS": {
+            "Url": "http://www.marines.mil/News/Feeds.aspx",
+            "Window": "_blank"
+          },
+          "Podcast": {
+            "Url": "",
+            "Window": ""
+          },
+          "Email": {
+            "Url": "",
+            "Window": ""
+          },
+          "LinkedIn": {
+            "Url": "",
+            "Window": ""
+          }
+        },
+        "SiteLinks": null,
+        "LogoffTimeout": 3300000
+      };
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "logo": "img/logo",
+        "name": "Marines.mil",
+        "url": "https://skin-dnn9.usmc.afpimsstaging.mil/logo.png",
+        "sameAs": ["http://www.facebook.com/marines", "https://twitter.com/#!/usmc", "http://www.instagram.com/marines", "http://www.pinterest.com/usmc/", "http://www.youtube.com/Marines"]
+      }
+    </script>
+
+    <div class="site-wrapper">
+
+      <div class="page-wrapper">
+        <!-- Header -->
+        <div id="skip-link-holder"><a id="skip-link" href="#skip-target">Skip to main content (Press Enter).</a></div>
+
+        <header class="navbar">
+          <div class="wrapper">
+            <!-- Logo -->
+            <a title="Marines.mil" href="/"><img class="logo" src="img/logo.png" alt="Marines.mil" /></a>
+
+            <!-- Nav -->
+            <nav id="dnnbootsterNav">
+              <button><i class="fa fa-bars"></i></button>
+              <ul class="navbar-nav" id="navbar-nav">
+                <li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/"><span>Home</span></a></li>
+                <li class="active">
+                  <a data-toggle="dropdown" href="https://skin-dnn9.usmc.afpimsstaging.mil/News" aria-haspopup="true" aria-expanded="false">
+                    <span>News</span>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="/News/Messages">Messages</a>
+                      <ul>
+                        <li><a href="/News/Messages/ALMARS">ALMARS</a></li>
+                        <li><a href="/News/Messages/MARADMINS">MARADMINS</a></li>
+                      </ul>
+
+                    </li>
+                    <li><a href="/News/Marines-TV">Marines TV</a></li>
+                    <li><a href="/News/Marine-Minute-Audio">Marine Minute Audio</a></li>
+                    <li><a href="/News/Press-Releases">Press Releases</a></li>
+                    <li><a href="/News/Publications">Publications</a></li>
+                    <li><a href="/News/Social-Media">Social Media</a></li>
+                  </ul>
+
+                </li>
+                <li class=""><a href="/Units"><span>Units</span></a></li>
+                <li class=""><a href="/Photos"><span>Photos</span></a></li>
+                <li class=""><a href="/Leaders"><span>Leaders</span></a></li>
+                <li class=""><a href="/Marines"><span>Marines</span></a></li>
+                <li class=""><a href="/Family"><span>Family</span></a></li>
+                <li class=""><a href="/Community"><span>Community</span></a></li>
+                <li><i class="fa fa-search" id="search-button"></i></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Social -->
+          <div class="social">
+            <div class="search">
+              <div class="wrapper">
+                <input type="search" name="search" value="" placeholder="Enter Search..." />
+                <button><i class="fas fa-times"></i></button>
+              </div>
+            </div>
+            <div class="icons social-links-loader"></div>
+            <!-- ./Icons -->
+          </div>
+          <!-- ./Social -->
+        </header>
+
+        <p id="skip-target-holder"><a id="skip-target" name="skip-target" class="skip" tabindex="-1"></a></p>
+
+        <!-- Content -->
+        <main class="container-fluid nopad">
+          <div class="row nopad no-gutters">
+            <div id="dnn_ContentPane" class="col-md-12 no-gutters">
+              <div class="DnnModule DnnModule-PhotoDashboard DnnModule-417"><a name="417"></a>
+                <div class="empty-container background-color-septenary">
+                  <div id="dnn_ctr417_ContentPane">
+                    <div id="dnn_ctr417_ModuleContent" class="DNNModuleContent ModPhotoDashboardC">
+
+                      <div class="PhotoDashboardSA heroPane" id="heroPane">
+                        <div id="heroPaneImg" class="parallax" style="background-image: url(/publicmedia/2018/Dec/07/2002070305/1100/620/0/181206-F-FI895-0051.JPG)">
+                          <div class="overlay">
+                            <div class="contentWrapper">
+                              <div class="titleWrapper">
+                                <hr align="left" class="titleDivider titleDividerColor" />
+                                <span class="title">News</span>
+                              </div>
+                              <div class="description">The latest news across the corps</div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <script type="text/javascript">
+                        function updateHeroImageSize() {
+                          var imgUrl;
+                          var windowWidth = window.innerWidth;
+
+                          switch (windowWidth) {
+                            case windowWidth <= 400:
+                              imgUrl = "/publicmedia/2018/Dec/07/2002070305/400/223/0/181206-F-FI895-0051.JPG";
+                              break;
+                            case windowWidth <= 768:
+                              imgUrl = "/publicmedia/2018/Dec/07/2002070305/768/429/0/181206-F-FI895-0051.JPG";
+                              break;
+                            default:
+                              imgUrl = "/publicmedia/2018/Dec/07/2002070305/1100/620/0/181206-F-FI895-0051.JPG"
+                          }
+
+                          $("#heroPaneImg").css({
+                            backgroundImage: "url(" + imgUrl + ")"
+                          });
+                        }
+
+                        function isInViewport(node) {
+                          var rect = node.getBoundingClientRect()
+                          return (
+                            (rect.height > 0 || rect.width > 0) &&
+                            rect.bottom >= 0 &&
+                            rect.right >= 0 &&
+                            rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                            rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+                          )
+                        }
+
+                        $(window).scroll(function() {
+                          var scrolled = $(window).scrollTop()
+                          // For every element with the class parallax..
+                          $('.parallax').each(function(index, element) {
+                            var initY = $(this).offset().top
+                            var height = $(this).height()
+                            var endY = initY + $(this).height()
+
+                            // Check if the element is in the viewport.
+                            var visible = isInViewport(this)
+                            if (visible) {
+                              var diff = scrolled - initY
+                              var ratio = Math.round((diff / height) * 100)
+                              $(this).css('background-position', 'center ' + (parseInt(-(ratio * 0.8)) - 18) + 'px');
+                            }
+                          })
+                        })
+
+                        $(function() {
+                          var $window = jQuery(window);
+
+                          $window.on("resize.PhotoDashboardSA", function() {
+                            updateHeroImageSize();
+                          });
+
+                          updateHeroImageSize();
+                        });
+                      </script>
+
+                    </div><!-- End_Module_417 -->
+                  </div>
+                </div>
+              </div>
+              <div class="DnnModule DnnModule-ArticleCS DnnModule-436"><a name="436"></a>
+                <div class="empty-container background-color-septenary">
+                  <div id="dnn_ctr436_ContentPane">
+                    <!-- Start_Module_436 -->
+                    <div id="dnn_ctr436_ModuleContent" class="DNNModuleContent ModArticleCSC">
+                      <div id="dnn_ctr436_Article_desktopmodules_articlecs_article_ascx_UpdatePanel1"></div>
+                    </div><!-- End_Module_436 -->
+                  </div>
+                </div>
+              </div>
+              <div class="DnnModule DnnModule-ArticleCSDashboard DnnModule-459"><a name="459"></a>
+                <div class="empty-container background-color-septenary">
+                  <div id="dnn_ctr459_ContentPane">
+                    <!-- Start_Module_459 -->
+                    <div id="dnn_ctr459_ModuleContent" class="DNNModuleContent ModArticleCSDashboardC">
+                      <div id="dnn_ctr459_Dashboard_ph">
+                        <div class='form-horizontal afilter'>
+                          <div class="filter-title">Filter</div>
+                          <div class="form-horizontal">
+                            <div class="form-group">
+                              <div>
+                                <div class="field-outer terms drop-list">
+                                  <select name="dnn$ctr459$Dashboard$terms459" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;dnn$ctr459$Dashboard$terms459\&#39;,\&#39;\&#39;)&#39;, 0)" id="dnn_ctr459_Dashboard_terms459" class="form-control">
+                                    <option selected="selected" value="0">Category</option>
+                                    <option value="-1">marines categories</option>
+                                    <option value="-1">Artillery</option>
+                                    <option value="-1">Aviation</option>
+                                    <option value="-1">Base or Station</option>
+                                    <option value="53">BioPhoto</option>
+                                    <option value="57">Career</option>
+                                    <option value="54">Ceremonies/Events</option>
+                                    <option value="55">Combat</option>
+                                    <option value="56">Combat Support</option>
+                                    <option value="58">Commandant of the Marine Corps</option>
+                                    <option value="59">Community Relations</option>
+                                    <option value="60">Deployment</option>
+                                    <option value="61">Education</option>
+                                    <option value="62">Environmental</option>
+                                    <option value="63">Expeditionary</option>
+                                    <option value="64">Family</option>
+                                    <option value="65">FRO</option>
+                                    <option value="66">Historical</option>
+                                    <option value="67">Humanitarian</option>
+                                    <option value="68">JCISFA</option>
+                                    <option value="-1">Joint Operations</option>
+                                    <option value="71">Marine Corps Wide</option>
+                                    <option value="72">Medal of Honor</option>
+                                    <option value="73">Medal of Honor - Kyle Carpenter</option>
+                                    <option value="78">Operation Enduring Freedom</option>
+                                    <option value="76">Operation Iraqi Freedom</option>
+                                    <option value="-1">Operational</option>
+                                    <option value="-1">Personal Profile</option>
+                                    <option value="77">Policy</option>
+                                    <option value="79">Recreation</option>
+                                    <option value="80">Recruiting</option>
+                                    <option value="81">Safety</option>
+                                    <option value="82">Sergeant Major of the Marine Corps</option>
+                                    <option value="83">Sports</option>
+                                    <option value="84">Technology</option>
+                                    <option value="85">Training</option>
+                                    <option value="86">Veterans</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div>
+                                <div class="field-outer custom drop-list">
+                                  <select name="dnn$ctr459$Dashboard$ctrlDigunit" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;dnn$ctr459$Dashboard$ctrlDigunit\&#39;,\&#39;\&#39;)&#39;, 0)" id="dnn_ctr459_Dashboard_ctrlDigunit" class="form-control">
+                                    <option selected="selected" value="">Unit</option>
+                                    <option value="10031">10th Marine Regiment</option>
+                                    <option value="10087">11th Marine Expeditionary Unit</option>
+                                    <option value="10160">11th Marine Regiment</option>
+                                    <option value="10163">12th Marine Corps District</option>
+                                    <option value="10092">12th Marine Regiment</option>
+                                    <option value="10084">13th Marine Expeditionary Unit</option>
+                                    <option value="10102">15th Marine Expeditionary Unit</option>
+                                    <option value="10144">1st Air Naval Gunfire Liaison Company</option>
+                                    <option value="10148">1st Battalion, 11th Marines</option>
+                                    <option value="10159">1st Battalion, 5th Marine Regiment</option>
+                                    <option value="10158">1st Dental Battalion</option>
+                                    <option value="10089">1st Marine Aircraft Wing</option>
+                                    <option value="10051">1st Marine Corps District</option>
+                                    <option value="10100">1st Marine Division</option>
+                                    <option value="10157">1st Marine Expeditionary Brigade</option>
+                                    <option value="10101">1st Marine Logistics Group</option>
+                                    <option value="10147">1st Marine Special Operations Battalion</option>
+                                    <option value="10023">22nd Marine Expeditionary Unit</option>
+                                    <option value="10024">24th Marine Expeditionary Unit</option>
+                                    <option value="10036">26th Marine Expeditionary Unit</option>
+                                    <option value="10169">2nd Air Naval Gunfire Liaison Company (ANGLICO)</option>
+                                    <option value="10164">2nd Battalion</option>
+                                    <option value="10176">2nd Battalion 23rd Marines</option>
+                                    <option value="10145">2nd Dental Battalion</option>
+                                    <option value="10060">2nd Marine Aircraft Wing</option>
+                                    <option value="10035">2nd Marine Division</option>
+                                    <option value="10047">2nd Marine Expeditionary Brigade</option>
+                                    <option value="10038">2nd Marine Logistics Group</option>
+                                    <option value="10032">2nd Marine Regiment</option>
+                                    <option value="10085">31st Marine Expeditionary Unit</option>
+                                    <option value="10142">3D Law Enforcement Battalion</option>
+                                    <option value="10108">3rd Marine Aircraft Wing</option>
+                                    <option value="10090">3rd Marine Division</option>
+                                    <option value="10096">3rd Marine Expeditionary Brigade</option>
+                                    <option value="10093">3rd Marine Logistics Group</option>
+                                    <option value="10094">3rd Marine Regiment</option>
+                                    <option value="10053">4th Marine Corps District</option>
+                                    <option value="10156">4th Marine Division</option>
+                                    <option value="10086">4th Marine Regiment</option>
+                                    <option value="10154">5th Battalion, 11th Marines</option>
+                                    <option value="10175">5th Marine Expeditionary Brigade</option>
+                                    <option value="10048">6th Marine Corps District</option>
+                                    <option value="10034">6th Marine Regiment</option>
+                                    <option value="10149">8th Engineer Support Battalion</option>
+                                    <option value="10052">8th Marine Corps District</option>
+                                    <option value="10033">8th Marine Regiment</option>
+                                    <option value="10049">9th Marine Corps District</option>
+                                    <option value="10172">Adjutant</option>
+                                    <option value="10130">Administration and Resource Managment</option>
+                                    <option value="10122">Assistant Commandant of the Marine Corps</option>
+                                    <option value="10027">Chemical Biological Incident Response Force</option>
+                                    <option value="10168">Combat Logistics Battalion 31</option>
+                                    <option value="10151">Combat Logistics Company 21</option>
+                                    <option value="10039">Combat Logistics Regiment 2</option>
+                                    <option value="10040">Combat Logistics Regiment 25</option>
+                                    <option value="10041">Combat Logistics Regiment 27</option>
+                                    <option value="10097">Combined Arms Training Center Camp Fuji</option>
+                                    <option value="10106">Command Element, Marine Forces Central Command Forward</option>
+                                    <option value="10118">Commandant of the Marine Corps</option>
+                                    <option value="10123">Community of Interest</option>
+                                    <option value="10165">Defense Media Activity</option>
+                                    <option value="10037">Deployment Processing Command-East</option>
+                                    <option value="10125">Director of the Marine Corps Staff</option>
+                                    <option value="10128">Division of Public Affairs</option>
+                                    <option value="10127">Expeditionary Energy Office</option>
+                                    <option value="10072">Field Medical Training Battalion-East</option>
+                                    <option value="10076">Field Medical Training Battalion-West</option>
+                                    <option value="10155">Ground Combat Element Integrated Task Force</option>
+                                    <option value="10116">Headquarters Marine Corps</option>
+                                    <option value="10119">Human Resources and Organizational Management</option>
+                                    <option value="10091">I Marine Expeditionary Force</option>
+                                    <option value="10153">I MEF Headquarters Group</option>
+                                    <option value="10079">II Marine Expeditionary Force</option>
+                                    <option value="10161">II MEF Headquarters Group</option>
+                                    <option value="10008">III Marine Expeditionary Force</option>
+                                    <option value="10167">III MEF/MCIPAC Consolidated Public Affairs Office</option>
+                                    <option value="10121">Inspector General of the Marine Corps</option>
+                                    <option value="10015">Installations and Logistics</option>
+                                    <option value="10061">Marine Air Control Group 28</option>
+                                    <option value="10064">Marine Aircraft Group 14</option>
+                                    <option value="10059">Marine Aircraft Group 26</option>
+                                    <option value="10062">Marine Aircraft Group 29</option>
+                                    <option value="10065">Marine Aircraft Group 31</option>
+                                    <option value="10115">Marine Aviation</option>
+                                    <option value="10003">Marine Barracks</option>
+                                    <option value="10173">Marine Corps Activity Guam</option>
+                                    <option value="10044">Marine Corps Air Facility</option>
+                                    <option value="10005">Marine Corps Air Ground Combat Center Twentynine Palms</option>
+                                    <option value="10066">Marine Corps Air Station Beaufort</option>
+                                    <option value="10083">Marine Corps Air Station Camp Pendleton</option>
+                                    <option value="10067">Marine Corps Air Station Cherry Point</option>
+                                    <option value="10098">Marine Corps Air Station Futenma</option>
+                                    <option value="10009">Marine Corps Air Station Iwakuni, Japan</option>
+                                    <option value="10012">Marine Corps Air Station Iwakuni-Japanese</option>
+                                    <option value="10107">Marine Corps Air Station Miramar</option>
+                                    <option value="10135">Marine Corps Air Station Miramar-EMS</option>
+                                    <option value="10063">Marine Corps Air Station New River</option>
+                                    <option value="10113">Marine Corps Air Station Yuma</option>
+                                    <option value="10010">Marine Corps Base Camp Butler</option>
+                                    <option value="10028">Marine Corps Base Camp Lejeune</option>
+                                    <option value="10095">Marine Corps Base Camp Pendleton</option>
+                                    <option value="10099">Marine Corps Base Hawaii</option>
+                                    <option value="10043">Marine Corps Base Quantico</option>
+                                    <option value="10046">Marine Corps Blount Island Command</option>
+                                    <option value="10077">Marine Corps Civil-Military Operations School</option>
+                                    <option value="10019">Marine Corps Combat Development Command</option>
+                                    <option value="10068">Marine Corps Combat Service Support School</option>
+                                    <option value="10124">Marine Corps Defense Services Organization</option>
+                                    <option value="10025">Marine Corps Embassy Security Group</option>
+                                    <option value="10069">Marine Corps Engineer School</option>
+                                    <option value="10075">Marine Corps Engineer School</option>
+                                    <option value="10054">Marine Corps Forces Africa</option>
+                                    <option value="10112">Marine Corps Forces Central Command</option>
+                                    <option value="10179">Marine Corps Forces Cyberspace Command</option>
+                                    <option value="10055">Marine Corps Forces Europe</option>
+                                    <option value="10056">Marine Corps Forces North</option>
+                                    <option value="10057">Marine Corps Forces Reserves</option>
+                                    <option value="10110">Marine Corps Forces South</option>
+                                    <option value="10029">Marine Corps Forces Special Operations Command</option>
+                                    <option value="10126">Marine Corps Helicopter Squadron One</option>
+                                    <option value="10013">Marine Corps Installations Command, MCICOM</option>
+                                    <option value="10030">Marine Corps Installations East</option>
+                                    <option value="10082">Marine Corps Installations Pacific</option>
+                                    <option value="10088">Marine Corps Installations West</option>
+                                    <option value="10004">Marine Corps Institute</option>
+                                    <option value="10141">Marine Corps Junior Reserve Officer Training Corps</option>
+                                    <option value="10014">Marine Corps Logistics Base Albany</option>
+                                    <option value="10016">Marine Corps Logistics Base Barstow</option>
+                                    <option value="10017">Marine Corps Logistics Command</option>
+                                    <option value="10006">Marine Corps Mountain Warfare Training Center</option>
+                                    <option value="10042">Marine Corps Recruit Depot, Parris Island</option>
+                                    <option value="10080">Marine Corps Recruit Depot, San Diego</option>
+                                    <option value="10050">Marine Corps Recruiting Command</option>
+                                    <option value="10021">Marine Corps Security Cooperation Group</option>
+                                    <option value="10026">Marine Corps Security Force Regiment</option>
+                                    <option value="10058">Marine Corps Support Facility New Orleans</option>
+                                    <option value="10018">Marine Corps Systems Command</option>
+                                    <option value="10022">Marine Corps Tactical Systems Support Activity</option>
+                                    <option value="10070">Marine Corps Training and Education Command</option>
+                                    <option value="10178">Marine Corps University</option>
+                                    <option value="10109">Marine Corps Warfighting Laboratory</option>
+                                    <option value="10103">Marine Expeditionary Brigade-Afghanistan</option>
+                                    <option value="10146">Marine Fighter Attack Squadron 251</option>
+                                    <option value="10020">Marine Forces Command</option>
+                                    <option value="10174">Marine Rotational Force - Darwin</option>
+                                    <option value="10152">Marine Wing Support Squadron 371</option>
+                                    <option value="10104">Multi National Force - West</option>
+                                    <option value="10071">Officer Candidate School</option>
+                                    <option value="10011">Okinawa Marines</option>
+                                    <option value="10131">Plans, Policies and Operations</option>
+                                    <option value="10129">Programs and Resources</option>
+                                    <option value="10140">Ready Marine Corps</option>
+                                    <option value="10143">Recruiting Station New York</option>
+                                    <option value="10162">Recruiting Station Pittsburgh</option>
+                                    <option value="10150">Recruiting Station Twin Cities</option>
+                                    <option value="10133">Safety</option>
+                                    <option value="10074">School of Infantry-East</option>
+                                    <option value="10073">School of Infantry-West</option>
+                                    <option value="10120">Sergeant Major of the Marine Corps</option>
+                                    <option value="10117">Staff Judge Advocate</option>
+                                    <option value="10177">TF 51/5</option>
+                                    <option value="10002">The Official United States Marine Corps Public Website</option>
+                                    <option value="10000">The United States Marine Drum and Bugle Corps</option>
+                                    <option value="10111">Train the Trainer School</option>
+                                    <option value="10139">Training Command</option>
+                                    <option value="10105">U.S. Marine Corps Forces, Korea</option>
+                                    <option value="10081">U.S. Marine Corps Forces, Pacific</option>
+                                    <option value="10114">U.S. Marine Corps Forces, U.S. Strategic Command</option>
+                                    <option value="10001">United States Marine Band</option>
+                                    <option value="10166">Wounded Warrior Regiment</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <div>
+                                <div class="field-outer category drop-list">
+                                  <select name="dnn$ctr459$Dashboard$cat459" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;dnn$ctr459$Dashboard$cat459\&#39;,\&#39;\&#39;)&#39;, 0)" id="dnn_ctr459_Dashboard_cat459" class="form-control">
+                                    <option selected="selected" value="0">Theme</option>
+                                    <option value="10646">Top Shots</option>
+                                    <option value="10647">Medal of Honor</option>
+                                    <option value="10648">Medal of Honor - Kyle Carpenter</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <div class="keyword-search">
+                                <div class="field-outer keyword text-box">
+                                  <input name="dnn$ctr459$Dashboard$keyword459" type="text" id="dnn_ctr459_Dashboard_keyword459" title="Keyword" class="form-control" placeholder="Key Words" />
+                                </div> <input type="submit" name="dnn$ctr459$Dashboard$ctl04" value="Search" title="Search" class="btn fa fa-search" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div><!-- End_Module_459 -->
+                  </div>
+                </div>
+              </div>
+              <div class="DnnModule DnnModule-ArticleCSListArticle DnnModule-442"><a name="442"></a>
+                <div class="empty-container background-color-septenary">
+                  <div id="dnn_ctr442_ContentPane">
+                    <!-- Start_Module_442 -->
+                    <div id="dnn_ctr442_ModuleContent" class="DNNModuleContent ModArticleCSListArticleC">
+                      <div id="dnn_ctr442_ListArticle_UpdatePanel1">
+
+                        <div id="alist" class="alist news also-like ">
+                          <div class="spinner3">
+                            <div class="bounce1"></div>
+                            <div class="bounce2"></div>
+                            <div class="bounce3"></div>
+                          </div>
+
+                          <div class="items container alist-more-here">
+                            <div class="item item-1635055" data-url="#">
+                              <div class="poster">
+                                <a href="img/181120-F-GO452-954Y.JPG">
+                                  <div class="image" style="background-image: url(img/181120-F-GO452-954Y.JPG);">
+                                    <p class="alt">Jacob Lucero(second for left) and Nadeem Seirafi ((second from right) hold the leashes of Colli and Ricsi during the two Military Workings Dogs&#39; retirement ceremony at the K-9 Training Field
+                                      adjacent to the Adam Leigh Cann Canine Facility aboard Marine Corps Logistics Base Barstow, Calif., Sept. 12. The two handlers partnered with their K-9 companions on the beat and are now adopting the two dogs as
+                                      they retire from active duty. Lieutenant Steven Goss, (far right) kennel master, Marine Corps Police Department, presented the two dogs with retirement certificates. The other officers in the photo also
+                                      partnered with Colli and Ricsi at different times in their careers. - Jacob Lucero(second for left) and Nadeem Seirafi ((second from right) hold the leashes of Colli and Ricsi during the two Military Workings
+                                      Dogs' retirement ceremony at the K-9 Training Field adjacent to the Adam Leigh Cann Canine Facility aboard Marine Corps Logistics Base Barstow, Calif., Sept. 12. The two handlers partnered with their K-9
+                                      companions on the beat and are now adopting the two dogs as they retire from active duty. Lieutenant Steven Goss, (far right) kennel master, Marine Corps Police Department, presented the two dogs with retirement
+                                      certificates. The other officers in the photo also partnered with Colli and Ricsi at different times in their careers.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Two K9s retired to homes of their handlers </h4>
+                                    <span class="hidden-xs caption">
+                                      Two four-footed police officers ended their long careers with the Marine Corps Police Department aboard MCLB Barstow by getting their forever homes with their human partners, Sept. 12.
+                                    </span>
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+                            <div class="item item-1631538" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190118-N-LX838-0054C.JPG);">
+                                    <p class="alt">MCTSSA personnel welcomes Vietnam veterans, share legacy - Staff Sgt. Jedidiah Seiler, Marine Corps Tactical Systems Support Activity radar staff noncommissioned-officer-in-charge, discusses air
+                                      search radar capabilities during a Vietnam veterans’ tour of MCTSSA this summer. (U.S. Marine Corps photo by Sky M. Laron)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">MCTSSA personnel welcomes Vietnam veterans, share legacy </h4>
+                                    <span class="hidden-xs caption">
+                                      Marine Corps Tactical Systems Support Activity welcomed Vietnam veterans from Marine Air Support Squadron 3 to MCTSSA’s headquarters aboard Marine Corps Base Camp Pendleton this summer.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+                            <div class="item item-1629045" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/181120-F-GO452-954Y.JPG);">
+                                    <p class="alt">Food pantry organizations lend helping hand to Camp Pendleton service members and families - Volunteers with the Saddleback Church help families pick out groceries during a food pantry event at the
+                                      Blinder Memorial Chapel at Marine Corps Base Camp Pendleton, California, Sept. 5, 2018. All the food handed out was donated by the church and was given out to service members and families. (U.S. Marine Corps
+                                      photo by lance Cpl. Betzabeth Y. Galvan)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Food pantry organizations lend helping hand to Camp Pendleton service members and families </h4>
+                                    <span class="hidden-xs caption">
+                                      The Food Pantry Ministry is a ministry that collects food donations and provides the food to members of the ministry or anyone in need .
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1625513" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190116-F-YH552-0114.JPG);">
+                                    <p class="alt">Cpl. Mackinley E. Dyess peers back at his fellow Marines during a tour Sept. 7, 2018 at Hacksaw Ridge, Okinawa, Japan. Marines and Sailors with Headquarters Company, Headquarters Regiment, 3rd
+                                      Marine Logistics Group, participated in the World War II battle site tour to learn about the U.S. Marine Corps’ history on Okinawa and remember those who have gone before them. Dyess is a radio technician with
+                                      Jump Platoon, HQ Co., HQ Reg. and is a native of Fort Worth, Texas. (U.S. Marine Corps photo by Pfc. Wong) - Cpl. Mackinley E. Dyess peers back at his fellow Marines during a tour Sept. 7, 2018 at Hacksaw Ridge,
+                                      Okinawa, Japan. Marines and Sailors with Headquarters Company, Headquarters Regiment, 3rd Marine Logistics Group, participated in the World War II battle site tour to learn about the U.S. Marine Corps’ history
+                                      on Okinawa and remember those who have gone before them. Dyess is a radio technician with Jump Platoon, HQ Co., HQ Reg. and is a native of Fort Worth, Texas. (U.S. Marine Corps photo by Pfc. Wong)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Trip to the past | U.S. Marines and Sailors visit Hacksaw Ridge </h4>
+                                    <span class="hidden-xs caption">
+                                      On April 1, 1945, the Battle of Okinawa began as U.S. Marines and Soldiers made their way to the Ryukyu Islands, including Okinawa.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1623328" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190118-N-LX838-0054C.JPG);">
+                                    <p class="alt">Corps looks to increase comms, lethality with next-gen hearing system - The Marine Corps released a request for information for a suite of hearing enhancement devices to help Marines communicate
+                                      better and increase their lethality on the battlefield.
+                                      Marine Corps Systems Command will assess industry’s capability to provide devices that are compatible with Marine Corps radios and the Marine Corps Enhanced Combat Helmet. (U.S. Marine Corps photo by Staff Sgt.
+                                      Ezekiel Kitandwe)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Corps looks to increase comms, lethality with next-gen hearing system </h4>
+                                    <span class="hidden-xs caption">
+                                      The Marine Corps released a request for information for industry input that identifies potential sources for a suite of hearing enhancement devices. The devices will protect Marines’ hearing while increasing
+                                      their situational awareness in a variety of training and combat environments.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1621965" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190123-A-OM209-661C.JPG);">
+                                    <p class="alt">The Silent Drill Platoon exits Marine Week Charlotte’s opening ceremony in downtown Charlotte, N.C., Sept. 5, 2018. Marine Week is an annual event that allows members of the Marine Corps to
+                                      demonstrate their capabilities and allows the public to interact with service members. Marine Week Charlotte is an opportunity for Marines to reconnect with our Marines, sailors, veterans, and their families
+                                      from different generations. - The Silent Drill Platoon exits Marine Week Charlotte’s opening ceremony in downtown Charlotte, N.C., Sept. 5, 2018. Marine Week is an annual event that allows members of the Marine
+                                      Corps to demonstrate their capabilities and allows the public to interact with service members. Marine Week Charlotte is an opportunity for Marines to reconnect with our Marines, sailors, veterans, and their
+                                      families from different generations.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Marine Week 2018 kicks off in Charlotte </h4>
+                                    <span class="hidden-xs caption">
+                                      Marine Week Charlotte kicked off with an opening ceremony at First Ward Park, Sept. 5, 2018. The ceremony welcomed the Marines to the city for the week, where they will demonstrate the capabilities of the Marine
+                                      Corps and interact with the public, through more than 75 events.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1619045" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190129-M-ZM399-1005C.JPG);">
+                                    <p class="alt">Military working dog Oohio preforms an aggression exercise Aug. 31 at the kennels on Camp Hansen, Okinawa, Japan. The Marine and military working dog are a team. The job of being a handler is always
+                                      a work in progress. Marines are encouraged to push their limits and learn more when it comes to doing their jobs. They are always learning new techniques and procedures when it comes to performing their job to
+                                      the best of their abilities. - Military working dog Oohio preforms an aggression exercise Aug. 31 at the kennels on Camp Hansen, Okinawa, Japan. The Marine and military working dog are a team. The job of being a
+                                      handler is always a work in progress. Marines are encouraged to push their limits and learn more when it comes to doing their jobs. They are always learning new techniques and procedures when it comes to
+                                      performing their job to the best of their abilities.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">In the Life of Marines: Military Police Working Dog Handler </h4>
+                                    <span class="hidden-xs caption">
+                                      Military occupational specialties are the foundation of the Marine Corps. Each MOS is a cog, working with and relying on each other to keep the fighting machine that is the United States Marine Corps running.
+                                      The military working dog handlers are one such dog.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1614101" data-url="#">
+                              <div class="poster">
+                                <a href="">
+                                  <div class="image" style="background-image: url(img/190130-N-KA046-0295Y.JPG);">
+                                    <p class="alt">Here is a sneak preview of the video. - U.S. Marine Corps Pilots with 2nd Marine Aircraft Wing (MAW) talk about how the invention of powered aviation has impacted their lives and how it has allowed
+                                      2nd MAW to accomplish its mission across the globe at Marine Corps Air Station Cherry Point, N.C., Aug. 9, 2018. National Aviation Day is a day to appreciate powered aviation and how it changed the world. (U.S.
+                                      Marine Corps graphic by Lance Cpl. Cody Rowe)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">National Aviation Day </h4>
+                                    <span class="hidden-xs caption">
+                                      U.S. Marine Corps pilots with 2nd Marine Aircraft Wing (MAW) talk about how the invention of powered aviation has impacted their lives and how it has allowed 2nd MAW to accomplish its mission across the globe at
+                                      Marine Corps Air Station Cherry Point, N.C. National Aviation Day is a day to appreciate powered aviation and how it changed the world.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1611532" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190131-F-OD616-0001C.JPG);">
+                                    <p class="alt">MCSC teams with Marines to build world’s first continuous 3D-printed concrete barracks - Marines from I Marine Expeditionary Force monitor the computer while the world's largest concrete 3D printer
+                                      constructs a 500-square-foot barracks hut at the U.S. Army Engineer Research and Development Center in Champaign, Illinois. Marine Corps Systems Command conducted the field user evaluation in mid-August to
+                                      inform future requirements for cutting-edge technology and autonomous systems. (Courtesy photo)</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">MCSC teams with Marines to build world’s first continuous 3D-printed concrete barracks </h4>
+                                    <span class="hidden-xs caption">
+                                      The Marine Corps is leading the way in employing advanced technologies and robotic construction.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1611522" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url('img/190131-N-LI768-1185C.JPG');">
+                                    <p class="alt"> - </p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Baby saved by MCLBB first responders </h4>
+                                    <span class="hidden-xs caption">
+                                      Teamwork, training and quick responses by first responders with the Marine Corps Police Department and the calm determination of a mother are being credited with saving a baby’s life aboard Marine Corps
+                                      Logistics Base Barstow, Calif., Aug. 14.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1610280" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190201-A-JD133-496C.JPG);">
+                                    <p class="alt">Lance Cpl. Justin Simmons, left, and Lance Cpl. Austin Ruckle, right, both field radio operators with 7th Communication Battalion, III Marine Expeditionary Force Information Group remove the free
+                                      space optic system from a tactical elevated antenna mass at Camp Hansen, Okinawa, Japan, Aug. 17, 2018. Marines are testing the new system, which will allow Marines to transmit mission critical information
+                                      faster and more securely in environments with damaged infrastructure. - Lance Cpl. Justin Simmons, left, and Lance Cpl. Austin Ruckle, right, both field radio operators with 7th Communication Battalion, III
+                                      Marine Expeditionary Force Information Group remove the free space optic system from a tactical elevated antenna mass at Camp Hansen, Okinawa, Japan, Aug. 17, 2018. Marines are testing the new system, which will
+                                      allow Marines to transmit mission critical information faster and more securely in environments with damaged infrastructure.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Marines test future of wireless communications </h4>
+                                    <span class="hidden-xs caption">
+                                      Marines with 7th Communication Battalion, III Marine Expeditionary Force Information Group conducted field testing of a new Free Space Optics system at Camp Hansen, Okinawa, Japan, Aug. 21.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1608995" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190201-A-JD133-496C.JPG);">
+                                    <p class="alt">Recovering service members, veterans, volunteers and their loved ones prepare for a group photo during the 12th Annual Operation Amped Surf Camp at San Onofre Beach at Marine Corps Base Camp
+                                      Pendleton, California, Aug. 18, 2018. Operation Amped is a nonprofit organization that supports wounded, ill and injured service members and veterans throughout their recovery. - Recovering service members,
+                                      veterans, volunteers and their loved ones prepare for a group photo during the 12th Annual Operation Amped Surf Camp at San Onofre Beach at Marine Corps Base Camp Pendleton, California, Aug. 18, 2018. Operation
+                                      Amped is a nonprofit organization that supports wounded, ill and injured service members and veterans throughout their recovery.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">Shredding adversity: Surfing helps wounded warriors recover </h4>
+                                    <span class="hidden-xs caption">
+                                      Service members often encounter physical, psychological and emotional adversity when protecting the freedoms this country was founded on.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                            <div class="item item-1607711" data-url="#">
+                              <div class="poster">
+                                <a href="#">
+                                  <div class="image" style="background-image: url(img/190202-M-KK705-086C.JPG);">
+                                    <p class="alt">Marines with Marine Aircraft Group 13 work on communications equipment during Exercise Northern Lightning at Volk Field Counterland Training Center, Camp Douglas, Wis. Aug. 16. Exercise Northern
+                                      Lightning 2018 allows the Air Force, Marine Corps and Navy to strengthen interoperability between services and gives the different branches a greater understanding of aviation capabilities within a joint
+                                      fighting force. - Marines with Marine Aircraft Group 13 work on communications equipment during Exercise Northern Lightning at Volk Field Counterland Training Center, Camp Douglas, Wis. Aug. 16. Exercise
+                                      Northern Lightning 2018 allows the Air Force, Marine Corps and Navy to strengthen interoperability between services and gives the different branches a greater understanding of aviation capabilities within a
+                                      joint fighting force.</p>
+                                  </div>
+
+                                  <div class="overlay overlay-info"></div>
+                                  <div class="info">
+                                    <span class="accentbar"></span><br />
+                                    <h4 class="title">MAG-13 makes history: 1,600 mile HF shot </h4>
+                                    <span class="hidden-xs caption">
+                                      Marines with Marine Aircraft Group 13 effectively communicated with air station assets throughout southern California utilizing organic equipment from exercise Northern Lightning at Volk Field Counter Land
+                                      Training Center, Camp Douglas, Wis., August 16.
+                                    </span>
+
+                                    <div class="info-text">
+                                      <a href="#"><i><span>Read More</span></i></a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+
+
+                          </div>
+                          <div class="pager">
+                            <button class="alist-more-button button-small">
+                              Load More
+                            </button>
+                          </div>
+                        </div>
+                        <script>
+                          /*
+                            Preload Function
+                          */
+                          (function($) {
+                            $.fn.preloadBackgrounds = $.fn.preloadBackgrounds || function(cb) {
+                              var urls = [],
+                                promises = [],
+                                $imgs = $('#alist .item').not('.animated');
+                              $imgs.each(function() {
+                                var bgimage = $(this).find('.image');
+                                var promise = $.Deferred();
+                                var img = new Image();
+
+                                img.onload = function() {
+                                  promise.resolve(img.src);
+                                };
+                                img.src = $(bgimage).css('background-image')
+                                  .replace('url(', '')
+                                  .replace(')', '')
+                                  .replace(/\"/gi, "");
+                                promises.push(promise);
+                              });
+
+                              $.when.apply(null, promises).done(cb);
+                            }
+                          })(jQuery);
+
+                          $('#alist .poster a, #alist .info').hover(function() {
+                            $(this).closest('.item').addClass('hover');
+                          }, function() {
+                            $(this).closest('.item').removeClass('hover');
+                          });
+
+                          $('#alist .info').click(function(evt) {
+                            if (evt.target.className.indexOf("info") !== -1) {
+                              var url = $(this).data("url");
+                              window.location.href = url;
+                            }
+                          });
+
+                          $('#alist .item').on('inview', function(event, isInView) {
+                            if (isInView && !$(this).hasClass('animated')) {
+                              $(this).addClass('animated');
+                              $(this).off('inview');
+                            }
+                          });
+
+                          var mdm_curPages = {};
+
+                          function InitLoadMoreMDMNews(modid, qs) {
+                            mdm_curPages[modid] = 0;
+                            $('#alist .alist-more-button').click(function(evt) {
+                              LoadListAJAX(modid, ++mdm_curPages[modid], qs, function(data) {
+                                $('.alist-more-here').append(data.data);
+                                $('.alist-more-button').removeClass('disabled');
+                                $('#alist').preloadBackgrounds();
+                              }, function(data) {
+                                $('.alist-more-button').hide();
+                              });
+                              return false;
+                            });
+                          }
+
+                          $(document).ready(function() {
+                            InitLoadMoreMDMNews(442, '&TabId=33&language=en-US');
+                            $('.spinner3').fadeOut('fast');
+                            $('#alist').on('inview', '.item:not(.animated)', function(event, isInView) {
+                              if (isInView && !$(this).hasClass('animated')) {
+                                $(this).addClass('animated');
+                                $(this).off();
+                              }
+                            });
+                          });
+                        </script>
+
+
+                      </div>
+
+
+                    </div><!-- End_Module_442 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Footer -->
+
+        <footer>
+          <div class="container">
+            <div class="row nopad no-gutters">
+              <div class="col-12 col-lg-4 col-xl-4">
+                <a class="logo" href="/">Marine Corps</a>
+              </div>
+              <div class="col-12 col-lg-3 col-xl-3">
+
+                <h3>About</h3>
+                <ul>
+                  <li><a href="/units" title=""><span class="text text-link-1">Units</span></a></li>
+                  <li><a href="/news" title=""><span class="text text-link-2">News</span></a></li>
+                  <li><a href="/photos" title=""><span class="text text-link-3">Photos</span></a></li>
+                  <li><a href="/leaders" title=""><span class="text text-link-4">Leaders</span></a></li>
+                  <li><a href="/marines" title=""><span class="text text-link-5">Marines</span></a></li>
+                  <li><a href="/family" title=""><span class="text text-link-6">Family</span></a></li>
+                  <li><a href="/Community-Relations" title=""><span class="text text-link-7">Community Releations</span></a></li>
+                </ul>
+
+              </div>
+              <div class="col-12 col-lg-5">
+                <div class="row no-gutters">
+                  <div class="col-lg-6 col-xl-6">
+
+                    <h3>Connect</h3>
+                    <ul>
+                      <li><a href="/rss" title=""><span class="text text-link-8">RSS Feeds</span></a></li>
+                      <li><a href="/socialmedia" title=""><span class="text text-link-9">Social Media</span></a></li>
+                      <li><a href="/faqs" title=""><span class="text text-link-10">FAQS</span></a></li>
+                      <li><a href="/contact_us" title=""><span class="text text-link-11">Contact Us</span></a></li>
+                    </ul>
+
+                  </div>
+                  <div class="col-lg-6 col-xl-6">
+
+                    <h3>Links</h3>
+                    <ul>
+                      <li><a href="https://www.hqmc.marines.mil/Agencies/USMC-FOIA/" title=""><span class="text text-link-12">FOIA</span></a></li>
+                      <li><a href="https://prhome.defense.gov/NoFear/" title=""><span class="text text-link-13">No Fear Act</span></a></li>
+                      <li><a href="https://www.usa.gov/" title=""><span class="text text-link-14">USA.gov</span></a></li>
+                      <li><a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx" title=""><span class="text text-link-15">Accessibility</span></a></li>
+                    </ul>
+
+                  </div>
+                </div>
+                <!-- Download Area -->
+                <div class="row no-gutters mobileDown">
+
+                  <h3>Download Our Mobile App</h3>
+                  <ul>
+                    <li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="/LinkClick.aspx?fileticket=WqCk_pyhblI%3d&amp;portalid=0" /><span class="text text-link-16">App Store</span></a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" title=""><img src="/LinkClick.aspx?fileticket=gQvTwOrJwOQ%3d&amp;portalid=0" /><span class="text text-link-17">Google Play</span></a></li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-lg-4 offset-xl-4">
+                <p class="copyright">
+                  <a href="/Privacy-Policy">Privacy Policy</a>
+                  <a href="/Home/SiteMap">Sitemap</a>
+                  <span>&copy; 2018 Official U.S. Marine Corps Website</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+        <a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
+      </div>
+    </div>
+</body>
+
+</html>

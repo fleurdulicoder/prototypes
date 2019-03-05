@@ -1,0 +1,26 @@
+{
+  "JSHINT_OPTS": {},
+  "JAVASCRIPT": {
+    "DIST_DIR": "dist",
+    "v1": [
+      "js/gsap/src/minified/TweenMax.min.js",
+      "js/gsap/src/minified/utils/SplitText.min.js",
+      "js/scrollmagic/minified/ScrollMagic.min.js",
+      "js/scrollmagic/minified/plugins/debug.addIndicators.min.js",
+      "js/v1.js"
+    ],
+    "v2": [
+      "js/gsap/src/minified/TweenMax.min.js",
+      "js/gsap/src/minified/utils/SplitText.min.js",
+      "js/scrollmagic/minified/ScrollMagic.min.js",
+      "js/scrollmagic/minified/plugins/debug.addIndicators.min.js",
+      "js/v2.js"
+    ]
+  },
+  "CSS": {
+    "DIST_DIR": "dist",
+    "index": ["css/main.css", "css/proto.css"],
+    "v1": ["css/v1.css"],
+    "v2": ["css/v2.css"]
+  }
+}

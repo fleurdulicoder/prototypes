@@ -10549,6 +10549,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
     var carousel = element.querySelector('.carousel');
     var wrapper = carousel.querySelector('.wrapper');
     var thumbs = carousel.querySelectorAll('.item');
+    var isAnimating = false;
     if (!views || !prev || !next || !carousel || !thumbs) return;
 
     var currentView = views[0], currentIndex = 0, currentThumb = thumbs[0];
@@ -10591,60 +10592,66 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
     }
 
     function slideInFromLeft(thumb) {
+      thumb.classList.add('current');
       var timeline = new TimelineMax({
         paused: true,
         onStart: function(){
           thumbs[currentIndex].classList.remove('current');
         },
         onComplete: function(){
-          thumb.classList.add('current');
           currentIndex = thumb.index;
           currentView = thumb.view;
+          isAnimating = false;
         }
       });
       timeline
+        .addLabel('init')
         .set(thumb.view, {
           x: '-100%',
           opacity: 1,
           visibility: 'visible'
-        })
+        }, 'init')
+        .addLabel('move')
         .to(views[currentIndex], 0.5, {
           x: '100%',
           ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
-        }, 0.1)
+        }, 0.1, 'move')
         .to(thumb.view, 0.5, {
           x: '0%',
           ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
-        }, 0.1);
+        }, 0.1, 'move');
       timeline.play();
     }
 
     function slideInFromRight(thumb) {
+      thumb.classList.add('current');
       var timeline = new TimelineMax({
         paused: true,
         onStart: function(){
           thumbs[currentIndex].classList.remove('current');
         },
         onComplete: function() {
-          thumb.classList.add('current');
           currentIndex = thumb.index;
           currentView = thumb.view;
+          isAnimating = false;
         }
       });
       timeline
+        .addLabel('init')
         .set(thumb.view, {
           x: '100%',
           opacity: 1,
           visibility: 'visible'
-        })
+        }, 'init')
+        .addLabel('move')
         .to(views[currentIndex], 0.5, {
           x: '-100%',
           ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
-        }, 0.1)
+        }, 0.1, 'move')
         .to(thumb.view, 0.5, {
           x: '0%',
           ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
-        }, 0.1);
+        }, 0.1, 'move');
       timeline.play();
     }
 
@@ -10711,8 +10718,18 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
       for (var i = 0, len = views.length; i < len; i++) {
         thumbs[i].view = views[i];
         thumbs[i].index = i;
-        thumbs[i].addEventListener('click', function(e) { slideIn(e); }, false);
-        thumbs[i].addEventListener('touch', function(e) { slideIn(e); }, false);
+        thumbs[i].addEventListener('click', function(e) {
+          if (!isAnimating) {
+            isAnimating = true;
+            slideIn(e);
+          }
+        }, false);
+        thumbs[i].addEventListener('touch', function(e) {
+          if (!isAnimating) {
+            isAnimating = true;
+            slideIn(e);
+          }
+        }, false);
       }
 
       prev.addEventListener('click', function(e) { moveThumbsRight(e); }, false);
@@ -10767,7 +10784,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
               onComplete: function() {
                 $(carousel).off('inview');
               }
-            }, 0.15);
+            }, 0.12);
           }
         });
       }

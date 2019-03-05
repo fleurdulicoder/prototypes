@@ -190,7 +190,7 @@
       var tmp = document.createElement('div');
       tmp.className = 'preview';
       tmp.view = galleryItem.view;
-      tmp.innerHTML = '<div class="imgswap" style="url('+galleryItem.src+')"></div>'+
+      tmp.innerHTML = '<div class="imgswap" style="background-image: url('+galleryItem.src+');"></div>'+
       '<a class="overlay" href="#"><span class="title"><span>View</span></span></a>';
       if (parent) {
         parent.appendChild(tmp);

@@ -1,0 +1,375 @@
+@media (max-width: 1199px), (max-device-width: 1199px) {
+  div.MDMLinkCollection div a {
+    width: 218px !important;
+    height: 134px !important;
+    margin-right: 19px;
+  }
+
+  div.MDMLinkCollection div a img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  div.MDMLinkCollection div a div.shadow {
+    display: block;
+    width: 218px;
+    height: 12px;
+    position: absolute;
+    left: 0px !important;
+    top: 106px !important;
+    background: url("/DesktopModules/ImageLinks/Images/shadow.png");
+  }
+}
+
+@media (max-width: 991px), (max-device-width: 991px) {
+  .ImageLinksTopDiv {
+    margin-top: 20px;
+  }
+
+  div.MDMLinkCollection div a:last-child {
+    margin-right: 19px !important;
+  }
+}
+
+div.ImageLinksRow {
+  display: inline-block;
+  width: 100%;
+}
+
+div.LinkCollection div a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+div.USACELinkCollection {
+  margin-bottom: 13px;
+}
+
+div.MDMLinkCollection {
+  text-align: center;
+}
+
+div.AirForceLinkCollection {}
+
+div.AirForceLinkCollection>div {
+  width: 210px;
+  height: 43px;
+  margin: 5px 17px 10px 16px;
+  box-shadow: 0 0 6px #333333;
+  -webkit-box-shadow: 0 0 6px #333333;
+  -moz-box-shadow: 0 0 6px #333333;
+  position: relative;
+}
+
+div.AirForceLinkCollection div.ieShadow {
+  background-color: #333333;
+  background-color: #666666\9;
+  filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=3, enabled='true');
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 211px;
+  height: 44px;
+}
+
+div.AirForceLinkCollection>div:first-child {
+  margin-top: 12px;
+}
+
+div.AirForceLinkCollection>div a {
+  width: 210px;
+  height: 43px;
+}
+
+div.AirForceLinkCollection .dnnFormMessage {
+  width: auto;
+}
+
+div.USACELinkCollection>div a {
+  width: 300px;
+  height: 100px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+div.USACELinkCollection>div {
+  margin-top: 20px;
+}
+
+div.USACELinkCollection>div:first-child {
+  margin-top: 0px;
+}
+
+div.USACELinkCollection>div:last-child {
+  margin-bottom: 26px;
+}
+
+div.USACELinkCollection .dnnFormMessage {
+  width: auto;
+}
+
+div.USMCLinkCollection div a {
+  width: 218px;
+  height: 134px;
+  margin-left: 20px;
+}
+
+div.MDMLinkCollection div a {
+  width: 268px;
+  height: 157px;
+  margin-right: 19px;
+}
+
+div.MDMLinkCollection div a img {
+  width: 266px;
+  height: 130px;
+}
+
+div.MDMLinkCollection div a div.shadow {
+  display: block;
+  width: 218px;
+  height: 12px;
+  position: absolute;
+  left: 25px;
+  top: 130px;
+  background: url("/DesktopModules/ImageLinks/Images/shadow.png");
+}
+
+div.ArmyLinkCollection>div a {
+  width: 190px;
+  height: 90px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.ArmyLinkCollection>div {}
+
+div.ArmyLinkCollection>div:first-child {
+  margin-top: 0px;
+}
+
+div.ArmyLinkCollection>div:last-child {
+  margin-bottom: 26px;
+}
+
+div.ArmyLinkCollection .dnnFormMessage {
+  width: auto;
+}
+
+div.ArmyLinkCollection div a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-align: center;
+  position: relative;
+}
+
+img.ArmyImage {
+  width: 140px;
+  height: 90px;
+}
+
+div.MDMLinkCollection .dnnFormMessage {
+  width: auto;
+}
+
+div.USACELinkCollection div a:first-child, div.USMCLinkCollection div a:first-child {
+  margin-left: 0px;
+}
+
+div.MDMLinkCollection div a:last-child {
+  margin-right: 0px;
+}
+
+div.LinkCollectionHorizontal a:first-child {
+  margin-left: 0px;
+}
+
+div.editLink, div.removeLink {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  margin-top: 0px !important;
+}
+
+div.editLink {
+  top: 5px;
+  background: url("/DesktopModules/ImageLinks/Images/edit.png");
+}
+
+div.removeLink {
+  top: 30px;
+  background: url("/DesktopModules/ImageLinks/Images/delete.png");
+}
+
+div.AirForceLinkCollection div.editLink {
+  top: 1px;
+}
+
+div.AirForceLinkCollection div.removeLink {
+  top: 22px;
+}
+
+div.imageLinkEditTitle {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input.imageLinkEditButton {
+  background: #555555;
+  border: 2px solid #666666;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/*
+div.overlay {
+    background: Black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+    overflow: hidden;
+}
+div.overlay div.window {
+    width: 400px;
+    height: 200px;
+    background: White;
+    border: 5px solid #0099FF;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -100px;
+}
+*/
+div.sharedMediaSelectorHeader {
+  border-bottom: 1px solid #C1C1C1;
+  overflow: hidden;
+}
+
+div.sharedMediaSelectorHeader a {
+  width: 110px;
+  height: 26px;
+  background: #D5D5D5;
+  line-height: 26px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  color: #3B5998;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 1px;
+  border: 1px solid #898C95;
+}
+
+div.sharedMediaSelectorHeader a:hover {
+  background: #B2E0FA !important;
+  border-color: #3C7FB1 !important;
+}
+
+div.sharedMediaSelectorHeader a.selected {
+  background: white !important;
+}
+
+div.sharedMediaContent {
+  border-left: 1px solid #C1C1C1;
+  border-bottom: 1px solid #C1C1C1;
+  border-right: 1px solid #C1C1C1;
+}
+
+div.sharedMediaContent a.item {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  width: 170px;
+  height: 90px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid #D8DFEA;
+  margin: 5px;
+  padding: 4px;
+}
+
+div.sharedMediaContent a:hover {
+  background: #F7F7F7 !important;
+}
+
+div.sharedMediaContent a.selected {
+  border: 1px solid green !important;
+  background: #D7F8AC !important;
+}
+
+div.sharedMediaFooter {
+  border-left: 1px solid #C1C1C1;
+  border-bottom: 1px solid #C1C1C1;
+  border-right: 1px solid #C1C1C1;
+}
+
+.LayoutHorizontalLinkCollection img {
+  width: 156px;
+  height: 90px;
+}
+
+.LayoutHorizontalLinkCollection a {
+  margin-right: 30px;
+}
+
+/* START: USACE base theme responsive */
+.LayoutHorizontalLinkCollection.row img {
+  width: auto;
+  height: auto;
+}
+
+.LayoutHorizontalLinkCollection.row a {
+  margin: 0;
+}
+
+#dialog-editLink {
+  min-height: 100px !important;
+}
+
+@media (max-width: 768px) {
+  div.LayoutHorizontalLinkCollection.row img {
+    max-height: 70px;
+  }
+}
+
+/* END: USACE base theme responsive */
+.MDMHorizontalLinkCollection,
+.MDMHorizontalLinkCollection>div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.MDMHorizontalLinkCollection img {
+  width: 284px;
+  height: 140px;
+}
+
+.MDMHorizontalLinkCollection a {
+  margin: 15px;
+  transition: transform .5s;
+}
+
+.MDMHorizontalLinkCollection a:hover {
+  transform: scale(1.05);
+}

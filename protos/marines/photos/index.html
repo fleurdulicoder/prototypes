@@ -3,11 +3,12 @@
 
 <head id="Head">
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-	<title>Marines.mil Home Page Prototype</title>
+	<title>Marines.mil Image Gallery</title>
 	<meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" />
 	<meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " />
 	<meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
 	<link href="css/default.css" type="text/css" rel="stylesheet" />
 	<link href="css/imagelinks.css" type="text/css" rel="stylesheet" />
 	<link href="css/skipnav.css" type="text/css" rel="stylesheet" />
@@ -19,7 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 </head>
 
-<body id="Body">
+<body id="Body" style="width: 100%; height: auto; position: relative;">
 	<script src="js/skin.build.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/gsap/src/uncompressed/utils/SplitText.js"></script>
 	<script src="js/mobile-detect.min.js" type="text/javascript"></script>
@@ -28,6 +29,7 @@
 	<script src="js/jquery.cycle2.swipe.js" type="text/javascript"></script>
 	<script src="js/jquery.inview.min.js" type="text/javascript"></script>
 	<script src="js/common.js" type="text/javascript"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			initializeSkin();
@@ -178,780 +180,754 @@
 
 			<p id="skip-target-holder"><a id="skip-target" name="skip-target" class="skip" tabindex="-1"></a></p>
 
-			<script type="text/javascript">
-				function isInViewport(node) {
-					var rect = node.getBoundingClientRect()
-					return (
-						(rect.height > 0 || rect.width > 0) &&
-						rect.bottom >= 0 &&
-						rect.right >= 0 &&
-						rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-						rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-					)
-				}
-
-				$(window).scroll(function() {
-					var scrolled = $(window).scrollTop()
-					// For every element with the class parallax..
-					$('.parallax').each(function(index, element) {
-						var initY = $(this).offset().top
-						var height = $(this).height()
-						var endY = initY + $(this).height()
-
-						// Check if the element is in the viewport.
-						var visible = isInViewport(this)
-						if (visible) {
-							var diff = scrolled - initY
-							var ratio = Math.round((diff / height) * 100)
-							$(this).css('background-position', 'center ' + (parseInt(-(ratio * 0.8)) - 18) + 'px');
-						}
-					})
-				});
-			</script>
-
-			<!-- FILTERS -->
-			<div id="marines-image-gallery-filters" class="container marines-image-gallery-filters">
-				<div class="row no-gutters">
-					<div class="col-xl-12 col-lg-2 col-md-12 col-sm-12 col-xs-12">
-						<span class="filter-text red">Filter</span>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-md-8">
-						<div class="row">
-							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-
-								<div class="dropdown filter-dropdown">
-									<button class="btn btn-default dropdown-toggle" type="button" id="categorySelectorButton" data-toggle="dropdown" aria-expanded="true">
-										Category
-									</button>
-									<ul class="dropdown-menu" role="menu" aria-labelledby="categorySelectorButton" id="CategorySelector">
-										<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">All Images</a></li>
-										<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Feature</a></li>
-										<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">News</a></li>
-									</ul>
-								</div>
-
-							</div>
-							<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
-								<div class="btn btn-default dropdown filter-dropdown">
-									<button class="dropdown-toggle" type="button" id="sortSelectorButton" data-toggle="dropdown" aria-expanded="true">
-										Upload Date
-									</button>
-									<ul class="dropdown-menu" role="menu" aria-labelledby="sortSelectorButton" id="SortSelector">
-										<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Upload Date</a></li>
-										<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Photo Date</a></li>
-										<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Title</a></li>
-									</ul>
+			<div class="DnnModule DnnModule-PhotoDashboard DnnModule-10450"><a name="10450"></a>
+				<div class="empty-container background-color-septenary">
+					<div id="dnn_ctr10450_ContentPane">
+						<!-- Start_Module_10450 -->
+						<div id="dnn_ctr10450_ModuleContent" class="DNNModuleContent ModPhotoDashboardC">
+							<div class="PhotoDashboardSA heroPane" id="heroPane">
+								<div id="heroPaneImg" class="parallax" style="background-image: url(img/img22.jpg); background-position: center -11px;">
+									<div class="overlay">
+										<div class="contentWrapper">
+											<div class="titleWrapper">
+												<hr align="left" class="titleDivider titleDividerColor">
+												<span class="title">Photos</span>
+											</div>
+											<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit velit, eleifend sit amet tempus at, imperdiet et diam. Etiam non volutpat mauris, eget ultricies nisl. Aliquam erat volutpat. Quisque et erat
+												non augue vulputate dignissim ac sagittis lorem.</div>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-						<div class="search-area">
-							<input type="text" value="" placeholder="Key Words" class="form-control" id="txtSearch">
-							<a class="btn-photo-search" type="button" onclick="return GalleryFilterChanged(this);"><i class="fas fa-search"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="row no-gutters">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<p onclick="window.location = window.location.pathname;" class="filter-text gray">CLEAR ALL</p>
+							<script type="text/javascript">
+								function updateHeroImageSize() {
+									var imgUrl;
+									var windowWidth = window.innerWidth;
+
+									switch (windowWidth) {
+										case windowWidth <= 400:
+											imgUrl = "img/img22.jpg";
+											break;
+										case windowWidth <= 768:
+											imgUrl = "img/img22.jpg";
+											break;
+										default:
+											imgUrl = "img/img22.jpg"
+									}
+
+									$("#heroPaneImg").css({
+										backgroundImage: "url(" + imgUrl + ")"
+									});
+								}
+
+								function isInViewport(node) {
+									var rect = node.getBoundingClientRect()
+									return (
+										(rect.height > 0 || rect.width > 0) &&
+										rect.bottom >= 0 &&
+										rect.right >= 0 &&
+										rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+										rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+									)
+								}
+
+								$(window).scroll(function() {
+									var scrolled = $(window).scrollTop()
+									// For every element with the class parallax..
+									$('.parallax').each(function(index, element) {
+										var initY = $(this).offset().top
+										var height = $(this).height()
+										var endY = initY + $(this).height()
+
+										// Check if the element is in the viewport.
+										var visible = isInViewport(this)
+										if (visible) {
+											var diff = scrolled - initY
+											var ratio = Math.round((diff / height) * 100)
+											$(this).css('background-position', 'center ' + (parseInt(-(ratio * 0.8)) - 18) + 'px');
+										}
+									})
+								})
+
+
+								$(function() {
+									var $window = jQuery(window);
+
+									$window.on("resize.PhotoDashboardSA", function() {
+										updateHeroImageSize();
+									});
+
+									updateHeroImageSize();
+								});
+							</script>
+
+						</div><!-- End_Module_10450 -->
 					</div>
 				</div>
 			</div>
-			<!-- END FILTERS -->
 
-			<!-- Content -->
-			<main class="container-fluid nopad">
-				<div class="row nopad no-gutters">
-					<div class="DnnModule DnnModule-PhotoDashboard DnnModule-10450"><a name="10450"></a>
-						<div class="empty-container background-color-septenary">
-							<div id="dnn_ctr10450_ContentPane">
-								<!-- Start_Module_10450 -->
-								<div id="dnn_ctr10450_ModuleContent" class="DNNModuleContent ModPhotoDashboardC">
-									<div class="PhotoDashboardSA heroPane" id="heroPane">
-										<div id="heroPaneImg" class="parallax" style="background-image: url(img/img1.jpg); background-position: center -11px;">
-											<div class="overlay">
-												<div class="contentWrapper">
-													<div class="titleWrapper">
-														<hr align="left" class="titleDivider titleDividerColor">
-														<span class="title">Photos</span>
+			<!-- FILTERS -->
+			<div class="empty-container background-color-septenary">
+				<div id="marines-image-gallery-filters" class="container marines-image-gallery-filters">
+					<div class="row no-gutters">
+						<div class="col-xl-12 col-lg-2 col-md-12 col-sm-12 col-xs-12">
+							<span class="filter-text red">Filter</span>
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-md-8">
+							<div class="row">
+								<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+
+									<div class="dropdown filter-dropdown">
+										<button class="btn btn-default dropdown-toggle" type="button" id="categorySelectorButton" data-toggle="dropdown" aria-expanded="true">
+											Category
+										</button>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="categorySelectorButton" id="CategorySelector">
+											<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">All Images</a></li>
+											<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Feature</a></li>
+											<li role="presentation"><a class="dropdown-item" role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">News</a></li>
+										</ul>
+									</div>
+
+								</div>
+								<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+									<div class="btn btn-default dropdown filter-dropdown">
+										<button class="dropdown-toggle" type="button" id="sortSelectorButton" data-toggle="dropdown" aria-expanded="true">
+											Upload Date
+										</button>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="sortSelectorButton" id="SortSelector">
+											<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Upload Date</a></li>
+											<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Photo Date</a></li>
+											<li role="presentation"><a role="menuitem" tabindex="-1" onclick="return GalleryFilterChanged(this);">Title</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 align-right">
+							<div class="search-area">
+								<input type="text" value="" placeholder="Key Words" class="form-control" id="txtSearch">
+								<a class="btn-photo-search" type="button" onclick="return GalleryFilterChanged(this);"><i class="fas fa-search"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row no-gutters">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<p onclick="window.location = window.location.pathname;" class="filter-text gray clear-all">CLEAR ALL</p>
+						</div>
+					</div>
+				</div>
+				<div class="empty-container background-color-septenary">
+					<!-- END FILTERS -->
+
+					<!-- Content -->
+					<main class="container-fluid nopad">
+						<div class="row nopad no-gutters">
+							<div class="empty-container background-color-septenary">
+								<!-- IMAGE GALLERY PROTOTYPE -->
+								<script type="text/javascript" src="js/jquery.flex-images.min.js"></script>
+								<!--[section:header]-->
+								<div class="marines-image-gallery" id="marines-image-gallery">
+									<div class="wrapper">
+										<div class="flex-images page-0">
+											<!--[section:item]-->
+											<div class="item" data-aos="fade-up" data-aos-duration="700" data-w="1353" data-h="900" href='img/img1.jpg' title='Image 1'>
+												<img src="img/blank.gif" data-src="img/img1.jpg" alt="test" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id sem et magna accumsan varius. Fusce pharetra lorem ac porttitor pretium. Quisque semper, neque a aliquam lacinia, est dolor egestas enim, id efficitur turpis massa sit
+															amet mauris. Maecenas nec euismod est, ut ultrices nisl. </h3>
+														<p>Photo by Author 1</p>
+														<aside>
+															<a href='#' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="share-link addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	url: 'img/img1.jpg',
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
 													</div>
-													<div class="description"></div>
 												</div>
 											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item" href='img/img2.jpg' title=''>
+												<img src="img/blank.gif" data-src="img/img2.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Donec tincidunt et nibh sed gravida. Sed leo urna, dapibus vitae viverra et, ultricies sed lorem. Sed dictum commodo est vitae placerat. Fusce vitae lacus id lectus dictum blandit sit amet et justo. Suspendisse potenti. Aenean
+															varius
+															volutpat odio. Pellentesque et consequat augue.</h3>
+														<p>Photo by Author 2</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1600" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img3.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 3</h3>
+														<p>Photo by Author 3</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img4.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 4</h3>
+														<p>Photo by Author 4</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='#'><i class="fas fa-share-alt"></i> Share</a>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1600" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img5.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 5</h3>
+														<p>Photo by Author 5</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img6.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Curabitur ut sapien ullamcorper purus laoreet placerat ut nec mi. Mauris tempus nisi id pretium ullamcorper. Cras eget mattis tellus, eget gravida nulla. Cras eget ligula turpis. </h3>
+														<p>Photo by Author 6</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img7.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 7</h3>
+														<p>Photo by Author 7</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1349" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img8.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Morbi vestibulum condimentum libero, sit amet placerat tellus dapibus vitae. Cras libero enim, pharetra sed ligula placerat, volutpat aliquam tortor. Curabitur at posuere purus. Suspendisse congue lacus ac nunc varius tristique.
+															Integer quis varius neque. </h3>
+														<p>Photo by Author 8</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1349" data-aos="fade-up" data-aos-duration="700" data-h="900" class="item">
+												<img src="img/blank.gif" data-src="img/img9.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 9</h3>
+														<p>Photo by Author 9</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1384" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img10.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 10</h3>
+														<p>Photo by Author 10</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img11.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 11</h3>
+														<p>Photo by Author 11</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img12.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 12</h3>
+														<p>Photo by Author 12</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img13.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 13</h3>
+														<p>Photo by Author 13</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1600" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img14.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 14</h3>
+														<p>Photo by Author 14</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1353" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img15.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 15</h3>
+														<p>Photo by Author 15</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1600" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item">
+												<img src="img/blank.gif" data-src="img/img16.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 16</h3>
+														<p>Photo by Author 16</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1241" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item" href='img/img17.jpg' title=''>
+												<img src="img/blank.gif" data-src="img/img17.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 17</h3>
+														<p>Photo by Author 17</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1350" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item" href='img/img18.jpg' title=''>
+												<img src="img/blank.gif" data-src="img/img18.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 18</h3>
+														<p>Photo by Author 18</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1349" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item" href='img/img19.jpg' title='Title 19'>
+												<img src="img/blank.gif" data-src="img/img19.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 19</h3>
+														<p>Photo by Author 19</p>
+														<aside>
+															<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
+											<!--[section:item]-->
+											<div data-w="1600" data-h="900" data-aos="fade-up" data-aos-duration="700" class="item" href='img/img20.jpg' title='Title 20'>
+												<img src="img/blank.gif" data-src="img/img20.jpg" alt="[i:imgtitle]" />
+												<div class="overlay">
+													<div class="caption">
+														<h3>Title 20</h3>
+														<p>Photo by Author 20</p>
+														<aside>
+															<a href='#' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
+															<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
+															<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
+															<script type="text/javascript">
+																var addthis_config = {
+																	data_use_flash: false,
+																	data_use_cookies: false,
+																	ui_508_compliant: true
+																}
+															</script>
+															<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+														</aside>
+													</div>
+												</div>
+											</div>
+											<!--[section:footer]-->
 										</div>
 									</div>
-									<script type="text/javascript">
-										function updateHeroImageSize() {
-											var imgUrl;
-											var windowWidth = window.innerWidth;
+								</div>
 
-											switch (windowWidth) {
-												case windowWidth <= 400:
-													imgUrl = "img/img1.jpg";
-													break;
-												case windowWidth <= 768:
-													imgUrl = "img/img2.jpg";
-													break;
-												default:
-													imgUrl = "img/img3.jpg"
-											}
+								<br clear="both" />
+								<div class="button-section">
+									<button id="load-more-images-button" type="button" class="load-more-button">Load More</button>
+								</div>
+							</div>
+							<!--[section:noitems]-->
+							<!-- END IMAGE GALLERY PROTOTYPE -->
 
-											$("#heroPaneImg").css({
-												backgroundImage: "url(" + imgUrl + ")"
-											});
-										}
+						</div>
+					</main>
 
-										function isInViewport(node) {
-											var rect = node.getBoundingClientRect()
-											return (
-												(rect.height > 0 || rect.width > 0) &&
-												rect.bottom >= 0 &&
-												rect.right >= 0 &&
-												rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-												rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-											)
-										}
+					<!-- Footer -->
+					<footer>
+						<div class="container">
+							<div class="row nopad no-gutters">
+								<div class="col-12 col-lg-4 col-xl-4">
+									<a class="logo" href="/">Marine Corps</a>
+								</div>
+								<div class="col-12 col-lg-3 col-xl-3">
+									<h3>About</h3>
+									<ul>
+										<li><a href="/units" title=""><span class="text text-link-1">Units</span></a></li>
+										<li><a href="/news" title=""><span class="text text-link-2">News</span></a></li>
+										<li><a href="/photos" title=""><span class="text text-link-3">Photos</span></a></li>
+										<li><a href="/leaders" title=""><span class="text text-link-4">Leaders</span></a></li>
+										<li><a href="/marines" title=""><span class="text text-link-5">Marines</span></a></li>
+										<li><a href="/family" title=""><span class="text text-link-6">Family</span></a></li>
+										<li><a href="/Community-Relations" title=""><span class="text text-link-7">Community Releations</span></a></li>
+									</ul>
 
-										$(window).scroll(function() {
-											var scrolled = $(window).scrollTop()
-											// For every element with the class parallax..
-											$('.parallax').each(function(index, element) {
-												var initY = $(this).offset().top
-												var height = $(this).height()
-												var endY = initY + $(this).height()
-
-												// Check if the element is in the viewport.
-												var visible = isInViewport(this)
-												if (visible) {
-													var diff = scrolled - initY
-													var ratio = Math.round((diff / height) * 100)
-													$(this).css('background-position', 'center ' + (parseInt(-(ratio * 0.8)) - 18) + 'px');
-												}
-											})
-										})
-
-
-										$(function() {
-											var $window = jQuery(window);
-
-											$window.on("resize.PhotoDashboardSA", function() {
-												updateHeroImageSize();
-											});
-
-											updateHeroImageSize();
-										});
-									</script>
-
-								</div><!-- End_Module_10450 -->
+								</div>
+								<div class="col-12 col-lg-5">
+									<div class="row no-gutters">
+										<div class="col-lg-6 col-xl-6">
+											<h3>Connect</h3>
+											<ul>
+												<li><a href="/rss" title=""><span class="text text-link-8">RSS Feeds</span></a></li>
+												<li><a href="/socialmedia" title=""><span class="text text-link-9">Social Media</span></a></li>
+												<li><a href="/faqs" title=""><span class="text text-link-10">FAQS</span></a></li>
+												<li><a href="/contact_us" title=""><span class="text text-link-11">Contact Us</span></a></li>
+											</ul>
+										</div>
+										<div class="col-lg-6 col-xl-6">
+											<h3>Links</h3>
+											<ul>
+												<li><a href="https://www.hqmc.marines.mil/Agencies/USMC-FOIA/" title=""><span class="text text-link-12">FOIA</span></a></li>
+												<li><a href="https://prhome.defense.gov/NoFear/" title=""><span class="text text-link-13">No Fear Act</span></a></li>
+												<li><a href="https://www.usa.gov/" title=""><span class="text text-link-14">USA.gov</span></a></li>
+												<li><a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx" title=""><span class="text text-link-15">Accessibility</span></a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- Download Area -->
+									<div class="row no-gutters mobileDown">
+										<h3>Download Our Mobile App</h3>
+										<ul>
+											<li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="img/blank.gif" data-src="img/apple-store@2x.png" /><span class="text text-link-16">App Store</span></a></li>
+											<li><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" title=""><img src="img/blank.gif" data-src="img/google-store@2x.png" /><span class="text text-link-17">Google Play</span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col offset-lg-4 offset-xl-4">
+									<p class="copyright">
+										<a href="/Privacy-Policy">Privacy Policy</a>
+										<a href="/Home/SiteMap">Sitemap</a>
+										<span>&copy; 2019 Official U.S. Marine Corps Website</span>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</footer>
+					<a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
+				</div>
+			</div>
 
+			<script type="text/javascript">
+				$('.dropdown-toggle').on('click', function(e) {
+					$(this).parent().toggleClass('show');
+				});
 
-					<!-- IMAGE GALLERY PROTOTYPE -->
-					<!--[section:header]-->
-					<div class="marines-image-gallery">
-						<script type="text/javascript" src="js/jquery.flex-images.min.js"></script>
-						<div class="wrapper">
-							<div class="flex-images">
-								<!--[section:item]-->
-								<div class="item" data-w="1353" data-h="900" href='img/img1.jpg' title='Image 1'>
-									<img src="img/blank.gif" data-src="img/img1.jpg" alt="test" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id sem et magna accumsan varius. Fusce pharetra lorem ac porttitor pretium. Quisque semper, neque a aliquam lacinia, est dolor egestas enim, id efficitur turpis massa sit
-												amet mauris. Maecenas nec euismod est, ut ultrices nisl. </h3>
-											<p>Photo by Author 1</p>
-											<aside>
-												<a href='#' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="share-link addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='img/img2.jpg' title=''>
-									<img src="img/blank.gif" data-src="img/img2.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Donec tincidunt et nibh sed gravida. Sed leo urna, dapibus vitae viverra et, ultricies sed lorem. Sed dictum commodo est vitae placerat. Fusce vitae lacus id lectus dictum blandit sit amet et justo. Suspendisse potenti. Aenean varius
-												volutpat odio. Pellentesque et consequat augue.</h3>
-											<p>Photo by Author 2</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1600" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img3.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 3</h3>
-											<p>Photo by Author 3</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img4.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 4</h3>
-											<p>Photo by Author 4</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='#'><i class="fas fa-share-alt"></i> Share</a>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1600" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img5.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 5</h3>
-											<p>Photo by Author 5</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img6.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Curabitur ut sapien ullamcorper purus laoreet placerat ut nec mi. Mauris tempus nisi id pretium ullamcorper. Cras eget mattis tellus, eget gravida nulla. Cras eget ligula turpis. </h3>
-											<p>Photo by Author 6</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img7.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 7</h3>
-											<p>Photo by Author 7</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1349" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img8.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Morbi vestibulum condimentum libero, sit amet placerat tellus dapibus vitae. Cras libero enim, pharetra sed ligula placerat, volutpat aliquam tortor. Curabitur at posuere purus. Suspendisse congue lacus ac nunc varius tristique.
-												Integer quis varius neque. </h3>
-											<p>Photo by Author 8</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
+				$(window).on('click', function(e) {
+					if (!e.target.matches('.dropdown-toggle')) {
+						$('.dropdown.show').removeClass('show');
+					}
+				});
 
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1349" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img9.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 9</h3>
-											<p>Photo by Author 9</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1384" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img10.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 10</h3>
-											<p>Photo by Author 10</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img11.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 11</h3>
-											<p>Photo by Author 11</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img12.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 12</h3>
-											<p>Photo by Author 12</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img13.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 13</h3>
-											<p>Photo by Author 13</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1600" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img14.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 14</h3>
-											<p>Photo by Author 14</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1353" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img15.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 15</h3>
-											<p>Photo by Author 15</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1600" data-h="900" class="item" href='' title=''>
-									<img src="img/blank.gif" data-src="img/img16.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 16</h3>
-											<p>Photo by Author 16</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1241" data-h="900" class="item" href='img/img17.jpg' title=''>
-									<img src="img/blank.gif" data-src="img/img17.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 17</h3>
-											<p>Photo by Author 17</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1350" data-h="900" class="item" href='img/img18.jpg' title=''>
-									<img src="img/blank.gif" data-src="img/img18.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 18</h3>
-											<p>Photo by Author 18</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1349" data-h="900" class="item" href='img/img19.jpg' title='Title 19'>
-									<img src="img/blank.gif" data-src="img/img19.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 19</h3>
-											<p>Photo by Author 19</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-								<!--[section:item]-->
-								<div data-w="1600" data-h="900" class="item" href='img/img20.jpg' title='Title 20'>
-									<img src="img/blank.gif" data-src="img/img20.jpg" alt="[i:imgtitle]" />
-									<div class="overlay">
-										<div class="caption">
-											<h3>Title 20</h3>
-											<p>Photo by Author 20</p>
-											<aside>
-												<a href='' target="_blank" class="download-link"><i class="fa fa-download"></i> Download</a>
-												<a href='#' class="detail-link"><i class="fas fa-info-circle"></i> Details</a>
-												<a id="aAddThisLink" class="addthis_button" addthis:url='[i:detailsurl]'><i class="fas fa-share-alt"></i> Share</a>
-												<script type="text/javascript">
-													var addthis_config = {
-														data_use_flash: false,
-														data_use_cookies: false,
-														ui_508_compliant: true
-													}
-												</script>
-												<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
-											</aside>
-										</div>
-									</div>
-								</div>
-								<!--[section:footer]-->
-							</div>
-						</div>
+				var page = 0;
+				$('.flex-images.page-' + page).flexImages({
+					rowHeight: 900
+				});
 
-						<br clear="both" />
-						<div class="button-section">
-							<button id="loadMore" type="button" class="load-more-button">Load More</button>
-						</div>
-					</div>
-
-
-					<script type="text/javascript">
-						// function preload(img) {
-						// 	var image = new Image();
-						// 	image.src = img.src;
-						// 	image.onload = function() {
-						// 		img.parentNode.setAttribute('data-w') = img.naturalWidth;
-						// 		img.parentNode.setAttribute('data-h') = img.naturalHeight;
-						// 		console.log(img.src, img.naturalWidth, img.naturalHeight);
-						// 	};
-						// 	image.onerror = function() {
-						// 		console.log('not loading ' + img.src);
-						// 	};
-						// }
-
-						document.addEventListener('DOMContentLoaded', function() {
-							// var images = document.querySelectorAll('.flex-images .item img');
-							// for (var i = 0, len = images.length; i < len; i++) {
-							// 	preload(images[i]);
-							// }
-							$('.flex-images').flexImages({
-								rowHeight: 900
-							});
+				$('#load-more-images-button').on('click', function(e) {
+					$('#marines-image-gallery>.wrapper').append('<div class="flex-images page-' + (++page) + '"></div>');
+					$('.flex-images.page-' + page).load("partial.html", function() {
+						$('.flex-images.page-' + page).flexImages({
+							rowHeight: 900
 						});
-					</script>
+					});
+				});
 
-					<!--[section:noitems]-->
-					No [g:isimages]Images[/g:isimages] Found.
-
-
-					<!-- END IMAGE GALLERY PROTOTYPE -->
-
-
-				</div>
-			</main>
-
-			<!-- Footer -->
-			<footer>
-				<div class="container">
-					<div class="row nopad no-gutters">
-						<div class="col-12 col-lg-4 col-xl-4">
-							<a class="logo" href="/">Marine Corps</a>
-						</div>
-						<div class="col-12 col-lg-3 col-xl-3">
-
-							<h3>About</h3>
-							<ul>
-								<li><a href="/units" title=""><span class="text text-link-1">Units</span></a></li>
-								<li><a href="/news" title=""><span class="text text-link-2">News</span></a></li>
-								<li><a href="/photos" title=""><span class="text text-link-3">Photos</span></a></li>
-								<li><a href="/leaders" title=""><span class="text text-link-4">Leaders</span></a></li>
-								<li><a href="/marines" title=""><span class="text text-link-5">Marines</span></a></li>
-								<li><a href="/family" title=""><span class="text text-link-6">Family</span></a></li>
-								<li><a href="/Community-Relations" title=""><span class="text text-link-7">Community Releations</span></a></li>
-							</ul>
-
-						</div>
-						<div class="col-12 col-lg-5">
-							<div class="row no-gutters">
-								<div class="col-lg-6 col-xl-6">
-
-									<h3>Connect</h3>
-									<ul>
-										<li><a href="/rss" title=""><span class="text text-link-8">RSS Feeds</span></a></li>
-										<li><a href="/socialmedia" title=""><span class="text text-link-9">Social Media</span></a></li>
-										<li><a href="/faqs" title=""><span class="text text-link-10">FAQS</span></a></li>
-										<li><a href="/contact_us" title=""><span class="text text-link-11">Contact Us</span></a></li>
-									</ul>
-
-								</div>
-								<div class="col-lg-6 col-xl-6">
-
-									<h3>Links</h3>
-									<ul>
-										<li><a href="https://www.hqmc.marines.mil/Agencies/USMC-FOIA/" title=""><span class="text text-link-12">FOIA</span></a></li>
-										<li><a href="https://prhome.defense.gov/NoFear/" title=""><span class="text text-link-13">No Fear Act</span></a></li>
-										<li><a href="https://www.usa.gov/" title=""><span class="text text-link-14">USA.gov</span></a></li>
-										<li><a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx" title=""><span class="text text-link-15">Accessibility</span></a></li>
-									</ul>
-
-								</div>
-							</div>
-							<!-- Download Area -->
-							<div class="row no-gutters mobileDown">
-
-								<h3>Download Our Mobile App</h3>
-								<ul>
-									<li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="img/blank.gif" data-src="img/apple-store@2x.png" /><span class="text text-link-16">App Store</span></a></li>
-									<li><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" title=""><img src="img/blank.gif" data-src="img/google-store@2x.png" /><span class="text text-link-17">Google Play</span></a></li>
-								</ul>
-
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col offset-lg-4 offset-xl-4">
-							<p class="copyright">
-								<a href="/Privacy-Policy">Privacy Policy</a>
-								<a href="/Home/SiteMap">Sitemap</a>
-								<span>&copy; 2019 Official U.S. Marine Corps Website</span>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-
-			<a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
-		</div>
-	</div>
-
+				$(document).ready(function() {
+					AOS.init({
+							once: true
+						}),
+						$("[data-bs-hover-animate]").mouseenter(function() {
+							var node = $(this);
+							node.addClass("animated " + node.attr("data-bs-hover-animate"))
+						}).mouseleave(function() {
+							var node = $(this);
+							node.removeClass("animated " + node.attr("data-bs-hover-animate"))
+						})
+				});
+			</script>
 </body>
 
 </html>

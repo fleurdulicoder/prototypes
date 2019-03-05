@@ -46,7 +46,7 @@
   text-align: left;
   background: transparent;
   position: relative;
-  cursor: hand;
+  cursor: pointer;
 }
 
 .marines-image-gallery-filters button.dropdown-toggle::after {
@@ -56,13 +56,23 @@
   font-size: 16px;
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
 .marines-image-gallery-filters .search-area {
   position: relative;
   width: 85%;
   border: 2px solid #ccc;
+  text-align: left;
+}
+
+.align-right {
   text-align: right;
+}
+
+.clear-all {
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .marines-image-gallery-filters .search-area input {
@@ -96,7 +106,8 @@ input:-moz-placeholder {
   position: relative;
   display: inline-block;
   width: 100%;
-  cursor: hand;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .marines-image-gallery-filters .dropdown-menu {
@@ -118,6 +129,7 @@ input:-moz-placeholder {
   z-index: 1;
   transform: translate3d(0px, 38px, 0px);
   transition: display 0ms, opacity 125ms ease-out;
+  cursor: pointer;
 }
 
 .marines-image-gallery-filters .dropdown.show>.dropdown-menu {
@@ -183,10 +195,6 @@ input:-moz-placeholder {
   margin: 4px;
   box-sizing: content-box;
   overflow: hidden;
-  /*opacity: 0;
-  transition-property: opacity, transform;
-  transform: translateY(40px);
-  transition-duration: .7s;*/
 }
 
 .marines-image-gallery .item .overlay {
@@ -222,8 +230,6 @@ input:-moz-placeholder {
   left: 0;
   width: 100%;
   color: #fff;
-  /*transition: .5s ease;
-  opacity: 0;*/
   z-index: 5;
 }
 
@@ -283,11 +289,11 @@ input:-moz-placeholder {
   margin-right: auto;
 }
 
-.marines-image-gallery .button-section {
+.button-section {
   text-align: center;
 }
 
-.marines-image-gallery .load-more-button {
+.load-more-button {
   outline: none;
   color: #fff;
   font-family: "Colossalis", arial, sans-serif !important;
@@ -306,4 +312,5 @@ input:-moz-placeholder {
   margin-top: 60px;
   margin-bottom: 68px;
   padding: 10px 10px;
+  cursor: pointer;
 }
