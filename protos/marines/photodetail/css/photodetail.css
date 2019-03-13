@@ -235,6 +235,14 @@ a.photos-white-link-next {
   position: relative;
 }
 
+.carousel-of-thumbs {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  flex-wrap: nowrap;
+}
+
 #photo-info .carousel-item-next,
 #photo-info .carousel-item-prev,
 #photo-info .carousel-item.active,
