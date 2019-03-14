@@ -181,6 +181,7 @@
       <p id="skip-target-holder"><a id="skip-target" name="skip-target" class="skip" tabindex="-1"></a></p>
 
       <div id="gallery-of-hero-photos" class="gallery-of-hero-photos background-color-primary">
+        <!-- control nav -->
         <div class="control-nav">
           <div class="container-fluid no-gutters nopad">
             <div class="row no-gutters">
@@ -202,6 +203,8 @@
             </div>
           </div>
         </div>
+        <!-- end control nav -->
+        <!-- start banner slider -->
         <div class="slider">
           <div class="item active"><img src="img/img1.jpg" alt="Image 1" /></div>
           <div class="item"><img src="img/img2.jpg" alt="Image 2" /></div>
@@ -226,9 +229,10 @@
           <div class="item"><img src="img/img21.jpg" alt="Image 21" /></div>
           <div class="item"><img src="img/img22.jpg" alt="Image 22" /></div>
         </div>
+        <!-- end hero banner slider -->
       </div>
 
-      <!-- photo details -->
+      <!-- photo info + carousel -->
       <div id="photo-info" class="background-color-primary photo-info">
         <div class="container-fluid">
           <div class="row margin-horizontal-10">
@@ -321,9 +325,10 @@
           </div>
         </div>
       </div>
+      <!-- end photo info + carousel -->
 
-      <!-- carousel area -->
-      <section class="container-fluid background-color-primary">
+      <!-- photo details -->
+      <div class="container-fluid background-color-primary">
         <div class="row photo-details marginRow">
           <div class="col-md-12 col-11 offset-lg-1 col-lg-11 aos-init aos-animate" data-aos="fade-right" data-aos-easing="ease-in" data-aos-duration="400" data-aos-offset="0">
             <p id="photo-date" class="photo-date">NOV 30 2017</p>
@@ -361,34 +366,29 @@
               </div>
             </div>
 
-
+            <!-- public domain -->
             <div class="row img-public">
               <div class="col-12">
-                <h4> IMAGE IS PUBLIC DOMAIN</h4>
-              </div>
-            </div>
-            <div class="row" style="padding-top: 0px">
-              <div class="col-12 read-more-link">
-                <a id="readmore"><span>Read More</span> <i id="readmoreplus" class="far fa-plus-circle"></i></a>
-                <a id="readless" style="display: none;"><span>Read More</span> <i id="readmoreminus" class="far fa-minus-circle" style="display: none;"></i></a>
-              </div>
-            </div>
-            <div class="row" id="photo-release-div" style="display: none;">
-              <div class="col-12">
-                <p class="phoro-release-text">This photograph is considered public domain and has been cleared for release. If you would like to republish please give the photographer appropriate credit. Further, any commercial or non-commercial
-                  use
-                  of this photograph or any other DoD image must be made in compliance with guidance found at <a href="http://www.dimoc.mil/resources/limitations.html" target="_new"> http://www.dimoc.mil/resources/limitations.html</a>, which
-                  pertains to intellectual property restrictions (e.g., copyright and trademark, including the use of official emblems, insignia, names and slogans), warnings regarding use of images of identifiable personnel, appearance of
+                <h4>IMAGE IS PUBLIC DOMAIN</h4>
+                <a id="readmore" class="readmore"><span>Read More</span></a>
+                <p id="photo-release" class="photo-release">
+                  This photograph is considered public domain and has been cleared for release.
+                  If you would like to republish please give the photographer appropriate credit.
+                  Further, any commercial or non-commercial use of this photograph or any other
+                  DoD image must be made in compliance with guidance found at
+                  <a href="http://www.dimoc.mil/resources/limitations.html" target="_new">http://www.dimoc.mil/resources/limitations.html</a>,
+                  which pertains to intellectual property restrictions (e.g., copyright and trademark,
+                  including the use of official emblems, insignia, names and slogans), warnings
+                  regarding use of images of identifiable personnel, appearance of
                   endorsement, and related matters.
-
                 </p>
               </div>
             </div>
-
           </div>
+          <!-- side column -->
           <div class="text-left offset-lg-1 col-lg-4 col-md-12 hide-on-mobile aos-init aos-animate" data-aos="fade-left" data-aos-easing="ease-in" data-aos-duration="400">
-            <p class="photo-attribute align-text-bottom">CAMERA </p>
-            <p class="photo-attribute-value">Canon EOS 5d Mark III</p>
+            <p class="photo-attribute">CAMERA </p>
+            <p class=" photo-attribute-value">Canon EOS 5d Mark III</p>
             <p class="photo-attribute">LENS </p>
             <p class="photo-attribute-value">EF 50mm f/2.5 Compact Macro</p>
             <p class="photo-attribute">APERTURE</p>
@@ -398,78 +398,82 @@
             <p class="photo-attribute">ISO</p>
             <p class="photo-attribute-value">250</p>
           </div>
-        </div>
-    </div>
-
-    <main id="mainContentPane"></main>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row nopad no-gutters">
-          <div class="col-12 col-lg-4 col-xl-4">
-            <a class="logo" href="/">Marine Corps</a>
-          </div>
-          <div class="col-12 col-lg-3 col-xl-3">
-            <h3>About</h3>
-            <ul>
-              <li><a href="/units" title=""><span class="text text-link-1">Units</span></a></li>
-              <li><a href="/news" title=""><span class="text text-link-2">News</span></a></li>
-              <li><a href="/photos" title=""><span class="text text-link-3">Photos</span></a></li>
-              <li><a href="/leaders" title=""><span class="text text-link-4">Leaders</span></a></li>
-              <li><a href="/marines" title=""><span class="text text-link-5">Marines</span></a></li>
-              <li><a href="/family" title=""><span class="text text-link-6">Family</span></a></li>
-              <li><a href="/Community-Relations" title=""><span class="text text-link-7">Community Releations</span></a></li>
-            </ul>
-
-          </div>
-          <div class="col-12 col-lg-5">
-            <div class="row no-gutters">
-              <div class="col-lg-6 col-xl-6">
-                <h3>Connect</h3>
-                <ul>
-                  <li><a href="/rss" title=""><span class="text text-link-8">RSS Feeds</span></a></li>
-                  <li><a href="/socialmedia" title=""><span class="text text-link-9">Social Media</span></a></li>
-                  <li><a href="/faqs" title=""><span class="text text-link-10">FAQS</span></a></li>
-                  <li><a href="/contact_us" title=""><span class="text text-link-11">Contact Us</span></a></li>
-                </ul>
-              </div>
-              <div class="col-lg-6 col-xl-6">
-                <h3>Links</h3>
-                <ul>
-                  <li><a href="https://www.hqmc.marines.mil/Agencies/USMC-FOIA/" title=""><span class="text text-link-12">FOIA</span></a></li>
-                  <li><a href="https://prhome.defense.gov/NoFear/" title=""><span class="text text-link-13">No Fear Act</span></a></li>
-                  <li><a href="https://www.usa.gov/" title=""><span class="text text-link-14">USA.gov</span></a></li>
-                  <li><a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx" title=""><span class="text text-link-15">Accessibility</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Download Area -->
-            <div class="row no-gutters mobileDown">
-              <h3>Download Our Mobile App</h3>
-              <ul>
-                <li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="img/blank.gif" data-src="img/apple-store@2x.png" /><span class="text text-link-16">App Store</span></a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" title=""><img src="img/blank.gif" data-src="img/google-store@2x.png" /><span class="text text-link-17">Google Play</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col offset-lg-4 offset-xl-4">
-            <p class="copyright">
-              <a href="/Privacy-Policy">Privacy Policy</a>
-              <a href="/Home/SiteMap">Sitemap</a>
-              <span>&copy; 2019 Official U.S. Marine Corps Website</span>
-            </p>
-          </div>
+          <!-- end side column -->
         </div>
       </div>
-    </footer>
-    <a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
-  </div>
+      <!-- end photo details -->
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="row nopad no-gutters">
+            <div class="col-12 col-lg-4 col-xl-4">
+              <a class="logo" href="/">Marine Corps</a>
+            </div>
+            <div class="col-12 col-lg-3 col-xl-3">
+              <h3>About</h3>
+              <ul>
+                <li><a href="/units" title=""><span class="text text-link-1">Units</span></a></li>
+                <li><a href="/news" title=""><span class="text text-link-2">News</span></a></li>
+                <li><a href="/photos" title=""><span class="text text-link-3">Photos</span></a></li>
+                <li><a href="/leaders" title=""><span class="text text-link-4">Leaders</span></a></li>
+                <li><a href="/marines" title=""><span class="text text-link-5">Marines</span></a></li>
+                <li><a href="/family" title=""><span class="text text-link-6">Family</span></a></li>
+                <li><a href="/Community-Relations" title=""><span class="text text-link-7">Community Releations</span></a></li>
+              </ul>
+
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="row no-gutters">
+                <div class="col-lg-6 col-xl-6">
+                  <h3>Connect</h3>
+                  <ul>
+                    <li><a href="/rss" title=""><span class="text text-link-8">RSS Feeds</span></a></li>
+                    <li><a href="/socialmedia" title=""><span class="text text-link-9">Social Media</span></a></li>
+                    <li><a href="/faqs" title=""><span class="text text-link-10">FAQS</span></a></li>
+                    <li><a href="/contact_us" title=""><span class="text text-link-11">Contact Us</span></a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-xl-6">
+                  <h3>Links</h3>
+                  <ul>
+                    <li><a href="https://www.hqmc.marines.mil/Agencies/USMC-FOIA/" title=""><span class="text text-link-12">FOIA</span></a></li>
+                    <li><a href="https://prhome.defense.gov/NoFear/" title=""><span class="text text-link-13">No Fear Act</span></a></li>
+                    <li><a href="https://www.usa.gov/" title=""><span class="text text-link-14">USA.gov</span></a></li>
+                    <li><a href="https://dodcio.defense.gov/DoDSection508/Std_Stmt.aspx" title=""><span class="text text-link-15">Accessibility</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Download Area -->
+              <div class="row no-gutters mobileDown">
+                <h3>Download Our Mobile App</h3>
+                <ul>
+                  <li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="img/blank.gif" data-src="img/apple-store@2x.png" /><span class="text text-link-16">App Store</span></a></li>
+                  <li><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" title=""><img src="img/blank.gif" data-src="img/google-store@2x.png" /><span class="text text-link-17">Google Play</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col offset-lg-4 offset-xl-4">
+              <p class="copyright">
+                <a href="/Privacy-Policy">Privacy Policy</a>
+                <a href="/Home/SiteMap">Sitemap</a>
+                <span>&copy; 2019 Official U.S. Marine Corps Website</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
+    </div>
   </div>
 
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+    $('#readmore').on('click', function() {
+      $('#photo-release').toggle('show');
+    });
+  </script>
 </body>
 
 </html>

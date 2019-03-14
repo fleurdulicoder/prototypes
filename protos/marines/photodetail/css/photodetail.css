@@ -414,6 +414,84 @@ a.photolist-white-link-prev:after {
   margin-top: 0;
 }
 
+/* img public */
+.img-public h4 {
+  font-size: 23px;
+  letter-spacing: 0.05em;
+  line-height: 26px;
+  font-family: 'Colossalis';
+  font-weight: 100;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  color: #fff;
+}
+
+.img-public a.readmore {
+  display: block;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+.img-public a.readmore span {
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  line-height: 28px;
+  font-family: Arial;
+  font-variant: normal;
+  font-weight: 100;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+.img-public a.readmore::after {
+  content: "\f055";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.img-public a.readmore.expanded::after {
+  content: "\f056";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.img-public .photo-release {
+  padding-top: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: Arial;
+  font-variant: normal;
+  font-weight: 100;
+  color: #ccc;
+  visibility: hidden;
+  height: 0;
+  transform: translateZ(0, 0, 0);
+  transition: visibility 0ms, height 250ms cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.img-public .photo-release a {
+  color: #900;
+  text-decoration: none;
+}
+
+.img-public a.readmore.expanded+.photo-release {
+  visibility: visible;
+  height: 200px;
+}
+
+.read-more-link i {
+  color: #fff;
+}
+
 @media (min-width: 995px) {
   .carousel-of-thumbs img {
     margin: 0 auto;
@@ -431,6 +509,10 @@ a.photolist-white-link-prev:after {
   #photo-info {
     padding-top: 40px;
     padding-bottom: 80px;
+  }
+
+  .img-public {
+    padding-top: 40px;
   }
 }
 
