@@ -354,8 +354,7 @@ a.photolist-white-link-prev:after {
 }
 
 .margin-horizontal-10 {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0;
 }
 
 .photo-date {
@@ -549,6 +548,10 @@ a.photolist-white-link-prev:after {
 }
 
 @media (max-width: 575.98px) {
+  .margin-horizontal-10 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
   .carousel-control-next,
   .carousel-control-prev {
