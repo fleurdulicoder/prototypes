@@ -370,8 +370,8 @@
             <div class="row img-public">
               <div class="col-12">
                 <h4>IMAGE IS PUBLIC DOMAIN</h4>
-                <a id="readmore" class="readmore"><span>Read More</span></a>
-                <p id="photo-release" class="photo-release">
+                <a id="readmore-expand" class="readmore"><span>Read More</span></a>
+                <p class="photo-release">
                   This photograph is considered public domain and has been cleared for release.
                   If you would like to republish please give the photographer appropriate credit.
                   Further, any commercial or non-commercial use of this photograph or any other
@@ -470,8 +470,8 @@
   </div>
 
   <script type="text/javascript">
-    $('#readmore').on('click', function() {
-      $('#photo-release').toggle('show');
+    $('#readmore-expand').on('click', function() {
+      $(this).toggle('expanded');
     });
   </script>
 </body>
