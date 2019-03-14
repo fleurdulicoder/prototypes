@@ -6,6 +6,7 @@
   height: 100vh;
   min-height: 100%;
   overflow: hidden;
+  font-weight: 600;
 }
 
 .gallery-of-hero-photos .slider .item {
@@ -367,6 +368,50 @@ a.photolist-white-link-prev:after {
   font-family: Arial;
   font-variant: normal;
   font-weight: 100;
+}
+
+.download-link, .share-link {
+  padding-right: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.download-link i, .share-link i {
+  color: #940000;
+}
+
+.download-photos {
+  padding-top: 30px;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
+.photo-attribute {
+  font-size: 17px;
+  color: #fff;
+  font-family: "Colossalis", Impact, Arial, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.photo-attribute-value {
+  color: #eadddc;
+  font-size: 17px;
+  font-family: Arial;
+  padding-bottom: 0px;
+  padding-top: 5px;
+  letter-spacing: 0.1em;
+  margin-top: 0;
 }
 
 @media (min-width: 995px) {
