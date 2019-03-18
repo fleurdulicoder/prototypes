@@ -1,0 +1,70 @@
+nav.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #940000;
+}
+
+@media (max-width: 992px) {
+  #navbarNavDropdown.show {}
+
+  #navbarNavDropdown.show {
+    left: 0;
+  }
+
+  #navbarNavDropdown {
+    font-family: "Colossalis";
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 999;
+    background: #960000 url(../img/Navigation-background.jpg) no-repeat;
+    background-size: 130%;
+    font-size: 20px;
+    letter-spacing: .07em;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    padding-top: 80px;
+  }
+
+  #navbarNavDropdown {
+    font-family: 'Colossalis';
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 999;
+    background: #960000 url(../img/Navigation-background.jpg) no-repeat;
+    background-size: 130%;
+    font-size: 20px;
+    letter-spacing: .07em;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    padding-top: 80px;
+  }
+
+  #navbarNavDropdown {
+    font-family: 'Colossalis';
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 999;
+    background: #960000 url(../img/Navigation-background.jpg) no-repeat;
+    background-size: 130%;
+    font-size: 20px;
+    letter-spacing: .07em;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    padding-top: 80px;
+  }
+}

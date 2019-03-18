@@ -222,6 +222,15 @@ input:-moz-placeholder {
   opacity: 1;
 }
 
+.marines-image-gallery .flex-images .item .overlay .pre-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 5;
+}
+
 .marines-image-gallery .flex-images .item .overlay .caption {
   position: absolute;
   bottom: 0;
@@ -230,7 +239,7 @@ input:-moz-placeholder {
   left: 0;
   width: 100%;
   color: #fff;
-  z-index: 5;
+  z-index: 6;
 }
 
 .marines-image-gallery .caption h3 {
@@ -257,19 +266,24 @@ input:-moz-placeholder {
 }
 
 .marines-image-gallery .caption aside {
+  position: relative;
   display: block;
   margin: 5px 0 10px;
   color: #fff;
+  z-index: 10;
 }
 
 .marines-image-gallery .caption aside a {
+  padding-bottom: 10px;
   padding-right: 30px;
+  padding-top: 5px;
   font-family: Arial, sans-serif;
   font-size: 18px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 2px;
   color: #fff;
+  z-index: 11;
 }
 
 .marines-image-gallery .caption aside a:last-child {

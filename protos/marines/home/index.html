@@ -17,6 +17,7 @@
 	<link href="css/skipnav.css" type="text/css" rel="stylesheet" />
 	<link href="css/skin.css" type="text/css" rel="stylesheet" />
 	<link href="css/animation.css" type="text/css" rel="stylesheet" />
+	<link href="css/flyout.css" type="text/css" rel="stylesheet" />
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -24,9 +25,9 @@
 
 <body id="Body">
 	<script src="js/skin.build.js" type="text/javascript"></script>
-	<!--script src="js/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js" type="text/javascript"></script>
+	<script src="js/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js" type="text/javascript"></script>
 	<script src="js/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js" type="text/javascript"></script>
-	<script src="js/scrollmagic/scrollmagic/minified/ScrollMagic.min.js" type="text/javascript"></script-->
+	<script src="js/scrollmagic/scrollmagic/minified/ScrollMagic.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/js/gsap/src/uncompressed/utils/SplitText.js"></script>
 	<script src="js/mobile-detect.min.js" type="text/javascript"></script>
 	<script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
@@ -127,7 +128,6 @@
 					<div id="dnn_ctr416_ContentPane">
 						<!-- Start_Module_416 -->
 						<div id="dnn_ctr416_ModuleContent" class="DNNModuleContent ModSlideShowC">
-
 							<div class="dma-slideshow onpoint" id="dma-slideshow-416">
 								<div class="headline-section dark">
 									<h4 class="title light">On Point</h4>
@@ -136,18 +136,19 @@
 									<div class="rotator">
 										<div id="on-point-slides-416" class="slides">
 
-											<div class="slide text light"><a href="https://www.yahoo.com/" target="_self" title="QA Test " class="text light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-													dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries...</a></div>
+											<div class="slide text light"><a href="https://www.yahoo.com/" target="_self" title="QA Test " class="text light">Lorem Ipsum
+													is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+													dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+													type specimen book. It has survived not only five centuries...</a></div>
 
-											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="Hawaii-based Marines participate in Okinawan language program -- March 2018" class="text light">Hawaii-based Marines
-													participate in Okinawan language program -- March 2018</a></div>
+											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="" class="text light">Hawaii-based
+													Marines participate in Okinawan language program -- March 2018</a></div>
 
-											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="Marine Corps efforts to address gender bias, harassment, social media misconduct continue" class="text light">Marine Corps
-													efforts to address gender bias, harassment, social media misconduct continue</a></div>
+											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="" class="text light">Marine
+													Corps efforts to address gender bias, harassment, social media misconduct continue</a></div>
 
-											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="Marine Corps makes history with mine plow prototype -- February 2018" class="text light">Marine Corps makes history with
-													mine plow prototype -- February 2018</a></div>
-
+											<div class="slide text light"><a href="http://www.symboit.com/SymboitCMS/MMPhase1/News.html" target="_self" title="" class="text light">Marine
+													Corps makes history with mine plow prototype -- February 2018</a></div>
 										</div>
 									</div>
 									<div id="on-point-pager-416" class="pager text light"></div>
@@ -161,7 +162,7 @@
 
 							<script type="text/javascript">
 								// OnPointAnnouncer - only one such component on page should be present
-								// @NOTE: Requires GSAP Animation Platform, add TweenMax Library for smooth animations
+								// Requires GSAP Animation Platform, add TweenMax Library for smooth animations
 								// Add either via Node or via SharedLibrary to use this component
 								// @developer Ella Musina (ella.musina@omnitecinc.com)
 
@@ -326,7 +327,6 @@
 									};
 								};
 
-								// add backend integration to check for slides
 								document.addEventListener('DOMContentLoaded', function() {
 									var announcer416 = new OnPointAnnouncer({
 										id: 'dma-slideshow-416',
@@ -353,8 +353,6 @@
 		<div class="page-wrapper">
 			<!-- Header -->
 			<div id="skip-link-holder"><a id="skip-link" href="#skip-target">Skip to main content (Press Enter).</a></div>
-			<!--CDF(Css|/Desktopmodules/SharedLibrary/Plugins/font-awesome5/css/all.min.css?cdv=183|DnnPageHeaderProvider|0)-->
-
 			<header class="navbar">
 				<!-- NavBar -->
 				<div class="wrapper">
@@ -364,45 +362,68 @@
 					<!-- Nav -->
 					<nav id="dnnbootsterNav">
 						<button><i class="fa fa-bars"></i></button>
-
-
-						<!-- ./ helper -->
-
 						<ul class="navbar-nav" id="navbar-nav">
-							<li class="active"><a href="https://skin-dnn9.usmc.afpimsstaging.mil/"><span>Home</span></a></li>
+							<li class="active"><a href="/"><span>Home</span></a></li>
 							<li class="">
-								<a data-toggle="dropdown" href="https://skin-dnn9.usmc.afpimsstaging.mil/News" aria-haspopup="true" aria-expanded="false">
+								<a data-toggle="dropdown" href="/News" aria-haspopup="true" aria-expanded="false">
 									<span>News</span>
 								</a>
 								<ul>
 									<li>
-										<a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Messages">Messages</a>
+										<a href="/News/Messages">Messages</a>
 										<ul>
-											<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Messages/ALMARS">ALMARS</a></li>
-											<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Messages/MARADMINS">MARADMINS</a></li>
+											<li><a href="/News/Messages/ALMARS">ALMARS</a></li>
+											<li><a href="/News/Messages/MARADMINS">MARADMINS</a></li>
 										</ul>
-
 									</li>
-									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Marines-TV">Marines TV</a></li>
-									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Marine-Minute-Audio">Marine Minute Audio</a></li>
-									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Press-Releases">Press Releases</a></li>
-									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Publications">Publications</a></li>
-									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Social-Media">Social Media</a></li>
+									<li><a href="/News/Marines-TV">Marines TV</a></li>
+									<li><a href="/News/Marine-Minute-Audio">Marine Minute Audio</a></li>
+									<li><a href="/News/Press-Releases">Press Releases</a></li>
+									<li><a href="/News/Publications">Publications</a></li>
+									<li><a href="/News/Social-Media">Social Media</a></li>
 								</ul>
 
 							</li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Units"><span>Units</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Photos"><span>Photos</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Leaders"><span>Leaders</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Marines"><span>Marines</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Family"><span>Family</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Community"><span>Community</span></a></li>
-							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Test"><span>Test</span></a></li>
+							<li class=""><a href="/Units"><span>Units</span></a></li>
+							<li class=""><a href="/Photos"><span>Photos</span></a></li>
+							<li class=""><a href="/Leaders"><span>Leaders</span></a></li>
+							<li class=""><a href="/Marines"><span>Marines</span></a></li>
+							<li class=""><a href="/Family"><span>Family</span></a></li>
+							<li class=""><a href="/Community"><span>Community</span></a></li>
 							<li><i class="fa fa-search" id="search-button"></i></li>
 						</ul>
-						<!-- ./ node count -->
+					</nav>
+					<nav id="mobileNav" class="mobile-nav">
+						<ul>
+							<li class="active"><a href="/"><span>Home</span></a></li>
+							<li class="">
+								<a data-toggle="dropdown" href="/News" aria-haspopup="true" aria-expanded="false">
+									<span>News</span>
+								</a>
+								<ul>
+									<li>
+										<a href="/News/Messages">Messages</a>
+										<ul>
+											<li><a href="/News/Messages/ALMARS">ALMARS</a></li>
+											<li><a href="/News/Messages/MARADMINS">MARADMINS</a></li>
+										</ul>
+									</li>
+									<li><a href="/News/Marines-TV">Marines TV</a></li>
+									<li><a href="/News/Marine-Minute-Audio">Marine Minute Audio</a></li>
+									<li><a href="/News/Press-Releases">Press Releases</a></li>
+									<li><a href="/News/Publications">Publications</a></li>
+									<li><a href="/News/Social-Media">Social Media</a></li>
+								</ul>
 
-
+							</li>
+							<li class=""><a href="/Units"><span>Units</span></a></li>
+							<li class=""><a href="/Photos"><span>Photos</span></a></li>
+							<li class=""><a href="/Leaders"><span>Leaders</span></a></li>
+							<li class=""><a href="/Marines"><span>Marines</span></a></li>
+							<li class=""><a href="/Family"><span>Family</span></a></li>
+							<li class=""><a href="/Community"><span>Community</span></a></li>
+							<li><i class="fa fa-search" id="search-button"></i></li>
+						</ul>
 					</nav>
 					<!-- ./Nav -->
 				</div>
@@ -413,19 +434,12 @@
 				<div class="social">
 					<!-- Search -->
 
-
 					<div class="search">
 						<div class="wrapper">
 							<input type="search" name="search" value="" placeholder="Enter Search..." />
 							<button><i class="fas fa-times"></i></button>
 						</div>
 					</div>
-
-					<!-- ./Search -->
-
-					<!-- Icons -->
-
-
 					<div class="icons social-links-loader"></div>
 					<!-- ./Icons -->
 				</div>
@@ -441,21 +455,16 @@
 						<div class="DnnModule DnnModule-SlideShow DnnModule-413"><a name="413"></a>
 							<div class="empty-container background-color-primary">
 								<div id="dnn_ctr413_ContentPane">
-									<!-- Start_Module_413 -->
 									<div id="dnn_ctr413_ModuleContent" class="DNNModuleContent ModSlideShowC">
-
 										<script type="text/javascript">
 											var VideoObjectsArray = [];
 										</script>
 										<div class="dma-slideshow toprotatorfull" id="toprotatorfull-413" data-scene="toprotatorfull">
 											<div class="slides">
-
 												<div class="slide" data-id="53" data-imagetitle="Reconnaissance and Surveillance Training" data-imagecaption="Cpl. Chancelor J. Kelso, a scout sniper team leader with Weapons Company, Battalion Landing Team, 1st Battalion, 4th Marines, posts security during reconnaissance and surveillance training at Camp Hansen, Okinawa, Japan, Dec. 12, 2018. Scout Snipers provide all weather, day and night, continuous and systematic observation of the battlefield for intelligence purposes, which is vital to the success of the mission. BLT 1/4 is the Ground Combat Element for the 31st Marine Expeditionary Unit. Kelso, a native of Mandeville, Louisiana, graduated Mandeville High School in May 2015 before enlisting in January 2017. The 31st MEU, the Marine Corps&#39; only continuously forward-deployed MEU, provides a flexible and lethal force ready to perform a wide-range of military operations as the premier crisis response force in the Indo-Pacific region.">
 													<img alt="Cpl. Chancelor J. Kelso, a scout sniper team leader with Weapons Company, Battalion Landing Team, 1st Battalion, 4th Marines, posts security during reconnaissance and surveillance training at Camp Hansen, Okinawa, Japan, Dec. 12, 2018. Scout Snipers provide all weather, day and night, continuous and systematic observation of the battlefield for intelligence purposes, which is vital to the success of the mission. BLT 1/4 is the Ground Combat Element for the 31st Marine Expeditionary Unit. Kelso, a native of Mandeville, Louisiana, graduated Mandeville High School in May 2015 before enlisting in January 2017. The 31st MEU, the Marine Corps&#39; only continuously forward-deployed MEU, provides a flexible and lethal force ready to perform a wide-range of military operations as the premier crisis response force in the Indo-Pacific region."
 													  src="/img/img1.jpg" class="" />
-													<div class="overlay">
-
-													</div>
+													<div class="overlay"></div>
 													<div class="caption-section transparent">
 														<div class="container">
 															<div class="row">
@@ -479,12 +488,10 @@
 													<img alt="Marines with 3rd Reconnaissance Battalion supervise Marines during a reconnaissance screening on Camp Hansen, Okinawa, Japan, Dec. 1, 2017.  Screeners evaluated service members interested in attending the Basic Reconnaissance Course through a series of physically demanding tests. The screening included a physical fitness test, two obstacle courses, a 500 meter swim, a 25 meter underwater swim, one minute of treading water followed by a 25 meter swim with a rifle, 30 minutes of treading water and culminating with an eight mile run with a 55pound pack. (U.S. Marine Corps video by Cpl. Breanna L. Weisenberger)"
 													  src="/img/img2.jpg" class="" />
 													<div class="overlay">
-
 														<a class='video-overlay light video-trigger' href='#' data-load="videomodal61">
 															<button></button>
 															<span>Play</span>
 														</a>
-
 													</div>
 													<div class="caption-section transparent">
 														<div class="container">
@@ -496,13 +503,9 @@
 																	</a>
 																	<p class="description text light">Marines with 3rd Reconnaissance Battalion supervise Marines during a reconnaissance screening on Camp Hansen, Okinawa, Japan, Dec. 1, 2017. Screeners</p>
 																	<aside class="text dark decorated">
-
-
-
 																		<span class="video-url"><a href="#" class="video-trigger" data-load="videomodal61"><span>Watch Video</span></a></span>
 																		<script type="text/javascript">
 																			if (!VideoObjectsArray[61]) {
-
 																				VideoObjectsArray.push({
 																					slideid: 61,
 																					format: 'dvids',
@@ -691,11 +694,8 @@
 																						}
 																					}.results : {}
 																				});
-
-
 																			}
 																		</script>
-
 																		<span class="extra-links"></span>
 																		<aside>
 																</div>
@@ -703,13 +703,10 @@
 														</div>
 													</div>
 												</div>
-
 												<div class="slide" data-id="49" data-imagetitle="Tactical Recovery of Aircraft and personnel  exercise " data-imagecaption="A U.S. Navy Corpsman with India Company 3rd Battalion, 7th Marine Regiment, 1st Marine Division attached to Special Purpose Marine Air-Ground Task Force, Crisis Response-Central Command provide security during a tactical recovery of aircraft and personnel  exercise August 19, 2018. The training exercise provided Marines the opportunity to enhance combat readiness and crisis response skills.">
 													<img alt="A U.S. Navy Corpsman with India Company 3rd Battalion, 7th Marine Regiment, 1st Marine Division attached to Special Purpose Marine Air-Ground Task Force, Crisis Response-Central Command provide security during a tactical recovery of aircraft and personnel  exercise August 19, 2018. The training exercise provided Marines the opportunity to enhance combat readiness and crisis response skills."
 													  src="/img/img3.jpg" class="" />
-													<div class="overlay">
-
-													</div>
+													<div class="overlay"></div>
 													<div class="caption-section transparent">
 														<div class="container">
 															<div class="row">
@@ -720,11 +717,7 @@
 																	</a>
 																	<p class="description text light">A U.S. Navy Corpsman with India Company 3rd Battalion, 7th Marine Regiment, 1st Marine Division attached to Special Purpose Marine Air-Ground Task For</p>
 																	<aside class="text dark decorated">
-
 																		<span class="more-url"><a href="/img/img3.jpg" target=" _self"><span>View Details</span></a></span>
-
-
-
 																		<span class="extra-links"></span>
 																		<aside>
 																</div>
@@ -732,17 +725,14 @@
 														</div>
 													</div>
 												</div>
-
 												<div class="slide" data-id="60" data-imagetitle="Cooperation of Warriors from the Sea, Kamandag 2" data-imagecaption="The Japan Ground Self-Defense Force, The Philippine Navy and Marine Corps, and U.S. Marines conduct exercise Kamandag 2 from Oct. 1-Oct. 12, 2018. Kamandag 2 is a humanitarian and counter terrorism training exercise focused on bringing the three services together as friends, partners, and allies. (U.S. Motion Imagery by Lance Cpl. Nickolas Beamish)">
 													<img alt="The Japan Ground Self-Defense Force, The Philippine Navy and Marine Corps, and U.S. Marines conduct exercise Kamandag 2 from Oct. 1-Oct. 12, 2018. Kamandag 2 is a humanitarian and counter terrorism training exercise focused on bringing the three services together as friends, partners, and allies. (U.S. Motion Imagery by Lance Cpl. Nickolas Beamish)"
 													  src="/img/img4.jpg" class="" />
 													<div class="overlay">
-
 														<a class='video-overlay light video-trigger' href='#' data-load="videomodal60">
 															<button></button>
 															<span>Play</span>
 														</a>
-
 													</div>
 													<div class="caption-section transparent">
 														<div class="container">
@@ -754,13 +744,9 @@
 																	</a>
 																	<p class="description text light">The Japan Ground Self-Defense Force, The Philippine Navy and Marine Corps, and U.S. Marines conduct exercise Kamandag 2 from Oct. 1-Oct. 12, 2018. Kam</p>
 																	<aside class="text dark decorated">
-
-
-
 																		<span class="video-url"><a href="#" class="video-trigger" data-load="videomodal60"><span>Watch Video</span></a></span>
 																		<script type="text/javascript">
 																			if (!VideoObjectsArray[60]) {
-
 																				VideoObjectsArray.push({
 																					slideid: 60,
 																					format: 'dvids',
@@ -947,11 +933,8 @@
 																						}
 																					}.results : {}
 																				});
-
-
 																			}
 																		</script>
-
 																		<span class="extra-links"></span>
 																		<aside>
 																</div>
@@ -959,12 +942,10 @@
 														</div>
 													</div>
 												</div>
-
 												<div class="slide" data-id="57" data-imagetitle="Crisis response training" data-imagecaption="U.S. Marines with 3rd Battalion, 7th Marine Regiment, attached to Special Purpose Marine Air-Ground Task Force, Crisis Response-Central Command, assist a simulated casualty during a tactical recovery of aircraft personnel exercise Oct. 10, 2018. Marines with SPMAGTF-CR-CC regularly conduct crisis response training to enhance mission readiness.">
 													<img alt="U.S. Marines with 3rd Battalion, 7th Marine Regiment, attached to Special Purpose Marine Air-Ground Task Force, Crisis Response-Central Command, assist a simulated casualty during a tactical recovery of aircraft personnel exercise Oct. 10, 2018. Marines with SPMAGTF-CR-CC regularly conduct crisis response training to enhance mission readiness."
 													  src="/img/img5.jpg" class="" />
 													<div class="overlay">
-
 													</div>
 													<div class="caption-section transparent">
 														<div class="container">
@@ -984,17 +965,14 @@
 														</div>
 													</div>
 												</div>
-
 												<div class="slide" data-id="59" data-imagetitle="Battle of the Badges" data-imagecaption="The 332nd in 90 Seconds takes a look at the work the men and women of the 332nd are doing around base. This weeks segment features a Battle of the Badges between Security Forces and the Fire Department, a coalition FOD walk, and the AFCENT Band.">
 													<img alt="The 332nd in 90 Seconds takes a look at the work the men and women of the 332nd are doing around base. This weeks segment features a Battle of the Badges between Security Forces and the Fire Department, a coalition FOD walk, and the AFCENT Band."
 													  src="/img/img6.jpg" class="" />
 													<div class="overlay">
-
 														<a class='video-overlay light video-trigger' href='#' data-load="videomodal59">
 															<button></button>
 															<span>Play</span>
 														</a>
-
 													</div>
 													<div class="caption-section transparent">
 														<div class="container">
@@ -1006,13 +984,9 @@
 																	</a>
 																	<p class="description text light">The 332nd in 90 Seconds takes a look at the work the men and women of the 332nd are doing around base. This weeks segment features a Battle of the Bad</p>
 																	<aside class="text dark decorated">
-
-
-
 																		<span class="video-url"><a href="#" class="video-trigger" data-load="videomodal59"><span>Watch Video</span></a></span>
 																		<script type="text/javascript">
 																			if (!VideoObjectsArray[59]) {
-
 																				VideoObjectsArray.push({
 																					slideid: 59,
 																					format: 'dvids',
@@ -1199,11 +1173,8 @@
 																						}
 																					}.results : {}
 																				});
-
-
 																			}
 																		</script>
-
 																		<span class="extra-links"></span>
 																		<aside>
 																</div>
@@ -1211,13 +1182,10 @@
 														</div>
 													</div>
 												</div>
-
 												<div class="slide" data-id="58" data-imagetitle="Setermoen, Norway" data-imagecaption="U.S. Marine with Marine Rotational Force-Europe 19.1 looks into an AN/PAS-25 portable lightweight designator rangefinder during close-air support during Exercise Northern Screen in Setermoen, Norway, Oct. 22, 2018. The PLDR uses laser technology to aid pilots in locking on to simulated enemy targets.">
 													<img alt="U.S. Marine with Marine Rotational Force-Europe 19.1 looks into an AN/PAS-25 portable lightweight designator rangefinder during close-air support during Exercise Northern Screen in Setermoen, Norway, Oct. 22, 2018." src="/img/img7.jpg"
 													  class="" />
-													<div class="overlay">
-
-													</div>
+													<div class="overlay"></div>
 													<div class="caption-section transparent">
 														<div class="container">
 															<div class="row">
@@ -2080,7 +2048,6 @@
 													</div>
 												</div>
 												<div class="view">
-
 													<div class="item" id="explore-420-39" data-id="39" data-src="/img/img10.jpg" data-title="180708-M-ZL982-0027" data-byline="" data-link="/photos?igphoto=2001942093">
 														<a href="/img/img10.jpg" class="overlay dark"></a>
 														<img src="/img/img10.jpg" alt="U.S. Marines with Maritime Raid Force, 26th Marine Expeditionary Unit, swim underwater during dive training in Aqaba, Jordan, July 8, 2018. Iwo Jima is deployed to the U.S. 5th Fleet area of operations in support of naval operations to ensure maritime stability and security in the central region, connecting the Mediterranean and the Pacific through the western Indian Ocean and three strategic choke points." />
@@ -2118,7 +2085,6 @@
 															</div>
 														</div>
 													</div>
-
 													<div class="item" id="explore-420-44" data-id="44" data-src="/img/img12.jpg" data-title="180928-M-ZX532-492" data-byline="" data-link="/photos?igphoto=2002050156">
 														<a href="/photos?igphoto=2002050156" class="overlay dark"></a>
 														<img src="/img/img12.jpg" alt="U.S. Marine Corps CH-53E Super Stallion aircraft assigned to Marine Aviation Weapons and Tactics Squadron One conduct flight operations during a long range raid in support of Weapons and Tactics Instructor course 1-19 in Yuma, Arizona, Sept. 28, 2018. WTI is a seven-week training event hosted by MAWTS-1 which emphasizes operational integration of the six functions of Marine Corps aviation in support of a Marine air-ground task force. WTI provides standardized advanced tactical training and certification of unit instructor qualifications to support Marine aviation training and readiness, and assists in developing and employing aviation weapons and tactics." />
@@ -2137,7 +2103,6 @@
 															</div>
 														</div>
 													</div>
-
 													<div class="item" id="explore-420-41" data-id="41" data-src="/img/img13.jpg" data-title="Seattle-based U.S. Marine aids in Cascade Pass rescue" data-byline="" data-link="/photos?igphoto=2001639167">
 														<a href="#" class="overlay dark"></a>
 														<img src="/img/img13.jpg" alt="Melanie Stam (foreground), Capt. Nick Anthony (middle) and Ben Stilin (background) hike atop the Sahale Arm in North Cascades National Park, Washington, Sept. 10, 2016. After encountering an exhausted 77-year-old Norman Petty on a hike with his wife Barbara, photographer Colin Ayers, the pictured climbers and Catherine Mitchell (not pictured) led the couple visiting from Dunwoody, Georgia, to safety by transporting Norman Petty more than three miles using an impromptu support system. Anthony, from Norman, Oklahoma, is a U.S. Marine Corps recruiting management officer based in Seattle. Ayers, from Spokane, Washington, is a University of Washington chemical engineering student. Mitchell, from Seattle, is a content project manager at Microsoft. Stam, from Atlanta, is a Microsoft data analyst. Stilin, from Seattle, is a ski instructor at Husky Winter Sports." />
@@ -2156,7 +2121,6 @@
 															</div>
 														</div>
 													</div>
-
 													<div class="item" id="explore-420-43" data-id="43" data-src="/img/img14.jpg" data-title="181119-M-CG596-0280" data-byline="" data-link="/photos?igphoto=2002066668">
 														<a href="#" class="overlay dark"></a>
 														<img src="/img/img14.jpg" alt="U.S. Marines with Combat Logistic Detachment 34 and 3rd Battalion, 4th Marine Regiment attached to Special Purpose Marine Air-Ground Task Force, Crisis Response-Central Command, prepare to breach a door while executing a demolition range during Exercise Cunning Seahorse November 18, 2018." />
@@ -2175,7 +2139,6 @@
 															</div>
 														</div>
 													</div>
-
 													<div class="item" id="explore-420-47" data-id="47" data-src="/img/img15.jpg" data-title="180822-M-LF768-1048" data-byline="" data-link="/photos?igphoto=2001959100">
 														<a href="#" class="overlay dark"></a>
 														<img src="/img/img15.jpg" alt="U.S. Marines with Company A., 2nd Light Armored Reconnaissance Battalion, 2nd Marine Division clear a trench during an Infantry Platoon Battle Course as part of a Deployment for Training exercise at Fort Pickett, Va., Aug. 22, 2018. The unit completed IPBC to increase Light Armored Vehicle crew and scout cohesion, while also preparing for potential real-world contingencies." />
@@ -2194,7 +2157,6 @@
 															</div>
 														</div>
 													</div>
-
 													<div class="item" id="explore-420-42" data-id="42" data-src="/img/img16.jpg" data-title="181012-M-JE159-1689" data-byline="" data-link="/photos?igphoto=2002051322">
 														<a href="#" class="overlay dark"></a>
 														<img src="/img/img16.jpg" alt="Aircraft Rescue and Firefighting Marines with Headquarters and Headquarters Squadron conduct fire containment drills at Marine Corps Air Station Iwakuni, Japan, Oct. 12, 2018. The training was conducted in order to maintain proficiency extinguishing aircraft fires in support of the air station&#39;s mission of launching and recovering aircraft. ARFF is a special category of firefighting that involves the response, hazard mitigation, evacuation and possible rescue of passengers and crew of an aircraft involved in a ground emergency." />
