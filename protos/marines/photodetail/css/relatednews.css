@@ -1,0 +1,83 @@
+.marines-related-news {
+  background-color: #900;
+  color: #fff;
+  height: 200px;
+}
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.align-self-center {
+  -ms-flex-item-align: center !important;
+  align-self: center !important;
+}
+
+.marines-related-news h1 {
+  font-size: 48px !important;
+  letter-spacing: 0.025em;
+  line-height: 75px;
+  font-variant: normal;
+  font-weight: 100;
+  color: #fff;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.marines-related-news .carousel-of-news {
+  position: relative;
+}
+
+.marines-related-news .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marines-related-news .news-item {
+  height: 100px;
+  overflow: hidden;
+  display: none;
+}
+
+.marines-related-news .news-item.active {
+  display: block;
+}
+
+.marines-related-news a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.marines-related-news h4 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 100;
+  padding-bottom: 0;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 58px;
+  overflow: hidden;
+}
+
+.marines-related-news .news-date {
+  font-size: 18px !important;
+  font-family: 'Helvetica', arial, sans-serif !important;
+  letter-spacing: 0.025em;
+  line-height: 33px;
+  font-variant: normal;
+  font-weight: 100;
+  color: #ebd8d8;
+  text-align: left !important;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.text-left {
+  text-align: left !important;
+}
