@@ -260,12 +260,12 @@
 															<a class="carousel-control-prev previous-link" id="photos-carousel-prev" href="#photos-carousel" role="button" data-slide="prev">PREVIOUS</a>
 														</div>
 														<div class="col-6 center-indicators-position">
-															<ol class="carousel-indicators">
-																<li data-target="#photos-carousel" data-slide-to="0" class="active"></li>
-																<li data-target="#photos-carousel" data-slide-to="1" class=""></li>
-																<li data-target="#photos-carousel" data-slide-to="2" class=""></li>
-																<li data-target="#photos-carousel" data-slide-to="3" class=""></li>
-																<li data-target="#photos-carousel" data-slide-to="4" class=""></li>
+															<ol class="carousel-indicators" id="photos-carousel-indicators">
+																<li data-index="0" class="current"></li>
+																<li data-index="1" class=""></li>
+																<li data-index="2" class=""></li>
+																<li data-index="3" class=""></li>
+																<li data-index="4" class=""></li>
 															</ol>
 														</div>
 														<div class="col-3 next-link-position">
@@ -366,11 +366,11 @@
 	<script src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 	<script type="text/javascript">
 		/*
-			MarinesCarousel - requires TimeMax & TimelineMax Libraries
+			ResponsiveCarousel - requires TimeMax & TimelineMax Libraries
 			to be loaded via SharedLibrary UseGSAP) or Node (via skin).
 			@developer Ella Musina (emusina@omnitecinc.com)
 	*/
-		var MarinesResponsiveCarousel = MarinesResponsiveCarousel || function(config) {
+		var ResponsiveCarousel = ResponsiveCarousel || function(config) {
 			var container = config.container ? document.getElementById(config.container) : null;
 			var prev = config.prev ? document.getElementById(config.prev) : null;
 			var next = config.next ? document.getElementById(config.next) : null;
@@ -380,7 +380,37 @@
 			var quantity = slides.length;
 			if (quantity === 0) return;
 
-			var currentSlide, currentIndex, isAnimating = false;
+			var currentSlide, currentIndex = 0,
+				hasIndicators = false,
+				isAnimating = false;
+			var indicatorsContainer = document.getElementById(config.indicators);
+			var indicators = indicatorsContainer ? indicatorsContainer.children : [];
+
+			function setupIndicators() {
+				if (indicators.length === 0) {
+					indicatorsContainer.style.display = 'none';
+					return;
+				}
+				hasIndicators = true;
+				var loadFromIndicator = function(e) {
+					var index = parseInt(e.target.getAttribute('data-index'));
+					// if (doRotation) {
+					// 	doRotation = false;
+					// 	clearTimeout(rotation);
+					// }
+					if (currentIndex < index) {
+						slideInNext();
+					} else if (currentIndex > index) {
+						slideInPrev();
+					}
+					currentIndex = index;
+				};
+
+				for (var i = 0; i < slides.length; i++) {
+					indicators[i].addEventListener('click', loadFromIndicator, false);
+					indicators[i].addEventListener('touch', loadFromIndicator, false);
+				}
+			}
 
 			function observe() {
 				if (prev && next) {
@@ -423,13 +453,23 @@
 				if (!currentSlide) {
 					currentSlide = slides[0];
 					slides[0].classList.add('current');
+					indicators[0].classList.add('current');
 				}
+			}
+
+			function clearCurrentIndicator() {
+				indicators[currentIndex].classList.remove('current');
+			}
+
+			function setCurrentIndicator() {
+				indicators[currentIndex].classList.add('current');
 			}
 
 			function slideInNext() {
 				console.log('Carousel > slideInNext');
 				isAnimating = true;
 				getCurrentSlide();
+				clearCurrentIndicator();
 				if ((currentIndex + 1) < quantity) {
 					nextSlide = slides[++currentIndex];
 				} else {
@@ -437,6 +477,7 @@
 					nextSlide = slides[currentIndex];
 				}
 
+				setCurrentIndicator();
 				var timeline = new TimelineMax({
 					onComplete: function() {
 						nextSlide.classList.add('current');
@@ -463,12 +504,10 @@
 					.addLabel('move-next')
 					.to(currentSlide, 0.5, {
 						x: '-100%',
-						// ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
 						ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
 					}, 'move-next')
 					.to(nextSlide, 0.5, {
 						x: '0%',
-						// ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
 						ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
 					}, 'move-next');
 
@@ -478,13 +517,17 @@
 				console.log('Carousel > slideInPrev');
 				isAnimating = true;
 				getCurrentSlide();
+				clearCurrentIndicator();
 				if ((currentIndex - 1) >= 0) {
+					indicators[currentIndex].classList.remove('current');
 					prevSlide = slides[--currentIndex];
+					indicators[currentIndex].classList.add('current');
 				} else {
 					currentIndex = quantity - 1;
 					prevSlide = slides[currentIndex];
 				}
 
+				setCurrentIndicator();
 				var timeline = new TimelineMax({
 					onComplete: function() {
 						currentSlide.classList.remove('current');
@@ -511,17 +554,16 @@
 					.addLabel('move-prev')
 					.to(prevSlide, 0.5, {
 						x: '0%',
-						// ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
 						ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
 					}, 'move-prev')
 					.to(currentSlide, 0.5, {
 						x: '100%',
-						// ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
 						ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
 					}, 'move-prev');
 			}
 
 			function setup() {
+				setupIndicators();
 				observe();
 			}
 
@@ -544,10 +586,11 @@
 
 
 		document.addEventListener('DOMContentLoaded', function() {
-			var carousel = new MarinesResponsiveCarousel({
+			var carousel = new ResponsiveCarousel({
 				container: 'photos-carousel-inner',
 				prev: 'photos-carousel-prev',
-				next: 'photos-carousel-next'
+				next: 'photos-carousel-next',
+				indicators: 'photos-carousel-indicators'
 			});
 		});
 	</script>
