@@ -81,6 +81,7 @@
 
 .photos-carousel .carousel-indicators {
   position: absolute;
+  padding: 20px 0;
   right: 0;
   bottom: 10px;
   left: 0;
@@ -150,9 +151,18 @@
   margin-left: 15px;
 }
 
+.mobileapp .prev-link-position,
+.mombileapp .next-link-position {
+  z-index: 12;
+}
+
+.mobileapp .center-indicators-position {
+  z-index: 10;
+}
+
 .mobileapp .previous-link {
   white-space: nowrap;
-  padding-left: 35px !important;
+  padding-left: 24px !important;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAALCAYAAACUPhZAAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+LUNEtwAAAIlJREFUKJG10bGtAWAYheHzR2UPE8jdgBV0hqDU3A65lVZDo1RYwT4qEiQSeTRXYoDPO8BzipN8hA72mKUyNGxxRr8aX+KBQTU8xROjSrdhnGSX5C/JutC+N9ySdAvRd7eGSZJVkkWSfSF+TZJg/n/msBDPG2/Y4IKfbwx0cMAJvW8MdHHEb4X3AouJbtq/kVvvAAAAAElFTkSuQmCC') left center;
   color: #fff;
   background-size: 16px auto;
@@ -162,7 +172,7 @@
 
 .mobileapp .next-link {
   white-space: nowrap;
-  padding-right: 35px !important;
+  padding-right: 24px !important;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAALCAYAAACUPhZAAAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDAgNzkuMTYwNDUxLCAyMDE3LzA1LzA2LTAxOjA4OjIxICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+LUNEtwAAAJFJREFUKJG107FpQgEUBdD70UYdIAuYBYIb6AoO8ktT2EmKQDbQBSxcwd5RrAyIIMix+YVaP+8A5xbvvqQgWGCLXoX3in/hhA2adxRMccVPOd4VzHFDmyR9fCQZFPmHJL9J/nBscE4yLMIfc2nwmWRUiM6TfCdpC80Es+6oq2p4gn+sS+eIMY7YlT8SltjjaXV363lv/rx8NAsAAAAASUVORK5CYII=') right center;
   color: #fff;
   background-size: 16px auto;
