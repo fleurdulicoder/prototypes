@@ -382,7 +382,9 @@
 
 			var currentSlide, currentIndex = 0,
 				hasIndicators = false,
-				isAnimating = false;
+				isAnimating = false,
+				autorotate = config.autorotate || false,
+				rotation;
 			var indicatorsContainer = document.getElementById(config.indicators);
 			var indicators = indicatorsContainer ? indicatorsContainer.children : [];
 
@@ -391,13 +393,9 @@
 					indicatorsContainer.style.display = 'none';
 					return;
 				}
-				hasIndicators = true;
 				var loadFromIndicator = function(e) {
+					stopRotation();
 					var index = parseInt(e.target.getAttribute('data-index'));
-					// if (doRotation) {
-					// 	doRotation = false;
-					// 	clearTimeout(rotation);
-					// }
 					if (currentIndex < index) {
 						slideInNext();
 					} else if (currentIndex > index) {
@@ -412,30 +410,49 @@
 				}
 			}
 
+			function stopRotation() {
+				if (autorotate) {
+					autorotate = false;
+					clearTimeout(rotation);
+				}
+			}
+
+			function startRotation() {
+				if (autorotate) {
+					rotation = setInterval(slideInNext, 5000);
+				}
+			}
+
 			function observe() {
 				if (prev && next) {
 					prev.addEventListener('click', function(e) {
 						e.preventDefault();
+						stopRotation();
 						if (!isAnimating) slideInPrev();
 					}, false);
 					next.addEventListener('click', function(e) {
 						e.preventDefault();
+						stopRotation();
 						if (!isAnimating) slideInNext();
 					}, false);
 					prev.addEventListener('touch', function(e) {
 						e.preventDefault();
+						stopRotation();
 						if (!isAnimating) slideInPrev();
 					}, false);
 					next.addEventListener('touch', function(e) {
 						e.preventDefault();
+						stopRotation();
 						if (!isAnimating) slideInPrev();
 					}, false);
 				}
 				jQuery(container).swipe({
 					swipeLeft: function(event, direction, distance, duration, fingerCount, fingerData) {
+						stopRotation();
 						if (!isAnimating) slideInNext();
 					},
 					swipeRight: function(event, direction, distance, duration, fingerCount, fingerData) {
+						stopRotation();
 						if (!isAnimating) slideInPrev();
 					}
 				});
@@ -565,6 +582,7 @@
 			function setup() {
 				setupIndicators();
 				observe();
+				startRotation();
 			}
 
 			setup();
@@ -590,7 +608,8 @@
 				container: 'photos-carousel-inner',
 				prev: 'photos-carousel-prev',
 				next: 'photos-carousel-next',
-				indicators: 'photos-carousel-indicators'
+				indicators: 'photos-carousel-indicators',
+				autorotate: true,
 			});
 		});
 	</script>
