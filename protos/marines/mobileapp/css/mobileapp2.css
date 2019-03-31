@@ -39,8 +39,7 @@
 }
 
 .mobileapp .carousel-inner {
-  height: 630px;
-  min-height: 714px;
+  height: 714px;
 }
 
 .mobileapp .magic-parallax>*:not(.magic-bg) {
@@ -60,12 +59,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-@media (min-width: 1200px) {
-  .carousel-inner {
-    height: 713.5px;
-  }
 }
 
 .mobileapp .photos-carousel .carousel-item {
@@ -136,6 +129,7 @@
 
 .mobileapp .photos-carousel .controls-section {
   text-transform: uppercase;
+  margin-top: 70px;
 }
 
 .mobileapp .photos-carousel .carousel-indicators {
@@ -1144,9 +1138,9 @@ span.redUnderlineSmall {
 }
 
 @media (min-width: 1200px) {
-  .controls-section {
+  /* .controls-section {
     margin-top: 200px;
-  }
+  } */
 }
 
 .box-border {
