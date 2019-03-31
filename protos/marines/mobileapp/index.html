@@ -191,7 +191,7 @@
 														<img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/Marines-App-iphone-1@2x.png" width="301" height="772">
 													</div>
 												</div>
-												<div class="row m20" style="overflow:hidden">
+												<div class="row m20" style="overflow:hidden;">
 													<div class="col  text-center">
 														<button id="watchVideoBtn" class="button-secondary" onclick="myFunction()">WATCH VIDEO</button>
 													</div>
@@ -212,6 +212,8 @@
 
 											<!-- carousel -->
 											<div id="photos-carousel" class="container-fluid photos-carousel">
+												<span class="pager-mobile-previous" id="pager-mobile-previous"></span>
+												<span class="pager-mobile-next" id="pager-mobile-next"></span>
 												<div class="carousel-inner" role="listbox" id="photos-carousel-inner">
 													<div class="carousel-item current">
 														<div class="row no-gutters">
@@ -253,13 +255,13 @@
 															<div class="col-6 offset-3 col-sm-4 offset-sm-1 col-lg-6 offset-lg-0"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/Marines%20App-iphone%202.4@2x.png" width="350" height="714"></div>
 														</div>
 													</div>
-												</div> <!-- contols-section -->
+												</div>
 												<div class="container controls-section">
 													<div class="row">
 														<div class="col-3 prev-link-position">
 															<a class="carousel-control-prev previous-link" id="photos-carousel-prev" href="#photos-carousel" role="button" data-slide="prev">PREVIOUS</a>
 														</div>
-														<div class="col-6 center-indicators-position">
+														<div class="col-6 col-2-xs col-center-indicators-position">
 															<ol class="carousel-indicators" id="photos-carousel-indicators">
 																<li data-index="0" class="current"></li>
 																<li data-index="1" class=""></li>
@@ -269,7 +271,7 @@
 															</ol>
 														</div>
 														<div class="col-3 next-link-position">
-															<a class="carousel-control-next next-link" id="photos-carousel-next" href="#photos-carousel" role="button" data-slide="next"> NEXT</a>
+															<a class="carousel-control-next next-link" id="photos-carousel-next" href="#photos-carousel" role="button" data-slide="next">NEXT</a>
 														</div>
 													</div>
 												</div>
@@ -336,7 +338,6 @@
 							</div>
 							<!-- Download Area -->
 							<div class="row no-gutters mobileDown">
-
 								<h3>Download Our Mobile App</h3>
 								<ul>
 									<li><a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" title=""><img src="img/apple-store@2x.png" /><span class="text text-link-16">App Store</span></a></li>
@@ -374,6 +375,8 @@
 			var container = config.container ? document.getElementById(config.container) : null;
 			var prev = config.prev ? document.getElementById(config.prev) : null;
 			var next = config.next ? document.getElementById(config.next) : null;
+			var prevMobile = config.prevMobile ? document.getElementById(config.prevMobile) : null;
+			var nextMobile = config.nextMobile ? document.getElementById(config.nextMobile) : null;
 			if (!container || !prev || !next) return;
 
 			var slides = container.children;
@@ -396,7 +399,6 @@
 				var loadFromIndicator = function(e) {
 					stopRotation();
 					var index = parseInt(e.target.getAttribute('data-index'));
-					console.log('clicked on: ', index, ', current is ', currentIndex);
 					if (currentIndex < index) {
 						slideInNext(index);
 					} else if (currentIndex > index) {
@@ -445,6 +447,18 @@
 						stopRotation();
 						if (!isAnimating) slideInPrev();
 					}, false);
+					if (prevMobile && nextMobile) {
+						prevMobile.addEventListener('click', function(e) {
+							e.preventDefault();
+							stopRotation();
+							if (!isAnimating) slideInPrev();
+						}, false);
+						nextMobile.addEventListener('click', function(e) {
+							e.preventDefault();
+							stopRotation();
+							if (!isAnimating) slideInNext();
+						}, false);
+					}
 				}
 				jQuery(container).swipe({
 					swipeLeft: function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -616,6 +630,8 @@
 				container: 'photos-carousel-inner',
 				prev: 'photos-carousel-prev',
 				next: 'photos-carousel-next',
+				prevMobile: 'pager-mobile-previous',
+				nextMobile: 'pager-mobile-next',
 				indicators: 'photos-carousel-indicators',
 				autorotate: false,
 			});
