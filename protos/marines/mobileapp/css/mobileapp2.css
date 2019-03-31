@@ -39,8 +39,8 @@
 }
 
 .mobileapp .carousel-inner {
-  height: auto;
-  min-height: 713px;
+  height: 630px;
+  min-height: 714px;
 }
 
 .mobileapp .magic-parallax>*:not(.magic-bg) {
@@ -85,6 +85,7 @@
 }
 
 .mobileapp .photos-carousel .carousel-item.current {
+  display: block;
   max-height: 950px;
 }
 
@@ -283,10 +284,9 @@
   border-style: none;
 }
 
-.controls-section {
+/*.controls-section {
   margin-top: 200px;
-}
-
+}*/
 .mobileapp .photos-carousel {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -357,15 +357,15 @@
 }
 
 @media (max-width: 1024px) {
-  .controls-section {
+  /*.controls-section {
     margin-top: 100px;
-  }
+  }*/
 }
 
 @media (max-width: 991px) {
-  .mobileapp .controls-section {
+  /*.mobileapp .controls-section {
     margin-top: 60px;
-  }
+  }*/
 }
 
 @media (min-width: 979px) {
@@ -803,7 +803,7 @@ span.redUnderlineSmall {
 
 .controls-section {
   text-transform: uppercase;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 @media (max-width: 767px) {
