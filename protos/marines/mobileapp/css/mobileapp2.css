@@ -69,7 +69,7 @@
   -ms-flex-align: center;
   align-items: center;
   width: 100%;
-  height: 713px;
+  height: 714px;
   max-height: 950px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -313,6 +313,10 @@
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
+  .mobileapp .carousel-inner {
+    min-height: 500px;
+  }
 }
 
 @media (max-width: 414px) {
@@ -350,25 +354,13 @@
   }
 }
 
-@media (max-width: 1024px) {
-  /*.controls-section {
-    margin-top: 100px;
-  }*/
-}
-
-@media (max-width: 991px) {
-  /*.mobileapp .controls-section {
-    margin-top: 60px;
-  }*/
-}
-
 @media (min-width: 979px) {
   .photos-carousel h1 {
     font-size: 60px !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .photos-carousel .carousel-indicators {
     z-index: 9;
     margin-right: 45px;
@@ -376,7 +368,7 @@
   }
 
   .mobileapp .carousel-inner {
-    min-height: 540px;
+    max-height: 540px;
   }
 }
 
@@ -384,10 +376,6 @@
   .photos-carousel h1 {
     text-align: center;
     padding-bottom: 15px;
-  }
-
-  .controls-section {
-    margin-top: 40px;
   }
 }
 
@@ -921,51 +909,11 @@ span.redUnderlineSmall {
   bottom: -10px;
 }
 
-.btnPlayVideo {
-  background-image: url(../img/News_photos/PlayButtons.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  margin: auto;
-  background-position: center;
-  border: 0px;
-  z-index: 99;
-  width: 200px;
-  height: 96px;
-}
-
-.btnPlayVideo:hover {
-  display: block !important;
-  background-image: url('../img/News_photos/PlayButtons_Hover.png') !important;
-  cursor: pointer;
-}
-
-.bor {
-  border: 4px solid #464646;
-  border-radius: .2em;
-}
-
-.TvLogoMargins div {
-  margin-bottom: 20px;
-}
-
 @media screen and (max-width: 575px) {
   .mobileapp .carousel-inner {
     height: 540px;
+    min-height: 750px;
   }
-}
-
-@media screen and (min-width: 991px) {
-  /*
-	 [data-bs-parallax-bg-marines_app]  {
-		 background :url('../img/MobileApp/MarinesAppNewBG') no-repeat;
-    	background-size:250% auto !important;
-      background-position: center!important;
-	}
-*/
 }
 
 @media (max-width: 991px) {
