@@ -11,6 +11,7 @@
 	<link href="css/default.css" type="text/css" rel="stylesheet" />
 	<link href="css/skin.css" type="text/css" rel="stylesheet" />
 	<link href="css/mobileapp2.css" type="text/css" rel="stylesheet">
+	<link href="css/drawlines.css" type="text/css" rel="stylesheet">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="js/jquery.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -209,7 +210,6 @@
 												</div>
 											</div>
 											<!-- end mobile option -->
-
 											<!-- carousel -->
 											<div id="photos-carousel" class="container-fluid photos-carousel">
 												<span class="pager-mobile-previous" id="pager-mobile-previous"></span>
@@ -279,8 +279,29 @@
 											</div>
 											<!-- end carousel -->
 
-										</div>
 
+											<!-- start animation piece -->
+											<div id="sectionGetMobilized" class="container-fluid appSection3 bg3">
+												<div class="row">
+													<div class="col align-self-center aos-init aos-animate" data-aos="fade-up" data-aos-duration="700">
+														<h1 class="text-center align-items-center align-content-center align-self-center box-border wrapper">
+															<button id="btnGetMobilized" class="triger">
+																<svg id="mySVG" viewBox="0 0 940 355" preserveAspectRatio="xMidYMid meet">
+																	<path d="M10,10   l917,0  0,330  -905,0  0,-320" style="stroke: rgb(148, 0, 0); stroke-width: 25px; fill: none; stroke-dasharray: 1380.11, 2472;"></path>
+																</svg><span class="triger-span">Get Mobilized<br>For Duty.</span>
+															</button>
+														</h1>
+														<div class="row">
+															<div class="col text-right"> <a href="https://itunes.apple.com/us/app/marinesmobile/id947183374?mt=8" target="_new"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/apple-store@2x.png" width="135" height="36"></a></div>
+															<div class="col"><a href="https://play.google.com/store/apps/details?id=com.marines.mil&amp;hl=en" target="_new"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/google-store@2x.png" width="135" height="36"></a></div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- end animation piece -->
+
+										</div>
 									</div>
 									<!-- END MOBILE APP -->
 								</div>
@@ -635,6 +656,32 @@
 				indicators: 'photos-carousel-indicators',
 				autorotate: false,
 			});
+
+			$(window).scroll(function() {
+				var scrolTop = $(window).scrollTop();
+				var offset_t = scrolTop - $(".wrapper").offset().top;
+				console.log(scrolTop + ' scroll ' + offset_t);
+				if (scrolTop > offset_t) {
+					drawLines();
+				}
+			});
+
+			function drawLines() {
+				$.each($("path"), function(i, val) {
+					var line = val;
+					drawLine($(this), line);
+				});
+			}
+
+			function drawLine(container, line) {
+				var length = 0;
+				var pathLength = line.getTotalLength();
+				var distanceFromTop = (container.offset().top - $(window).scrollTop()) - 50;
+				var percentDone = 1 - (distanceFromTop / $(window).height());
+				length = percentDone * pathLength;
+				line.style.strokeDasharray = [length, pathLength].join(' ');
+				console.log("strokeDasharray: " + [length, pathLength].join(' '));
+			}
 		});
 	</script>
 </body>

@@ -929,8 +929,8 @@ span.redUnderlineSmall {
 }
 
 .controls-section {
-  display: block !important;
-  visibility: visible !important;
+  display: block;
+  visibility: visible;
 }
 
 .photos-carousel .carousel-caption {

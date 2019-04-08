@@ -1,0 +1,607 @@
+#socialMedia {
+  padding-bottom: 148px;
+  color: #fff;
+}
+
+#socialMedia h1 {
+  padding-top: 34px;
+  margin-bottom: 14px;
+  font-size: 80px !important;
+  background: url('../Icons/HomeHero-ContentLine.png') no-repeat top left;
+  padding: 0px;
+  padding-top: 45px;
+}
+
+#socialMedia p {
+  font-size: 18px;
+}
+
+@media (min-width: 1440px) {
+  #mHeader {
+    padding-bottom: 225px;
+    overflow: visible
+  }
+
+  .bg2 {
+    background-size: 62% !important;
+    padding-bottom: 100px;
+  }
+}
+
+.btn2 {
+  margin-top: 63px;
+  font-family: 'Colossalis';
+  border-radius: 0px;
+  border: 0px;
+  color: #960000;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: .23em;
+  font-size: 18px;
+  padding: 12px 42px;
+  border: 2px solid #960000;
+  border-radius: 0;
+}
+
+button.btn2:hover,
+button.btn2:focus,
+button.btn2:active {
+  color: #960000 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 2px solid #960000 !important;
+}
+
+.load-more button {
+  font-family: "Colossalis", arial, sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 100 !important;
+  letter-spacing: .2em;
+  padding: 10px 10px;
+  background-color: ;
+  border: none;
+  border-radius: 0;
+  position: inherit;
+  margin-top: 60px;
+  margin-bottom: 68px;
+}
+
+.officialPlatform h2 {
+  color: #000;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+
+.bg2 {
+  background-size: 90%;
+}
+
+.bg3 {
+  padding-top: 100px;
+  background: url('../img/getmobilized4duty.jpg') no-repeat left;
+  background-size: 100%;
+}
+
+.updown {
+  -webkit-animation: updwn 5s infinite;
+  animation: updwn 5s infinite;
+  transition: all 5s;
+}
+
+@-webkit-keyframes updwn {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: 50px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+.appSection3 {
+  clear: both;
+}
+
+#myBtn {
+  font-family: Colossalis;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  width: 200px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background: #960000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#main-menu {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  padding-top: 0 36px;
+  padding-bottom: 0;
+  z-index: 99 !important
+}
+
+#photos-header .breadcrumb-tag {
+  color: #fff;
+  cursor: cursor: pointer;
+  font-weight: 100;
+  text-shadow: 1px 1px #ccc;
+}
+
+#photo-breadcrumb {
+  position: relative;
+  z-index: 99;
+}
+
+.slide-text {
+  min-height: 150px;
+  float: left;
+  display: block !important
+}
+
+.bg-dark {
+  background-color: rgba(0, 0, 0, .5) !important;
+}
+
+@media (max-width: 767px) {
+  .draw {
+    width: 100%;
+  }
+
+  .button>button {
+    padding: 30px;
+  }
+
+  .bg3 {
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .box-border {
+    font-size: 80px;
+  }
+
+  .draw::before,
+  .draw::after {
+    border: 50px solid transparent;
+  }
+}
+
+.gradientback {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80%;
+  background: -moz-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
+  background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -o-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -ms-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
+}
+
+#carouselExampleNew img {
+  margin: 0 auto;
+  display: block;
+  max-height: 300px;
+  padding: 5px;
+}
+
+.btnPlayVideo {
+  background-image: url(../img/News_photos/PlayButtons.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  margin: auto;
+  background-position: center;
+  border: 0px;
+  z-index: 99;
+  width: 200px;
+  height: 96px;
+}
+
+.btnPlayVideo:hover {
+  display: block !important;
+  background-image: url('../img/News_photos/PlayButtons_Hover.png') !important;
+  cursor: pointer;
+}
+
+.bor {
+  border: 4px solid #464646;
+  border-radius: .2em;
+}
+
+.TvLogoMargins div {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+  .bg3 {
+    background-size: 225%;
+    background-position: center;
+  }
+
+  /* #photos-carousel img{ height: 300px!important; width: auto;} */
+  .btn2 {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .m20 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .draw {
+    border: 15px solid #cc0001 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .button>button {
+    font-size: 80px;
+    margin: 0 auto;
+  }
+
+  .draw {
+    border: 20px solid transparent !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .bg3 {
+    padding-top: 300px;
+  }
+
+  .draw::before,
+  .draw::after {
+    border: 30px solid transparent;
+  }
+}
+
+@media (min-width: 1200px) {
+  .MobVideoImg {
+    padding-right: 110px;
+  }
+
+  .bg3 {
+    padding-top: 400px;
+    padding-bottom: 200px;
+    background-position: center bottom;
+  }
+}
+
+/* Get MObile Button */
+.appSection3 .box-border>button {
+  text-transform: uppercase !important;
+  letter-spacing: .0em !important;
+  font-weight: 100;
+  background: none;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-weight: 100;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/*button::before, button::after {
+ -webkit-box-sizing: inherit;
+         box-sizing: inherit;
+ content: '';*/
+/* position: absolute;*/
+/* width: 100%;
+ height: 100%;
+}*/
+/*.draw {
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+  -webkit-animation: mymove 5s infinite;*/
+/* Safari 4.0 - 8.0 */
+/* animation: mymove 5s infinite;
+  transition:all 2s;
+}*/
+/*.draw::before, .draw::after {
+
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}*/
+/*.draw-active{
+  color: #fff;*/
+/*transform: translate3d(50px, -20px, 100px);*/
+/*}
+.draw-active::before, .draw-active::after {
+  width: 100%;
+  height: 100%;
+}*/
+/* .draw-active::before {
+  border-top-color: #cc0001;
+  border-right-color: #cc0001;
+  -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw-active::after {
+  border-bottom-color: #cc0001;
+  border-left-color: #cc0001;
+  -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+} */
+.box-border {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 575px) {
+  .appSection3 {
+    padding-top: 125px;
+    padding-bottom: 100px;
+  }
+
+  .appSection3 .box-border>button {
+    -webkit-box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
+    font-size: 40px;
+    padding: 20px 20px !important;
+  }
+
+  .appSection3 .box-border>button {
+    padding: 30px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .appSection3 .box-border>button {
+    padding: 30px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .appSection3 .box-border>button {
+    padding: 30px !important;
+  }
+
+  .appSection3 {
+    padding-top: 350px;
+    padding-bottom: 150px;
+  }
+}
+
+@media (min-width: 991px) {
+  .button>button {
+    text-transform: uppercase !important;
+    letter-spacing: .0em !important;
+    font-weight: 100;
+    background: none;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1em;
+    -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    color: #ffffff;
+    font-size: 120px;
+    font-weight: 100;
+    position: relative;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 70px 95px;
+  }
+
+  button::before,
+  button::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.appSection3 {
+  padding-top: 350px;
+  padding-bottom: 150px;
+}
+
+@media (min-width: 1200px) {
+  .appSection3 .box-border>button {
+    -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    font-size: 120px;
+    padding: 70px 95px !important;
+  }
+
+  /* Border Animate */
+  #btnGetMobilized {
+    position: relative;
+  }
+
+  #btnGetMobilized svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .triger {
+    display: inline-block;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.09);
+  }
+
+  .triger-span {
+    display: block;
+    padding: 25px 80px;
+    font-size: 125px;
+    font-family: "Colossalis", Impact, sans-serif;
+  }
+
+  .triger::before,
+  .triger::after {
+    content: "";
+    width: 0;
+    height: 25px;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #cc0001;
+  }
+
+  .triger-span::before,
+  .triger-span::after {
+    content: "";
+    width: 25px;
+    height: 0;
+    position: absolute;
+    transition: all 0.2s linear;
+    background: #cc0001;
+  }
+
+  /*----- Animate 1 -----*/
+  .animate-1::before,
+  .animate-1::after {
+    width: 100%
+  }
+
+  .animate-1 .triger-span::before,
+  .animate-1 .triger-span::after {
+    height: 100%
+  }
+
+  .triger_1::after {
+    left: 0;
+    bottom: 0;
+    transition-delay: 0.6s
+  }
+
+  .triger_1 span::after {
+    right: 0;
+    bottom: 0;
+    transition-delay: 0.4s
+  }
+
+  .triger_1::before {
+    right: 0;
+    top: 0;
+    transition-delay: 0.2s
+  }
+
+  .triger_1 span::before {
+    transition-delay: 0s;
+    left: 0;
+    top: 0
+  }
+
+  .animate-1::after {
+    transition-delay: 0s
+  }
+
+  .animate-1 .triger-span::after {
+    transition-delay: 0.2s
+  }
+
+  .animate-1::before {
+    transition-delay: 0.4s
+  }
+
+  .animate-1 .triger-span::before {
+    transition-delay: 0.6s
+  }
+
+  /*------ Animate 2 -------*/
+  .animate-2::before,
+  .animate-2::after {
+    width: 100%
+  }
+
+  .animate-2 .triger-span::before,
+  .animate-2 .triger-span::after {
+    height: 100%
+  }
+
+  .triger_2::after {
+    left: 0;
+    top: 0;
+    transition-delay: 0.6s
+  }
+
+  .triger_2 span::after {
+    right: 0;
+    top: 0;
+    transition-delay: 0.4s
+  }
+
+  .triger_2::before {
+    right: 0;
+    bottom: 0;
+    transition-delay: 0.2s
+  }
+
+  .triger_2 span::before {
+    left: 0;
+    bottom: 0;
+    transition-delay: 0s
+  }
+
+  .animate-2::after {
+    transition-delay: 0s
+  }
+
+  .animate-2 .triger-span::after {
+    transition-delay: 0.2s
+  }
+
+  .animate-2::before {
+    transition-delay: 0.4s
+  }
+
+  .animate-2 .triger-span::before {
+    transition-delay: 0.6s
+  }
+
+  @media(max-width: 991px) {
+    .triger-span {
+      font-size: 80px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    .triger-span {
+      font-size: 48px;
+    }
+  }
+
+  @media(max-width: 500px) {
+    .triger-span {
+      padding: 15px 20px;
+      font-size: 30px;
+    }
+  }
