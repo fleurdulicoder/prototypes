@@ -23,7 +23,6 @@
   }
 
   .bg2 {
-    /*background: url('../img/MobileApp/Marines-App-Hero-2.jpg') no-repeat left;*/
     background-size: 62% !important;
     padding-bottom: 100px;
   }
@@ -36,10 +35,6 @@
 
   #download-our-tv-app2 h1 {
     padding-top: 30px;
-  }
-
-  #photos-carousel h1 {
-    font-size: 60px !important;
   }
 }
 
@@ -75,7 +70,6 @@ button.btn2:active {
 }
 
 .bg2 {
-  /*background: url('../img/MobileApp/Marines-App-Hero-2.jpg') no-repeat left;*/
   background-size: 90%;
 }
 
@@ -125,12 +119,6 @@ button.btn2:active {
   }
 }
 
-@media (min-width: 768px) {
-  .box-border {
-    font-size: 80px;
-  }
-}
-
 #download-our-tv-app2 p {
   width: 80%
 }
@@ -142,25 +130,16 @@ button.btn2:active {
   width: 100%;
   height: 80%;
   background: -moz-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-  /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  /* Opera 11.10+ */
   background: -ms-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  /* IE10+ */
   background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
-  /* IE6-9 */
 }
 
 #carouselExampleNew img {
-  /*		max-width: 1600px;*/
   margin: 0 auto;
-  /*width:100%*/
   display: block;
   max-height: 300px;
   padding: 5px;
@@ -177,8 +156,6 @@ button.btn2:active {
 
 #download-our-tv-app2 p {}
 
-/*.inLine{width: 500px; float: left;}
-.inLine button, .inLine a{float: left; display: inline-block;}*/
 .btnPlayVideo {
   background-image: url(../img/News_photos/PlayButtons.png);
   background-repeat: no-repeat;
@@ -211,16 +188,11 @@ button.btn2:active {
 }
 
 @media (max-width: 575px) {
-  .carousel-inner {
-    min-height: 630px !important;
-  }
-
   .bg3 {
     background-size: 225%;
     background-position: center;
   }
 
-  /* #photos-carousel img{ height: 300px!important; width: auto;} */
   .btn2 {
     margin-right: 20px;
   }
