@@ -12,20 +12,20 @@
   }
 }
 
-.updown {
+.mobileapp .updown {
   -webkit-animation: updwn 5s infinite;
   animation: updwn 5s infinite;
   transition: all 5s;
 }
 
-.app-section-03 {
+.mobileapp .app-section-03 {
   clear: both;
   padding-top: 100px;
   background: url('../img/getmobilized4duty.jpg') no-repeat left;
   background-size: 100%;
 }
 
-#btnGetMobilized svg {
+.mobileapp .get-mobilized-button svg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -33,161 +33,12 @@
   top: 0px;
 }
 
-#myBtn {
-  font-family: "Colossalis";
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  width: 200px;
-  font-size: 20px;
-  padding: 10px;
-  border: none;
-  background: #960000;
-  color: #fff;
-  cursor: pointer;
-}
-
-/*.app-section-03 .box-border>button {
-  box-sizing: border-box;
-  color: rgb(255, 255, 255);
-  font-weight: 100;
-  position: relative;
-  vertical-align: middle;
-  line-height: 1;
-  text-transform: uppercase !important;
-  letter-spacing: 0em !important;
-  background: none;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-}*/
-.slide-text {
-  min-height: 150px;
-  float: left;
-  display: block !important
-}
-
-.bg-dark {
-  background-color: rgba(0, 0, 0, .5) !important;
-}
-
-@media (max-width: 767px) {
-  .draw {
-    width: 100%;
-  }
-
-  .button>button {
-    padding: 30px;
-  }
-
-  .app-section-03 {
-    background-size: 100%;
-    background-position: center;
-  }
-}
-
-@media (min-width: 768px) {
-  .box-border {
-    font-size: 80px;
-  }
-
-  .draw::before,
-  .draw::after {
-    border: 50px solid transparent;
-  }
-}
-
-.gradientback {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 80%;
-  background: -moz-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-  background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -o-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -ms-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
-}
-
-/*.btnPlayVideo {
-  background-image: url(../img/News_photos/PlayButtons.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  margin: auto;
-  background-position: center;
-  border: 0px;
-  z-index: 99;
-  width: 200px;
-  height: 96px;
-}
-
-.btnPlayVideo:hover {
-  display: block !important;
-  background-image: url('../img/News_photos/PlayButtons_Hover.png') !important;
-  cursor: pointer;
-}*/
-.bor {
+.mobileapp .bor {
   border: 4px solid #464646;
   border-radius: .2em;
 }
 
-@media (max-width: 575px) {
-  .app-section-03 {
-    background-size: 225%;
-    background-position: center;
-  }
-}
-
-@media (max-width: 991px) {
-  .m20 {
-    margin-top: 50px;
-    margin-bottom: 20px;
-  }
-
-  .draw {
-    border: 15px solid #cc0001 !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .button>button {
-    font-size: 80px;
-    margin: 0 auto;
-  }
-
-  .draw {
-    border: 20px solid transparent !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .app-section-03 {
-    padding-top: 300px;
-  }
-
-  .draw::before,
-  .draw::after {
-    border: 30px solid transparent;
-  }
-}
-
-@media (min-width: 1200px) {
-  .app-section-03 {
-    padding-top: 400px;
-    padding-bottom: 200px;
-    background-position: center bottom;
-  }
-}
-
-/* Get MObile Button */
-.app-section-03 .box-border>button {
+.mobileapp .app-section-03 .box-border>button {
   text-transform: uppercase !important;
   letter-spacing: .0em !important;
   font-weight: 100;
@@ -202,47 +53,154 @@
   line-height: 1;
 }
 
-.box-border {
+.mobileapp .box-border {
   margin-bottom: 30px;
 }
 
+.mobileapp .app-section-03 {
+  padding-top: 350px;
+  padding-bottom: 150px;
+}
+
+.mobileapp .get-mobilized-button {
+  position: relative;
+}
+
+.mobileapp .get-mobilized-button svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mobileapp .triger {
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.mobileapp .triger-span {
+  display: block;
+  padding: 25px 80px;
+  font-size: 125px;
+  font-family: "Colossalis", Impact, sans-serif;
+}
+
+@media (max-width: 767px) {
+  .mobileapp .draw {
+    width: 100%;
+  }
+
+  .mobileapp .button>button {
+    padding: 30px;
+  }
+
+  .mobileapp .app-section-03 {
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileapp .box-border {
+    font-size: 80px;
+  }
+
+  .mobileapp .draw::before,
+  .mobileapp .draw::after {
+    border: 50px solid transparent;
+  }
+}
+
 @media (max-width: 575px) {
-  .app-section-03 {
+  .mobileapp .app-section-03 {
+    background-size: 225%;
+    background-position: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .mobileapp .m20 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .mobileapp .draw {
+    border: 15px solid #cc0001 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileapp .button>button {
+    font-size: 80px;
+    margin: 0 auto;
+  }
+
+  .mobileapp .draw {
+    border: 20px solid transparent !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobileapp .app-section-03 {
+    padding-top: 300px;
+  }
+
+  .mobileapp .draw::before,
+  .mobileapp .draw::after {
+    border: 30px solid transparent;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mobileapp .app-section-03 {
+    padding-top: 400px;
+    padding-bottom: 200px;
+    background-position: center bottom;
+  }
+}
+
+@media (max-width: 575px) {
+  .mobileapp .app-section-03 {
     padding-top: 125px;
     padding-bottom: 100px;
   }
 
-  .app-section-03 .box-border>button {
+  .mobileapp .app-section-03 .box-border>button {
     -webkit-box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
     box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
     font-size: 40px;
     padding: 20px 20px !important;
   }
 
-  .app-section-03 .box-border>button {
+  .mobileapp .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-  .app-section-03 .box-border>button {
+  .mobileapp .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 }
 
 @media (min-width: 768px) {
-  .app-section-03 .box-border>button {
+  .mobileapp .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 
-  .app-section-03 {
+  .mobileapp .app-section-03 {
     padding-top: 350px;
     padding-bottom: 150px;
   }
 }
 
 @media (min-width: 991px) {
-  .button>button {
+  .mobileapp .button>button {
     text-transform: uppercase !important;
     letter-spacing: .0em !important;
     font-weight: 100;
@@ -262,8 +220,8 @@
     padding: 70px 95px;
   }
 
-  button::before,
-  button::after {
+  .mobileapp button::before,
+  .mobileapp button::after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
     content: '';
@@ -273,13 +231,8 @@
   }
 }
 
-.app-section-03 {
-  padding-top: 350px;
-  padding-bottom: 150px;
-}
-
 @media (min-width: 1200px) {
-  .app-section-03 .box-border>button {
+  .mobileapp .app-section-03 .box-border>button {
     -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
     box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
     font-size: 120px;
@@ -287,170 +240,20 @@
   }
 }
 
-/* Border Animate */
-#btnGetMobilized {
-  position: relative;
-}
-
-#btnGetMobilized svg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.triger {
-  display: inline-block;
-  position: relative;
-  background: none;
-  border: none;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.09);
-}
-
-.triger-span {
-  display: block;
-  padding: 25px 80px;
-  font-size: 125px;
-  font-family: "Colossalis", Impact, sans-serif;
-}
-
-/*.triger::before,
-.triger::after {
-  content: "";
-  width: 0;
-  height: 25px;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #cc0001;
-}
-
-.triger-span::before,
-.triger-span::after {
-  content: "";
-  width: 25px;
-  height: 0;
-  position: absolute;
-  transition: all 0.2s linear;
-  background: #cc0001;
-}*/
-/*----- Animate 1 -----*/
-.animate-1::before,
-.animate-1::after {
-  width: 100%
-}
-
-.animate-1 .triger-span::before,
-.animate-1 .triger-span::after {
-  height: 100%
-}
-
-.triger_1::after {
-  left: 0;
-  bottom: 0;
-  transition-delay: 0.6s
-}
-
-.triger_1 span::after {
-  right: 0;
-  bottom: 0;
-  transition-delay: 0.4s
-}
-
-.triger_1::before {
-  right: 0;
-  top: 0;
-  transition-delay: 0.2s
-}
-
-.triger_1 span::before {
-  transition-delay: 0s;
-  left: 0;
-  top: 0
-}
-
-.animate-1::after {
-  transition-delay: 0s
-}
-
-.animate-1 .triger-span::after {
-  transition-delay: 0.2s
-}
-
-.animate-1::before {
-  transition-delay: 0.4s
-}
-
-.animate-1 .triger-span::before {
-  transition-delay: 0.6s
-}
-
-/*------ Animate 2 -------*/
-.animate-2::before,
-.animate-2::after {
-  width: 100%
-}
-
-.animate-2 .triger-span::before,
-.animate-2 .triger-span::after {
-  height: 100%
-}
-
-.triger_2::after {
-  left: 0;
-  top: 0;
-  transition-delay: 0.6s
-}
-
-.triger_2 span::after {
-  right: 0;
-  top: 0;
-  transition-delay: 0.4s
-}
-
-.triger_2::before {
-  right: 0;
-  bottom: 0;
-  transition-delay: 0.2s
-}
-
-.triger_2 span::before {
-  left: 0;
-  bottom: 0;
-  transition-delay: 0s
-}
-
-.animate-2::after {
-  transition-delay: 0s
-}
-
-.animate-2 .triger-span::after {
-  transition-delay: 0.2s
-}
-
-.animate-2::before {
-  transition-delay: 0.4s
-}
-
-.animate-2 .triger-span::before {
-  transition-delay: 0.6s
-}
-
 @media(max-width: 991px) {
-  .triger-span {
+  .mobileapp .triger-span {
     font-size: 80px;
   }
 }
 
 @media(max-width: 768px) {
-  .triger-span {
+  .mobileapp .triger-span {
     font-size: 48px;
   }
 }
 
 @media(max-width: 500px) {
-  .triger-span {
+  .mobileapp .triger-span {
     padding: 15px 20px;
     font-size: 30px;
   }
