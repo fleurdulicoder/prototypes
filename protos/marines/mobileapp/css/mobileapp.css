@@ -15,11 +15,6 @@
   color: #fff;
 }
 
-.mobileapp .button-secondary:hover {
-  background-color: #940000;
-  color: #fff;
-}
-
 .mobileapp .float-right {
   float: right;
 }
@@ -43,6 +38,10 @@
   z-index: 1;
 }
 
+/*.mobileapp .button-secondary:hover {
+  background-color: #940000;
+  color: #fff;
+}*/
 .mobileapp .carousel-inner {
   height: 714px;
 }
@@ -1078,14 +1077,13 @@ span.redUnderlineSmall {
   [data-bs-parallax-bg-marines_app] {
     background-size: 150% auto !important;
     background-position: 30% 10% !important;
-    /*		  background-size: "cover";*/
   }
 }
 
 @media (max-width: 767px) {}
 
 @media (max-width: 991px) {
-  #download-our-tv-app2 h1 {
+  .download-our-tv-app h1 {
     letter-spacing: 0.02em;
     text-align: left;
   }

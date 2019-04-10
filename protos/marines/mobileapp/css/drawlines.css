@@ -20,16 +20,9 @@
 
 .app-section-03 {
   clear: both;
-}
-
-.bg3 {
   padding-top: 100px;
   background: url('../img/getmobilized4duty.jpg') no-repeat left;
   background-size: 100%;
-}
-
-.app-section-03 {
-  clear: both;
 }
 
 #btnGetMobilized svg {
@@ -87,7 +80,7 @@
     padding: 30px;
   }
 
-  .bg3 {
+  .app-section-03 {
     background-size: 100%;
     background-position: center;
   }
@@ -119,7 +112,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
 }
 
-.btnPlayVideo {
+/*.btnPlayVideo {
   background-image: url(../img/News_photos/PlayButtons.png);
   background-repeat: no-repeat;
   position: absolute;
@@ -139,15 +132,14 @@
   display: block !important;
   background-image: url('../img/News_photos/PlayButtons_Hover.png') !important;
   cursor: pointer;
-}
-
+}*/
 .bor {
   border: 4px solid #464646;
   border-radius: .2em;
 }
 
 @media (max-width: 575px) {
-  .bg3 {
+  .app-section-03 {
     background-size: 225%;
     background-position: center;
   }
@@ -176,7 +168,7 @@
 }
 
 @media (min-width: 992px) {
-  .bg3 {
+  .app-section-03 {
     padding-top: 300px;
   }
 
@@ -187,7 +179,7 @@
 }
 
 @media (min-width: 1200px) {
-  .bg3 {
+  .app-section-03 {
     padding-top: 400px;
     padding-bottom: 200px;
     background-position: center bottom;
@@ -324,7 +316,7 @@
   font-family: "Colossalis", Impact, sans-serif;
 }
 
-.triger::before,
+/*.triger::before,
 .triger::after {
   content: "";
   width: 0;
@@ -342,8 +334,7 @@
   position: absolute;
   transition: all 0.2s linear;
   background: #cc0001;
-}
-
+}*/
 /*----- Animate 1 -----*/
 .animate-1::before,
 .animate-1::after {
