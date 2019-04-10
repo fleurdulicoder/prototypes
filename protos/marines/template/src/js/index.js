@@ -13,6 +13,19 @@ const buttonOpen = document.getElementById('openMobileNav');
 const buttonClose = document.getElementById('closeMobileNav');
 
 document.addEventListener('DOMContentLoaded', () => {
+  buttonOpen.addEventListener('click', () => {
+    TweenMax.to(mobilenav, 0.6, {
+      x: '0%',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
+    });
+  }, false);
+
+  buttonClose.addEventListener('click', () => {
+    TweenMax.to(mobilenav, 0.6, {
+      x: '-100%',
+      ease: 'cubic-bezier(.67,.54,.43,.78)',
+    });
+  }, false);
   // commenting out for now
   // const announcer = new Announcer(
   //   'on-point-message',
@@ -30,18 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   VideoFactory();
-
-  buttonOpen.addEventListener('click', () => {
-    TweenMax.to(mobilenav, 0.6, {
-      x: '0%',
-      ease: 'cubic-bezier(.67,.54,.43,.78)',
-    });
-  }, false);
-
-  buttonClose.addEventListener('click', () => {
-    TweenMax.to(mobilenav, 0.6, {
-      x: '-100%',
-      ease: 'cubic-bezier(.67,.54,.43,.78)',
-    });
-  }, false);
 }, false);

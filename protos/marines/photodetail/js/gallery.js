@@ -3,9 +3,10 @@
     @developer - Ella Musina (emusina@omnitecinc.com)
 */
   var ImageGallerySlider = ImageGallerySlider || function(config) {
+    console.log('Image Gallery Slider >');
     var element = config.id ? document.getElementById(config.id) : null;
     if (!element) return;
-    var view = element.querySelector('#gallery-of-hero-photos .slider>.wrapper');
+    var view = element.querySelector('.slider');
     var views = view.querySelectorAll('.item');
     var prev = element.querySelector('.carousel-control-prev');
     var next = element.querySelector('.carousel-control-next');
