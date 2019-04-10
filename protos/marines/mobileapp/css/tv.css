@@ -130,14 +130,4 @@
     line-height: 1;
     padding: 70px 95px;
   }
-
-  .mobileapp button::before,
-  .mobileapp button::after {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
 }
