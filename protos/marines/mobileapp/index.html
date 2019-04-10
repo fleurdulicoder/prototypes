@@ -212,7 +212,7 @@
 												</div>
 												<div class="row m20" style="overflow:hidden;">
 													<div class="col  text-center">
-														<button id="watchVideoBtn" class="button-secondary">WATCH VIDEO</button>
+														<button id="watchVideoBtn" class="button-secondary" data-target="#mobileapp-modal-video" data-toggle="modal" data-modal-id="mobileapp-modal-video">WATCH VIDEO</button>
 													</div>
 												</div>
 												<div class="row">
@@ -232,8 +232,8 @@
 											<div id="photos-carousel" class="container-fluid app-section-02 photos-carousel">
 												<span class="pager-mobile-previous" id="pager-mobile-previous"></span>
 												<span class="pager-mobile-next" id="pager-mobile-next"></span>
-												<div class="carousel-inner" role="listbox" id="photos-carousel-inner">
-													<div class="carousel-item current">
+												<div class="rotator" role="listbox" id="photos-rotator">
+													<div class="item current">
 														<div class="row no-gutters">
 															<div class="col-sm-5 offset-sm-1 col-lg-4 offset-lg-1 align-self-center">
 																<h1 class="text-left">Read The<br>Latest<br><span class="redUnderline">News</span> And<br><span class="redUnderline">Maradmins.</span><br></h1>
@@ -241,7 +241,7 @@
 															<div class="col-6 offset-3 col-sm-4 offset-sm-1 col-lg-6 offset-lg-0"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/Marines-App-iphone-2@2x.png" width="350" height="714"></div>
 														</div>
 													</div>
-													<div class="carousel-item">
+													<div class="item">
 														<div class="row no-gutters">
 															<div class="col-sm-4 offset-sm-1 col-lg-4 offset-lg-1 align-self-center">
 																<h1 class="text-left">Filter By<br><span class="redUnderline">Location</span> <br>OR <span class="redUnderline">Keywords.</span><br></h1>
@@ -249,7 +249,7 @@
 															<div class="col-6 offset-3 col-sm-4 offset-sm-1 col-lg-6 offset-lg-0"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/FilterByLocationOrKeywords@2x.png" width="350" height="713"></div>
 														</div>
 													</div>
-													<div class="carousel-item">
+													<div class="item">
 														<div class="row no-gutters">
 															<div class="col-sm-5 offset-sm-1 col-lg-4 offset-lg-1 align-self-center">
 																<h1 class="text-left">Customize Your<br><span class="redUnderline">Notifications.</span></h1>
@@ -257,7 +257,7 @@
 															<div class="col-6 offset-3 col-sm-4 offset-sm-1 col-lg-6 offset-lg-0"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/Marines%20App-iphone%202.2@2x.png" width="350" height="714"></div>
 														</div>
 													</div>
-													<div class="carousel-item">
+													<div class="item">
 														<div class="row no-gutters">
 															<div class="col-sm-5 offset-sm-1 col-lg-4 offset-lg-1 align-self-center">
 																<h1 class="text-left">GET <span class="redUnderline">ALL</span><br>Marines<br><span class="redUnderline">Social</span> Feeds,<br> In <span class="redUnderline">One Place.</span><br></h1>
@@ -265,7 +265,7 @@
 															<div class="col-6 offset-3 col-sm-4 offset-sm-1 col-lg-6 offset-lg-0"><img src="http://www.symboit.com/SymboitCMS/MMPhase1/assets/img/MobileApp/Marines%20App-iphone%202.3@2x.png" width="350" height="714"></div>
 														</div>
 													</div>
-													<div class="carousel-item">
+													<div class="item">
 														<div class="row no-gutters">
 															<div class="col-sm-5 offset-sm-1 col-lg-4 offset-lg-1 align-self-center">
 																<h1 class="text-left">Calculate<br><span class="redUnderline">PFT/CFT</span><br>AND<br><span class="redUnderline">Throw Down</span><br> A challenge.</h1>
@@ -277,10 +277,10 @@
 												<div class="container controls-section">
 													<div class="row">
 														<div class="col-3 prev-link-position">
-															<a class="carousel-control-prev previous-link" id="photos-carousel-prev" href="#photos-carousel" role="button" data-slide="prev">PREVIOUS</a>
+															<a class="rotator-control-prev previous-link" id="photos-carousel-prev" href="#photos-carousel" role="button" data-slide="prev">PREVIOUS</a>
 														</div>
 														<div class="col-6 col-2-xs col-center-indicators-position">
-															<ol class="carousel-indicators" id="photos-carousel-indicators">
+															<ol class="rotator-indicators" id="photos-rotator-indicators">
 																<li data-index="0" class="current"></li>
 																<li data-index="1" class=""></li>
 																<li data-index="2" class=""></li>
@@ -289,7 +289,7 @@
 															</ol>
 														</div>
 														<div class="col-3 next-link-position">
-															<a class="carousel-control-next next-link" id="photos-carousel-next" href="#photos-carousel" role="button" data-slide="next">NEXT</a>
+															<a class="rotator-control-next next-link" id="photos-carousel-next" href="#photos-carousel" role="button" data-slide="next">NEXT</a>
 														</div>
 													</div>
 												</div>
@@ -680,15 +680,6 @@
 			setup();
 		};
 
-		// function PlaySelectedMarVideo(VidId) {
-		// 	var btnContainer = eval('document.getElementById("btnPlayVid' + VidId + '")');
-		// 	btnContainer.style.visibility = "hidden";
-		// 	var videocontainer = eval('document.getElementById("videoclip' + VidId + '")');
-		// 	videocontainer.load();
-		// 	videocontainer.setAttribute('controls', 'controls');
-		// 	videocontainer.play();
-		// }
-
 		var minuteVideoButton = document.getElementById('btnPlayVid2') || null;
 		if (minuteVideoButton) {
 			minuteVideoButton.addEventListener('click', function(e) {
@@ -722,12 +713,12 @@
 			AOS.init();
 
 			var carousel = new ResponsiveCarousel({
-				container: 'photos-carousel-inner',
+				container: 'photos-rotator',
 				prev: 'photos-carousel-prev',
 				next: 'photos-carousel-next',
 				prevMobile: 'pager-mobile-previous',
 				nextMobile: 'pager-mobile-next',
-				indicators: 'photos-carousel-indicators',
+				indicators: 'photos-rotator-indicators',
 				autorotate: false,
 			});
 
@@ -759,11 +750,11 @@
 
 
 			// MODAL
-			$("#modal-video").on('shown.bs.modal', function() {
-				$('#modal-video-source').get(0).play()
+			$("#mobileapp-modal-video").on('shown.bs.modal', function() {
+				$('#modal-video-source').get(0).play();
 			});
-			$("#modal-video").on('hidden.bs.modal', function() {
-				$('#modal-video-source').get(0).pause()
+			$("#mobileapp-modal-video").on('hidden.bs.modal', function() {
+				$('#modal-video-source').get(0).pause();
 			});
 
 		});

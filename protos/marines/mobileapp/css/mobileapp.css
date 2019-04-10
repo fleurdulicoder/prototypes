@@ -92,6 +92,15 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
+.mobileapp-modal-video .modal-body {
+  background-color: #434343;
+  padding: 4px;
+}
+
+.mobileapp-modal-video .modal-body .modal-video {
+  background: #000;
+}
+
 .mobileapp h1,
 .mobileapp h2,
 .mobileapp h3,
@@ -131,28 +140,23 @@
   z-index: 2;
 }
 
-/* carousel */
 @media (min-width: 1200px) {
   .mobileapp .app-section-01 .mob-video-img {
     padding-right: 110px;
   }
 }
 
-.mobileapp .photos-carousel .carousel-inner {
-  height: 714px;
-}
-
-.mobileapp .photos-carousel .carousel {
-  position: relative;
-}
-
-.mobileapp .photos-carousel .carousel-inner {
+.mobileapp .photos-carousel .rotator {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 714px;
 }
 
-.mobileapp .photos-carousel .carousel-item {
+/*.mobileapp .photos-carousel .carousel {
+  position: relative;
+}*/
+.mobileapp .photos-carousel .item {
   position: relative;
   top: 0;
   display: none;
@@ -168,13 +172,13 @@
   perspective: 1000px;
 }
 
-.mobileapp .photos-carousel .carousel-item.current {
+.mobileapp .photos-carousel .item.current {
   display: block;
   max-height: 950px;
 }
 
-.mobileapp .photos-carousel .carousel-control-next,
-.mobileapp .photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-next,
+.mobileapp .photos-carousel .rotator-control-prev {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -194,26 +198,26 @@
   letter-spacing: .2em;
 }
 
-.mobileapp .photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-prev {
   left: 0;
 }
 
-.mobileapp .photos-carousel .carousel-control-next {
+.mobileapp .photos-carousel .rotator-control-next {
   right: 0;
 }
 
-.mobileapp .photos-carousel .carousel-control-prev i {
+.mobileapp .photos-carousel .rotator-control-prev i {
   margin-right: 15px;
 }
 
-.mobileapp .photos-carousel .carousel-control-next i {
+.mobileapp .photos-carousel .rotator-control-next i {
   margin-left: 15px;
 }
 
-.mobileapp .photos-carousel .carousel-control-next:focus,
-.mobileapp .photos-carousel .carousel-control-next:hover,
-.mobileapp .photos-carousel .carousel-control-prev:focus,
-.mobileapp .photos-carousel .carousel-control-prev:hover {
+.mobileapp .photos-carousel .rotator-control-next:focus,
+.mobileapp .photos-carousel .rotator-control-next:hover,
+.mobileapp .photos-carousel .rotator-control-prev:focus,
+.mobileapp .photos-carousel .rotator-control-prev:hover {
   text-decoration: none;
   outline: 0;
 }
@@ -223,7 +227,7 @@
   margin-top: 70px;
 }
 
-.mobileapp .photos-carousel .carousel-indicators {
+.mobileapp .photos-carousel .rotator-indicators {
   position: absolute;
   padding: 20px 0;
   right: 0;
@@ -242,7 +246,7 @@
   list-style: none;
 }
 
-.mobileapp .photos-carousel .carousel-indicators li {
+.mobileapp .photos-carousel .rotator-indicators li {
   position: relative;
   -webkit-box-flex: 0;
   -ms-flex: 0 1 auto;
@@ -256,7 +260,7 @@
   background: 0 0;
 }
 
-.mobileapp .photos-carousel .carousel-indicators li.current {
+.mobileapp .photos-carousel .rotator-indicators li.current {
   height: 13px;
   border-radius: 50px;
   width: 13px;
@@ -265,7 +269,7 @@
   background: #fff;
 }
 
-.mobileapp .photos-carousel .carousel-indicators li::before {
+.mobileapp .photos-carousel .rotator-indicators li::before {
   display: inline-block;
   position: absolute;
   top: -10px;
@@ -275,7 +279,7 @@
   content: "";
 }
 
-.mobileapp .photos-carousel .carousel-indicators li::after {
+.mobileapp .photos-carousel .rotator-indicators li::after {
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -285,7 +289,7 @@
   content: "";
 }
 
-.mobileapp .photos-carousel .carousel-indicators li:hover {
+.mobileapp .photos-carousel .rotator-indicators li:hover {
   height: 13px;
   border-radius: 50px;
   width: 13px;
@@ -295,15 +299,15 @@
   background: rgba(256, 256, 256, 0.5);
 }
 
-.mobileapp .photos-carousel .carousel-indicators .current {
+.mobileapp .photos-carousel .rotator-indicators .current {
   background-color: #fff;
 }
 
-.mobileapp .carousel-indicators .current {
+.mobileapp .rotator-indicators .current {
   background: #fff;
 }
 
-.mobileapp .photos-carousel .carousel-item.current {}
+.mobileapp .photos-carousel .item.current {}
 
 .mobileapp .photos-carousel .prev-link-position,
 .mobileapp .photos-carousel .next-link-position {
@@ -338,12 +342,12 @@
   font-size: 41px;
 }
 
-.mobileapp .photos-carousel .carousel-caption {
+.mobileapp .photos-carousel .rotator-caption {
   width: 40%;
 }
 
-.mobileapp .photos-carousel .carousel-control-next,
-.mobileapp .photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-next,
+.mobileapp .photos-carousel .rotator-control-prev {
   position: relative;
   opacity: 1;
   padding-left: 30px;
@@ -355,7 +359,7 @@
   height: 480px
 }
 
-.mobileapp .photos-carousel .carousel-caption h1 {
+.mobileapp .photos-carousel .rotator-caption h1 {
   line-height: 1;
   font-size: 68px !important;
   clear: both;
@@ -412,13 +416,13 @@
     padding-bottom: 70px;
   }
 
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     min-height: 700px;
   }
 }
 
 @media (max-width: 992px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     height: 600px;
   }
 
@@ -429,7 +433,7 @@
 }
 
 @media (max-width: 840px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     min-height: 500px;
     max-height: 600px;
   }
@@ -441,7 +445,7 @@
     padding-bottom: 50px;
   }
 
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     min-height: 500px;
   }
 }
@@ -461,7 +465,7 @@
 }
 
 @media (max-width: 414px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     height: 540px;
     min-height: 580px;
   }
@@ -473,20 +477,20 @@
     padding-bottom: 40px;
   }
 
-  .mobileapp .photos-carousel .carousel-inner {
+  .mobileapp .photos-carousel .rotator {
     min-height: 640px !important;
   }
 }
 
 @media (max-width: 375px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     height: 580px;
     min-height: 590px !important;
   }
 }
 
 @media (max-width: 360px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     height: 540px;
     min-height: 570px;
   }
@@ -497,7 +501,7 @@
     margin-top: 0 !important;
   }
 
-  .mobileapp .photos-carousel .carousel-inner {
+  .mobileapp .photos-carousel .rotator {
     min-height: 480px !important;
   }
 }
@@ -509,13 +513,13 @@
 }
 
 @media (max-width: 768px) {
-  .mobileapp .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .rotator-indicators {
     z-index: 9;
     margin-right: 45px;
     bottom: 5px;
   }
 
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     max-height: 550px;
   }
 }
@@ -528,7 +532,7 @@
 }
 
 @media (max-width: 410px) {
-  .mobileapp .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .rotator-indicators {
     display: none;
   }
 }
@@ -613,11 +617,7 @@
   }
 }
 
-.appSection3 {
-  clear: both;
-}
-
-#myBtn {
+/*#myBtn {
   font-family: Colossalis;
   letter-spacing: .2em;
   text-transform: uppercase;
@@ -628,69 +628,53 @@
   background: #960000;
   color: #fff;
   cursor: pointer;
-}
-
-/*--------banner slider------------------------------*/
-#main-menu {
+}*/
+/*#main-menu {
   position: absolute;
   width: 100%;
   z-index: 2;
   padding-top: 0 36px;
   padding-bottom: 0;
   z-index: 99 !important
-}
-
-#photos-header .breadcrumb-tag {
-  color: #fff;
-  cursor: cursor: pointer;
-  font-weight: 100;
-  text-shadow: 1px 1px #ccc;
-}
-
-#photo-breadcrumb {
-  position: relative;
-  z-index: 99;
-}
-
-.photos-carousel {
+}*/
+.mobileapp .photos-carousel {
   background: transparent;
   clear: both;
 }
 
-.photos-carousel .carousel-control-next,
-.photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-next,
+.mobileapp .photos-carousel .rotator-control-prev {
   opacity: 1;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.photos-carousel .caption {
+.mobileapp .photos-carousel .caption {
   height: 480px
 }
 
-.slide-text {
+/*.slide-text {
   min-height: 150px;
   float: left;
   display: block !important
-}
-
-.photos-carousel .carousel-control-prev {
+}*/
+.mobileapp .photos-carousel .rotator-control-prev {
   color: #eee !important;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.photos-carousel .controls-section .carousel-control-next {
+.mobileapp .photos-carousel .controls-section .rotator-control-next {
   /* background: url('../img/icons/General-UI/RightArrow-White.png') right no-repeat; */
   color: #eee !important;
 }
 
-.carousel-control-prev button {
+.mobileapp .rotator-control-prev button {
   margin-right: 20px;
 }
 
-.photos-carousel .carousel-control-next,
-.photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-next,
+.mobileapp .photos-carousel .rotator-control-prev {
   width: auto;
   top: inherit;
   padding: 20px 0;
@@ -703,46 +687,46 @@
   float: left;
 }
 
-.photos-carousel .carousel-control-prev {
+.mobileapp .photos-carousel .rotator-control-prev {
   text-align: left;
 }
 
-.photos-carousel .carousel-control-next {
+.mobileapp .photos-carousel .rotator-control-next {
   text-align: right;
 }
 
-.photos-carousel .carousel-control-next a {
+.mobileapp .photos-carousel .rotator-control-next a {
   text-align: right !important;
   width: 100%;
   float: left;
 }
 
-.photos-carousel .carousel-control-prev a h6 {
+.mobileapp .photos-carousel .rotator-control-prev a h6 {
   text-align: left !important;
 }
 
-.photos-carousel .carousel-indicators {
+.mobileapp .photos-carousel .rotator-indicators {
   bottom: 110px;
   z-index: 9;
 }
 
-.photos-carousel .carousel-caption i {
+.mobileapp .photos-carousel .rotator-caption i {
   color: #900
 }
 
-.photos-carousel .carousel-caption a {
+.mobileapp .photos-carousel .rotator-caption a {
   color: #fff;
   text-decoration: none;
   position: relative;
   font-size: 15px;
 }
 
-.photos-carousel .carousel-caption a:hover {
+.mobileapp .photos-carousel .rotator-caption a:hover {
   color: #900;
   text-decoration: noen;
 }
 
-.photos-carousel .carousel-caption a:after {
+.mobileapp .photos-carousel .rotator-caption a:after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -752,17 +736,17 @@
   transition: 0.4s;
 }
 
-.photos-carousel .carousel-caption a:hover:after {
+.mobileapp .photos-carousel .rotator-caption a:hover:after {
   width: 100%;
 }
 
-.photos-carousel .carousel-caption h6 {
+.mobileapp .photos-carousel .rotator-caption h6 {
   margin-bottom: 20px;
   font-size: 17px;
   letter-spacing: .2em
 }
 
-.photos-carousel .carousel-caption h2 {
+.mobileapp .photos-carousel .rotator-caption h2 {
   padding-bottom: 14px;
   border-bottom: #900 2px solid;
   margin-bottom: 14px;
@@ -772,40 +756,36 @@
   letter-spacing: 0.03em;
 }
 
-.photos-carousel .carousel-caption {
+.mobileapp .photos-carousel .rotator-caption {
   margin-bottom: 0;
   padding-bottom: 0;
   position: absolute;
   bottom: 133px;
 }
 
-.photos-carousel a.carousel-item-next,
-.photos-carousel a.carousel-item-prev,
-.photos-carousel a.carousel-item.active {
+.mobileapp .photos-carousel a.item-next,
+.mobileapp .photos-carousel a.item-prev,
+.mobileapp .photos-carousel a.item.active {
   max-height: 889px color:#333 !important;
 }
 
-.photos-carousel h1 {
+.mobileapp .photos-carousel h1 {
   font-size: 41px;
 }
 
-.bg-dark {
-  background-color: rgba(0, 0, 0, .5) !important;
-}
-
-.photos-carousel .carousel-control-prev span {
+.mobileapp .photos-carousel .rotator-control-prev span {
   line-height: 0;
   color: #fff !important;
   margin-left: 15px;
 }
 
-.photos-carousel .carousel-control-prev span {
+.mobileapp .photos-carousel .rotator-control-prev span {
   position: relative;
   color: #fff;
   margin-left: 50px;
 }
 
-.photos-carousel .carousel-control-prev span:after {
+.mobileapp .photos-carousel .rotator-control-prev span:after {
   content: '';
   position: absolute;
   bottom: -20px;
@@ -815,11 +795,11 @@
   transition: 0.4s;
 }
 
-.photos-carousel .carousel-control-prev span:hover:after {
+.mobileapp .photos-carousel .rotator-control-prev span:hover:after {
   width: 100%;
 }
 
-.photos-carousel .carousel-control-next span {
+.mobileapp .photos-carousel .rotator-control-next span {
   line-height: 0;
   color: #fff !important;
   margin-left: 15px;
@@ -828,12 +808,12 @@
   margin-right: 50px;
 }
 
-.photos-carousel .carousel-control-next span {
+.mobileapp .photos-carousel .rotator-control-next span {
   position: relative;
   color: #fff;
 }
 
-.photos-carousel .carousel-control-next span:after {
+.mobileapp .photos-carousel .rotator-control-next span:after {
   content: '';
   position: absolute;
   bottom: -20px;
@@ -843,51 +823,43 @@
   transition: 0.4s;
 }
 
-.photos-carousel .carousel-control-next span:hover:after {
+.mobileapp .photos-carousel .rotator-control-next span:hover:after {
   width: 100%;
 }
 
 .controls-section {
   text-transform: uppercase;
-  /* margin-top: 100px; */
 }
 
 @media (max-width: 767px) {
-
-  /* .carousel-item{height: 500px!important;} */
-  .photos-carousel h1 {
+  .mobileapp .photos-carousel h1 {
     padding-top: 0px !important;
   }
 
-  .draw {
-    width: 100%;
-  }
-
-  .button>button {
+  /*.button>button {
     padding: 30px;
-  }
-
-  .photos-carousel .carousel-indicators {
+  }*/
+  .mobileapp .photos-carousel .rotator-indicators {
     bottom: 35px !important
   }
 
-  .photos-carousel {
+  .mobileapp .photos-carousel {
     padding-top: 60px;
   }
 
-  .photos-carousel h1 {
+  .mobileapp .photos-carousel h1 {
     padding-top: 60px;
     margin-bottom: 10px;
     min-height: 180px;
   }
 
-  span.redUnderline {
+  .mobileapp span.redUnderline {
     -webkit-animation: underlineSmall 5s infinite;
     animation: underlineSmall 5s infinite;
     transition: all 5s;
   }
 
-  .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .rotator-indicators {
     bottom: 110px;
     z-index: 9;
     margin-right: 0px;
@@ -896,7 +868,7 @@
 }
 
 @media (min-width: 768px) {
-  .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .rotator-indicators {
     bottom: 110px;
     z-index: 9;
     margin-right: 45px;
@@ -904,111 +876,92 @@
 }
 
 @media (max-width: 991px) {
-  .carousel-indicators {
+  .mobileapp .rotator-indicators {
     margin-bottom: 30px;
   }
 
-  .photos-carousel .carousel-item-next,
-  .photos-carousel .carousel-item-prev,
-  .photos-carousel .carousel-item.active {}
+  .mobileapp .photos-carousel .item-next,
+  .mobileapp .photos-carousel .item-prev,
+  .mobileapp .photos-carousel .item.active {}
 
-  .carousel {
+  .mobileapp .carousel {
     clear: both;
     float: left;
   }
 
-  .photos-carousel .carousel-caption {
+  .mobileapp .photos-carousel .rotator-caption {
     margin-bottom: 0;
     padding-bottom: 0;
     position: absolute;
     bottom: 53px;
   }
 
-  .photos-carousel p {
+  .mobileapp .photos-carousel p {
     color: rgba(255, 255, 255, .8)
   }
 
-  .controls-section {
+  .mobileapp .controls-section {
     position: relative;
   }
 }
 
-.controls-section {
+.mobileapp .controls-section {
   display: block;
   visibility: visible;
 }
 
-.photos-carousel .carousel-caption {
+.mobileapp .photos-carousel .rotator-caption {
   width: 40%;
 }
 
-.photos-carousel .carousel-caption h1 {
+.mobileapp .photos-carousel .rotator-caption h1 {
   line-height: 1;
   font-size: 68px !important;
   clear: both;
   margin-bottom: 4px;
 }
 
-.gradientback {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 80%;
-  background: -moz-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-  background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -o-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -ms-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
-}
-
-.photos-carousel img {
+.mobileapp .photos-carousel img {
   margin: 0 auto;
   display: block;
 }
 
-.photos-carousel .carousel-indicators {
+.mobileapp .photos-carousel .rotator-indicators {
   bottom: -10px;
 }
 
 @media screen and (max-width: 575px) {
-  .mobileapp .carousel-inner {
+  .mobileapp .rotator {
     height: 540px;
     min-height: 750px;
   }
 }
 
 @media (max-width: 991px) {
-  .app-section-01-mobile h4 {
+  .mobileapp .app-section-01-mobile h4 {
     font-size: 36px !important;
-  }
-
-  .navbar-nav {
-    display: none;
   }
 }
 
 @media (min-width: 992px) {
-  .hide-on-desktop {
+  .mobileapp .hide-on-desktop {
     display: none !important;
     visibility: hidden !important;
   }
 }
 
 @media (max-width: 992px) {
-  .hide-on-mobile {
+  .mobileapp .hide-on-mobile {
     display: none !important;
     visibility: hidden !important;
   }
 
-  .app-section-01-mobile {
+  .mobileapp .app-section-01-mobile {
     padding-top: 150px;
   }
 
-  .container,
-  .m-tv-left-inner {
+  .mobileapp .container,
+  .mobileapp .m-tv-left-inner {
     padding-right: 25px;
     padding-left: 25px;
     max-width: 100vw;
@@ -1017,8 +970,8 @@
 
 @media (max-width: 1261px) {
 
-  .container,
-  .m-tv-left-inner {
+  .mobileapp .container,
+  .mobileapp .m-tv-left-inner {
     padding-right: 35px;
     padding-left: 35px;
     max-width: 100vw;
@@ -1026,32 +979,22 @@
 }
 
 @media (min-width: 768px) {
-  .photos-carousel .carousel-control-prev {
+  .mobileapp .photos-carousel .rotator-control-prev {
     text-align: left;
   }
 
-  .photos-carousel .carousel-control-next {
+  .mobileapp .photos-carousel .rotator-control-next {
     text-align: right;
   }
 
-  .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .rotator-indicators {
     bottom: 5px;
   }
 }
 
 /* review everything */
 @media (max-width: 575px) {
-
-  /*.carousel-inner {
-    min-height: 630px !important;
-  }*/
-  .bg3 {
-    background-size: 225%;
-    background-position: center;
-  }
-
-  /* [data-bs-parallax-bg-lg-app]  {background-Position: left !important; background-size: 280%!important;}*/
-  .app-section-01-mobile h1 {
+  .mobileapp .app-section-01-mobile h1 {
     font-size: 60px;
     text-transform: inherit !important;
     line-height: 1;
@@ -1059,31 +1002,17 @@
     margin-bottom: 30px
   }
 
-  .app-section-01-mobile h4 {
+  .mobileapp .app-section-01-mobile h4 {
     font-size: 36px !important;
     margin-bottom: 0px;
     letter-spacing: .0em;
   }
 
-  .app-section-01-mobile sup {
+  .mobileapp .app-section-01-mobile sup {
     font-size: 12px;
     top: -30px
   }
-
-  /* .photos-carousel img{ height: 300px!important; width: auto;} */
-  .btn2 {
-    margin-right: 20px;
-  }
 }
-
-@media (min-width: 576px) and (max-width: 768px) {
-  [data-bs-parallax-bg-marines_app] {
-    background-size: 150% auto !important;
-    background-position: 30% 10% !important;
-  }
-}
-
-@media (max-width: 767px) {}
 
 @media (max-width: 991px) {
   .download-our-tv-app h1 {
@@ -1091,101 +1020,33 @@
     text-align: left;
   }
 
-  .photos-carousel {
+  .mobileapp .photos-carousel {
     padding-top: 70px;
     padding-bottom: 70px;
   }
 
-  .app-section-01-mobile h4 {
+  .mobileapp .app-section-01-mobile h4 {
     font-size: 36px !important
   }
 
-  .app-section-01-mobile {
+  .mobileapp .app-section-01-mobile {
     padding-top: 150px;
   }
 
-  .app-section-01-mobile sup {
+  .mobileapp .app-section-01-mobile sup {
     font-size: 16px;
     top: -30px
   }
 
-  .m20 {
+  .mobileapp .m20 {
     margin-top: 50px;
     margin-bottom: 20px;
-  }
-
-  .draw {
-    border: 15px solid #cc0001 !important;
   }
 }
 
 @media (min-width: 768px) {
-  .button>button {
+  .mobileapp .button>button {
     font-size: 80px;
     margin: 0 auto;
-  }
-
-  .draw {
-    /*	 border: 20px solid #cc0001 !important;*/
-    border: 20px solid transparent !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .bg3 {
-    padding-top: 300px;
-  }
-
-  .draw::before,
-  .draw::after {
-    border: 30px solid transparent;
-  }
-
-  [data-bs-parallax-bg-marines_app] {
-    background: url('../img/MobileApp/MarinesAppNewBG') no-repeat;
-    background-size: 100% auto !important;
-    background-size: "cover";
-  }
-}
-
-@media (min-width: 1200px) {
-  /* .controls-section {
-    margin-top: 200px;
-  } */
-}
-
-.box-border {
-  margin-bottom: 30px;
-}
-
-@media (min-width: 991px) {
-  .button>button {
-    text-transform: uppercase !important;
-    letter-spacing: .0em !important;
-    font-weight: 100;
-    background: none;
-    border: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 1em;
-    -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
-    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
-    color: #ffffff;
-    font-size: 120px;
-    font-weight: 100;
-    position: relative;
-    vertical-align: middle;
-    line-height: 1;
-    padding: 70px 95px;
-  }
-
-  button::before,
-  button::after {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
   }
 }
