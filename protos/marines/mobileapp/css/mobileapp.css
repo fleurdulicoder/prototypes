@@ -1,3 +1,87 @@
+@-webkit-keyframes underline {
+  0% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    background-position: 0 88%;
+  }
+
+  20% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 30px;
+    background-position: 0 88%;
+  }
+
+  80% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 30px;
+    background-position: 0 88%;
+  }
+
+  100% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 30px;
+    background-position: 0 88%;
+  }
+}
+
+@-webkit-keyframes underlineSmall {
+  0% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 15px;
+    background-position: 0 88%;
+  }
+
+  20% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 15px;
+    background-position: 0 88%;
+  }
+
+  80% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 15px;
+    background-position: 0 88%;
+  }
+
+  100% {
+    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 15px;
+    background-position: 0 88%;
+  }
+}
+
 /* start prototype code */
 .mobileapp ::outline {
   border: 0;
@@ -27,6 +111,11 @@
   text-align: right;
 }
 
+.mobileapp img {
+  max-width: 100%;
+  height: auto;
+}
+
 .mobileapp .magic-parallax>.magic-bg {
   position: fixed;
   top: 0;
@@ -38,21 +127,19 @@
   z-index: 1;
 }
 
-/*.mobileapp .button-secondary:hover {
-  background-color: #940000;
-  color: #fff;
-}*/
-.mobileapp .carousel-inner {
-  height: 714px;
-}
-
 .mobileapp .magic-parallax>*:not(.magic-bg) {
   z-index: 2;
 }
 
-.mobileapp img {
-  max-width: 100%;
-  height: auto;
+/* carousel */
+@media (min-width: 1200px) {
+  .mobileapp .app-section-01 .mob-video-img {
+    padding-right: 110px;
+  }
+}
+
+.mobileapp .photos-carousel .carousel-inner {
+  height: 714px;
 }
 
 .mobileapp .photos-carousel .carousel {
@@ -264,18 +351,18 @@
   height: 60px;
 }
 
-.photos-carousel .caption {
+.mobileapp .photos-carousel .caption {
   height: 480px
 }
 
-.photos-carousel .carousel-caption h1 {
+.mobileapp .photos-carousel .carousel-caption h1 {
   line-height: 1;
   font-size: 68px !important;
   clear: both;
   margin-bottom: 4px;
 }
 
-.photos-carousel img {
+.mobileapp .photos-carousel img {
   margin: 0 auto;
   display: block;
   vertical-align: middle;
@@ -331,11 +418,11 @@
 }
 
 @media (max-width: 992px) {
-  .carousel-inner {
+  .mobileapp .carousel-inner {
     height: 600px;
   }
 
-  .photos-carousel {
+  .mobileapp .photos-carousel {
     padding-top: 70px;
     padding-bottom: 70px;
   }
@@ -349,7 +436,7 @@
 }
 
 @media (max-width: 768px) {
-  .photos-carousel {
+  .mobileapp .photos-carousel {
     padding-top: 50px;
     padding-bottom: 50px;
   }
@@ -381,7 +468,7 @@
 }
 
 @media (max-width: 411px) {
-  .photos-carousel {
+  .mobileapp .photos-carousel {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -416,13 +503,13 @@
 }
 
 @media (min-width: 979px) {
-  .photos-carousel h1 {
+  .mobileapp .photos-carousel h1 {
     font-size: 60px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .carousel-indicators {
     z-index: 9;
     margin-right: 45px;
     bottom: 5px;
@@ -434,30 +521,30 @@
 }
 
 @media (max-width: 576px) {
-  .photos-carousel h1 {
+  .mobileapp .photos-carousel h1 {
     text-align: center;
     padding-bottom: 15px;
   }
 }
 
 @media (max-width: 410px) {
-  .photos-carousel .carousel-indicators {
+  .mobileapp .photos-carousel .carousel-indicators {
     display: none;
   }
 }
 
 @media (min-width: 979px) {
-  .app-section-01 {
+  .mobileapp .app-section-01 {
     padding-top: 200px;
     min-height: 1000px;
   }
 
-  .photos-carousel h1 {
+  .mobileapp .photos-carousel h1 {
     font-size: 60px !important;
   }
 }
 
-.load-more button {
+.mobileapp .load-more button {
   font-family: "Colossalis", arial, sans-serif !important;
   text-transform: uppercase;
   font-weight: 100 !important;
@@ -471,122 +558,38 @@
   margin-bottom: 68px;
 }
 
-.officialPlatform h2 {
+.mobileapp .officialPlatform h2 {
   color: #000;
   text-transform: capitalize;
   margin-bottom: 10px;
   margin-top: 60px;
 }
 
-.app-section-01 h1 {
+.mobileapp .app-section-01 h1 {
   font-size: 100px !important;
   text-transform: none;
 }
 
-.app-section-01 sup {
+.mobileapp .app-section-01 sup {
   font-size: 20px;
   vertical-align: top;
   line-height: 4;
 }
 
-.app-section-01 h4 {
+.mobileapp .app-section-01 h4 {
   font-size: 30px;
 }
 
-span.redUnderline {
+.mobileapp span.redUnderline {
   -webkit-animation: underline 5s infinite;
   animation: underline 5s infinite;
   transition: all 5s;
 }
 
-span.redUnderlineSmall {
+.mobileapp span.redUnderlineSmall {
   -webkit-animation: underlineSmall 5s infinite;
   animation: underlineSmall 5s infinite;
   transition: all 5s;
-}
-
-@-webkit-keyframes underline {
-  0% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 30px;
-    background-position: 0 88%;
-  }
-
-  20% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 30px;
-    background-position: 0 88%;
-  }
-
-  80% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 30px;
-    background-position: 0 88%;
-  }
-
-  100% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 30px;
-    background-position: 0 88%;
-  }
-}
-
-@-webkit-keyframes underlineSmall {
-  0% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 15px;
-    background-position: 0 88%;
-  }
-
-  20% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 15px;
-    background-position: 0 88%;
-  }
-
-  80% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 15px;
-    background-position: 0 88%;
-  }
-
-  100% {
-    background-image: -moz-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -o-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: -webkit-linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-image: linear-gradient(to bottom, #cc0001 0%, #cc0001 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 15px;
-    background-position: 0 88%;
-  }
 }
 
 .updown {

@@ -27,22 +27,6 @@
   width: 100%;
 }
 
-@media (min-width: 979px) {
-  .mobileapp .download-our-tv-app {
-    padding: 104px 0;
-  }
-
-  .mobileapp .download-our-tv-app h1 {
-    padding-top: 30px;
-  }
-}
-
-@media (max-width: 767px) {
-  .mobileapp .download-our-tv-app {
-    padding-bottom: 70px;
-  }
-}
-
 .mobileapp .download-our-tv-app p {
   width: 80%
 }
@@ -84,15 +68,27 @@
   margin-bottom: 20px;
 }
 
+@media (min-width: 979px) {
+  .mobileapp .download-our-tv-app {
+    padding: 104px 0;
+  }
+
+  .mobileapp .download-our-tv-app h1 {
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobileapp .download-our-tv-app {
+    padding-bottom: 70px;
+  }
+}
+
 @media (max-width: 575px) {
   .app-section-03 {
     background-size: 225%;
     background-position: center;
   }
-
-  /*.btn2 {
-    margin-right: 20px;
-  }*/
 }
 
 @media (max-width: 991px) {
@@ -111,12 +107,6 @@
   .mobileapp .button>button {
     font-size: 80px;
     margin: 0 auto;
-  }
-}
-
-@media (min-width: 1200px) {
-  .MobVideoImg {
-    padding-right: 110px;
   }
 }
 
