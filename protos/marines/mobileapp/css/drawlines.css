@@ -18,14 +18,26 @@
   transition: all 5s;
 }
 
+.app-section-03 {
+  clear: both;
+}
+
 .bg3 {
   padding-top: 100px;
   background: url('../img/getmobilized4duty.jpg') no-repeat left;
   background-size: 100%;
 }
 
-.appSection3 {
+.app-section-03 {
   clear: both;
+}
+
+#btnGetMobilized svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
 
 #myBtn {
@@ -41,6 +53,21 @@
   cursor: pointer;
 }
 
+/*.app-section-03 .box-border>button {
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: uppercase !important;
+  letter-spacing: 0em !important;
+  background: none;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+}*/
 .slide-text {
   min-height: 150px;
   float: left;
@@ -168,7 +195,7 @@
 }
 
 /* Get MObile Button */
-.appSection3 .box-border>button {
+.app-section-03 .box-border>button {
   text-transform: uppercase !important;
   letter-spacing: .0em !important;
   font-weight: 100;
@@ -188,35 +215,35 @@
 }
 
 @media (max-width: 575px) {
-  .appSection3 {
+  .app-section-03 {
     padding-top: 125px;
     padding-bottom: 100px;
   }
 
-  .appSection3 .box-border>button {
+  .app-section-03 .box-border>button {
     -webkit-box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
     box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
     font-size: 40px;
     padding: 20px 20px !important;
   }
 
-  .appSection3 .box-border>button {
+  .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-  .appSection3 .box-border>button {
+  .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 }
 
 @media (min-width: 768px) {
-  .appSection3 .box-border>button {
+  .app-section-03 .box-border>button {
     padding: 30px !important;
   }
 
-  .appSection3 {
+  .app-section-03 {
     padding-top: 350px;
     padding-bottom: 150px;
   }
@@ -254,13 +281,13 @@
   }
 }
 
-.appSection3 {
+.app-section-03 {
   padding-top: 350px;
   padding-bottom: 150px;
 }
 
 @media (min-width: 1200px) {
-  .appSection3 .box-border>button {
+  .app-section-03 .box-border>button {
     -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
     box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
     font-size: 120px;

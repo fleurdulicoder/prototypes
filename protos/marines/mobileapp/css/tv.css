@@ -1,4 +1,17 @@
-video[poster] {
+.download-our-tv-app h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+  padding: 0;
+  font-weight: 100;
+}
+
+.download-our-tv-app p {
+  margin-bottom: 16px;
+}
+
+.download-our-tv-app video[poster] {
   top: 0 !important;
   left: 0 !important;
   right: 0;
@@ -8,176 +21,45 @@ video[poster] {
   width: 100%;
 }
 
-#socialMedia {
-  padding-bottom: 148px;
-  color: #fff;
-}
-
-#socialMedia h1 {
-  padding-top: 34px;
-  margin-bottom: 14px;
-  font-size: 80px !important;
-  background: url('../Icons/HomeHero-ContentLine.png') no-repeat top left;
-  padding: 0px;
-  padding-top: 45px;
-}
-
-#socialMedia p {
-  font-size: 18px;
-}
-
-#download-our-tv-app2 h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  letter-spacing: 2px;
-  margin: 0 0 8px;
-  padding: 0;
-  font-weight: 100;
-}
-
-#download-our-tv-app2 p {
-  margin-bottom: 16px;
-}
-
-@media (min-width: 1440px) {
-  #mHeader {
-    padding-bottom: 225px;
-    overflow: visible
-  }
-
-  .bg2 {
-    background-size: 62% !important;
-    padding-bottom: 100px;
-  }
-}
-
 @media (min-width: 979px) {
-  #download-our-tv-app2 {
+  .download-our-tv-app {
     padding: 104px 0;
   }
 
-  #download-our-tv-app2 h1 {
+  .download-our-tv-app h1 {
     padding-top: 30px;
   }
 }
 
-.btn2 {
-  margin-top: 63px;
-  font-family: 'Colossalis';
-  border-radius: 0px;
-  border: 0px;
-  color: #960000;
-  background: transparent;
-  text-transform: uppercase;
-  letter-spacing: .23em;
-  font-size: 18px;
-  padding: 12px 42px;
-  border: 2px solid #960000;
-  border-radius: 0;
-}
-
-button.btn2:hover,
-button.btn2:focus,
-button.btn2:active {
-  color: #960000 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: 2px solid #960000 !important;
-}
-
-.officialPlatform h2 {
-  color: #000;
-  text-transform: capitalize;
-  margin-bottom: 10px;
-  margin-top: 60px;
-}
-
-.bg2 {
-  background-size: 90%;
-}
-
-.appSection3 {
-  clear: both;
-}
-
-#myBtn {
-  font-family: Colossalis;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  width: 200px;
-  font-size: 20px;
-  padding: 10px;
-  border: none;
-  background: #960000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#main-menu {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  padding-top: 0 36px;
-  padding-bottom: 0;
-  z-index: 99 !important
-}
-
-.slide-text {
-  min-height: 150px;
-  float: left;
-  display: block !important
-}
-
-.bg-dark {
-  background-color: rgba(0, 0, 0, .5) !important;
-}
-
 @media (max-width: 767px) {
-  .button>button {
-    padding: 30px;
-  }
 
-  #download-our-tv-app2 {
+  /*.button>button {
+    padding: 30px;
+  }*/
+  .download-our-tv-app {
     padding-bottom: 70px;
   }
 }
 
-#download-our-tv-app2 p {
+.download-our-tv-app p {
   width: 80%
 }
 
-.gradientback {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 80%;
-  background: -moz-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 255, 241, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
-  background: -webkit-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -o-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -ms-linear-gradient(top, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(to bottom, rgba(137, 255, 241, 0) 0%, rgba(0, 0, 0, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0089fff1', endColorstr='#000000', GradientType=0);
-}
-
-#carouselExampleNew img {
+/*#carouselExampleNew img {
   margin: 0 auto;
   display: block;
   max-height: 300px;
   padding: 5px;
-}
-
-#modal-video video {
+}*/
+.mobileapp-modal-video video {
   width: 100%;
 }
 
-#download-our-tv-app2 {
+.download-our-tv-app {
   padding-top: 60px;
   padding-bottom: 60px;
+  background-color: #000;
 }
-
-#download-our-tv-app2 p {}
 
 .btnPlayVideo {
   background-image: url('../img/PlayButtons.png');
@@ -208,7 +90,7 @@ button.btn2:active {
   box-sizing: border-box;
 }
 
-.TvLogoMargins div {
+.tv-logo-margins div {
   margin-bottom: 20px;
 }
 
@@ -224,7 +106,7 @@ button.btn2:active {
 }
 
 @media (max-width: 991px) {
-  #download-our-tv-app2 h1 {
+  .download-our-tv-app h1 {
     letter-spacing: 0.02em;
     text-align: left;
   }
