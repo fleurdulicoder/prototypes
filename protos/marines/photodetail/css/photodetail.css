@@ -1,6 +1,6 @@
 /* top slider banner */
-.slider-of-hero-photos,
-.slider-of-hero-photos .slider {
+.gallery-of-hero-photos,
+.gallery-of-hero-photos .slider {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -9,7 +9,7 @@
   font-weight: 600;
 }
 
-.slider-of-hero-photos .slider .item {
+.gallery-of-hero-photos .slider .item {
   position: absolute;
   top: 0;
   left: 0;
@@ -28,11 +28,11 @@
   overflow: hidden;
 }
 
-.slider-of-hero-photos .slider .item.active {
+.gallery-of-hero-photos .slider .item.active {
   visibility: visible;
 }
 
-.slider-of-hero-photos .slider .item img {
+.gallery-of-hero-photos .slider .item img {
   min-width: 100%;
   min-height: 100%;
   display: block;
@@ -46,7 +46,7 @@
   margin-right: auto !important;
 }
 
-.slider-of-hero-photos .slider>.wrapper .control-nav {
+.gallery-of-hero-photos .control-nav {
   text-transform: uppercase;
   position: absolute;
   left: 0;
@@ -56,19 +56,19 @@
   z-index: 4;
 }
 
-.slider-of-hero-photos .slider .control-nav>.container-fluid>.row>div:nth-child(1) {
+.gallery-of-hero-photos .control-nav>.container-fluid>.row>div:nth-child(1) {
   text-align: left;
 }
 
-.slider-of-hero-photos .slider .control-nav>.container-fluid>.row>div:nth-child(2) {
+.gallery-of-hero-photos .control-nav>.container-fluid>.row>div:nth-child(2) {
   text-align: center;
 }
 
-.slider-of-hero-photos .slider .control-nav>.container-fluid>.row>div:nth-child(3) {
+.gallery-of-hero-photos .control-nav>.container-fluid>.row>div:nth-child(3) {
   text-align: right;
 }
 
-.carousel-control-down {
+.gallery-of-hero-photos .carousel-control-down {
   width: 80px;
   height: 40px;
   text-align: center;

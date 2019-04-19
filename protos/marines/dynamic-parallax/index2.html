@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dynamic Parallax</title>
+  <style>
+    body {
+      background: black;
+      color: #fff;
+      line-height: 27px;
+      font-size: 18px;
+      font-family: Arial;
+      font-weight: 100;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      margin: 0;
+    }
+
+    .site-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      padding: 50px;
+      background: transparent;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .magic-parallax {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .magic-parallax > div:nth-child(1) {
+      position: absolute;
+      top: -100%;
+      width: 100%;
+      height: 200%;
+      background-repeat: no-repeat;
+      transform: translateZ(0);
+      background-size: cover;
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      z-index: -100;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <div class="DnnModule">
+      <section id="section-1" data-parallax data-parallax-image="img/twitterbg.jpg" data-parallax-span="3">
+        <h1>Span Parallax Over 3 Items</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget dignissim metus, ut eleifend elit. Proin ante tellus, sagittis ut eleifend ut, semper in nisi. Ut dignissim placerat felis in pulvinar. In facilisis feugiat dignissim.
+          Aenean pharetra suscipit enim, eget lacinia ante imperdiet eu. Sed at pretium magna, et iaculis ligula. Donec eget finibus felis, vel ultricies lacus.</p>
+      </section>
+    </div>
+    <div class="DnnModule">
+      <section id="section-2">
+        <h2>Will End Inside Parallax</h2>
+        Vestibulum cursus vehicula sapien, eget elementum massa tempus at. Proin commodo massa nunc, vitae auctor velit efficitur quis. Donec imperdiet non neque vitae fermentum. Vestibulum id massa interdum libero hendrerit aliquet sit amet pretium
+        lorem. Morbi sit amet dignissim sem. Integer pulvinar mattis lectus eu cursus. Maecenas tincidunt feugiat nibh, sed pharetra elit ultrices id. Ut posuere vitae ante at ullamcorper. Integer non pulvinar diam. Aliquam faucibus eget dui ut
+        malesuada. Donec posuere, augue lobortis feugiat faucibus, dui risus volutpat arcu, et laoreet erat dolor eget nunc.
+      </section>
+    </div>
+    <div class="DnnModule">
+      <section id="section-3">
+        <h2>Will Also End Inside Parallax</h2>
+        <p>Duis imperdiet sed augue sed laoreet. Mauris lacus elit, gravida eget venenatis quis, sodales sed nisi. Nunc sapien lacus, fermentum vel ligula dignissim, tincidunt accumsan erat. Phasellus quis tellus nec nibh scelerisque eleifend.
+          Vivamus
+          quis varius elit. Quisque pretium arcu vel cursus volutpat. Sed ut elit sodales, tempus odio sed, gravida massa. Mauris placerat bibendum justo, ut pulvinar leo dignissim ut. Donec congue sem vel ex mattis tempor. Donec mattis id ipsum
+          ultricies lobortis. Aliquam consequat porta lectus, id vestibulum turpis sodales ut. Nullam fermentum et augue sed cursus. Cras laoreet, diam ac egestas placerat, ligula odio efficitur magna, vitae tempor tellus lectus id leo. Cras viverra
+          pretium est, ac malesuada nulla suscipit et. Sed sit amet sem et sapien sollicitudin dapibus a sit amet odio. Nulla mollis facilisis dignissim.</p>
+      </section>
+    </div>
+
+    <section id="section-4" data-parallax data-parallax-image="img/redness.jpg" data-parallax-span="2">
+      <h1>Spans Parallax Over 2 Items</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget dignissim metus, ut eleifend elit. Proin ante tellus, sagittis ut eleifend ut, semper in nisi. Ut dignissim placerat felis in pulvinar. In facilisis feugiat dignissim.
+        Aenean pharetra suscipit enim, eget lacinia ante imperdiet eu. Sed at pretium magna, et iaculis ligula. Donec eget finibus felis, vel ultricies lacus.</p>
+    </section>
+    <section id="section-5">
+      <h2>Will Be Inside</h2>
+      Vestibulum cursus vehicula sapien, eget elementum massa tempus at. Proin commodo massa nunc, vitae auctor velit efficitur quis. Donec imperdiet non neque vitae fermentum. Vestibulum id massa interdum libero hendrerit aliquet sit amet pretium
+      lorem. Morbi sit amet dignissim sem. Integer pulvinar mattis lectus eu cursus. Maecenas tincidunt feugiat nibh, sed pharetra elit ultrices id. Ut posuere vitae ante at ullamcorper. Integer non pulvinar diam. Aliquam faucibus eget dui ut
+      malesuada. Donec posuere, augue lobortis feugiat faucibus, dui risus volutpat arcu, et laoreet erat dolor eget nunc.
+    </section>
+    <section id="section-6">
+      <h2>Will Be Outside</h2>
+      <p>Duis imperdiet sed augue sed laoreet. Mauris lacus elit, gravida eget venenatis quis, sodales sed nisi. Nunc sapien lacus, fermentum vel ligula dignissim, tincidunt accumsan erat. Phasellus quis tellus nec nibh scelerisque eleifend. Vivamus
+        quis varius elit. Quisque pretium arcu vel cursus volutpat. Sed ut elit sodales, tempus odio sed, gravida massa. Mauris placerat bibendum justo, ut pulvinar leo dignissim ut. Donec congue sem vel ex mattis tempor. Donec mattis id ipsum
+        ultricies lobortis. Aliquam consequat porta lectus, id vestibulum turpis sodales ut. Nullam fermentum et augue sed cursus. Cras laoreet, diam ac egestas placerat, ligula odio efficitur magna, vitae tempor tellus lectus id leo. Cras viverra
+        pretium est, ac malesuada nulla suscipit et. Sed sit amet sem et sapien sollicitudin dapibus a sit amet odio. Nulla mollis facilisis dignissim.</p>
+    </section>
+  </div>
+
+
+  <script src="js/gsap/src/uncompressed/TweenMax.js"></script>
+  <script src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="js/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+
+  <script type="text/javascript">
+    var SpanningParallax = {
+      count: 0,
+
+      // getClosestParent(item, classname) {
+      //   var parent;
+      //   for (; item && item !== document; item = item.parentNode) {
+      //     if (item.classList.contains('DnnModule')) {
+      //       parent = item;
+      //       break;
+      //     }
+      //   }
+      //   return parent;
+      // },
+
+      wrapInParallax: function(item) {
+        var len = parseInt(item.getAttribute('data-parallax-span')) || 0;
+        var image = item.getAttribute('data-parallax-image');
+
+        // var parent = this.getClosestParent(item, 'DnnModule');
+
+        var wrapper = document.createElement('div');
+        wrapper.innerHTML = '<div style="background-image: url(' + image + ')"></div>'
+        wrapper.className = 'magic-parallax';
+        wrapper.id = 'magic-parallax-' + (++this.count);
+        item.parentNode.insertBefore(wrapper, item);
+
+        for (var j = 0; j < len; j++) {
+          var item = wrapper.nextSibling;
+          if (item) {
+            wrapper.appendChild(item);
+            wrapper.parentNode.removeChild(wrapper.nextSibling);
+          }
+        }
+
+        new ScrollMagic.Scene({
+            triggerElement: '#' + wrapper.id,
+            triggerHook: "onEnter",
+            duration: "200%"
+          })
+          .setTween('#' + wrapper.id + ' > div', {
+            y: "30%",
+            ease: Linear.easeNone
+          })
+          .addTo(this.controller);
+      },
+
+      init: function(controller) {
+        if (!controller) return;
+        this.controller = controller;
+        var callers = document.querySelectorAll('[data-parallax]');
+        for (var i = 0, len = callers.length; i < len; i++) {
+          this.wrapInParallax(callers[i]);
+        }
+      }
+    }
+
+    var controller = new ScrollMagic.Controller();
+    SpanningParallax.init(controller);
+  </script>
+</body>
+
+</html>

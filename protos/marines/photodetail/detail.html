@@ -16,6 +16,7 @@
   <link href="css/photodashboard.css" type="text/css" rel="stylesheet" />
   <link href="css/imagegallery.css" type="text/css" rel="stylesheet" />
   <link href="css/photodetail.css" type="text/css" rel="stylesheet" />
+  <link href="css/relatednews.css" type="text/css" rel="stylesheet" />
   <script src="js/jquery.js" type="text/javascript"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -23,7 +24,7 @@
 
 <body id="Body" style="width: 100%; height: auto; position: relative;">
   <script src="js/skin.build.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/js/gsap/src/uncompressed/utils/SplitText.js"></script>
+  <!--script type="text/javascript" src="/js/gsap/src/uncompressed/utils/SplitText.js"></script-->
   <script src="js/mobile-detect.min.js" type="text/javascript"></script>
   <script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
   <script src="js/cycle2.js" type="text/javascript"></script>
@@ -186,17 +187,17 @@
           <div class="container-fluid no-gutters nopad">
             <div class="row no-gutters">
               <div class="col-6 col-sm-6 col-md-6 col-lg-5">
-                <a class="carousel-control-prev" role="button" data-slide="prev">
+                <a class="carousel-control-prev" role="button" data-slide="prev" id="carousel-control-prev">
                   <div><span>PREVIOUS</span></div>
                 </a>
               </div>
               <div class="col-md-2 col-lg-2 no-mobile">
-                <a href="#photo-info" role="button" class="carousel-control-down">
+                <a href="#photo-info" role="button" class="carousel-control-down" id="carousel-control-down">
                   <i class="fas fa-chevron-down"></i>
                 </a>
               </div>
               <div class="col-6 col-sm-6 col-md-6 col-lg-5">
-                <a class="carousel-control-next" role="button" data-slide="next">
+                <a class="carousel-control-next" role="button" data-slide="next" id="carousel-control-next">
                   <div><span>NEXT</span></div>
                 </a>
               </div>
@@ -206,28 +207,30 @@
         <!-- end control nav -->
         <!-- start banner slider -->
         <div class="slider">
-          <div class="item active"><img src="img/img1.jpg" alt="Image 1" /></div>
-          <div class="item"><img src="img/img2.jpg" alt="Image 2" /></div>
-          <div class="item"><img src="img/img3.jpg" alt="Image 3" /></div>
-          <div class="item"><img src="img/img4.jpg" alt="Image 4" /></div>
-          <div class="item"><img src="img/img5.jpg" alt="Image 5" /></div>
-          <div class="item"><img src="img/img6.jpg" alt="Image 6" /></div>
-          <div class="item"><img src="img/img7.jpg" alt="Image 7" /></div>
-          <div class="item"><img src="img/img8.jpg" alt="Image 8" /></div>
-          <div class="item"><img src="img/img9.jpg" alt="Image 9" /></div>
-          <div class="item"><img src="img/img10.jpg" alt="Image 10" /></div>
-          <div class="item"><img src="img/img11.jpg" alt="Image 11" /></div>
-          <div class="item"><img src="img/img12.jpg" alt="Image 12" /></div>
-          <div class="item"><img src="img/img13.jpg" alt="Image 13" /></div>
-          <div class="item"><img src="img/img14.jpg" alt="Image 14" /></div>
-          <div class="item"><img src="img/img15.jpg" alt="Image 15" /></div>
-          <div class="item"><img src="img/img16.jpg" alt="Image 16" /></div>
-          <div class="item"><img src="img/img17.jpg" alt="Image 17" /></div>
-          <div class="item"><img src="img/img18.jpg" alt="Image 18" /></div>
-          <div class="item"><img src="img/img19.jpg" alt="Image 19" /></div>
-          <div class="item"><img src="img/img20.jpg" alt="Image 20" /></div>
-          <div class="item"><img src="img/img21.jpg" alt="Image 21" /></div>
-          <div class="item"><img src="img/img22.jpg" alt="Image 22" /></div>
+          <div class="wrapper" id="hero-slider">
+            <div class="item active"><img src="img/img1.jpg" alt="Image 1" /></div>
+            <div class="item"><img src="img/img2.jpg" alt="Image 2" /></div>
+            <div class="item"><img src="img/img3.jpg" alt="Image 3" /></div>
+            <div class="item"><img src="img/img4.jpg" alt="Image 4" /></div>
+            <div class="item"><img src="img/img5.jpg" alt="Image 5" /></div>
+            <div class="item"><img src="img/img6.jpg" alt="Image 6" /></div>
+            <div class="item"><img src="img/img7.jpg" alt="Image 7" /></div>
+            <div class="item"><img src="img/img8.jpg" alt="Image 8" /></div>
+            <div class="item"><img src="img/img9.jpg" alt="Image 9" /></div>
+            <div class="item"><img src="img/img10.jpg" alt="Image 10" /></div>
+            <div class="item"><img src="img/img11.jpg" alt="Image 11" /></div>
+            <div class="item"><img src="img/img12.jpg" alt="Image 12" /></div>
+            <div class="item"><img src="img/img13.jpg" alt="Image 13" /></div>
+            <div class="item"><img src="img/img14.jpg" alt="Image 14" /></div>
+            <div class="item"><img src="img/img15.jpg" alt="Image 15" /></div>
+            <div class="item"><img src="img/img16.jpg" alt="Image 16" /></div>
+            <div class="item"><img src="img/img17.jpg" alt="Image 17" /></div>
+            <div class="item"><img src="img/img18.jpg" alt="Image 18" /></div>
+            <div class="item"><img src="img/img19.jpg" alt="Image 19" /></div>
+            <div class="item"><img src="img/img20.jpg" alt="Image 20" /></div>
+            <div class="item"><img src="img/img21.jpg" alt="Image 21" /></div>
+            <div class="item"><img src="img/img22.jpg" alt="Image 22" /></div>
+          </div>
         </div>
         <!-- end hero banner slider -->
       </div>
@@ -403,6 +406,69 @@
       </div>
       <!-- end photo details -->
 
+      <!-- related news -->
+      <section id="marines-related-news" class="container-fluid no-gutters pad0 d-flex marines-related-news">
+        <div class="container-fluid align-self-center">
+          <div class="row">
+            <div class="text-left offset-lg-1 col-lg-3 col-md-12 col-sm-12 align-self-center">
+              <h1 id="related-title">RELATED NEWS</h1>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
+              <div id="in-the-news-scroll" class="carousel-of-news" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner align-center">
+                  <div class="news-item active">
+                    <a href="News_Detail.html" class="align-self-center">
+                      <h4 class="text-left">U.S., French complete pivotal deployment in the U.S. 5th Fleet</h4>
+                      <p class="news-date">27/02/2018 Staff Sgt. Vitaliy Rusavskiy, TF 51/5 </p>
+                    </a>
+                  </div>
+                  <div class="news-item">
+                    <a href="News_Detail.html">
+                      <h4 class="text-left">Any clime and place: 2nd Tank Battalion trains at Fort Stewart</h4>
+                      <p class="news-date">26/02/2018 Cpl. Aaron Henson, II Marine Expeditionary Force </p>
+                    </a>
+                  </div>
+                  <div class="news-item">
+                    <a href="News_Detail.html">
+                      <h4 class="text-left">Cobra Gold 18: HADR-X</h4>
+                      <p class="news-date">25/02/2018 Cpl. Breanna Weisenberger, III Marine Expeditionary Force </p>
+                    </a>
+                  </div>
+                  <div class="news-item">
+                    <a href="News_Detail.html">
+                      <h4 class="text-left">Cobra Gold 18: Allied Marines learn jungle survival skills</h4>
+                      <p class="news-date">24/02/2018 Staff Sgt. Micaiah Anthony, III Marine Expeditionary Force </p>
+                    </a>
+                  </div>
+                  <div class="news-item">
+                    <a href="News_Detail.html">
+                      <h4 class="text-left">1/2 Marines engage in live fire exercise</h4>
+                      <p class="news-date">23/02/2018 Cpl. Juan Madrigal , Marine Corps Installations East</p>
+                    </a>
+                  </div>
+                  <div class="news-item">
+                    <a href="News_Detail.html">
+                      <h4 class="text-left">FASTCENT stands ready to execute its mission</h4>
+                      <p class="news-date">22/02/2018 Sgt. Travis Jordan, 5th Marine Expeditionary Brigade </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-3 col-lg-2 col-sm-12 offest-md-0 align-self-center hide-on-mobile">
+              <span class="dual-link">
+                <a class="previous"><span></span></a>
+                <a class="next"><span>Next</span></a>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="hide-on-desktop mb-3" style="margin-left:auto !important;margin-right: auto!important;"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer>
         <div class="container">
@@ -468,10 +534,470 @@
       <a class="return-to-top" id="return-to-top"><i class="fa fa-location-arrow"></i></a>
     </div>
   </div>
+  <script>
+    /*
+      GalleryHeroSlider - requires TimeMax & TimelineMax Libraries
+      to be loaded via SharedLibrary UseGSAP) or Node (via skin).
+      @developer Ella Musina (emusina@omnitecinc.com)
+    */
+    var GalleryHeroSlider = function(config) { // GalleryHeroSlider || 
+      console.log('GalleryHeroSlider >');
+      var container = config.container ? document.getElementById(config.container) : null;
+      var prev = config.prev ? document.getElementById(config.prev) : null;
+      var next = config.next ? document.getElementById(config.next) : null;
+      if (!container || !prev || !next) return;
 
-  <script type="text/javascript">
-    $('#readmore-expand').on('click', function() {
-      $(this).toggle('expanded');
+      var slides = container.children;
+      var quantity = slides.length;
+      if (quantity === 0) return;
+
+      var currentSlide, currentIndex = 0,
+        isAnimating = false;
+
+      function observe() {
+        console.log('GalleryHeroSlider > observe()');
+        if (prev && next) {
+          prev.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!isAnimating) slideInPrev();
+          }, false);
+          next.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!isAnimating) slideInNext();
+          }, false);
+          prev.addEventListener('touch', function(e) {
+            e.preventDefault();
+            if (!isAnimating) slideInPrev();
+          }, false);
+          next.addEventListener('touch', function(e) {
+            e.preventDefault();
+            if (!isAnimating) slideInPrev();
+          }, false);
+        }
+        jQuery(container).swipe({
+          swipeLeft: function(event, direction, distance, duration, fingerCount, fingerData) {
+            stopRotation();
+            if (!isAnimating) slideInNext();
+          },
+          swipeRight: function(event, direction, distance, duration, fingerCount, fingerData) {
+            stopRotation();
+            if (!isAnimating) slideInPrev();
+          }
+        });
+      }
+
+      function getCurrentSlide() {
+        console.log('GalleryHeroSlider > getCurrentSlide()');
+        for (var j = 0, len = slides.length; j < len; j++) {
+          if (slides[j].classList.contains('current')) {
+            currentIndex = j;
+            currentSlide = slides[j];
+            break;
+          }
+        }
+        if (!currentSlide) {
+          currentSlide = slides[0];
+          slides[0].classList.add('current');
+          indicators[0].classList.add('current');
+        }
+      }
+
+      function slideInNext() {
+        console.log('GalleryHeroSlider > slideInNext()');
+        isAnimating = true;
+        getCurrentSlide();
+        if ((currentIndex + 1) < quantity) {
+          ++currentIndex;
+        } else {
+          currentIndex = 0;
+        }
+
+        nextSlide = slides[currentIndex];
+        var timeline = new TimelineMax({
+          onComplete: function() {
+            nextSlide.classList.add('current');
+            currentSlide.classList.remove('current');
+            currentSlide.setAttribute('style', '');
+            currentSlide = nextSlide;
+            isAnimating = false;
+          }
+        });
+
+        timeline
+          .addLabel('prep')
+          .set(nextSlide, {
+            x: '100%',
+            display: 'block'
+          }, 'prep')
+          .addLabel('move-next')
+          .to(currentSlide, 0.5, {
+            x: '-100%',
+            ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+          }, 'move-next')
+          .to(nextSlide, 0.5, {
+            x: '0%',
+            ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+          }, 'move-next');
+
+      }
+
+      function slideInPrev() {
+        console.log('GalleryHeroSlider > slideInPrev()');
+        isAnimating = true;
+        getCurrentSlide();
+
+        if ((currentIndex - 1) >= 0) {
+          --currentIndex;
+        } else {
+          currentIndex = quantity - 1;
+        }
+
+        prevSlide = slides[currentIndex];
+        var timeline = new TimelineMax({
+          onComplete: function() {
+            currentSlide.classList.remove('current');
+            prevSlide.classList.add('current');
+            currentSlide.setAttribute('style', '');
+            currentSlide = prevSlide;
+            isAnimating = false;
+          }
+        });
+
+        timeline
+          .addLabel('prep')
+          .set(prevSlide, {
+            display: 'block',
+            x: '-100%'
+          }, 'prep')
+          .addLabel('move-prev')
+          .to(prevSlide, 0.5, {
+            x: '0%',
+            ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+          }, 'move-prev')
+          .to(currentSlide, 0.5, {
+            x: '100%',
+            ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+          }, 'move-prev');
+      }
+
+      function setup() {
+        observe();
+      }
+
+      setup();
+    };
+    /*
+        Slider - Slideshow of photos managed by carousel of thumbnails below
+        @developer - Ella Musina (emusina@omnitecinc.com)
+    */
+    // var ImageGallerySlider = function(config) {
+    //   console.log('Image Gallery Slider >');
+    //   var element = config.id ? document.getElementById(config.id) : null;
+    //   if (!element) return;
+    //   var view = element.querySelector('.slider');
+    //   var views = view.querySelectorAll('.item');
+    //   var prev = element.querySelector('.carousel-control-prev');
+    //   var next = element.querySelector('.carousel-control-next');
+    //   var carousel = element.querySelector('.carousel-of-thumbs');
+    //   var wrapper = carousel.querySelector('.carousel-inner');
+    //   var thumbs = carousel.querySelectorAll('.item');
+    //   var isAnimating = false;
+    //   if (!views || !prev || !next || !carousel || !thumbs) return;
+    //
+    //   var currentView = views[0],
+    //     currentIndex = 0,
+    //     currentThumb = thumbs[0];
+    //   var autoRotate = config.autorotate || false;
+    //   var stopRotate = config.stoprotate || false;
+    //   var rotateDuration = config.rotateduration || 5000;
+    //   var animateInView = config.animateinview || false;
+    //
+    //   var distance, jump, totalJumps;
+    //
+    //   function setCarouselDistance() {
+    //     jump = 0;
+    //     distance = carousel.getBoundingClientRect().width;
+    //     totalJumps = Math.ceil(thumbs.length * 72 / distance);
+    //     TweenMax.set(wrapper, {
+    //       x: 0,
+    //       width: (totalJumps * distance) + 'px'
+    //     });
+    //   }
+    //
+    //   function setImageRatioViewSize() {
+    //     var width = view.getBoundingClientRect().width; // 3x2
+    //     var height = width * 2 / 3;
+    //     TweenMax.set(view, {
+    //       height: height + 'px'
+    //     });
+    //   }
+    //
+    //   function slideIn(e) {
+    //     var thumb = e.target;
+    //     while (!thumb.classList.contains('item')) {
+    //       thumb = thumb.parentNode;
+    //     }
+    //     if (thumb.index !== currentIndex) {
+    //       if (thumb.index > currentIndex) {
+    //         slideInFromRight(thumb);
+    //       } else {
+    //         slideInFromLeft(thumb);
+    //       }
+    //     }
+    //   }
+    //
+    //   function slideInFromLeft(thumb) {
+    //     thumb.classList.add('current');
+    //     var timeline = new TimelineMax({
+    //       paused: true,
+    //       onStart: function() {
+    //         thumbs[currentIndex].classList.remove('current');
+    //       },
+    //       onComplete: function() {
+    //         currentIndex = thumb.index;
+    //         currentView = thumb.view;
+    //         isAnimating = false;
+    //       }
+    //     });
+    //     timeline
+    //       .addLabel('init')
+    //       .set(thumb.view, {
+    //         x: '-100%',
+    //         opacity: 1,
+    //         visibility: 'visible'
+    //       }, 'init')
+    //       .addLabel('move')
+    //       .to(views[currentIndex], 0.5, {
+    //         x: '100%',
+    //         ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+    //       }, 0.1, 'move')
+    //       .to(thumb.view, 0.5, {
+    //         x: '0%',
+    //         ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+    //       }, 0.1, 'move');
+    //     timeline.play();
+    //   }
+    //
+    //   function slideInFromRight(thumb) {
+    //     thumb.classList.add('current');
+    //     var timeline = new TimelineMax({
+    //       paused: true,
+    //       onStart: function() {
+    //         thumbs[currentIndex].classList.remove('current');
+    //       },
+    //       onComplete: function() {
+    //         currentIndex = thumb.index;
+    //         currentView = thumb.view;
+    //         isAnimating = false;
+    //       }
+    //     });
+    //     timeline
+    //       .addLabel('init')
+    //       .set(thumb.view, {
+    //         x: '100%',
+    //         opacity: 1,
+    //         visibility: 'visible'
+    //       }, 'init')
+    //       .addLabel('move')
+    //       .to(views[currentIndex], 0.5, {
+    //         x: '-100%',
+    //         ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+    //       }, 0.1, 'move')
+    //       .to(thumb.view, 0.5, {
+    //         x: '0%',
+    //         ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+    //       }, 0.1, 'move');
+    //     timeline.play();
+    //   }
+    //
+    //   function moveLeft() {
+    //     var prevIndex = currentIndex - 1;
+    //     if (prevIndex <= 0) {
+    //       prevIndex = thumbs.length - 1;
+    //     }
+    //     var thumb = thumbs[prevIndex];
+    //     slideInFromLeft(thumb);
+    //   }
+    //
+    //   function moveRight() {
+    //     var nextIndex = currentIndex + 1;
+    //     if (nextIndex >= thumbs.length) {
+    //       nextIndex = 0;
+    //     }
+    //     var thumb = thumbs[nextIndex];
+    //     slideInFromRight(thumb);
+    //   }
+    //
+    //   var timer;
+    //
+    //   function rotate() {
+    //     timer = window.setInterval(function() {
+    //       moveRight();
+    //     }, rotateDuration);
+    //   }
+    //
+    //   function pause() {
+    //     window.clearInterval(timer);
+    //   }
+    //
+    //   function moveThumbsRight() {
+    //     if (jump - 1 >= 0) {
+    //       jump--;
+    //     } else {
+    //       jump = totalJumps - 1;
+    //       TweenMax.set(wrapper, {
+    //         x: -totalJumps * distance + 'px'
+    //       });
+    //     }
+    //     TweenMax.to(wrapper, 0.5, {
+    //       x: -(jump * distance) + 'px',
+    //       ease: 'cubic-bezier(0, 0, 0, 1.1)'
+    //     });
+    //   }
+    //
+    //   function moveThumbsLeft() {
+    //     if (jump + 1 < totalJumps) {
+    //       jump++;
+    //     } else {
+    //       jump = 0;
+    //       TweenMax.set(wrapper, {
+    //         x: distance + 'px'
+    //       });
+    //     }
+    //     TweenMax.to(wrapper, 0.5, {
+    //       x: -(jump * distance) + 'px',
+    //       ease: 'cubic-bezier(0, 0, 0, 1.1)'
+    //     });
+    //   }
+    //
+    //   function observe() {
+    //     for (var i = 0, len = views.length; i < len; i++) {
+    //       thumbs[i].view = views[i];
+    //       thumbs[i].index = i;
+    //       thumbs[i].addEventListener('click', function(e) {
+    //         if (!isAnimating) {
+    //           isAnimating = true;
+    //           slideIn(e);
+    //         }
+    //       }, false);
+    //       thumbs[i].addEventListener('touch', function(e) {
+    //         if (!isAnimating) {
+    //           isAnimating = true;
+    //           slideIn(e);
+    //         }
+    //       }, false);
+    //     }
+    //
+    //     prev.addEventListener('click', function(e) {
+    //       moveThumbsRight(e);
+    //     }, false);
+    //     prev.addEventListener('touch', function(e) {
+    //       moveThumbsRight(e);
+    //     }, false);
+    //     next.addEventListener('click', function(e) {
+    //       moveThumbsLeft(e);
+    //     }, false);
+    //     next.addEventListener('touch', function(e) {
+    //       moveThumbsLeft(e);
+    //     }, false);
+    //
+    //     if (stopRotate) {
+    //       element.addEventListener('mouseover', function() {
+    //         pause();
+    //       }, false);
+    //       element.addEventListener('mouseout', function() {
+    //         rotate();
+    //       }, false);
+    //     }
+    //
+    //     if (autoRotate) {
+    //       window.addEventListener('resize', function() { // debouncer
+    //         pause();
+    //         if (timer) clearInterval(timer);
+    //         timer = window.setTimeout(function() {
+    //           setCarouselDistance();
+    //           setImageRatioViewSize();
+    //           rotate();
+    //         }, 12000);
+    //       }, false);
+    //       rotate();
+    //     } else {
+    //       window.addEventListener('resize', function() {
+    //         window.setTimeout(function() {
+    //           setCarouselDistance();
+    //           setImageRatioViewSize();
+    //         }, 200);
+    //       });
+    //     }
+    //
+    //     if (animateInView) { //jquery.inview plugin
+    //       $(element).on('inview', function(event, isInView) {
+    //         if (isInView) {
+    //           TweenMax.to(element, 0.25, {
+    //             opacity: 1,
+    //             y: 0,
+    //             ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+    //             onComplete: function() {
+    //               $(element).off('inview');
+    //             }
+    //           });
+    //         }
+    //       });
+    //
+    //       $(carousel).on('inview', function(event, isInView) {
+    //         if (isInView) {
+    //           TweenMax.staggerTo(thumbs, 0.25, {
+    //             opacity: 1,
+    //             ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+    //             onComplete: function() {
+    //               $(carousel).off('inview');
+    //             }
+    //           }, 0.12);
+    //         }
+    //       });
+    //     }
+    //   }
+    //
+    //   function loadDefaults() {
+    //     currentThumb.classList.add('current');
+    //     if (animateInView) { // material lib animation standards
+    //       TweenMax.set(element, {
+    //         opacity: 0,
+    //         y: 30
+    //       });
+    //       TweenMax.set(thumbs, {
+    //         opacity: 0
+    //       });
+    //     }
+    //     TweenMax.set(views[0], {
+    //       visibility: 'visible',
+    //       opacity: 1
+    //     });
+    //   }
+    //
+    //   function init() {
+    //     setCarouselDistance();
+    //     setImageRatioViewSize();
+    //     loadDefaults();
+    //     observe();
+    //   }
+    //
+    //   init();
+    // };
+
+    document.addEventListener('DOMCotentLoaded', function(e) {
+      // var slider = new ImageGallerySlider({
+      //   id: "gallery-of-hero-photos",
+      //   autorotate: false,
+      //   stoprotate: false,
+      //   rotateduration: 5000,
+      //   animateinview: false
+      // });
+      var carousel = new GalleryHeroSlider({
+        container: 'hero-slider',
+        prev: 'carousel-control-prev',
+        next: 'carousel-control-next',
+      });
     });
   </script>
 </body>
