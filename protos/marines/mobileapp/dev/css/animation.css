@@ -1,0 +1,13 @@
+.dma-slideshow.toprotatorfull .slides .slide:nth-child(1) {
+  visibility: hidden;
+}
+
+/* .dma-slideshow.toprotatorfull .slides .slide:nth-child(1) h4,
+.dma-slideshow.toprotatorfull .slides .slide:nth-child(1) h1,
+.dma-slideshow.toprotatorfull .slides .slide:nth-child(1) p,
+.dma-slideshow.toprotatorfull .slides .slide:nth-child(1) aside {
+  opacity: 0;
+} */
+.banner-line {
+  overflow: hidden;
+}

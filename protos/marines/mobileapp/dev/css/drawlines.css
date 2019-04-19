@@ -1,0 +1,249 @@
+@-webkit-keyframes updwn {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: 50px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+.mobileapp .updown {
+  -webkit-animation: updwn 5s infinite;
+  animation: updwn 5s infinite;
+  transition: all 5s;
+}
+
+.mobileapp .app-section-03 {
+  clear: both;
+  padding-top: 100px;
+  background-size: 100%;
+}
+
+.mobileapp .get-mobilized-button svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.mobileapp .bor {
+  border: 4px solid #464646;
+  border-radius: .2em;
+}
+
+.mobileapp .app-section-03 .box-border>button {
+  text-transform: uppercase !important;
+  letter-spacing: .0em !important;
+  font-weight: 100;
+  background: none;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-weight: 100;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.mobileapp .box-border {
+  margin-bottom: 30px;
+}
+
+.mobileapp .app-section-03 {
+  padding-top: 350px;
+  padding-bottom: 150px;
+}
+
+.mobileapp .get-mobilized-button {
+  position: relative;
+}
+
+.mobileapp .get-mobilized-button svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mobileapp .triger {
+  display: inline-block;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.mobileapp .triger-span {
+  display: block;
+  padding: 25px 80px;
+  font-size: 125px;
+  font-family: "Colossalis", Impact, sans-serif;
+}
+
+@media (max-width: 767px) {
+  .mobileapp .draw {
+    width: 100%;
+  }
+
+  .mobileapp .button>button {
+    padding: 30px;
+  }
+
+  .mobileapp .app-section-03 {
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileapp .box-border {
+    font-size: 80px;
+  }
+
+  .mobileapp .draw::before,
+  .mobileapp .draw::after {
+    border: 50px solid transparent;
+  }
+}
+
+@media (max-width: 575px) {
+  .mobileapp .app-section-03 {
+    background-size: 225%;
+    background-position: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .mobileapp .m20 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .mobileapp .draw {
+    border: 15px solid #cc0001 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileapp .button>button {
+    font-size: 80px;
+    margin: 0 auto;
+  }
+
+  .mobileapp .draw {
+    border: 20px solid transparent !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobileapp .app-section-03 {
+    padding-top: 300px;
+  }
+
+  .mobileapp .draw::before,
+  .mobileapp .draw::after {
+    border: 30px solid transparent;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mobileapp .app-section-03 {
+    padding-top: 400px;
+    padding-bottom: 200px;
+    background-position: center bottom;
+  }
+}
+
+@media (max-width: 575px) {
+  .mobileapp .app-section-03 {
+    padding-top: 125px;
+    padding-bottom: 100px;
+  }
+
+  .mobileapp .app-section-03 .box-border>button {
+    -webkit-box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0);
+    font-size: 40px;
+    padding: 20px 20px !important;
+  }
+
+  .mobileapp .app-section-03 .box-border>button {
+    padding: 30px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .mobileapp .app-section-03 .box-border>button {
+    padding: 30px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileapp .app-section-03 .box-border>button {
+    padding: 30px !important;
+  }
+
+  .mobileapp .app-section-03 {
+    padding-top: 350px;
+    padding-bottom: 150px;
+  }
+}
+
+@media (min-width: 991px) {
+  .mobileapp .button>button {
+    text-transform: uppercase !important;
+    letter-spacing: .0em !important;
+    font-weight: 100;
+    background: none;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1em;
+    -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    color: #ffffff;
+    font-size: 120px;
+    font-weight: 100;
+    position: relative;
+    vertical-align: middle;
+    line-height: 1;
+    padding: 70px 95px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mobileapp .app-section-03 .box-border>button {
+    -webkit-box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 30px rgba(0, 0, 0, 0);
+    font-size: 120px;
+    padding: 70px 95px !important;
+  }
+}
+
+@media(max-width: 991px) {
+  .mobileapp .triger-span {
+    font-size: 80px;
+  }
+}
+
+@media(max-width: 768px) {
+  .mobileapp .triger-span {
+    font-size: 48px;
+  }
+}
+
+@media(max-width: 500px) {
+  .mobileapp .triger-span {
+    padding: 15px 20px;
+    font-size: 30px;
+  }
+}
