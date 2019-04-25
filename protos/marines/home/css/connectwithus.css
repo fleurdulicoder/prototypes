@@ -1,0 +1,42 @@
+.connect-with-us {
+  color: #fff;
+  background-color: #640000;
+  padding: 60px 0;
+  padding-bottom: 20px;
+  clear: both;
+}
+
+.connect-with-us .icon-col {
+  text-align: center;
+}
+
+.connect-with-us .connect-title:hover {
+  border-color: #fff;
+}
+
+.connect-with-us .connect-title {
+  text-decoration: none;
+  color: #fff !important;
+  border-bottom: 3px solid transparent;
+  transition: all 0.5s;
+  padding-bottom: 0.3em;
+  font-size: 24px !important;
+}
+
+.connect-with-us h3 {
+  min-height: 43px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+  .connect-with-us .s1 h3 {
+    padding-right: 19px;
+  }
+}
+
+@media (min-width: 992px) {
+  .connect-with-us {
+    background-color: #640000;
+    padding: 110px 0 90px !important;
+  }
+}
