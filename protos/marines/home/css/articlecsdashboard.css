@@ -3458,6 +3458,8 @@ Begin restyled components
 }
 
 .adash-fs .tab-menu .nav-tabs li a {
+  font-weight: 400;
+  /* @done */
   padding-left: 28px;
   text-align: right;
   padding-right: 38px;

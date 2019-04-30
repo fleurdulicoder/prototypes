@@ -475,14 +475,13 @@
 														<div class="container">
 															<div class="row">
 																<div class="col-12">
-																	<h4 class="title light underline" data-animate>01</h4>
-																	<div class="accentbar" data-animate style="border-bottom: 2px solid #940000; width: 120px;"></div>
-																	<a href="/img/img1.jpg" target="_self">
-																		<h1 class="title light mouseover" data-animate>Reconnaissance and Surveillance Training</h1>
+																	<h4 class="title light underline" data-aos="fade-right" data-aos-easing="cubic-bezier(0.0, 0.0, 0.2, 1)" data-aos-duration="600" data-aos-delay="900" data-aos-once="true">01</h4>
+																	<a href="/img/img1.jpg" target="_self" data-aos="fade-right" data-aos-easing="cubic-bezier(0.0, 0.0, 0.2, 1)" data-aos-duration="600" data-aos-delay="1100" data-aos-once="true">
+																		<h1 class="title light mouseover" data-aos="fade-right" data-aos-easing="cubic-bezier(0.0, 0.0, 0.2, 1)" data-aos-duration="600" data-aos-delay="1100">Reconnaissance and Surveillance Training</h1>
 																	</a>
-																	<p class="description text light" data-animate>Cpl. Chancelor J. Kelso, a scout sniper team leader with Weapons Company,
+																	<p class="description text light" data-aos="fade-right" data-aos-easing="cubic-bezier(0.0, 0.0, 0.2, 1)" data-aos-duration="600" data-aos-delay="1300">Cpl. Chancelor J. Kelso, a scout sniper team leader with Weapons Company,
 																		Battalion Landing Team, 1st Battalion, 4th Marines, posts security during re</p>
-																	<aside class="text dark decorated" data-animate>
+																	<aside class="text dark decorated" data-aos="fade-right" data-aos-easing="cubic-bezier(0.0, 0.0, 0.2, 1)" data-aos-duration="600" data-aos-delay="1500" data-aos-once="true">
 																		<span class="more-url"><a href="/img/img1.jpg" target="_self"><span>View Details</span></a></span>
 																		<span class="extra-links"></span>
 																		<aside>
@@ -3762,8 +3761,6 @@
 			linesClass: "banner-line"
 		});
 
-		console.log(bannerItems);
-
 		bannerTimeline
 			.addLabel('headline')
 			.set(bannerItemsParent, {
@@ -3783,12 +3780,12 @@
 				y: 0
 			}, 'paragraph');
 
-		bannerTimeline.staggerFrom(bannerItems, 1, {
-			delay: 2,
-			y: '300%',
-			opacity: 1,
-			ease: 'Power4.easeOut',
-		}, 0.15);
+		// bannerTimeline.staggerFrom(bannerItems, 1, {
+		// 	delay: 2,
+		// 	y: '300%',
+		// 	opacity: 1,
+		// 	ease: 'Power4.easeOut',
+		// }, 0.15);
 
 		document.addEventListener('DOMContentLoaded', function() {
 			slideshow413.pause();
