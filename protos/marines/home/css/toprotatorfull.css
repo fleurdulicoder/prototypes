@@ -32,6 +32,9 @@ body.noscroll {
   border-bottom: 1px solid;
 }
 
+/* @done */
+.toprotatorfull .accentbar {}
+
 .toprotatorfull h1 {
   padding: 0;
   margin: 25px 0;
@@ -65,7 +68,9 @@ body.noscroll {
   line-height: 1.5;
   padding: 0;
   margin: 0 0 30px;
-  width: 65%;
+  /* width: 65%; */
+  /* @done */
+  width: 50%;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -351,13 +356,37 @@ body.noscroll {
   text-transform: uppercase;
 }
 
+/* @done */
 .toprotatorfull .pager-section .next span,
-.toprotatorfull .pager-section .previous span {
+.toprotatorfull .pager-section .previous span,
+.toprotatorfull .pager-section .next i,
+.toprotatorfull .pager-section .previous i {
   position: relative;
-  margin: 0 15px;
-  padding: 0;
+  margin: 0;
+  padding: 5px 0;
   display: inline-block;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  overflow: hidden;
+  line-height: 1;
+  /* added @done */
+}
+
+/* @done */
+.toprotatorfull .pager-section .next span {
+  margin-right: 15px;
+}
+
+/* @done */
+.toprotatorfull .pager-section .previous span {
+  margin-left: 15px;
+}
+
+/* @done */
+.toprotatorfull .pager-section .next i,
+.toprotatorfull .pager-section .previous i {
+  font-style: normal;
 }
 
 .toprotatorfull-video-background {

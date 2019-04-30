@@ -332,12 +332,16 @@ div.sharedMediaFooter {
 }
 
 /* START: USACE base theme responsive */
-.LayoutHorizontalLinkCollection.row img {
-  width: auto;
+.LayoutVerticalLinkCollection.row {
+  text-align: center;
+}
+
+.LayoutVerticalLinkCollection.row img {
+  max-width: 100%;
   height: auto;
 }
 
-.LayoutHorizontalLinkCollection.row a {
+.LayoutVerticalLinkCollection.row a {
   margin: 0;
 }
 
@@ -346,9 +350,32 @@ div.sharedMediaFooter {
 }
 
 @media (max-width: 768px) {
-  div.LayoutHorizontalLinkCollection.row img {
+  div.LayoutVerticalLinkCollection.row img {
     max-height: 70px;
   }
+
+  div.LayoutVerticalLinkCollection.row div:nth-child(n+3) {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  div.LayoutVerticalLinkCollection.row div {
+    margin-top: 8px !important;
+  }
+}
+
+/* Styles for IE10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .LayoutVerticalLinkCollection.row img {
+    width: 100%;
+  }
+}
+
+/* Fix bootstrap theme level override, this can possibly be removed in the future */
+#content .LayoutVerticalLinkCollection.row {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 /* END: USACE base theme responsive */
@@ -372,4 +399,102 @@ div.sharedMediaFooter {
 
 .MDMHorizontalLinkCollection a:hover {
   transform: scale(1.05);
+}
+
+.imagelinks-edit-links .ui-sortable a {
+  min-height: 60px;
+  min-width: 60px;
+}
+
+.ImageWithTextOverlayLinkCollection {
+  width: 100%;
+}
+
+.ImageWithTextOverlayLinkCollection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ImageWithTextOverlayLinkCollection>div {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  max-width: 1261px;
+  width: 100%;
+}
+
+div.LinkCollection.ImageWithTextOverlayLinkCollection div a {
+  height: 234px;
+  display: block;
+}
+
+.ImageWithTextOverlayLinkCollection a .img {
+  margin: 10px;
+  height: calc(100% - 20px);
+  background-size: cover;
+}
+
+.ImageWithTextOverlayLinkCollection a .overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 20px 0 20px;
+  transition-duration: .7s;
+  transition-timing-function: ease;
+  transition-property: background;
+}
+
+.ImageWithTextOverlayLinkCollection a:hover .overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ImageWithTextOverlayLinkCollection a .overlay .asset-request-icon {
+  background: url(../img/additional-info-icon.png);
+  display: block;
+  height: 35px;
+  width: 35px;
+  opacity: 0;
+  transition-duration: .7s;
+  transition-timing-function: ease;
+  transition-property: opacity;
+}
+
+.ImageWithTextOverlayLinkCollection a:hover .overlay .asset-request-icon {
+  opacity: 1;
+}
+
+.ImageWithTextOverlayLinkCollection a h6 {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  right: 30px;
+  margin: 0;
+  color: #fff;
+  font-size: 32px;
+  line-height: 32px;
+  word-break: break-word;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .ImageWithTextOverlayLinkCollection>div {
+    flex-direction: column;
+  }
+
+  .ImageWithTextOverlayLinkCollection>div a {
+    width: 100% !important;
+    height: 234px;
+  }
+
+  .ImageWithTextOverlayLinkCollection a .overlay {
+    justify-content: center;
+  }
 }

@@ -1,0 +1,97 @@
+/*****************/
+/*Extra CSS*/
+/***************/
+div.Clear {
+  clear: both;
+}
+
+.dnnModuleSettings {
+  padding-left: 15px;
+}
+
+/*Get rid of sickly yellow color Bootstrap has for some reason*/
+mark, .mark {
+  background-color: transparent !important;
+}
+
+.SocialMediaFeedSettingRow {
+  margin-bottom: 10px;
+}
+
+.SocialMediaFeedchkSpan {
+  width: 100px !important;
+}
+
+.SocialMediaFeedchkImg {
+  margin-right: 5px;
+  margin-bottom: 8px;
+  width: 40px;
+}
+
+.pnlMaxResults {
+  margin-left: 10px;
+}
+
+.pnlSocialMediaIcons {
+  margin-left: 25px;
+}
+
+div.DGovFeedThird>div>a>img {
+  max-width: 100%;
+}
+
+/* @todo */
+.SlideshowFeedMain {
+  background-color: #000;
+  background-image: url($marines-icon-black);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.SlideshowFeedMain .SlideshowFeed .next {
+  background-image: url(../img/right-arrow-white@2x.png);
+}
+
+.SlideshowFeedMain .SlideshowFeed .prev {
+  background-image: url(../img/left-arrow-white@2x.png);
+}
+
+.SlideshowFeedMain .pagination li {
+  border-color: #fff;
+}
+
+.SlideshowFeedMain .pagination .active {
+  background-color: #fff;
+}
+
+.SlideshowFeedMain .feed-item {}
+
+.SlideshowFeedMain .feed-item .feed-age,
+.SlideshowFeedMain .feed-item .feed-content {
+  border-color: #fff;
+  color: #fff;
+}
+
+.SlideshowFeedMain .feed-name a {
+  color: #fff;
+}
+
+.SlideshowFeedMain .feed-content a {
+  color: #fff;
+}
+
+.linked-desc {
+  background-color: #000;
+}
+
+.linked-desc a {
+  color: #fff;
+}
+
+.feed-follow a {
+  color: #fff;
+}
+
+.feed-follow .main-title {
+  color: #940000;
+}
