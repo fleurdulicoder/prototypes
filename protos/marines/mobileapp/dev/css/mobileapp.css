@@ -1,14 +1,14 @@
-@-webkit-keyframes wordliner {
+@-webkit-keyframes highlighter {
   0% {
-    transform: scaleX(0.8);
-  }
-
-  20% {
     transform: scaleX(0);
   }
 
+  20% {
+    transform: scaleX(1);
+  }
+
   80% {
-    transform: scaleX(0.88);
+    transform: scaleX(1);
   }
 
   100% {
@@ -16,23 +16,27 @@
   }
 }
 
-.underlined-word {
+.highlighted-word {
+  position: relative;
+}
+
+.highlighted-word span {
   position: relative;
   z-index: 2;
 }
 
-.underlined-word::after {
+.highlighted-word::after {
   content: '';
   width: 100%;
   position: absolute;
   background-color: #cc0001;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 50%;
+  height: 65%;
   transform-origin: left bottom;
-  transform: scaleX(0.8);
-  -webkit-animation: wordliner 5s infinite;
-  animation: wordliner 5s infinite;
+  transform: scaleX(0);
+  -webkit-animation: highlighter 5s infinite;
+  animation: highlighter 5s infinite;
   transition: all 5s;
   z-index: 1;
 }

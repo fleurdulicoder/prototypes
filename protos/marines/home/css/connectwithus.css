@@ -29,6 +29,13 @@
   box-sizing: border-box;
 }
 
+.connect-with-us h2 {
+  z-index: 2;
+  color: #fff;
+  margin: 0;
+  font-size: 48px !important;
+}
+
 @media (min-width: 992px) {
   .connect-with-us .s1 h3 {
     padding-right: 19px;
@@ -40,4 +47,14 @@
     background-color: #640000;
     padding: 110px 0 90px !important;
   }
+}
+
+@media (max-width: 991px) {
+  .connect-with-us h2 {
+    text-align: center;
+  }
+
+  /*.connect-with-us h6 {
+    padding: 22px 5px;
+  }*/
 }

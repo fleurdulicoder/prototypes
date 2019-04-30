@@ -14,7 +14,6 @@
 	<link href="css/toprotatorfull.css" type="text/css" rel="stylesheet" />
 	<link href="css/explore.css" type="text/css" rel="stylesheet" />
 	<link href="css/onpoint.css" type="text/css" rel="stylesheet" />
-	<link href="css/socialmediafeed.css" type="text/css" rel="stylesheet" />
 	<link href="css/articlecsdashboard.css" type="text/css" rel="stylesheet" />
 	<link href="css/floatingvideo.css" type="text/css" rel="stylesheet" />
 	<link href="css/connectwithus.css" type="text/css" rel="stylesheet" />
@@ -22,9 +21,15 @@
 	<link href="css/skipnav.css" type="text/css" rel="stylesheet" />
 	<link href="css/skin.css" type="text/css" rel="stylesheet" />
 	<link href="css/homeanimations.css" type="text/css" rel="stylesheet" />
+	<link href="css/socialmediafeed.css" type="text/css" rel="stylesheet" />
+	<link href="css/royalslider.css" type="text/css" rel="stylesheet" />
+	<link href="css/dvidsvideos.css" type="text/css" rel="stylesheet" />
+	<link href="css/mediaelementplayer.css" type="text/css" rel="stylesheet" />
+	<link href="css/dvidsvideos.css" type="text/css" rel="stylesheet" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" type="text/css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" type="text/javascript"></script>
 	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/jquery.royalslider.min.js" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 </head>
@@ -41,6 +46,8 @@
 	<script src="js/jquery.cycle2.swipe.js" type="text/javascript"></script>
 	<script src="js/jquery.inview.min.js" type="text/javascript"></script>
 	<script src="js/common.js" type="text/javascript"></script>
+	<script src="js/mediaelement.js" type="text/javascript"></script>
+	<!--script src="js/dvidsmediaanalytics.js" type="text/javascript"></script-->
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			initializeSkin();
@@ -391,7 +398,6 @@
 									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Special-Features">Special Features</a></li>
 									<li><a href="https://skin-dnn9.usmc.afpimsstaging.mil/News/Live-Video">Live Video</a></li>
 								</ul>
-
 							</li>
 							<li class=""><a href="https://skin-dnn9.usmc.afpimsstaging.mil/Units"><span>Units</span></a></li>
 							<li class="">
@@ -3180,7 +3186,7 @@
 							</div>
 						</div>
 
-						<!-- Soocial Media Feeds -->
+						<!-- Social Tweets -->
 						<div class="DnnModule DnnModule-SocialMediaFeed DnnModule-600"><a name="600"></a>
 							<div class="empty-container background-color-septenary">
 								<div id="dnn_ctr600_ContentPane">
@@ -3194,7 +3200,8 @@
 													<ul class="slideshow-slider" style="width: 7500px; margin-left: -750px;">
 														<li class="feed-item" id="slide-9" style="width: 750px;">
 															<div class="feed-content">
-																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1121455323754192897" target="_blank" class="DGovTwitterText">Summer is quickly approaching. It's important for us to reflect on our safety, especially our safety
+																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1121455323754192897" target="_blank" class="DGovTwitterText">Summer
+																		is quickly approaching. It's important for us to reflect on our safety, especially our safety
 																		behind the whe… https://t.co/ctzKQhEvam</a></div>
 																<div class="SlideshowInfo">
 																	<span class="feed-name"><a href="https://www.twitter.com/usmc">@usmc</a></span>
@@ -3215,8 +3222,9 @@
 														</li>
 														<li class="feed-item" id="slide-1" style="width: 750px;">
 															<div class="feed-content">
-																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1122651712311955457" target="_blank" class="DGovTwitterText">No Marine Left Behind
-																		Marines with @3rdmaw conduct a simulated casualty evacuation as part of their Corporals Cour… https://t.co/87EmzZmcgi</a></div>
+																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1122651712311955457" target="_blank" class="DGovTwitterText">No
+																		Marine Left Behind Marines with @3rdmaw conduct a simulated casualty evacuation as
+																		part of their Corporals Cour… https://t.co/87EmzZmcgi</a></div>
 																<div class="SlideshowInfo">
 																	<span class="feed-name"><a href="https://www.twitter.com/usmc">@usmc</a></span>
 																	<span class="feed-age">23 hours ago</span>
@@ -3227,7 +3235,6 @@
 														<li class="feed-item" id="slide-2" style="width: 750px;">
 															<div class="feed-content">
 																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1122470519880724480" target="_blank" class="DGovTwitterText">What's your favorite superpower of the Corps?
-
 																		#NationalSuperheroDay https://t.co/0Avippfuae</a></div>
 																<div class="SlideshowInfo">
 																	<span class="feed-name"><a href="https://www.twitter.com/usmc">@usmc</a></span>
@@ -3262,7 +3269,6 @@
 														<li class="feed-item" id="slide-5" style="width: 750px;">
 															<div class="feed-content">
 																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1121926935779651584" target="_blank" class="DGovTwitterText">Know what it takes to become an EOD Marine?
-
 																		Learn how to LAT move to EOD: https://t.co/zO7Iy9BO6L https://t.co/g8IWpD14PE</a></div>
 																<div class="SlideshowInfo">
 																	<span class="feed-name"><a href="https://www.twitter.com/usmc">@usmc</a></span>
@@ -3285,7 +3291,6 @@
 														<li class="feed-item" id="slide-7" style="width: 750px;">
 															<div class="feed-content">
 																<div class="linked-desc"><a href="https://twitter.com/10126672/statuses/1121564548710924288" target="_blank" class="DGovTwitterText">Wall of Steel
-
 																		Sgt. Alexander Anninos with Battalion Landing Team 3/5, @11thMEU, kicks a riot shield during civil d… https://t.co/4YJZ2USphK</a></div>
 																<div class="SlideshowInfo">
 																	<span class="feed-name"><a href="https://www.twitter.com/usmc">@usmc</a></span>
@@ -3473,7 +3478,6 @@
 
 										</div>
 
-
 										<script>
 											window.fbAsyncInit = function() {
 												FB.init({
@@ -3498,10 +3502,9 @@
 									</div><!-- End_Module_600 -->
 								</div>
 							</div>
+							<script async defer src="https://connect.facebook.net/es_LA/sdk.js"></script>
 						</div>
-
-						<!-- End Social MMedia Feeds -->
-
+						<!-- End Social -->
 
 						<!-- Corp Resources  -->
 						<div class="DnnModule DnnModule-DNN_HTML DnnModule-519"><a name="519"></a>
@@ -3513,31 +3516,31 @@
 											<div data-parallax data-parallax-span="3" data-parallax-image="img/home-parallax.jpg" data-parallax-overflow="visible">
 												<div class="container"><br>
 													<div class="row corp-resources no-gutters"><br>
-														<div class="col-sm-12 col-xl-3 align-self-center" data-aos="fade-right" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-duration="800" data-aos-once="true"><br>
-															<h2>CORPS RESOURCES</h2><br>
-														</div><br>
-														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-once="true"><br>
+														<div class="col-sm-12 col-xl-3 align-self-center" data-aos="fade-right" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-duration="800" data-aos-once="true">
+															<h2>CORPS RESOURCES</h2>
+														</div>
+														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="700" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-once="true">
+															<ul class="list-unstyled" style="font-size: 18px !important;">
+																<li><a href="http://www.fitness.marines.mil/" target="_new" class="slide-in">WORKOUT OF THE DAY</a></li>
+																<li><a href="http://www.hqmc.marines.mil/Portals/136/Docs/Financial%20Reports/FY17USMC_AFR12-5.pdf?ver=2017-12-07-131524-073" target="_new" class="slide-in">MARINE CORPS ENERGY</a></li>
+																<li><a href="http://www.woundedwarriorregiment.org/" target="_new" class="slide-in">WOUNDED WARRIOR</a></li>
+																<li><a href="http://www.hqmc.marines.mil/Portals/61/Docs/Courts%20Martials/Courts%20Martial_1117.pdf" target="_new" class="slide-in">COURTS MARTIAL</a></li>
+															</ul>
+														</div>
+														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="1200" data-aos-once="true" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)">
 															<ul class="list-unstyled" style="font-size: 18px !important;"><br>
-																<li><a href="http://www.fitness.marines.mil/" target="_new" class="slide-in">WORKOUT OF THE DAY</a></li><br>
-																<li><a href="http://www.hqmc.marines.mil/Portals/136/Docs/Financial%20Reports/FY17USMC_AFR12-5.pdf?ver=2017-12-07-131524-073" target="_new" class="slide-in">MARINE CORPS ENERGY</a></li><br>
-																<li><a href="http://www.woundedwarriorregiment.org/" target="_new" class="slide-in">WOUNDED WARRIOR</a></li><br>
-																<li><a href="http://www.hqmc.marines.mil/Portals/61/Docs/Courts%20Martials/Courts%20Martial_1117.pdf" target="_new" class="slide-in">COURTS MARTIAL</a></li><br>
+																<li><a href="maradmins.html" target="_new" class="slide-in">MARADMINS </a></li>
+																<li><a href="library.html" target="_new" class="slide-in">ORDERS/DIRECTIVES </a></li>
+																<li><a href="https://www.mol.usmc.mil/" target="_new" class="slide-in">MARINE ONLINE</a></li>
+																<li><a href="http://www.marines.mil/Portals/59/Docs/MarineCorps101_2.pdf" target="_new" class="slide-in">MARINE CORPS 101</a></li>
 															</ul><br>
 														</div><br>
-														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="1200" data-aos-once="true" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)"><br>
+														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="1700" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-once="true">
 															<ul class="list-unstyled" style="font-size: 18px !important;"><br>
-																<li><a href="maradmins.html" target="_new" class="slide-in">MARADMINS </a></li><br>
-																<li><a href="library.html" target="_new" class="slide-in">ORDERS/DIRECTIVES </a></li><br>
-																<li><a href="https://www.mol.usmc.mil/" target="_new" class="slide-in">MARINE ONLINE</a></li><br>
-																<li><a href="http://www.marines.mil/Portals/59/Docs/MarineCorps101_2.pdf" target="_new" class="slide-in">MARINE CORPS 101</a></li><br>
-															</ul><br>
-														</div><br>
-														<div class="col-md-4 text-md-left col-xl-3" data-aos="fade-up" data-aos-duration="1700" data-aos-once="true" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)"><br>
-															<ul class="list-unstyled" style="font-size: 18px !important;"><br>
-																<li><a href="http://www.marines.mil/Portals/59/Docs/MarineCorps101_2.pdf" class="slide-in">LEJEUNE HISTORIC WATER</a></li><br>
-																<li><a href="http://www.marines.mil/tattoos.aspx?pid=HPTattooPolicy" target="_new" class="slide-in">TATOO POLICY</a></li><br>
-																<li><a href="http://www.mccdc.marines.mil/MOC/" target="_new" class="slide-in">MARINE OPERATING CONCEPT</a></li><br>
-																<li><a href="http://www.hqmc.marines.mil/acmc/Task-Force" target="_new" class="slide-in">SITE REGISTRY</a></li><br>
+																<li><a href="http://www.marines.mil/Portals/59/Docs/MarineCorps101_2.pdf" class="slide-in">LEJEUNE HISTORIC WATER</a></li>
+																<li><a href="http://www.marines.mil/tattoos.aspx?pid=HPTattooPolicy" target="_new" class="slide-in">TATOO POLICY</a></li>
+																<li><a href="http://www.mccdc.marines.mil/MOC/" target="_new" class="slide-in">MARINE OPERATING CONCEPT</a></li>
+																<li><a href="http://www.hqmc.marines.mil/acmc/Task-Force" target="_new" class="slide-in">SITE REGISTRY</a></li>
 															</ul><br>
 														</div><br>
 													</div><br>
@@ -3560,16 +3563,629 @@
 												<a href="https://www.usmc-mccs.org/services/career/marine-for-life-network/" target="_blank"><img src="img/HomeAd-1.jpg" alt="HomeAd-1.jpg" /></a>
 												<a href="https://www.usmc-mccs.org/index.cfm/services/support/dstress-line/" target="_blank"><img src="img/HomeAd-2.jpg" alt="HomeAd-2.jpg" /></a>
 												<a href="https://www.usmc-mccs.org/index.cfm/services/support/sexual-assault-prevention/" target="_blank"><img src="img/HomeAd-3.jpg" alt="HomeAd-3.jpg" /></a>
-												<a href="https://www.usmc-mccs.org/PWYE/" target="_blank" data-aos="zoom-in"><img src="img/HomeAd-4.jpg" alt="HomeAd-4.jpg" /></a></div>
+												<a href="https://www.usmc-mccs.org/PWYE/" target="_blank"><img src="img/HomeAd-4.jpg" alt="HomeAd-4.jpg" /></a></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- End Image Links -->
-
 					</div>
 				</div>
+
+				<!-- Video Player -->
+				<div class="DnnModule DnnModule-DVIDSVideoPlayer DnnModule-564"><a name="564"></a>
+					<div class="empty-container background-color-primary">
+						<div id="dnn_ctr564_ContentPane">
+							<!-- Start_Module_564 -->
+							<div id="dnn_ctr564_ModuleContent" class="DNNModuleContent ModDVIDSVideoPlayerC">
+
+								<div class="DVIDSVideoPlayer">
+									<a name="DVIDSVideoPlayer564"></a>
+									<div class="container">
+										<div class="DVIDSVideoPlayerOuter">
+											<div class="DVIDSVideoPlayerInner">
+												<div class="DVIDSVideoPlayerLeft">
+													<h1 class="marine-tv-caption" data-aos="fade-right" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-duration="800" data-aos-once="true">MARINES TV&nbsp;</h1>
+													<p class="marine-tv-text" data-aos="fade-right" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-duration="800" data-aos-once="true" data-aos-delay="500">Visit Marines TV for the latest videos from fellow
+														Marines across the globe. Search by location and activity, find training videos, news stories and more</p>
+												</div>
+												<div class="DVIDSVideoPlayerRight" data-aos="fade-left" data-aos-easing="cubic-bezier(0.4, 0.0, 0.2, 1)" data-aos-duration="800" data-aos-delay="800" data-aos-once="true">
+													<div class="DVIDSVideoPlayerItem">
+														<!-- DVIDS Video Analytics -->
+														<script type="text/javascript" src="/DesktopModules/DVIDSVideoPlayer/Components/analyticsParamsForDVIDSAnalyticsAPI.js"></script>
+														<script type="text/javascript">
+															// ANALYTICSLIBRARY.init(["676030", "5037"]);
+															// ANALYTICSLIBRARY.loadAnalyticsParam();
+														</script>
+														<!-- End DVIDS Video Analytics -->
+
+														<div class="DVPPlayerBackground">
+															<div class="DVPPlayer">
+																<span class="mejs__offscreen">Video Player</span>
+																<div id="mep_0" class="mejs__container mejs__container-keyboard-inactive mejs__video" tabindex="0" role="application" aria-label="Video Player" style="width: 985.375px; height: 554.273px; min-width: 0px;">
+																	<div class="mejs__inner">
+																		<div class="mejs__mediaelement">
+																			<mediaelementwrapper id="videoPlayer564"><video id="videoPlayer564_html5" preload="none" src="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1024x576-1769k.mp4" poster="https://cdn.dvidshub.net/media/frames/video/1904/676030.jpg"
+																				  crossorigin="anonymous" style="width: 985.375px; height: 554.273px;">
+																					<track kind="subtitles" src="/desktopmodules/sharedlibrary/handlers/dvidscaption.ashx?PortalId=0&amp;AssetId=video:676030&amp;Format=" srclang="en"></video></mediaelementwrapper>
+																		</div>
+																		<div class="mejs__layers">
+																			<div class="mejs__captions-layer mejs__layer" style="display: none; width: 100%; height: 100%;">
+																				<div class="mejs__captions-position mejs__captions-position-hover"><span class="mejs__captions-text"></span></div>
+																			</div>
+																			<div class="mejs__poster mejs__layer" style="background-image: url(&quot;https://cdn.dvidshub.net/media/frames/video/1904/676030.jpg&quot;); width: 100%; height: 100%;"><img class="mejs__poster-img" width="0" height="0" src="https://cdn.dvidshub.net/media/frames/video/1904/676030.jpg"></div>
+																			<div class="mejs__overlay mejs__layer" style="display: none; width: 100%; height: 100%;">
+																				<div class="mejs__overlay-loading"><span class="mejs__overlay-loading-bg-img"></span></div>
+																			</div>
+																			<div class="mejs__overlay mejs__layer" style="display: none; width: 100%; height: 100%;">
+																				<div class="mejs__overlay-error"></div>
+																			</div>
+																			<div class="mejs__overlay mejs__layer mejs__overlay-play" style="width: 100%; height: 100%;">
+																				<div class="mejs__overlay-button" role="button" tabindex="0" aria-label="Play" aria-pressed="false"></div>
+																			</div>
+																			<div class="mejs__layer video-overlay" style="width: 100%; height: 100%;">U.S. Army Paratroopers prepare for Operation Devil Storm(B-roll)<br>April 29, 2019&nbsp;|&nbsp;2:02</div>
+																		</div>
+																		<div class="mejs__controls" style="display: none;">
+																			<div class="mejs__button mejs__playpause-button mejs__play"><button type="button" aria-controls="mep_0" title="Play" aria-label="Play" tabindex="0"></button></div>
+																			<div class="mejs__time-rail"><span class="mejs__time-total mejs__time-slider" role="slider" tabindex="0" aria-label="Time Slider" aria-valuemin="0" aria-valuemax="NaN" aria-valuenow="0" aria-valuetext="00:00"><span class="mejs__time-buffering"
+																					  style="display: none;"></span><span class="mejs__time-loaded"></span><span class="mejs__time-current"></span><span class="mejs__time-hovered no-hover"></span><span class="mejs__time-handle"><span class="mejs__time-handle-content"></span></span><span
+																					  class="mejs__time-float"><span class="mejs__time-float-current">00:00</span><span class="mejs__time-float-corner"></span></span></span></div>
+																			<div class="mejs__time" role="timer" aria-live="off"><span class="mejs__currenttime">00:00</span><span> | </span><span class="mejs__duration">00:00</span></div>
+																			<div class="mejs__button mejs__captions-button"><button type="button" aria-controls="mep_0" title="Captions/Subtitles" aria-label="Captions/Subtitles" tabindex="0"></button>
+																				<div class="mejs__captions-selector mejs__offscreen">
+																					<ul class="mejs__captions-selector-list">
+																						<li class="mejs__captions-selector-list-item"><input type="radio" class="mejs__captions-selector-input" name="mep_0_captions" id="mep_0_captions_none" value="none" checked=""><label class="mejs__captions-selector-label mejs__captions-selected"
+																							  for="mep_0_captions_none">None</label></li>
+																						<li class="mejs__captions-selector-list-item"><input type="radio" class="mejs__captions-selector-input" name="mep_0_captions" id="mep_0_track_0_subtitles_en" value="mep_0_track_0_subtitles_en"><label class="mejs__captions-selector-label"
+																							  for="mep_0_track_0_subtitles_en">English</label></li>
+																					</ul>
+																				</div>
+																			</div>
+																			<div class="multiBandwidthButton"><button type="button" title="Multi-bandwidth Button"></button></div>
+																			<div id="multiBandwidthOptions" style="height: 100px;"><a href="#" class="multiBandwidthAnchor" fileurl="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049.mp4">1080p</a><a href="#" class="multiBandwidthAnchor"
+																				  fileurl="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1280x720-2765k.mp4">720p</a><a href="#" class="multiBandwidthAnchor chosenMBLink" fileurl="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1024x576-1769k.mp4">576p</a><a
+																				  href="#" class="multiBandwidthAnchor" fileurl="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-512x288-442k.mp4">288p</a><a href="#" class="multiBandwidthAnchor" fileurl="https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-256x144-111k.mp4">144p</a>
+																				<div style="clear:both;"></div>
+																			</div>
+																			<div class="mejs__button mejs__volume-button mejs__mute"><button type="button" aria-controls="mep_0" title="Mute" aria-label="Mute" tabindex="0"></button><a href="javascript:void(0);" class="mejs__volume-slider" aria-label="Volume Slider"
+																				  aria-valuemin="0" aria-valuemax="100" role="slider" aria-orientation="vertical"><span class="mejs__offscreen">Use Up/Down Arrow keys to increase or decrease volume.</span>
+																					<div class="mejs__volume-total">
+																						<div class="mejs__volume-current" style="bottom: 0px; height: 100%;"></div>
+																						<div class="mejs__volume-handle" style="bottom: 100%; margin-bottom: -3px;"></div>
+																					</div>
+																				</a></div>
+																			<div class="mejs__button mejs__fullscreen-button"><button type="button" aria-controls="mep_0" title="Fullscreen" aria-label="Fullscreen" tabindex="0"></button></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<script type="text/javascript">
+															var dvpCCEnabled = false;
+															var myPlayer = null;
+															jQuery(document).ready(function() {
+																var autoPlayTimer = null;
+																var mbOptions = null;
+																var videoHasPlayed = false;
+																var restartTimer = 0;
+																var captionsSelector = null;
+																var videoFilesObj = [{
+																	height: 144,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-256x144-111k.mp4"
+																}, {
+																	height: 288,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-512x288-442k.mp4"
+																}, {
+																	height: 576,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1024x576-1769k.mp4"
+																}, {
+																	height: 720,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1280x720-2765k.mp4"
+																}, {
+																	height: 1080,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049-1920x1080-6221k.mp4"
+																}, {
+																	height: 1080,
+																	src: "https://cdn.dvidshub.net/media/video/1904/DOD_106689049/DOD_106689049.mp4"
+																}];
+																var currentVideoHeight = 576;
+																var playEventAlreadyTriggered = false;
+																var playEventButtonTriggered = false;
+
+																//If template is using new img tags for play button overlay
+																var defaultButton = jQuery('.DVIDSVideo .video-wrap-container.video-player .defaultVideoOverlay');
+																var hoverButton = jQuery('.DVIDSVideo .video-wrap-container.video-player .hoverVideoOverlay');
+																if (defaultButton.length) {
+																	defaultButton.click(function() {
+																		playVideo();
+																	});
+																	hoverButton.click(function() {
+																		playVideo();
+																	});
+																}
+
+																// TURN ON CAPTIONS IF PREVIOUSLY ENABLED
+																function turnOnCaptionsIfEnabled() {
+																	(function($) {
+																		$(window).load(function() {
+																			CheckCaptions();
+																		});
+																	})(jQuery);
+																}
+
+																function CheckCaptions() {
+																	if (captionsSelector.length > 0 && dvpCCEnabled) {
+																		var englishCaptions = captionsSelector.find("input[value=en]");
+																		englishCaptions.click();
+																	}
+																}
+
+																// DEFINE MULTI-BANDWIDTH BUTTON CONTROL
+																MediaElementPlayer.prototype.buildmultiBandwidth = function(player, controls, layers, media) {
+																	var multiBandwidth = $("<div class='multiBandwidthButton'><button type='button' title='Multi-bandwidth Button'></button></div><div id='multiBandwidthOptions'></div>").appendTo(controls);
+																	mbOptions = $("#multiBandwidthOptions");
+																	createMultiBandwithAnchors(currentVideoHeight);
+																	multiBandwidth.hover(function() {
+																			mbOptions.show();
+																		},
+																		function() {
+																			mbOptions.hide();
+																		});
+																}
+
+																// BUILD MULTI-BANDWIDTH PLAYER TOOL
+																function createMultiBandwithAnchors(videoHeight) {
+																	videoHeight = checkVideoHeight(videoHeight);
+																	updateMultiBandwithAnchors(videoFilesObj, videoHeight);
+																}
+
+																// CHECK IF CURRENT VIDEO HEIGHT EXISTS
+																function checkVideoHeight(heightToCheck) {
+																	var index = videoFilesObj.length - 1;
+																	tempHeight = videoFilesObj[index].height;
+																	for (var i = 0; i < videoFilesObj.length; i++) {
+																		if (videoFilesObj[i].height == heightToCheck) {
+																			tempHeight = videoFilesObj[i].height;
+																			break;
+																		}
+																	}
+																	return tempHeight;
+																}
+
+																// SET PLAYER SOURCE AND PLAY VIDEO
+																function setPlayerSource(src) {
+																	videoHasPlayed = false; // INIT
+																	createMultiBandwithAnchors(currentVideoHeight); // RECREATE THE ANCHORS
+																	var time = myPlayer.getCurrentTime(); // GET THE CURRENT TIME
+																	myPlayer.setSrc(src);
+																	myPlayer.load();
+																	playVideo();
+																	// SET THE TIMER TO THE CURRENT TIME SO IT WILL BE AVAILABLE WHEN THE PLAYER IS RELOADED
+																	if (time > 0) {
+																		restartTimer = time;
+																	}
+																}
+
+																function playVideo() {
+																	document.getElementById('videoPlayer564').play();
+																	//var playButton = $(".mejs-overlay-play");
+																	//if (playButton.size() != 0) {
+																	//    playButton.trigger("click");
+																	//}
+																}
+
+																myPlayer = new MediaElementPlayer('videoPlayer564', {
+																	videoWidth: '100%',
+																	videoHeight: '100%',
+																	//enableAutosize: true,
+																	pluginPath: "/DesktopModules/SharedLibrary/Plugins/MediaElement4.2.9/",
+																	features: ["playpause", "progress", "current", "duration", "tracks", "multiBandwidth", "volume", "fullscreen"],
+																	success: function(mediaElement, domObject) {
+
+																		mediaElement.addEventListener('playing', function(e) {
+																			if (defaultButton.length) {
+																				if (playEventButtonTriggered === false) {
+																					defaultButton.hide();
+																					hoverButton.hide();
+																					playEventButtonTriggered = true;
+																				}
+																			}
+																			if (playEventAlreadyTriggered === false) {
+																				// DVIDSVideoAnalytics.track('play', analyticsParams);
+																				// console.debug('DVIDSVideoAnalytics PLAY EVENT');
+																				playEventAlreadyTriggered = true;
+																			}
+																		});
+
+																		mediaElement.addEventListener('play', function(e) {
+																			if ($(".mejs__controls").is(":hidden"))
+																				$(".mejs__controls").show();
+																			// if overlay exists, hide it
+																			if ($(".mejs__layer.video-overlay").length)
+																				$(".mejs__layer.video-overlay").hide();
+
+																		});
+
+
+																		mediaElement.addEventListener('ended', function(e) {
+																			// DVIDSVideoAnalytics.track('ended', analyticsParams);
+																			// console.debug('DVIDSVideoAnalytics ENDED EVENT');
+																			//play next media
+
+																		});
+
+
+																		//$('#videoPlayer564').css({'width': '100%', 'height':'100%'});
+
+																		// EVENT LISTENER FOR WHEN VIDEO TIME HAS BEEN UPDATED
+																		mediaElement.addEventListener('timeupdate', function(e) {
+
+																			// IF VIDEO HAS NOT BEEN PLAYED AND SAVED POSITION IS GREATER THAN 0
+																			if (!videoHasPlayed && restartTimer > 0) {
+
+																				// SET THE START TIME FROM THE RELATION IN SECONDS
+																				myPlayer.setCurrentTime(restartTimer);
+
+																				// SET THE VIDEO HAS PLAYED FLAG AND CLEAR THE TIMER
+																				// OTHERWISE KEEP CONTINUAL LOOP GOING BACK TO THIS TIME
+																				// THIS EVENT GETS CALLED AROUND EVERY 250MS
+																				videoHasPlayed = true;
+																				restartTimer = 0;
+																			}
+																		}, false);
+
+																		mediaElement.addEventListener('canplay', function(e) {
+																			CheckCaptions();
+																		}, false);
+
+																		mediaElement.addEventListener('pause', function(e) {
+																			if (defaultButton.length) {
+																				defaultButton.removeAttr("style")
+																				hoverButton.removeAttr("style");
+																				playEventButtonTriggered = false;
+																			}
+																		}, false);
+
+																		mbOptions.delegate("a", "click", function() {
+																			var obj = $(this);
+																			if (obj.hasClass("chosenMBLink")) {
+																				return false;
+																			} else {
+																				mbOptions.find("a.chosenMBLink").removeClass("chosenMBLink");
+																				obj.addClass("chosenMBLink");
+																				currentVideoHeight = obj.html().substring(0, obj.html().length - 1);
+																				setPlayerSource(obj.attr("fileurl"));
+																			}
+																			mbOptions.hide();
+																			return false;
+																		});
+																		// ASSIGN CAPTIONS SELECTOR TO JQUERY OBJECT, SET CLICK DELEGATE AND TURN ON CAPTIONS IF PREVIOUSLY ENABLED
+																		captionsSelector = $("div.mejs-captions-selector");
+																		captionsSelector.delegate("input:radio", "click", function() {
+																			var lang = this.value;
+																			if (lang == "none") {
+																				dvpCCEnabled = false;
+																			} else {
+																				dvpCCEnabled = true;
+																			}
+																		});
+																		turnOnCaptionsIfEnabled();
+																	}
+																});
+
+																// AUTOMATICALLY PLAY VIDEO IF ID PASSED OR VIDEO CLICKED
+																if (false) {
+																	playVideo();
+																	//document.getElementById('videoPlayer564').play();
+																}
+															});
+
+															function updateMultiBandwithAnchors(files, videoHeight) {
+																var mbOptions = $("#multiBandwidthOptions");
+																var multiBandwidthHTML = [];
+																for (var i = 0; i < files.length; i++) {
+																	if (i == files.length - 1) {
+																		multiBandwidthHTML.unshift("<a href='#' class='multiBandwidthAnchor' fileurl='" + files[i].src + "'>" + files[i].height + "p</a>");
+																	} else {
+																		if (files[i].height != files[i + 1].height) {
+																			multiBandwidthHTML.unshift("<a href='#' class='multiBandwidthAnchor' fileurl='" + files[i].src + "'>" + files[i].height + "p</a>");
+																		}
+																	}
+																}
+																multiBandwidthHTML.push("<div style='clear:both;'></div>");
+																mbOptions.html(multiBandwidthHTML.join(""));
+																var mbAnchors = mbOptions.children("a");
+																for (i = 0; i < mbAnchors.length; i++) {
+																	if (mbAnchors.eq(i).html() == videoHeight + "p") {
+																		mbAnchors.eq(i).addClass("chosenMBLink");
+																	}
+																}
+																mbOptions.css("height", 20 * mbAnchors.length);
+															}
+
+															function PlayAssetAJAX(id) {
+																var baseUrl = $.ServicesFramework().getServiceRoot('DVIDSVideoPlayer');
+																$.ajax({
+																	type: "GET",
+																	url: baseUrl + "Public/GetAsset?id=" + id,
+																	success: function(data) {
+																		// remove the poster so the initial poster doesn't display while switching videos.
+																		$(".DVPPlayerBackground .mejs__poster").css("background-image", "");
+																		$(".DVPPlayerBackground .mejs__poster-img").removeAttr("src");
+																		$(".DVPPlayerBackground video").removeAttr("poster");
+																		myPlayer.setSrc(data.Video.Src);
+																		myPlayer.play();
+																		updateMultiBandwithAnchors(data.Bandwidth, 700);
+																	},
+																	error: function() {
+																		console.log("error loading asset");
+																	}
+																});
+															}
+														</script>
+													</div>
+													<div class="DVIDSBottom">
+														<div class="DVIDSCarouselSection">
+															<div class="DVIDSMoreButtonLarge d-none d-xl-flex">
+																<a class="button-primary dark" href="/News/MarinesTV">All Videos</a>
+															</div>
+															<div class="DVIDSCarouselPager">
+																<div class="DVIDSCarouselPagerInner">
+																	<div class="DVIDSCarouselLeftPager" aria-role="button" aria-label="Scroll media carousel to the previous page" title="Scroll media carousel to the previous page"></div>
+																	<div class="DVIDSCarouselRightPager" aria-role="button" aria-label="Scroll media carousel to the next page" title="Scroll media carousel to the next page"><span>NEXT</span></div>
+																</div>
+															</div>
+															<div class="DVIDSCarouselImgTitle">
+																<div><span>U.S. Army Paratroopers prepare for Operation Devil Storm(B-roll)</span></div>
+															</div>
+															<div class="DVIDSCarousel royalSlider rsDefault rsAutoHeight rsHor">
+																<div class="rsOverflow" style="cursor: -webkit-grab; width: 200px; height: 133.328px; transition: height 600ms ease-in-out 0s;">
+																	<div class="rsContainer" style="transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+																		<div style="left: 0px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem Selected" data-title="U.S. Army Paratroopers prepare for Operation Devil Storm(B-roll)" data-id="video:676030" style="visibility: visible; opacity: 1; transition: opacity 400ms ease-in-out 0s;">
+																				<div class="DVIDSCarouselImgWrapper Selected">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676030/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 215px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratroopers prepares for Operation Devil Storm (B-roll)" data-id="video:676026">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676026/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 430px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Courage in the Midst of Tragedy: Marines Awarded Navy and Marine Corps Medal" data-id="video:676021">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676021/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 645px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Resilient Typhoon - Yap" data-id="video:675988">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675988/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 860px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratroopers prepare for Operation Devil Storm(B-roll)" data-id="video:676022">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676022/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 1075px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Soldiers conduct a wet gap crossing training during Operation Devil Storm (B-roll)" data-id="video:676016">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676016/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 1290px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Ie Shima Lighthouse Memorial Service" data-id="video:675096">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675096/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: 1505px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratroopers conduct night operations during Operation Devil Storm (B-roll)" data-id="video:676012">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676012/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -215px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Wyoming National Guard Gets a Taste of the New ACFT (Army Combat Fitness Test)" data-id="video:675983">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675983/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -430px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Iowa Air National Guard clinicians provide healing waves of hope" data-id="video:675977">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675977/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -645px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratroopers prepare for Operation Devil Storm (B-roll)" data-id="video:675996">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675996/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -860px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratroopers prepare for Operation Devil Storm" data-id="video:676000">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676000/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -1075px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Vietnam War Vet Pinning" data-id="video:675999">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/675999/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -1290px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="U.S. Army Paratrooper conduct night operations during Operation Devil Storm" data-id="video:676008">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676008/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																		<div style="left: -1505px;" class="rsSlide ">
+																			<div class="DVIDSCarouselItem" data-title="Vietnam War Veteran Pinning" data-id="video:676010">
+																				<div class="DVIDSCarouselImgWrapper">
+																					<div style="width:200px;background-image:url('https://cdn.dvidshub.net/media/thumbs/frames/video/1904/676010/200w_q95.jpg')"></div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div style="clear:both; float: none;"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="DVIDSMoreButton  d-flex d-xl-none">
+											<a class="button-primary dark" href="/News/MarinesTV">All Videos</a>
+										</div>
+									</div>
+								</div>
+
+								<script type="text/javascript">
+									jQuery(document).ready(function() {
+										var isAudio = false;
+
+										AOS.init({
+											startEvent: 'load'
+										});
+
+										$(".mejs__controls").hide();
+										var slider = jQuery(".DVIDSCarousel").royalSlider({
+											autoHeight: true,
+											navigateByClick: false,
+											imageScaleMode: 'none',
+											imageAlignCenter: false,
+											loop: true,
+											controlNavigation: "none",
+											slidesSpacing: 15,
+											arrowsNav: false,
+											arrowsNavAutoHide: false,
+											keyboardNavEnabled: true,
+											numImagesToPreload: 10,
+											usePreloader: false,
+											sliderTouch: true,
+											startSlideId: 0
+										}).data('royalSlider');
+
+										$(".DVIDSCarouselLeftPager").on("click", function() {
+											slider.prev();
+											SetCarouselTitle();
+										});
+
+										$(".DVIDSCarouselRightPager").on("click", function() {
+											slider.next();
+											SetCarouselTitle();
+										});
+
+										$(".DVIDSCarouselImgTitle, .DVIDSCarouselItem").click(function(e) {
+											var vidID = slider.currSlide.content.data("id");
+											PlayAssetAJAX(vidID);
+										});
+
+										function SetCarouselTitle() {
+											var title = slider.currSlide.content.data("title");
+											$(".DVIDSCarouselImgTitle span").html(title);
+										}
+
+										$(".mejs__layers").append("<div class='mejs__layer video-overlay'>U.S. Army Paratroopers prepare for Operation Devil Storm(B-roll)<br />April 29, 2019&nbsp;|&nbsp;2:02</div>")
+										SetCarouselTitle();
+									});
+								</script>
+
+								<script type="text/javascript">
+									var $window = jQuery(window);
+									var windowResizeTimeout = null;
+									var windowResizeTimeoutInterval = 500;
+									var clearSearch = jQuery(".spanDVIDSClearSearch");
+
+									jQuery(document).ready(function() {
+										jQuery("#btnDVIDSSearch").on("click", function() {
+											if (jQuery("#txtDVIDSSearch").val().length > 0) {
+												var searchTxt = CleanUpSearchText(jQuery("#txtDVIDSSearch").val());
+												if (searchTxt !== "") {
+													document.location = searchURL.replace("searchstring", searchTxt);
+												} else {
+													console.log("After scrubbing nothing to submit for search.");
+													return false;
+												}
+											} else {
+												//document.location = baseURL;
+											}
+										});
+
+										jQuery('#txtDVIDSSearch').keypress(function(e) {
+											if (e.which === 13) { //Enter key pressed
+												e.preventDefault();
+												jQuery('#btnDVIDSSearch').click(); //Trigger search button click event
+											}
+										});
+
+										if (clearSearch !== null) {
+											clearSearch.on("click", function() {
+												document.location = baseURL;
+											});
+										}
+
+									});
+
+									// Whitelist regex the text to ensure only expected characters are used.
+									// Then encode spaces and single quotes
+									function CleanUpSearchText(theText) {
+										//DVIDS Search API expected characters, allow dash, word chars, single quote, and space.
+										//Remove the rest
+										//encode the single quotes and spaces to not break the js call to GetCCURL()
+										return theText.replace(/[^/-\w' ]/gi, '').replace(/'/g, "\\'").replace(' ', '%20').replace(/\//ig, '%2F');
+									}
+
+									function GetCCURL(URL) {
+										var CCString = "dvpcc=" + dvpCCEnabled;
+										if (URL.indexOf("dvpcc") > 0) {
+											//document.location.href = URL;
+											document.location.href = URL.replace(/(dvpcc=)[^\&#]+/, '$1' + dvpCCEnabled);
+										} else {
+											if (URL.indexOf("?") > 0) {
+												CCString = "&" + CCString;
+											} else {
+												CCString = "?" + CCString;
+											}
+
+											if (URL.indexOf("#" > 0)) {
+												document.location.href = URL.substring(0, URL.indexOf('#')) + CCString + URL.substring(URL.indexOf('#'));
+											} else {
+												document.location.href = URL + CCString;
+											}
+										}
+									}
+								</script>
+							</div><!-- End_Module_564 -->
+						</div>
+					</div>
+				</div>
+
+
+				<!-- End Video Player -->
 
 
 				<!-- In The News Module -->
