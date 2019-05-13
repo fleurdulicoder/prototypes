@@ -1,0 +1,1228 @@
+<!--[section:item]-->
+<div id="gallery-of-hero-photos" class="gallery-of-hero-photos background-color-primary">
+  <div class="control-nav" id="control-nav">
+    <div class="container-fluid no-gutters nopad">
+      <div class="row no-gutters">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-5">
+          <a class="gallery-control-prev" id="gallery-control-prev" role="button" data-slide="prev">
+            <div><span>PREVIOUS</span></div>
+          </a>
+        </div>
+        <div class="col-md-2 col-lg-2 hide-on-mobile">
+          <a href="#photo-info" role="button" class="carousel-control-down" id="carousel-control-down">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-5">
+          <a class="gallery-control-next" id="gallery-control-next" role="button" data-slide="next">
+            <div><span>NEXT</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider">
+    <div class="wrapper" id="hero-slider">
+      <!-- dynamically loading -->
+    </div>
+  </div>
+</div>
+
+<div class="background-color-primary photo-info" id="photo-info">
+  <div class="container-fluid">
+    <div class="row margin-horizontal-10" id="main-photo-detail-carousel">
+      <div class="offset-lg-1 col-lg-3 col-12 col-sm-12 col-md-12 main-photo-title" id="main-photo-title">
+        <h4 class="photo-caption" id="photo-caption">[i:shorttitle]</h4>
+        <p class="photo-sub-caption" id="photo-sub-caption">U.S. Marine Corps photo by [i:author]/Released [i:filename]</p>
+      </div>
+      <div class="col-12 col-sm-12 col-md-7 hide-on-mobile">
+        <div class="pager-section">
+          <div class="carousel-div">
+            <div class="wrapper">
+              <div id="carousel-of-thumbs" class="carousel-of-thumbs slide row">
+                <div class="carousel-inner w-100 mx-auto row" role="listbox" id="thumbs-slider">
+                  <!-- repeated content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-1 container-fluid align-self-center text-center d-md-flex ml-auto hide-on-mobile">
+        <span class="dual-link carousel-dual-link" id="carousel-dual-link">
+          <a class="previous" id="thumbs-carousel-prev"><span></span></a>
+          <a class="next" id="thumbs-carousel-next"><span>Next</span></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid background-color-primary photo-details" id="photo-details">
+    <div class="row">
+      <div class="col-md-12 col-11 offset-lg-1 col-lg-11">
+        <p id="photo-date" class="photo-date">[i:createdon]</p>
+      </div>
+    </div>
+    <div class="row marginRow">
+      <div class="offset-lg-1 col-lg-6 col-md-12 photo-detail-data" id="photo-detail-data">
+        <div class="row">
+          <div class="col-12">
+            <p id="photo-desc" class="photo-desc">[i:caption]</p>
+          </div>
+        </div>
+        <div class="row download-photos">
+          <div class="col-12 col-md-auto  col-sm-auto mb-3">
+            <a href="[i:fullurl]" class="download-link" id="photo-download" download="[i:fullurl]"><i class="fa fa-download"></i> DOWNLOAD</a>
+          </div>
+          <div class="col-12 col-md-5  col-sm-auto offset-col-md-2 mb-3">
+            <a class="share-link addthis_button" addthis:url="[i:baseurl]" id="photo-share"><i class="fas fa-info-circle"></i> SHARE</a>
+            <script type="text/javascript">
+              var addthis_config = {
+                data_use_flash: false,
+                data_use_cookies: false,
+                ui_508_compliant: true
+              }
+            </script>
+            <script type="text/javascript" src="[ig:urlprotocol]://s7.addthis.com/js/300/addthis_widget.js#pubid=[addthis:pubid]"></script>
+          </div>
+        </div>
+
+        <div class="row img-public">
+          <div class="col-12">
+            <h4 id="public-domain">IMAGE IS PUBLIC DOMAIN</h4>
+            <a id="readmore-link" class="readmore"><span>Read More</span></a>
+            <p class="photo-release" id="photo-release">
+              This photograph is considered public domain and has been cleared for release. If you would like to republish please give the photographer appropriate credit.
+              Further, any commercial or non-commercial use of this photograph or any other DoD image must be made in compliance with guidance found at
+              <a href="http://www.dimoc.mil/resources/limitations.html" target="_new">http://www.dimoc.mil/resources/limitations.html</a>,
+              which pertains to intellectual property restrictions (e.g., copyright and trademark, including the use of official emblems, insignia, names and slogans), warnings
+              regarding use of images of identifiable personnel, appearance of endorsement, and related matters.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-left offset-lg-1 col-lg-4 col-md-12 hide-on-mobile">
+        <p class="photo-attribute title">CAMERA </p>
+        <p class="photo-attribute value" id="photo-camera">Canon EOS 5d Mark III</p>
+        <p class="photo-attribute title">LENS </p>
+        <p class="photo-attribute value" id="photo-lens">EF 50mm f/2.5 Compact Macro</p>
+        <p class="photo-attribute title">APERTURE</p>
+        <p class="photo-attribute value" id="photo-aperture">f/3.2</p>
+        <p class="photo-attribute title">SHUTTERSPEED</p>
+        <p class="photo-attribute value" id="photo-shutterspeed">1/400</p>
+        <p class="photo-attribute title">ISO</p>
+        <p class="photo-attribute value" id="photo-iso">250</p>
+      </div>
+      <!-- end side column -->
+    </div>
+  </div>
+</div>
+
+<div id="marines-related-news" class="container-fluid no-gutters pad0 d-flex marines-related-news">
+  <div class="container-fluid align-self-center">
+    <div class="row">
+      <div class="text-left offset-lg-1 col-lg-3 col-md-12 col-sm-12 align-self-center">
+        <h1 id="related-title">RELATED NEWS</h1>
+      </div>
+      <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
+        <div id="in-the-news-scroll" class="carousel-of-news" data-ride="carousel" data-interval="false">
+          <ul class="carousel-inner align-center" id="related-news-list">
+            [i:hasrelated][i:relatedarticles][/i:hasrelated]
+          </ul>
+        </div>
+      </div>
+      <div class="col-3 col-lg-2 col-sm-12 offest-md-0 align-self-center align-right hide-on-mobile">
+        <span class="dual-link">
+          <a class="previous" id="related-news-prev"><span></span></a>
+          <a class="next" id="related-news-next"><span>Next</span></a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+[i:usePrevNextGallery]
+[prevnextdetailsgalleryjs]
+[/i:usePrevNextGallery]
+
+<script type="text/javascript">
+  $('#heroPane').css('display', 'none');
+
+  $('#readmore-link').on('click', function(e) {
+    $(this).toggleClass('expanded');
+  });
+
+  /*
+    Custom Animations
+    @developer Ella Musina (emusina@omnitecinc.com)
+  */
+  function AnimateGalleryImage() {
+    var isShown = false;
+    var control = document.getElementById('control-nav');
+    var prev = document.getElementById('gallery-control-prev');
+    var next = document.getElementById('gallery-control-next');
+    var down = document.getElementById('carousel-control-down');
+    if (!control || !prev || !next) return;
+
+    var timeline = new TimelineMax({
+      paused: true,
+      delay: 1.5
+    });
+    timeline
+      .addLabel('show')
+      .to(prev, 0.5, {
+        opacity: 1,
+        x: 0,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 'show')
+      .to(down, 0.5, {
+        opacity: 1,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 'show')
+      .to(next, 0.5, {
+        opacity: 1,
+        x: 0,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 'show');
+
+    $('#control-nav').on('inview', function(event, isInView) {
+      if (isInView && !isShown) {
+        isShown = true;
+        timeline.play();
+      }
+    });
+
+    if (down) {
+      down.addEventListener('click', function(e) { // on desktop
+        e.preventDefault();
+        TweenMax.to(window, 0.5, {
+          scrollTo: '#photo-info',
+          ease: 'cubic-bezier(.41,.73,.47,.96)'
+        });
+      });
+    }
+  }
+
+  function AnimateGalleryCarousel() {
+    var items = [],
+      isShown = false;
+    var title = document.getElementById('main-photo-title');
+    var carousel = document.getElementById('carousel-of-thumbs');
+    var link = document.getElementById('carousel-dual-link');
+
+    var timeline = new TimelineMax({
+      paused: true,
+      delay: 0.5
+    });
+    timeline
+      .addLabel('title')
+      .to(title, 0.5, {
+        opacity: 1,
+        y: 0,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 'title')
+      .addLabel('carousel')
+      .to(carousel, 0.5, {
+        opacity: 1,
+        scale: 1,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      })
+      .addLabel('dual-link')
+      .to(link, 0.5, {
+        opacity: 1,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 'dual-link');
+
+    $('#main-photo-detail-carousel').on('inview', function(event, isInView) {
+      if (isInView && !isShown) {
+        isShown = true;
+        timeline.play();
+      }
+    });
+  }
+
+  function AnimateGalleryBody() {
+    var isShown = false;
+    var dateline = document.getElementById('photo-date');
+    var photodata = document.getElementById('photo-detail-data');
+    var attrs = document.querySelectorAll('.photo-attribute');
+
+    var timeline = new TimelineMax({
+      paused: true,
+      delay: 0.5
+    });
+    timeline
+      .addLabel('details')
+      .staggerTo([dateline, photodata], 0.5, {
+        opacity: 1,
+        y: 0,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 0.3, 'details')
+      .staggerTo([attrs], 0.5, {
+        opacity: 1,
+        y: 0,
+        ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+      }, 0.3, 'details');
+
+    $('#photo-details').on('inview', function(event, isInView) {
+      if (isInView && !isShown) {
+        isShown = true;
+        timeline.play();
+      }
+    });
+  }
+
+  /* NewsSlider - news snippets related to the hero image
+    @developer Ella Musina (emusina@omnitecinc.com)
+  */
+  var NewsSlider = NewsSlider || function(config) {
+    var container = config.container ? document.getElementById(config.container) : null;
+    var prev = config.prev ? document.getElementById(config.prev) : null;
+    var next = config.next ? document.getElementById(config.next) : null;
+    if (!container || !prev || !next) return;
+
+    var slides, quantity, currentSlide, currentIndex, isAnimating;
+
+    function init() {
+      slides = container.children;
+      quantity = slides.length;
+      isAnimating = false;
+      currentIndex = 0;
+    }
+
+    function observe() {
+      if (prev && next) {
+        prev.addEventListener('click', function(e) {
+          if (!isAnimating) slideInPrev();
+        }, false);
+        next.addEventListener('click', function(e) {
+          if (!isAnimating) slideInNext();
+        }, false);
+        prev.addEventListener('touch', function(e) {
+          if (!isAnimating) slideInPrev();
+        }, false);
+        next.addEventListener('touch', function(e) {
+          if (!isAnimating) slideInPrev();
+        }, false);
+      }
+      jQuery(container).swipe({
+        swipeLeft: function(event, direction, distance, duration, fingerCount, fingerData) {
+          if (!isAnimating) slideInNext();
+        },
+        swipeRight: function(event, direction, distance, duration, fingerCount, fingerData) {
+          if (!isAnimating) slideInPrev();
+        }
+      });
+    }
+
+    function getCurrentSlide() {
+      for (var j = 0, len = slides.length; j < len; j++) {
+        if (slides[j].classList.contains('current')) {
+          currentIndex = j;
+          currentSlide = slides[j];
+          break;
+        }
+      }
+    }
+
+    function slideInNext() {
+      isAnimating = true;
+      getCurrentSlide();
+      if ((currentIndex + 1) < quantity) {
+        nextSlide = slides[++currentIndex];
+      } else {
+        currentIndex = 0;
+        nextSlide = slides[currentIndex];
+      }
+
+      var timeline = new TimelineMax({
+        paused: true,
+        onComplete: function() {
+          currentSlide.setAttribute('style', '');
+          currentSlide.classList.remove('current');
+          nextSlide.classList.add('current');
+          currentSlide = nextSlide;
+          isAnimating = false;
+        }
+      });
+
+      timeline
+        .set(nextSlide, {
+          x: '100%',
+          visibility: 'visible',
+          opacity: 1
+        })
+        .to(currentSlide, 0.5, {
+          x: '-100%',
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+        }, 0.1)
+        .to(nextSlide, 0.5, {
+          x: '0%',
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+        }, 0.1);
+
+      timeline.play();
+    }
+
+    function slideInPrev() {
+      isAnimating = true;
+      getCurrentSlide();
+      if ((currentIndex - 1) >= 0) {
+        prevSlide = slides[--currentIndex];
+      } else {
+        currentIndex = quantity - 1;
+        prevSlide = slides[currentIndex];
+      }
+
+      var timeline = new TimelineMax({
+        paused: true,
+        onComplete: function() {
+          currentSlide.setAttribute('style', '');
+          currentSlide.classList.remove('current');
+          prevSlide.classList.add('current');
+          currentSlide = prevSlide;
+          isAnimating = false;
+        }
+      });
+
+      timeline
+        .set(prevSlide, {
+          x: '-100%',
+          visibility: 'visible',
+          opacity: 1
+        })
+        .to(prevSlide, 0.5, {
+          x: '0%',
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+        }, 0.1)
+        .to(currentSlide, 0.5, {
+          x: '100%',
+          ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)'
+        }, 0.1);
+
+      timeline.play();
+    }
+
+    function reset() {
+      currentIndex = 0;
+      isAnimating = false;
+      slides = [];
+      quantity = 0;
+      currentSlide = null;
+    }
+
+    function setup() {
+      init();
+      observe();
+    }
+
+    function update(news) {
+      var template = function(index, item) {
+        var classname = index === 0 ? 'current' : '';
+        var date = new Date(item.PublishDate);
+        var dateString = ("0" + (date.getMonth() + 1)).slice(-2) + "/" + ("0" + date.getDate()).slice(-2) + "/" + date.getFullYear();
+
+        return '<li class="' + classname + '"><a href="' + item.FullyQualifiedArticleURL +
+          '"><span class="related-title">' + item.Title + '</span><span class="related-annotation">' +
+          dateString + ' ' + item.AuthorName + ' ' + item.Unit + '</span></a></li>';
+      };
+
+      if (news && news.length > 0) {
+        var html = '';
+        $.each(news, function(index, value) {
+          html += template(index, value);
+        });
+        container.innerHTML = html;
+        reset();
+        show();
+        setup();
+      } else {
+        hide();
+      }
+    }
+
+    function show() {
+      container.style.display = 'block';
+    }
+
+    function hide() {
+      container.style.display = 'none';
+    }
+
+    setup();
+
+    return {
+      update: update
+    }
+  };
+
+  var relatedSlider = new NewsSlider({
+    container: 'related-news-list',
+    prev: 'related-news-prev',
+    next: 'related-news-next'
+  });
+
+  /*
+    Gallery Template: fill in page data on prev/next clicks
+    @developer - Ella Musina (emusina@omnitecinc.com)
+  */
+
+  var GalleryTemplate = {
+    photoCaption: document.getElementById('photo-caption'),
+    photoSubCaption: document.getElementById('photo-sub-caption'),
+    photoDate: document.getElementById('photo-date'),
+    photoDesc: document.getElementById('photo-desc'),
+    photoDownload: document.getElementById('photo-download'),
+    photoShare: document.getElementById('photo-share'),
+    photoCamera: document.getElementById('photo-camera'),
+    photoLens: document.getElementById('photo-lens'),
+    photoAperture: document.getElementById('photo-aperture'),
+    photoShutterspeed: document.getElementById('photo-shutterspeed'),
+    photoISO: document.getElementById('photo-iso'),
+
+    transformDate: function(dateString) {
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      var photoTakenOn = new Date(dateString);
+      return (months[photoTakenOn.getMonth()] + ' ' + photoTakenOn.getDate() + ', ' + photoTakenOn.getFullYear());
+    },
+
+    update: function(obj) {
+      this.photoCaption.innerHTML = obj.caption;
+      this.photoSubCaption.innerHTML = obj.subcaption;
+      this.photoDate.innerHTML = this.transformDate(obj.date);
+      this.photoDesc.innerHTML = obj.description;
+      this.photoDownload.setAttribute('href', obj.download);
+      this.photoDownload.setAttribute('download', obj.download);
+      this.photoShare.setAttribute('addthis:url', obj.share);
+      // @todo: hardcoded, no API exists yet
+      this.photoCamera.innerHTML = '-';
+      this.photoLens.innerHTML = '-';
+      this.photoAperture.innerHTML = '-';
+      this.photoShutterspeed.innerHTML = '-';
+      this.photoISO.innerHTML = '-';
+    }
+  };
+
+  var LoadingScreen = {
+    append: function() {
+      this.screen = document.createElement('div');
+      this.screen.className = "loading-screen";
+      this.screen.id = "loading-screen";
+      this.screen.innerHTML = '<div class="bounce"><div></div><div></div><div></div></div>';
+      this.parent.appendChild(this.screen);
+    },
+
+    show: function() {
+      TweenMax.to(this.screen, 0.3, {
+        opacity: 1,
+        ease: 'Power4.easeOut'
+      });
+    },
+
+    close: function() {
+      if (this.screen) {
+        this.parent.removeChild(this.screen);
+        this.screen = null;
+      }
+    },
+
+    init: function(element) {
+      if (!element) return;
+      this.parent = element;
+      this.append(element);
+      this.show();
+    }
+  };
+
+  /*
+    GallerySlider - Programmed specifically for the Marines Gallery
+    of Hero images managed by thumbs carousel, all values are set
+    @developer - Ella Musina (emusina@omnitecinc.com)
+  */
+  var GallerySlider = GallerySlider || function(config) {
+    var element = document.getElementById('gallery-of-hero-photos');
+    if (!element) return;
+
+    var view = document.getElementById('hero-slider');
+    var views = view.getElementsByClassName('item');
+    var prevHero = document.getElementById('gallery-control-prev');
+    var nextHero = document.getElementById('gallery-control-next');
+    if (!view || !views || views.length === 0) return;
+
+    var carousel = document.getElementById('carousel-of-thumbs');
+    var wrapper = document.getElementById('thumbs-slider');
+    var thumbs = wrapper.getElementsByClassName('item');
+    var prev = document.getElementById('thumbs-carousel-prev');
+    var next = document.getElementById('thumbs-carousel-next');
+    if (!carousel || !wrapper || !thumbs || thumbs.length === 0) return;
+
+    // slider config
+    var autoRotate = config.autorotate || false;
+    var stopRotate = config.stoprotate || false;
+    var rotateDuration = config.rotateduration || 5000;
+    var animateInView = config.animateinview || false;
+
+    // slider defaults
+    var isAnimating = false,
+      currentIndex = 0,
+      jump, totalJumps;
+
+    function setCurrentHero() {
+      for (var j = 0, len = views.length; j < len; j++) {
+        if (views[j].classList.contains('current')) {
+          currentIndex = j;
+          break;
+        }
+      }
+      TweenMax.set(views[currentIndex], {
+        x: 0,
+        opacity: 1,
+        visibility: 'visible'
+      });
+    }
+
+    function setCurrentJump() {
+      var jump = Math.floor(currentIndex / 4);
+      TweenMax.set(wrapper, {
+        x: -(jump * 100) + '%'
+      });
+    }
+
+    function setCarouselWidth() {
+      jump = 0;
+      totalJumps = Math.ceil(thumbs.length / 4);
+      TweenMax.set(wrapper, {
+        x: 0,
+        width: (totalJumps * 100) + '%'
+      });
+    }
+
+    function slideIn(e) {
+      var thumb = e.target;
+      while (!thumb.classList.contains('item')) {
+        thumb = thumb.parentNode;
+      }
+      if (thumb.index !== currentIndex) {
+        isAnimating = true;
+        if (thumb.index > currentIndex) {
+          slideInFromRight(thumb);
+        } else {
+          slideInFromLeft(thumb);
+        }
+      }
+    }
+
+    function slideInFromLeft(thumb) {
+      thumb.classList.add('current');
+      var timeline = new TimelineMax({
+        paused: true,
+        onComplete: function() {
+          views[currentIndex].setAttribute('style', '');
+          thumbs[currentIndex].classList.remove('current');
+          views[currentIndex].classList.remove('current');
+          currentIndex = thumb.index;
+          views[currentIndex].classList.add('current');
+          GalleryTemplate.update(views[currentIndex].data);
+          relatedSlider.update(views[currentIndex].news);
+          isAnimating = false;
+        }
+      });
+      timeline
+        .addLabel('init')
+        .set(thumb.view, {
+          x: '-100%',
+          opacity: 1,
+          visibility: 'visible'
+        }, 'init')
+        .set(views[currentIndex], {
+          x: '0%',
+          opacity: 1,
+          visibility: 'visible'
+        }, 'init')
+        .addLabel('move')
+        .to(thumb.view, 0.8, {
+          x: '0%',
+          ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+        }, 0.1, 'move')
+        .to(views[currentIndex], 0.8, {
+          x: '100%',
+          ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+        }, 0.1, 'move');
+      timeline.play();
+    }
+
+    function slideInFromRight(thumb) {
+      console.log('ImageGallerySlider > slide right, current = ', currentIndex, ' next = ', thumb.index);
+      thumb.classList.add('current');
+      var timeline = new TimelineMax({
+        paused: true,
+        onComplete: function() {
+          views[currentIndex].setAttribute('style', '');
+          thumbs[currentIndex].classList.remove('current');
+          views[currentIndex].classList.remove('current');
+          currentIndex = thumb.index;
+          views[currentIndex].classList.add('current');
+          GalleryTemplate.update(views[currentIndex].data);
+          relatedSlider.update(views[currentIndex].news);
+          isAnimating = false;
+        }
+      });
+      timeline
+        .addLabel('init')
+        .set(thumb.view, {
+          x: '100%',
+          opacity: 1,
+          visibility: 'visible'
+        }, 'init')
+        .set(views[currentIndex], {
+          x: '0%',
+          opacity: 1,
+          visibility: 'visible'
+        }, 'init')
+        .addLabel('move')
+        .to(thumb.view, 0.8, {
+          x: '0%',
+          ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+        }, 0.1, 'move')
+        .to(views[currentIndex], 0.8, {
+          x: '-100%',
+          ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+        }, 0.1, 'move');
+
+      timeline.play();
+    }
+
+    function moveLeft() {
+      if ((currentIndex - 1) <= 0) {
+        if (galleryStartPage[moduleid] !== 1) {
+          LoadingScreen.init(view);
+          window.galleryStore.mode = 'prev';
+          GalleryLoadPrevPage();
+        } else {
+          console.log('reached the beginning of gallery, no pages');
+          // hide prev?
+        }
+      } else {
+        var prevIndex = currentIndex - 1;
+        var thumb = thumbs[prevIndex];
+        slideInFromLeft(thumb);
+      }
+    }
+
+    function moveRight() {
+      console.log('Image Gallery Slider > move right');
+      if ((currentIndex + 1) >= thumbs.length) {
+        if (galleryEndPage[moduleid] !== totalpages[moduleid]) {
+          LoadingScreen.init(view);
+          window.galleryStore.mode = 'next';
+          GalleryLoadNextPage();
+        } else {
+          console.log('reached the end of loading next pages');
+          // hide next?
+        }
+      } else {
+        var nextIndex = currentIndex + 1;
+        var thumb = thumbs[nextIndex];
+        slideInFromRight(thumb);
+      }
+    }
+
+    var timer;
+
+    function rotate() {
+      timer = window.setInterval(function() {
+        moveRight();
+      }, rotateDuration);
+    }
+
+    function pause() {
+      window.clearInterval(timer);
+    }
+
+    function moveThumbsRight() {
+      if (jump - 1 >= 0) {
+        jump--;
+      } else {
+        jump = totalJumps - 1;
+        TweenMax.set(wrapper, {
+          x: -totalJumps * 100 + '%'
+        });
+      }
+      TweenMax.to(wrapper, 0.5, {
+        x: -(jump * 100) + '%',
+        ease: 'cubic-bezier(0, 0, 0, 1.1)'
+      });
+    }
+
+    function moveThumbsLeft() {
+      console.log('Image Gallery Slider > move thumbs left');
+      if (jump + 1 < totalJumps) {
+        jump++;
+      } else {
+        jump = 0;
+        TweenMax.set(wrapper, {
+          x: '100%'
+        });
+      }
+      TweenMax.to(wrapper, 0.5, {
+        x: -(jump * 100) + '%',
+        ease: 'cubic-bezier(0, 0, 0, 1.1)'
+      });
+    }
+
+    function scrollToBanner() {
+      TweenMax.to(window, 0.5, {
+        scrollTo: 0,
+        ease: 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+      });
+    }
+
+    function destroy() {
+      for (var idx = 0, len = views.length; idx < len; idx++) {
+        thumbs[idx].removeEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!isAnimating) {
+            scrollToBanner();
+            slideIn(e);
+          }
+        }, false);
+        thumbs[idx].removeEventListener('touch', function(e) {
+          e.stopPropagation();
+          if (!isAnimating) {
+            scrollToBanner();
+            slideIn(e);
+          }
+        }, false);
+      }
+
+      prev.removeEventListener('click', function(e) {
+        moveThumbsLeft(e);
+      }, false);
+      prev.removeEventListener('touch', function(e) {
+        e.stopPropagation();
+        moveThumbsLeft(e);
+      }, false);
+      next.removeEventListener('click', function(e) {
+        e.stopPropagation();
+        moveThumbsRight(e);
+      }, false);
+      next.removeEventListener('touch', function(e) {
+        e.stopPropagation();
+        moveThumbsRight(e);
+      }, false);
+
+      prevHero.removeEventListener('click', function(e) {
+        e.stopPropagation();
+        moveLeft();
+      }, false);
+      nextHero.removeEventListener('click', function(e) {
+        e.stopPropagation();
+        moveRight();
+      }, false);
+
+      if (stopRotate) {
+        element.removeEventListener('mouseover', function() {
+          pause();
+        }, false);
+        element.removeEventListener('mouseout', function() {
+          rotate();
+        }, false);
+      }
+
+      if (autoRotate) {
+        window.removeEventListener('resize', function() { // debouncer
+          pause();
+          if (timer) clearInterval(timer);
+          timer = window.setTimeout(function() {
+            rotate();
+          }, 12000);
+        });
+      }
+
+      delete jump;
+      delete totalJumps;
+      delete currentIndex;
+      delete isAnimating;
+      delete animateInView;
+      delete rotateDuration;
+      delete stopRotate;
+      delete autoRotate;
+      delete prev;
+      delete next;
+      delete thumbs;
+      delete wrapper;
+      delete carousel;
+      delete nextHero;
+      delete prevHero;
+      delete views;
+      delete view;
+      delete element;
+    }
+
+    function observe() {
+      console.log('Image Gallery Slider > observe');
+      for (var idx = 0, len = views.length; idx < len; idx++) {
+        thumbs[idx].view = views[idx];
+        thumbs[idx].index = idx;
+        thumbs[idx].addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!isAnimating) {
+            scrollToBanner();
+            slideIn(e);
+          }
+        }, false);
+        thumbs[idx].addEventListener('touch', function(e) {
+          e.stopPropagation();
+          if (!isAnimating) {
+            scrollToBanner();
+            slideIn(e);
+          }
+        }, false);
+      }
+
+      prev.addEventListener('click', function(e) {
+        moveThumbsRight(e);
+      }, false);
+      prev.addEventListener('touch', function(e) {
+        e.stopPropagation();
+        moveThumbsRight(e);
+      }, false);
+      next.addEventListener('click', function(e) {
+        e.stopPropagation();
+        moveThumbsLeft(e);
+      }, false);
+      next.addEventListener('touch', function(e) {
+        e.stopPropagation();
+        moveThumbsLeft(e);
+      }, false);
+
+      prevHero.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveLeft();
+      }, false);
+      nextHero.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveRight();
+      }, false);
+
+      if (stopRotate) {
+        element.addEventListener('mouseover', function() {
+          pause();
+        }, false);
+        element.addEventListener('mouseout', function() {
+          rotate();
+        }, false);
+      }
+
+      if (autoRotate) {
+        window.addEventListener('resize', function() { // debouncer
+          pause();
+          if (timer) clearInterval(timer);
+          timer = window.setTimeout(function() {
+            rotate();
+          }, 12000);
+        }, false);
+        rotate();
+      }
+
+      if (animateInView) { //jquery.inview plugin
+        $(element).on('inview', function(event, isInView) {
+          if (isInView) {
+            TweenMax.to(element, 0.25, {
+              opacity: 1,
+              y: 0,
+              ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+              onComplete: function() {
+                $(element).off('inview');
+              }
+            });
+          }
+        });
+
+        $(carousel).on('inview', function(event, isInView) {
+          if (isInView) {
+            TweenMax.staggerTo(thumbs, 0.25, {
+              opacity: 1,
+              ease: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
+              onComplete: function() {
+                $(carousel).off('inview');
+              }
+            }, 0.12);
+          }
+        });
+      }
+    }
+
+    function init() {
+      setCurrentHero();
+      setCurrentJump();
+      setCarouselWidth();
+      observe();
+    }
+
+    init();
+
+    return {
+      slideNext: moveRight,
+      slidePrev: moveLeft,
+      destroy: destroy
+    }
+  };
+
+  function GalleryPage() {
+    window.galleryStore = {
+      heros: 0,
+      images: 0,
+      counter: 0,
+      mode: ''
+    };
+
+    var heroSlider = document.getElementById('hero-slider');
+    var thumbSlider = document.getElementById('thumbs-slider');
+    var currentImageId = getFileIdFromUrl();
+    var gallerySlider;
+
+    function init() {
+      LoadingScreen.init(heroSlider);
+      GalleryLoadInitialPage();
+      observe();
+      AnimateGalleryImage();
+      AnimateGalleryCarousel();
+      AnimateGalleryBody();
+    }
+
+    function isPortrait(w, h) {
+      return w <= h;
+    }
+
+    function getImageToLoad(imgSizes, isThumb) {
+      var sortedSizes, files, dimensions;
+      if (imgSizes.length > 0) {
+        dimensions = (function() {
+          if (isThumb) {
+            return {
+              width: 240,
+              height: 150
+            };
+          } else {
+            return {
+              width: dma.DeviceIsMobile() ? 480 : 1088,
+              height: dma.DeviceIsMobile() ? 800 : 820
+            };
+          }
+        })();
+        if (isPortrait(imgSizes[0].Width, imgSizes[0].Height)) {
+          sortedSizes = imgSizes.sort(function(a, b) {
+            return a.Height - b.Height;
+          });
+          files = sortedSizes.filter(function(item) {
+            return (item.Height >= dimensions.height);
+          });
+        } else {
+          sortedSizes = imgSizes.sort(function(a, b) {
+            return a.Width - b.Width;
+          });
+          files = sortedSizes.filter(function(item) {
+            return (item.Width >= dimensions.width);
+          });
+        }
+        if (files.length > 0) {
+          return files[0];
+        } else {
+          return sortedSizes.pop();
+        }
+      } else {
+        return null;
+      }
+    }
+
+    // @redo, 2 urls exist, ?igphoto=id, /igphoto/id
+    // put updated url into the browser on next/prev click
+    function getFileIdFromUrl() {
+      var url = window.location.href;
+      var u = new URL(url);
+      var c = u.searchParams.get('igphoto');
+      return c;
+    }
+
+    function loadImage(obj, img, mode, template) {
+      if (obj) {
+        if (img) {
+          preload(img.ViewUrl, mode);
+          var tmpl = template ? template : 'hero';
+          var md = mode ? mode : 'next';
+          var data = {
+            id: obj.FileId,
+            name: obj.FileName,
+            caption: obj.Title,
+            subcaption: "U.S. Marine Corps photo by " + obj.Creator.CreatorName + '/Released ' + obj.FileName,
+            description: obj.Description,
+            author: obj.Creator.CreatorName,
+            date: obj.CreatedOn,
+            download: img.DownloadUrl,
+            share: '/Photos?igphoto=' + obj.FileId,
+            alt: obj.AltText
+            // @todo: camera: '', lens: '', aperture: '', shutterspeed: '', iso: ''
+          };
+          switch (template) {
+            case 'hero':
+              var item = document.createElement('div');
+              item.className = (currentImageId == obj.FileId) ? 'item current' : 'item';
+              item.className = isPortrait(img.Width, img.Height) ? item.className : item.className + ' landscape';
+              item.innerHTML = '<img src="' + img.ViewUrl + '" alt="' + img.AltText + '" />';
+              item.data = data;
+              if (mode && mode === 'next') {
+                heroSlider.appendChild(item);
+              } else {
+                heroSlider.insertBefore(item, heroSlider.firstChild);
+              }
+              break;
+            case 'thumb':
+              var item = document.createElement('div');
+              item.className = 'item col-md-3 col-sm-6 col-6 align-self-center';
+              item.className += (currentImageId == obj.FileId) ? ' current' : '';
+              item.innerHTML = '<img src="' + img.ViewUrl + '" alt="' + img.AltText + '" />';
+              item.data = data;
+              if (mode && mode === 'next') {
+                thumbSlider.appendChild(item);
+              } else {
+                thumbSlider.insertBefore(item, thumbSlider.firstChild);
+              }
+              break;
+          }
+          return item;
+        }
+      }
+    }
+
+    function loadHero(obj, newsobj, mode) { // mobile + desktop
+      var img = getImageToLoad(obj.FileProperties);
+      var item = loadImage(obj, img, mode, 'hero');
+      item.news = newsobj; // attach / prep news data
+    }
+
+    function loadThumb(obj, mode) { // only desktop
+      var img = getImageToLoad(obj.FileProperties, true);
+      loadImage(obj, img, mode, 'thumb');
+    }
+
+    function preload(imgURL) {
+      var image = new Image();
+      image.src = imgURL;
+      image.onload = function() {
+        document.dispatchEvent(new Event('gallery-hero-preload'));
+      };
+      image.onerror = function() {
+        console.log('image errored out >', imgURL);
+        // welcome to add better error handling
+        document.dispatchEvent(new Event('gallery-hero-preload'));
+      };
+    }
+
+    function loadImages(newItems, mode) {
+      window.galleryStore.images = dma.DeviceIsMobile() ?
+        newItems.length :
+        newItems.length * 2;
+      $.each(newItems, function(index, value) {
+        var file = value.File;
+        var news = value.RelatedNews;
+        if (!file.FileProperties || file.FileProperties.length === 0) {
+          if (dma.DeviceIsMobile()) { // remove what is not a gallery image
+            window.galleryStore.images--; // hero
+          } else {
+            window.galleryStore.images -= 2; // hero + thumb
+          }
+        } else {
+          loadHero(file, news, mode);
+          if (!dma.DeviceIsMobile()) {
+            loadThumb(file, mode);
+          }
+        }
+      });
+    }
+
+    function observe() {
+      console.log('GalleryPage > observe');
+      document.addEventListener('gallery-hero-preload', function(e) {
+        window.galleryStore.counter++;
+        console.log('event: gallery-hero-preload', window.galleryStore.counter);
+        if (window.galleryStore.counter === (window.galleryStore.images - 1)) {
+          document.dispatchEvent(new Event('gallery-heros-preload-done'));
+        }
+      });
+
+      document.addEventListener('gallery-heros-preload-done', function(e) {
+        console.log('event: gallery-heros-preload-done');
+        window.galleryStore.heros = dma.DeviceIsMobile() ?
+          window.galleryStore.images :
+          window.galleryStore.images / 2;
+        window.galleryStore.images = 0;
+        window.galleryStore.counter = 0;
+
+        gallerySlider = new GallerySlider();
+        LoadingScreen.close();
+        if (window.galleryStore.mode === 'prev') {
+          gallerySlider.slidePrev();
+        } else if (window.galleryStore.mode === 'next') {
+          gallerySlider.slideNext();
+        }
+        window.galleryStore.mode = '';
+      });
+
+      document.addEventListener('gallery-load-initial-page', function(e) {
+        loadImages(Object.values(galleryJSON[moduleid]));
+      });
+
+      document.addEventListener('gallery-load-initial-page-error', function(e) {
+        LoadingScreen.close();
+      });
+
+      document.addEventListener('gallery-load-prev-page', function(e) {
+        gallerySlider.destroy();
+        gallerySlider = null;
+        var batch = Object.values(galleryJSON[moduleid]).slice(
+          window.galleryStore.heros,
+          window.galleryStore.heros + 20
+        );
+        loadImages(batch, 'prev');
+      });
+
+      document.addEventListener('gallery-load-prev-page-error', function(e) {
+        console.log('Next Page Loading Error');
+        gallerySlider = new GallerySlider();
+        LoadingScreen.close();
+      });
+
+      document.addEventListener('gallery-load-next-page', function(e) {
+        gallerySlider.destroy();
+        gallerySlider = null;
+        var batch = Object.values(galleryJSON[moduleid]).slice(
+          window.galleryStore.heros,
+          window.galleryStore.heros + 20
+        );
+        loadImages(batch, 'next');
+      });
+
+      document.addEventListener('gallery-load-next-page-error', function() {
+        console.log('Next Page Loading Error');
+        gallerySlider = new GallerySlider();
+        LoadingScreen.close();
+      });
+
+      // document.addEventListener('gallery-load-related', function(e) {});
+    }
+
+    init();
+  }
+
+  var relatedSlider;
+  window.addEventListener('load', function(e) {
+    GalleryPage();
+  });
+</script>
+
+<!--[section:noitems]-->
